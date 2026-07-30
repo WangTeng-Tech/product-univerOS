@@ -219,25 +219,64 @@ export default function UpgradedPartnerPage() {
   };
 
   return (
-    <div style={{ padding: '5rem 0', background: '#09090b', color: '#fafafa', fontFamily: 'Inter, system-ui, sans-serif' }}>
+    <div className="partner-page-root">
       <style>{`
+        .partner-page-root {
+          padding: 5rem 0;
+          background-color: var(--color-bg-primary, #ffffff);
+          color: var(--color-text-primary, #101418);
+          font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+          min-height: 100vh;
+          transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
         .partner-glow-card {
           position: relative;
-          background: rgba(18, 18, 22, 0.7);
-          border: 1px solid rgba(255, 255, 255, 0.08);
+          background: var(--partner-card-bg, rgba(255, 255, 255, 0.85));
+          border: 1px solid var(--partner-card-border, rgba(0, 0, 0, 0.08));
           border-radius: 16px;
           padding: 2.5rem;
           transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
           overflow: hidden;
+          box-shadow: var(--partner-card-shadow, 0 8px 30px rgba(0, 0, 0, 0.04));
         }
+
         .partner-glow-card:hover {
           transform: translateY(-4px);
           border-color: rgba(99, 102, 241, 0.4);
-          box-shadow: 0 12px 30px -10px rgba(79, 70, 229, 0.25);
+          box-shadow: 0 16px 36px -10px rgba(79, 70, 229, 0.2);
         }
+
+        .partner-popular-card {
+          border: 2px solid #6366f1 !important;
+          background: var(--partner-popular-bg, rgba(245, 247, 255, 0.9)) !important;
+        }
+
+        .partner-section-box {
+          background: var(--partner-section-bg, rgba(248, 250, 252, 0.8));
+          border: 1px solid var(--partner-card-border, rgba(0, 0, 0, 0.08));
+          border-radius: 24px;
+          padding: 3.5rem 2rem;
+          box-shadow: var(--partner-card-shadow, 0 8px 30px rgba(0, 0, 0, 0.03));
+        }
+
+        .partner-benefit-card {
+          background: var(--partner-benefit-bg, #ffffff);
+          border: 1px solid var(--partner-card-border, rgba(0, 0, 0, 0.08));
+          border-radius: 16px;
+          padding: 2rem;
+          box-shadow: var(--partner-card-shadow, 0 4px 20px rgba(0, 0, 0, 0.03));
+          transition: all 0.3s ease;
+        }
+
+        .partner-benefit-card:hover {
+          transform: translateY(-2px);
+          border-color: rgba(99, 102, 241, 0.3);
+        }
+
         .btn-glowing-primary {
           background: #4f46e5;
-          color: #ffffff;
+          color: #ffffff !important;
           border: 1px solid #6366f1;
           border-radius: 9999px;
           padding: 0.85rem 2rem;
@@ -245,17 +284,19 @@ export default function UpgradedPartnerPage() {
           font-size: 0.95rem;
           cursor: pointer;
           transition: all 0.3s ease;
-          box-shadow: 0 0 20px rgba(79, 70, 229, 0.4);
+          box-shadow: 0 0 20px rgba(79, 70, 229, 0.35);
         }
+
         .btn-glowing-primary:hover {
           background: #4338ca;
-          box-shadow: 0 0 30px rgba(79, 70, 229, 0.6);
+          box-shadow: 0 0 30px rgba(79, 70, 229, 0.55);
           transform: scale(1.02);
         }
+
         .btn-glowing-secondary {
-          background: rgba(255, 255, 255, 0.05);
-          color: #e4e4e7;
-          border: 1px solid rgba(255, 255, 255, 0.15);
+          background: var(--partner-btn-sec-bg, rgba(0, 0, 0, 0.05));
+          color: var(--color-text-primary, #101418) !important;
+          border: 1px solid var(--partner-card-border, rgba(0, 0, 0, 0.15));
           border-radius: 9999px;
           padding: 0.85rem 2rem;
           font-weight: 600;
@@ -263,23 +304,81 @@ export default function UpgradedPartnerPage() {
           cursor: pointer;
           transition: all 0.3s ease;
         }
+
         .btn-glowing-secondary:hover {
-          background: rgba(255, 255, 255, 0.1);
-          border-color: rgba(255, 255, 255, 0.3);
+          background: var(--partner-btn-sec-hover, rgba(0, 0, 0, 0.08));
+          border-color: rgba(99, 102, 241, 0.4);
         }
+
+        .partner-input {
+          width: 100%;
+          padding: 0.75rem 1rem;
+          background: var(--partner-input-bg, #ffffff) !important;
+          border: 1px solid var(--partner-card-border, #e2e8f0) !important;
+          border-radius: 8px;
+          color: var(--color-text-primary, #0f172a) !important;
+          font-size: 0.85rem;
+          outline: none;
+          transition: all 0.2s ease;
+        }
+
+        .partner-input:focus {
+          border-color: #6366f1 !important;
+          box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+        }
+
         .step-circle {
           width: 48px;
           height: 48px;
           border-radius: 50%;
-          background: rgba(79, 70, 229, 0.15);
+          background: rgba(79, 70, 229, 0.12);
           border: 1px solid rgba(99, 102, 241, 0.3);
-          color: #818cf8;
+          color: #4f46e5;
           display: flex;
           align-items: center;
           justify-content: center;
           font-weight: bold;
           font-size: 1.1rem;
           margin-bottom: 1.25rem;
+        }
+
+        /* ── 深色模式自适应变量 ── */
+        @media (prefers-color-scheme: dark) {
+          :root:not([data-theme="light"]) {
+            --partner-card-bg: rgba(18, 18, 22, 0.75);
+            --partner-card-border: rgba(255, 255, 255, 0.08);
+            --partner-card-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+            --partner-popular-bg: rgba(24, 24, 32, 0.95);
+            --partner-section-bg: rgba(18, 18, 24, 0.6);
+            --partner-benefit-bg: rgba(255, 255, 255, 0.02);
+            --partner-btn-sec-bg: rgba(255, 255, 255, 0.06);
+            --partner-btn-sec-hover: rgba(255, 255, 255, 0.12);
+            --partner-input-bg: rgba(255, 255, 255, 0.04);
+          }
+        }
+        [data-theme="dark"] {
+          --partner-card-bg: rgba(18, 18, 22, 0.75);
+          --partner-card-border: rgba(255, 255, 255, 0.08);
+          --partner-card-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+          --partner-popular-bg: rgba(24, 24, 32, 0.95);
+          --partner-section-bg: rgba(18, 18, 24, 0.6);
+          --partner-benefit-bg: rgba(255, 255, 255, 0.02);
+          --partner-btn-sec-bg: rgba(255, 255, 255, 0.06);
+          --partner-btn-sec-hover: rgba(255, 255, 255, 0.12);
+          --partner-input-bg: rgba(255, 255, 255, 0.04);
+        }
+
+        /* ── 浅色模式显式变量定义 ── */
+        [data-theme="light"] {
+          --partner-card-bg: rgba(255, 255, 255, 0.9);
+          --partner-card-border: rgba(226, 232, 240, 0.9);
+          --partner-card-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+          --partner-popular-bg: rgba(245, 247, 255, 0.95);
+          --partner-section-bg: rgba(248, 250, 252, 0.9);
+          --partner-benefit-bg: #ffffff;
+          --partner-btn-sec-bg: rgba(0, 0, 0, 0.04);
+          --partner-btn-sec-hover: rgba(0, 0, 0, 0.08);
+          --partner-input-bg: #ffffff;
         }
       `}</style>
 
@@ -293,7 +392,7 @@ export default function UpgradedPartnerPage() {
             gap: '0.5rem',
             background: 'rgba(79, 70, 229, 0.1)',
             border: '1px solid rgba(99, 102, 241, 0.25)',
-            color: '#a5b4fc',
+            color: '#4f46e5',
             padding: '0.4rem 1rem',
             borderRadius: '9999px',
             fontSize: '0.85rem',
@@ -304,13 +403,13 @@ export default function UpgradedPartnerPage() {
             {t.tag}
           </div>
           
-          <h1 style={{ fontSize: '3rem', fontWeight: 900, letterSpacing: '-0.02em', marginBottom: '1rem' }}>
+          <h1 style={{ fontSize: '3rem', fontWeight: 900, letterSpacing: '-0.02em', marginBottom: '1rem', color: 'var(--color-text-primary, #0f172a)' }}>
             {t.title}
           </h1>
-          <p style={{ fontSize: '1.35rem', color: '#818cf8', fontWeight: 700, marginBottom: '1.5rem' }}>
+          <p style={{ fontSize: '1.35rem', color: '#4f46e5', fontWeight: 700, marginBottom: '1.5rem' }}>
             {t.subtitle}
           </p>
-          <p style={{ fontSize: '1rem', color: '#a1a1aa', maxWidth: '760px', margin: '0 auto 2.5rem', lineHeight: '1.7' }}>
+          <p style={{ fontSize: '1rem', color: 'var(--color-text-secondary, #475569)', maxWidth: '760px', margin: '0 auto 2.5rem', lineHeight: '1.7' }}>
             {t.desc}
           </p>
 
@@ -331,44 +430,44 @@ export default function UpgradedPartnerPage() {
         {/* 2. Tier Pricing Cards */}
         <div style={{ marginBottom: '6rem' }}>
           <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
-            <h2 style={{ fontSize: '2rem', fontWeight: 800, marginBottom: '0.5rem' }}>{t.tierTitle}</h2>
-            <p style={{ fontSize: '0.95rem', color: '#71717a' }}>{t.tierDesc}</p>
+            <h2 style={{ fontSize: '2rem', fontWeight: 800, marginBottom: '0.5rem', color: 'var(--color-text-primary, #0f172a)' }}>{t.tierTitle}</h2>
+            <p style={{ fontSize: '0.95rem', color: 'var(--color-text-muted, #64748b)' }}>{t.tierDesc}</p>
           </div>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '2rem' }}>
             
             {/* Tier 1: BYOK */}
             <div className="partner-glow-card">
-              <h3 style={{ fontSize: '1.25rem', fontWeight: 800, color: '#f4f4f5' }}>{t.tier1Name}</h3>
-              <p style={{ fontSize: '0.85rem', color: '#a1a1aa', margin: '0.5rem 0 1.5rem' }}>{t.tier1Focus}</p>
-              <div style={{ fontSize: '2rem', fontWeight: 900, color: '#818cf8', marginBottom: '1.5rem' }}>{t.tier1Price}</div>
+              <h3 style={{ fontSize: '1.25rem', fontWeight: 800, color: 'var(--color-text-primary, #0f172a)' }}>{t.tier1Name}</h3>
+              <p style={{ fontSize: '0.85rem', color: 'var(--color-text-muted, #64748b)', margin: '0.5rem 0 1.5rem' }}>{t.tier1Focus}</p>
+              <div style={{ fontSize: '2rem', fontWeight: 900, color: '#4f46e5', marginBottom: '1.5rem' }}>{t.tier1Price}</div>
               <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 2rem 0', display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
                 {tierFeatures.tier1.map((feat, idx) => (
-                  <li key={idx} style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', fontSize: '0.88rem', color: '#d4d4d8' }}>
-                    <Check size={16} color="#818cf8" />
+                  <li key={idx} style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', fontSize: '0.88rem', color: 'var(--color-text-secondary, #334155)' }}>
+                    <Check size={16} color="#4f46e5" />
                     <span>{feat}</span>
                   </li>
                 ))}
               </ul>
               <a href="#apply-form" style={{ width: '100%' }}>
-                <button style={{ width: '100%', padding: '0.75rem', borderRadius: '8px', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', color: '#fff', fontWeight: 600, cursor: 'pointer' }}>
+                <button className="btn-glowing-secondary" style={{ width: '100%', borderRadius: '8px', padding: '0.75rem' }}>
                   选择申请
                 </button>
               </a>
             </div>
 
             {/* Tier 2: Standard (Popular) */}
-            <div className="partner-glow-card" style={{ border: '2px solid rgba(99, 102, 241, 0.6)', background: 'rgba(24, 24, 32, 0.9)' }}>
+            <div className="partner-glow-card partner-popular-card">
               <div style={{ position: 'absolute', top: '1rem', right: '1rem', background: '#4f46e5', color: '#fff', padding: '0.25rem 0.75rem', borderRadius: '9999px', fontSize: '0.75rem', fontWeight: 700 }}>
                 {t.popular}
               </div>
-              <h3 style={{ fontSize: '1.25rem', fontWeight: 800, color: '#ffffff' }}>{t.tier2Name}</h3>
-              <p style={{ fontSize: '0.85rem', color: '#a1a1aa', margin: '0.5rem 0 1.5rem' }}>{t.tier2Focus}</p>
-              <div style={{ fontSize: '2rem', fontWeight: 900, color: '#818cf8', marginBottom: '1.5rem' }}>{t.tier2Price}</div>
+              <h3 style={{ fontSize: '1.25rem', fontWeight: 800, color: 'var(--color-text-primary, #0f172a)' }}>{t.tier2Name}</h3>
+              <p style={{ fontSize: '0.85rem', color: 'var(--color-text-muted, #64748b)', margin: '0.5rem 0 1.5rem' }}>{t.tier2Focus}</p>
+              <div style={{ fontSize: '2rem', fontWeight: 900, color: '#4f46e5', marginBottom: '1.5rem' }}>{t.tier2Price}</div>
               <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 2rem 0', display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
                 {tierFeatures.tier2.map((feat, idx) => (
-                  <li key={idx} style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', fontSize: '0.88rem', color: '#ffffff' }}>
-                    <Check size={16} color="#818cf8" />
+                  <li key={idx} style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', fontSize: '0.88rem', color: 'var(--color-text-primary, #0f172a)' }}>
+                    <Check size={16} color="#4f46e5" />
                     <span>{feat}</span>
                   </li>
                 ))}
@@ -382,19 +481,19 @@ export default function UpgradedPartnerPage() {
 
             {/* Tier 3: Core Partner */}
             <div className="partner-glow-card">
-              <h3 style={{ fontSize: '1.25rem', fontWeight: 800, color: '#f4f4f5' }}>{t.tier3Name}</h3>
-              <p style={{ fontSize: '0.85rem', color: '#a1a1aa', margin: '0.5rem 0 1.5rem' }}>{t.tier3Focus}</p>
-              <div style={{ fontSize: '2rem', fontWeight: 900, color: '#818cf8', marginBottom: '1.5rem' }}>{t.tier3Price}</div>
+              <h3 style={{ fontSize: '1.25rem', fontWeight: 800, color: 'var(--color-text-primary, #0f172a)' }}>{t.tier3Name}</h3>
+              <p style={{ fontSize: '0.85rem', color: 'var(--color-text-muted, #64748b)', margin: '0.5rem 0 1.5rem' }}>{t.tier3Focus}</p>
+              <div style={{ fontSize: '2rem', fontWeight: 900, color: '#4f46e5', marginBottom: '1.5rem' }}>{t.tier3Price}</div>
               <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 2rem 0', display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
                 {tierFeatures.tier3.map((feat, idx) => (
-                  <li key={idx} style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', fontSize: '0.88rem', color: '#d4d4d8' }}>
-                    <Check size={16} color="#818cf8" />
+                  <li key={idx} style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', fontSize: '0.88rem', color: 'var(--color-text-secondary, #334155)' }}>
+                    <Check size={16} color="#4f46e5" />
                     <span>{feat}</span>
                   </li>
                 ))}
               </ul>
               <a href="#apply-form" style={{ width: '100%' }}>
-                <button style={{ width: '100%', padding: '0.75rem', borderRadius: '8px', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', color: '#fff', fontWeight: 600, cursor: 'pointer' }}>
+                <button className="btn-glowing-secondary" style={{ width: '100%', borderRadius: '8px', padding: '0.75rem' }}>
                   联系定制沟通
                 </button>
               </a>
@@ -406,59 +505,59 @@ export default function UpgradedPartnerPage() {
         {/* 3. Core Benefits Grid */}
         <div style={{ marginBottom: '6rem' }}>
           <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
-            <h2 style={{ fontSize: '2rem', fontWeight: 800 }}>{t.benefitsTitle}</h2>
+            <h2 style={{ fontSize: '2rem', fontWeight: 800, color: 'var(--color-text-primary, #0f172a)' }}>{t.benefitsTitle}</h2>
           </div>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1.5rem' }}>
-            <div style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '16px', padding: '2rem' }}>
-              <Zap size={28} color="#818cf8" style={{ marginBottom: '1rem' }} />
-              <h3 style={{ fontSize: '1.1rem', fontWeight: 800, marginBottom: '0.6rem' }}>{t.benefit1Title}</h3>
-              <p style={{ fontSize: '0.85rem', color: '#a1a1aa', lineHeight: '1.6' }}>{t.benefit1Desc}</p>
+            <div className="partner-benefit-card">
+              <Zap size={28} color="#4f46e5" style={{ marginBottom: '1rem' }} />
+              <h3 style={{ fontSize: '1.1rem', fontWeight: 800, marginBottom: '0.6rem', color: 'var(--color-text-primary, #0f172a)' }}>{t.benefit1Title}</h3>
+              <p style={{ fontSize: '0.85rem', color: 'var(--color-text-secondary, #475569)', lineHeight: '1.6' }}>{t.benefit1Desc}</p>
             </div>
 
-            <div style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '16px', padding: '2rem' }}>
-              <ShieldCheck size={28} color="#818cf8" style={{ marginBottom: '1rem' }} />
-              <h3 style={{ fontSize: '1.1rem', fontWeight: 800, marginBottom: '0.6rem' }}>{t.benefit2Title}</h3>
-              <p style={{ fontSize: '0.85rem', color: '#a1a1aa', lineHeight: '1.6' }}>{t.benefit2Desc}</p>
+            <div className="partner-benefit-card">
+              <ShieldCheck size={28} color="#4f46e5" style={{ marginBottom: '1rem' }} />
+              <h3 style={{ fontSize: '1.1rem', fontWeight: 800, marginBottom: '0.6rem', color: 'var(--color-text-primary, #0f172a)' }}>{t.benefit2Title}</h3>
+              <p style={{ fontSize: '0.85rem', color: 'var(--color-text-secondary, #475569)', lineHeight: '1.6' }}>{t.benefit2Desc}</p>
             </div>
 
-            <div style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '16px', padding: '2rem' }}>
-              <Users size={28} color="#818cf8" style={{ marginBottom: '1rem' }} />
-              <h3 style={{ fontSize: '1.1rem', fontWeight: 800, marginBottom: '0.6rem' }}>{t.benefit3Title}</h3>
-              <p style={{ fontSize: '0.85rem', color: '#a1a1aa', lineHeight: '1.6' }}>{t.benefit3Desc}</p>
+            <div className="partner-benefit-card">
+              <Users size={28} color="#4f46e5" style={{ marginBottom: '1rem' }} />
+              <h3 style={{ fontSize: '1.1rem', fontWeight: 800, marginBottom: '0.6rem', color: 'var(--color-text-primary, #0f172a)' }}>{t.benefit3Title}</h3>
+              <p style={{ fontSize: '0.85rem', color: 'var(--color-text-secondary, #475569)', lineHeight: '1.6' }}>{t.benefit3Desc}</p>
             </div>
 
-            <div style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '16px', padding: '2rem' }}>
-              <Layers size={28} color="#818cf8" style={{ marginBottom: '1rem' }} />
-              <h3 style={{ fontSize: '1.1rem', fontWeight: 800, marginBottom: '0.6rem' }}>{t.benefit4Title}</h3>
-              <p style={{ fontSize: '0.85rem', color: '#a1a1aa', lineHeight: '1.6' }}>{t.benefit4Desc}</p>
+            <div className="partner-benefit-card">
+              <Layers size={28} color="#4f46e5" style={{ marginBottom: '1rem' }} />
+              <h3 style={{ fontSize: '1.1rem', fontWeight: 800, marginBottom: '0.6rem', color: 'var(--color-text-primary, #0f172a)' }}>{t.benefit4Title}</h3>
+              <p style={{ fontSize: '0.85rem', color: 'var(--color-text-secondary, #475569)', lineHeight: '1.6' }}>{t.benefit4Desc}</p>
             </div>
           </div>
         </div>
 
         {/* 4. Three-step Join Process */}
-        <div style={{ marginBottom: '6rem', background: 'rgba(18, 18, 24, 0.6)', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '24px', padding: '3.5rem 2rem' }}>
+        <div style={{ marginBottom: '6rem' }} className="partner-section-box">
           <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
-            <h2 style={{ fontSize: '2rem', fontWeight: 800 }}>{t.stepsTitle}</h2>
+            <h2 style={{ fontSize: '2rem', fontWeight: 800, color: 'var(--color-text-primary, #0f172a)' }}>{t.stepsTitle}</h2>
           </div>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem' }}>
             <div style={{ textAlign: 'center', padding: '1rem' }}>
               <div className="step-circle" style={{ margin: '0 auto 1.25rem' }}>1</div>
-              <h3 style={{ fontSize: '1.15rem', fontWeight: 800, marginBottom: '0.5rem' }}>{t.step1Title}</h3>
-              <p style={{ fontSize: '0.85rem', color: '#a1a1aa', lineHeight: '1.6' }}>{t.step1Desc}</p>
+              <h3 style={{ fontSize: '1.15rem', fontWeight: 800, marginBottom: '0.5rem', color: 'var(--color-text-primary, #0f172a)' }}>{t.step1Title}</h3>
+              <p style={{ fontSize: '0.85rem', color: 'var(--color-text-secondary, #475569)', lineHeight: '1.6' }}>{t.step1Desc}</p>
             </div>
 
             <div style={{ textAlign: 'center', padding: '1rem' }}>
               <div className="step-circle" style={{ margin: '0 auto 1.25rem' }}>2</div>
-              <h3 style={{ fontSize: '1.15rem', fontWeight: 800, marginBottom: '0.5rem' }}>{t.step2Title}</h3>
-              <p style={{ fontSize: '0.85rem', color: '#a1a1aa', lineHeight: '1.6' }}>{t.step2Desc}</p>
+              <h3 style={{ fontSize: '1.15rem', fontWeight: 800, marginBottom: '0.5rem', color: 'var(--color-text-primary, #0f172a)' }}>{t.step2Title}</h3>
+              <p style={{ fontSize: '0.85rem', color: 'var(--color-text-secondary, #475569)', lineHeight: '1.6' }}>{t.step2Desc}</p>
             </div>
 
             <div style={{ textAlign: 'center', padding: '1rem' }}>
               <div className="step-circle" style={{ margin: '0 auto 1.25rem' }}>3</div>
-              <h3 style={{ fontSize: '1.15rem', fontWeight: 800, marginBottom: '0.5rem' }}>{t.step3Title}</h3>
-              <p style={{ fontSize: '0.85rem', color: '#a1a1aa', lineHeight: '1.6' }}>{t.step3Desc}</p>
+              <h3 style={{ fontSize: '1.15rem', fontWeight: 800, marginBottom: '0.5rem', color: 'var(--color-text-primary, #0f172a)' }}>{t.step3Title}</h3>
+              <p style={{ fontSize: '0.85rem', color: 'var(--color-text-secondary, #475569)', lineHeight: '1.6' }}>{t.step3Desc}</p>
             </div>
           </div>
         </div>
@@ -466,15 +565,15 @@ export default function UpgradedPartnerPage() {
         {/* 5. Interactive Application Form */}
         <div id="apply-form" style={{ marginBottom: '6rem', maxWidth: '720px', margin: '0 auto 6rem' }} className="partner-glow-card">
           <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
-            <h2 style={{ fontSize: '1.75rem', fontWeight: 800, marginBottom: '0.5rem' }}>{t.formTitle}</h2>
-            <p style={{ fontSize: '0.85rem', color: '#a1a1aa' }}>{t.formSubtitle}</p>
+            <h2 style={{ fontSize: '1.75rem', fontWeight: 800, marginBottom: '0.5rem', color: 'var(--color-text-primary, #0f172a)' }}>{t.formTitle}</h2>
+            <p style={{ fontSize: '0.85rem', color: 'var(--color-text-muted, #64748b)' }}>{t.formSubtitle}</p>
           </div>
 
           {submitSuccess ? (
-            <div style={{ textAlign: 'center', padding: '3rem 1rem', background: 'rgba(16, 185, 129, 0.1)', border: '1px solid rgba(16, 185, 129, 0.3)', borderRadius: '16px' }}>
+            <div style={{ textAlign: 'center', padding: '3rem 1rem', background: 'rgba(16, 185, 129, 0.08)', border: '1px solid rgba(16, 185, 129, 0.3)', borderRadius: '16px' }}>
               <CheckCircle2 size={48} color="#10b981" style={{ margin: '0 auto 1rem' }} />
               <h3 style={{ fontSize: '1.25rem', fontWeight: 800, color: '#10b981', marginBottom: '0.5rem' }}>{t.successMsg}</h3>
-              <p style={{ fontSize: '0.85rem', color: '#a1a1aa', marginTop: '1rem' }}>您也可以直接注册或登录代理商控制台生成试用链接。</p>
+              <p style={{ fontSize: '0.85rem', color: 'var(--color-text-secondary, #475569)', marginTop: '1rem' }}>您也可以直接注册或登录代理商控制台生成试用链接。</p>
               <Link href="/partner/login" style={{ display: 'inline-block', marginTop: '1.5rem' }}>
                 <button className="btn-glowing-primary">{t.btnEnter}</button>
               </Link>
@@ -483,61 +582,61 @@ export default function UpgradedPartnerPage() {
             <form onSubmit={handleFormSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
                 <div>
-                  <label style={{ display: 'block', fontSize: '0.8rem', color: '#a1a1aa', marginBottom: '0.4rem' }}>{t.lblContact} *</label>
+                  <label style={{ display: 'block', fontSize: '0.8rem', color: 'var(--color-text-secondary, #475569)', marginBottom: '0.4rem', fontWeight: 600 }}>{t.lblContact} *</label>
                   <input
                     type="text"
                     required
                     placeholder="如：张经理"
+                    className="partner-input"
                     value={formData.contactName}
                     onChange={(e) => setFormData({ ...formData, contactName: e.target.value })}
-                    style={{ width: '100%', padding: '0.75rem 1rem', background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '8px', color: '#fff', fontSize: '0.85rem', outline: 'none' }}
                   />
                 </div>
 
                 <div>
-                  <label style={{ display: 'block', fontSize: '0.8rem', color: '#a1a1aa', marginBottom: '0.4rem' }}>{t.lblPhone} *</label>
+                  <label style={{ display: 'block', fontSize: '0.8rem', color: 'var(--color-text-secondary, #475569)', marginBottom: '0.4rem', fontWeight: 600 }}>{t.lblPhone} *</label>
                   <input
                     type="text"
                     required
                     placeholder="手机号或微信"
+                    className="partner-input"
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    style={{ width: '100%', padding: '0.75rem 1rem', background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '8px', color: '#fff', fontSize: '0.85rem', outline: 'none' }}
                   />
                 </div>
               </div>
 
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
                 <div>
-                  <label style={{ display: 'block', fontSize: '0.8rem', color: '#a1a1aa', marginBottom: '0.4rem' }}>{t.lblCompany}</label>
+                  <label style={{ display: 'block', fontSize: '0.8rem', color: 'var(--color-text-secondary, #475569)', marginBottom: '0.4rem', fontWeight: 600 }}>{t.lblCompany}</label>
                   <input
                     type="text"
                     placeholder="公司或团队名称"
+                    className="partner-input"
                     value={formData.companyName}
                     onChange={(e) => setFormData({ ...formData, companyName: e.target.value })}
-                    style={{ width: '100%', padding: '0.75rem 1rem', background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '8px', color: '#fff', fontSize: '0.85rem', outline: 'none' }}
                   />
                 </div>
 
                 <div>
-                  <label style={{ display: 'block', fontSize: '0.8rem', color: '#a1a1aa', marginBottom: '0.4rem' }}>{t.lblEmail}</label>
+                  <label style={{ display: 'block', fontSize: '0.8rem', color: 'var(--color-text-secondary, #475569)', marginBottom: '0.4rem', fontWeight: 600 }}>{t.lblEmail}</label>
                   <input
                     type="email"
                     placeholder="partner@example.com"
+                    className="partner-input"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    style={{ width: '100%', padding: '0.75rem 1rem', background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '8px', color: '#fff', fontSize: '0.85rem', outline: 'none' }}
                   />
                 </div>
               </div>
 
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
                 <div>
-                  <label style={{ display: 'block', fontSize: '0.8rem', color: '#a1a1aa', marginBottom: '0.4rem' }}>{t.lblTier}</label>
+                  <label style={{ display: 'block', fontSize: '0.8rem', color: 'var(--color-text-secondary, #475569)', marginBottom: '0.4rem', fontWeight: 600 }}>{t.lblTier}</label>
                   <select
                     value={formData.tier}
                     onChange={(e) => setFormData({ ...formData, tier: e.target.value })}
-                    style={{ width: '100%', padding: '0.75rem 1rem', background: 'rgba(24,24,32,0.9)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '8px', color: '#fff', fontSize: '0.85rem', outline: 'none' }}
+                    className="partner-input"
                   >
                     <option value="标准合伙人">标准合伙人 (¥19,800/年)</option>
                     <option value="核心合伙人">核心合伙人 (¥49,800/年)</option>
@@ -546,25 +645,26 @@ export default function UpgradedPartnerPage() {
                 </div>
 
                 <div>
-                  <label style={{ display: 'block', fontSize: '0.8rem', color: '#a1a1aa', marginBottom: '0.4rem' }}>{t.lblRegion}</label>
+                  <label style={{ display: 'block', fontSize: '0.8rem', color: 'var(--color-text-secondary, #475569)', marginBottom: '0.4rem', fontWeight: 600 }}>{t.lblRegion}</label>
                   <input
                     type="text"
                     placeholder="如：华东地区/上海"
+                    className="partner-input"
                     value={formData.region}
                     onChange={(e) => setFormData({ ...formData, region: e.target.value })}
-                    style={{ width: '100%', padding: '0.75rem 1rem', background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '8px', color: '#fff', fontSize: '0.85rem', outline: 'none' }}
                   />
                 </div>
               </div>
 
               <div>
-                <label style={{ display: 'block', fontSize: '0.8rem', color: '#a1a1aa', marginBottom: '0.4rem' }}>{t.lblNotes}</label>
+                <label style={{ display: 'block', fontSize: '0.8rem', color: 'var(--color-text-secondary, #475569)', marginBottom: '0.4rem', fontWeight: 600 }}>{t.lblNotes}</label>
                 <textarea
                   rows={3}
                   placeholder="请输入您的团队背景或目标客户群体描述..."
+                  className="partner-input"
                   value={formData.notes}
                   onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
-                  style={{ width: '100%', padding: '0.75rem 1rem', background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '8px', color: '#fff', fontSize: '0.85rem', outline: 'none', resize: 'vertical' }}
+                  style={{ resize: 'vertical' }}
                 />
               </div>
 
@@ -586,7 +686,7 @@ export default function UpgradedPartnerPage() {
         {/* 6. FAQ Accordion */}
         <div style={{ marginBottom: '6rem', maxWidth: '840px', margin: '0 auto 6rem' }}>
           <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
-            <h2 style={{ fontSize: '1.75rem', fontWeight: 800 }}>{t.faqTitle}</h2>
+            <h2 style={{ fontSize: '1.75rem', fontWeight: 800, color: 'var(--color-text-primary, #0f172a)' }}>{t.faqTitle}</h2>
           </div>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
@@ -597,22 +697,23 @@ export default function UpgradedPartnerPage() {
                   key={idx}
                   onClick={() => setOpenFaq(isOpen ? null : idx)}
                   style={{
-                    background: 'rgba(255,255,255,0.02)',
-                    border: '1px solid rgba(255,255,255,0.06)',
+                    background: 'var(--partner-benefit-bg, #ffffff)',
+                    border: '1px solid var(--partner-card-border, rgba(0,0,0,0.08))',
                     borderRadius: '12px',
                     padding: '1.25rem 1.5rem',
                     cursor: 'pointer',
-                    transition: 'all 0.2s ease'
+                    transition: 'all 0.2s ease',
+                    boxShadow: 'var(--partner-card-shadow, 0 4px 15px rgba(0,0,0,0.02))'
                   }}
                 >
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '1rem' }}>
-                    <h3 style={{ fontSize: '1rem', fontWeight: 700, color: '#f4f4f5', margin: 0 }}>
+                    <h3 style={{ fontSize: '1rem', fontWeight: 700, color: 'var(--color-text-primary, #0f172a)', margin: 0 }}>
                       {faq.q}
                     </h3>
-                    {isOpen ? <ChevronUp size={18} color="#818cf8" /> : <ChevronDown size={18} color="#71717a" />}
+                    {isOpen ? <ChevronUp size={18} color="#4f46e5" /> : <ChevronDown size={18} color="#94a3b8" />}
                   </div>
                   {isOpen && (
-                    <p style={{ fontSize: '0.88rem', color: '#a1a1aa', marginTop: '1rem', lineHeight: '1.7', borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '1rem' }}>
+                    <p style={{ fontSize: '0.88rem', color: 'var(--color-text-secondary, #475569)', marginTop: '1rem', lineHeight: '1.7', borderTop: '1px solid var(--partner-card-border, rgba(0,0,0,0.06))', paddingTop: '1rem' }}>
                       {faq.a}
                     </p>
                   )}
@@ -624,18 +725,19 @@ export default function UpgradedPartnerPage() {
 
         {/* 7. Bottom Call to Action (CTA) */}
         <div style={{
-          background: 'radial-gradient(circle at top left, rgba(79, 70, 229, 0.15), transparent 70%)',
-          border: '1px solid rgba(255, 255, 255, 0.08)',
+          background: 'var(--partner-section-bg, rgba(248, 250, 252, 0.9))',
+          border: '1px solid var(--partner-card-border, rgba(0, 0, 0, 0.08))',
           borderRadius: '24px',
           padding: '4rem 2rem',
           textAlign: 'center',
           position: 'relative',
-          overflow: 'hidden'
+          overflow: 'hidden',
+          boxShadow: 'var(--partner-card-shadow, 0 8px 30px rgba(0, 0, 0, 0.03))'
         }}>
-          <h2 style={{ fontSize: '2rem', fontWeight: 900, marginBottom: '1rem', color: '#ffffff' }}>
+          <h2 style={{ fontSize: '2rem', fontWeight: 900, marginBottom: '1rem', color: 'var(--color-text-primary, #0f172a)' }}>
             {t.ctaTitle}
           </h2>
-          <p style={{ fontSize: '0.9rem', color: '#a1a1aa', marginBottom: '2.5rem', maxWidth: '600px', margin: '0 auto 2.5rem' }}>
+          <p style={{ fontSize: '0.9rem', color: 'var(--color-text-secondary, #475569)', marginBottom: '2.5rem', maxWidth: '600px', margin: '0 auto 2.5rem' }}>
             {t.ctaDesc}
           </p>
           <div style={{ display: 'flex', gap: '1.25rem', justifyContent: 'center', flexWrap: 'wrap' }}>
@@ -654,5 +756,6 @@ export default function UpgradedPartnerPage() {
 
       </div>
     </div>
+
   );
 }
