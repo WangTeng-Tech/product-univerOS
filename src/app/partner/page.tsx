@@ -574,7 +574,7 @@ export default function UpgradedPartnerPage() {
                 type="submit"
                 disabled={submitting}
                 className="btn-glowing-primary"
-                style={{ width: '100%', marginTop: '0.5rem', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyCenter: 'center', gap: '0.5rem' }}
+                style={{ width: '100%', marginTop: '0.5rem', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem' }}
               >
                 <Send size={16} />
                 <span>{submitting ? t.submitting : t.btnSubmit}</span>
