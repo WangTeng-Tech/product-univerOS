@@ -58,16 +58,16 @@ export default function Home() {
             </p>
 
             <div className="hero-actions">
-              <Link href="/console/login">
+              <Link href="/checkout">
                 <button className="btn-primary hero-btn">
                   {t("hero.btnApply")}
                 </button>
               </Link>
-              <Link href="/pricing">
+              <a href="https://app.univeros.cn/explore" target="_blank" rel="noopener noreferrer">
                 <button className="btn-secondary hero-btn">
                   {t("hero.btnPricing")}
                 </button>
-              </Link>
+              </a>
             </div>
 
             <span className="hero-tip">
