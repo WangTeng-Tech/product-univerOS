@@ -40,83 +40,43 @@ export default function Home() {
   return (
     <div>
       {/* Hero Section */}
-      <section style={{
-        padding: '6rem 0',
-        background: 'radial-gradient(ellipse at top right, var(--color-accent-light) 0%, transparent 60%)',
-        borderBottom: '1px solid var(--color-border)'
-      }}>
-        <div className="container" style={{
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          flexWrap: 'wrap',
-          gap: '4rem'
-        }}>
+      <section className="hero-section">
+        <div className="container hero-container">
           {/* Left Hero copy */}
-          <div className="animate-fade-in" style={{ flex: '1 1 500px' }}>
-            <span style={{
-              background: 'var(--color-accent-light)',
-              color: 'var(--color-accent-hover)',
-              padding: '4px 10px',
-              borderRadius: '4px',
-              fontSize: '0.75rem',
-              fontWeight: 600,
-              display: 'inline-block',
-              marginBottom: '1.25rem',
-              border: '1px solid rgba(0, 201, 129, 0.15)'
-            }}>
+          <div className="hero-copy animate-fade-in">
+            <span className="hero-tag">
               {t("hero.tag")}
             </span>
             
-            <h1 style={{
-              fontSize: '3rem',
-              lineHeight: '1.15',
-              color: 'var(--color-text-primary)',
-              marginBottom: '1.5rem',
-              fontFamily: 'var(--font-outfit)'
-            }}>
+            <h1 className="hero-title">
               {t("hero.title")}<br />
               <span style={{ color: 'var(--color-accent-main)' }}>{t("hero.titleHighlight")}</span>
             </h1>
             
-            <p style={{
-              fontSize: '1.05rem',
-              color: 'var(--color-text-secondary)',
-              lineHeight: '1.7',
-              maxWidth: '520px',
-              marginBottom: '2rem'
-            }}>
+            <p className="hero-desc">
               {t("hero.desc")}
             </p>
 
-            <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginBottom: '1.5rem' }}>
+            <div className="hero-actions">
               <Link href="/console/login">
-                <button className="btn-primary" style={{ padding: '0.8rem 1.75rem' }}>
+                <button className="btn-primary hero-btn">
                   {t("hero.btnApply")}
                 </button>
               </Link>
               <Link href="/pricing">
-                <button className="btn-secondary" style={{ padding: '0.8rem 1.75rem' }}>
+                <button className="btn-secondary hero-btn">
                   {t("hero.btnPricing")}
                 </button>
               </Link>
             </div>
 
-            <span style={{ 
-              fontSize: '0.75rem', 
-              color: 'var(--color-text-muted)',
-              display: 'block'
-            }}>
+            <span className="hero-tip">
               {t("hero.tip")}
             </span>
           </div>
 
           {/* Right Console block */}
-          <div className="animate-fade-in delay-2" style={{ 
-            flex: '1 1 450px',
-            display: 'flex',
-            justifyContent: 'center'
-          }}>
+          <div className="hero-visual animate-fade-in delay-2">
             <ConsoleBlock />
           </div>
         </div>

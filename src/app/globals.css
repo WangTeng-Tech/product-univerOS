@@ -232,3 +232,134 @@ input:focus {
     display: flex !important;
   }
 }
+
+/* Hero 区域响应式样式（解决竖屏/窄屏图片与控制台错位问题） */
+.hero-section {
+  padding: 5rem 0;
+  background: radial-gradient(ellipse at top right, var(--color-accent-light) 0%, transparent 60%);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.hero-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3.5rem;
+}
+
+.hero-copy {
+  flex: 1 1 50%;
+  max-width: 580px;
+  width: 100%;
+}
+
+.hero-tag {
+  background: var(--color-accent-light);
+  color: var(--color-accent-hover);
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  display: inline-block;
+  margin-bottom: 1.25rem;
+  border: 1px solid rgba(0, 201, 129, 0.15);
+}
+
+.hero-title {
+  font-size: 3rem;
+  line-height: 1.15;
+  color: var(--color-text-primary);
+  margin-bottom: 1.5rem;
+  font-family: var(--font-outfit);
+}
+
+.hero-desc {
+  font-size: 1.05rem;
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+  max-width: 520px;
+  margin-bottom: 2rem;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+.hero-btn {
+  padding: 0.8rem 1.75rem;
+}
+
+.hero-tip {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  display: block;
+}
+
+.hero-visual {
+  flex: 1 1 45%;
+  max-width: 560px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* 竖屏/窄屏 (Tablet & Mobile Portrait: <= 960px) 响应式适配 */
+@media (max-width: 960px) {
+  .hero-section {
+    padding: 3rem 0;
+  }
+
+  .hero-container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    gap: 2.5rem;
+  }
+
+  .hero-copy {
+    max-width: 100%;
+    width: 100%;
+    text-align: left;
+  }
+
+  .hero-title {
+    font-size: 2.25rem;
+  }
+
+  .hero-desc {
+    max-width: 100%;
+  }
+
+  .hero-visual {
+    max-width: 100%;
+    width: 100%;
+    justify-content: center;
+    margin-top: 0.5rem;
+  }
+
+  .console-container {
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 1.85rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-actions a,
+  .hero-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
