@@ -37,7 +37,7 @@ const translations: Record<Language, TranslationDict> = {
       title: "企业级多职能",
       titleHighlight: "交付系统",
       desc: "特定多职能流程自动化交付系统。自备算力，物理隔离，不代理销售大模型 Token，交付经过 Reality Ledger 审计防篡改的 SOP 闭环结果，推动企业固定成本下调。",
-      btnApply: "申请试用席位",
+      btnApply: "代理申请",
       btnPricing: "马上体验",
       tip: "* 提示：大模型 API 密钥由客户自备并在本地客户端加载，云端零留痕。"
     },
@@ -176,7 +176,7 @@ const translations: Record<Language, TranslationDict> = {
       title: "Enterprise Multi-Functional",
       titleHighlight: "SOP Delivery System",
       desc: "Domain-specific multi-functional workflow automation delivery system. Bring your own compute, physical isolation. We do not resell LLM Tokens, delivering tamper-proof SOP execution outcomes audited by Reality Ledger to reduce corporate fixed costs.",
-      btnApply: "Request Trial Seats",
+      btnApply: "Partner Application",
       btnPricing: "Try Now",
       tip: "* Note: LLM API keys are loaded locally inside client memory; zero records remain on cloud servers."
     },
