@@ -34,8 +34,8 @@ const translations: Record<Language, TranslationDict> = {
     },
     hero: {
       tag: "企业级物理隔离执行引擎",
-      title: "企业级多职能全标流程",
-      titleHighlight: "自动化交付系统",
+      title: "企业级多职能",
+      titleHighlight: "交付系统",
       desc: "特定多职能流程自动化交付系统。自备算力，物理隔离，不代理销售大模型 Token，交付经过 Reality Ledger 审计防篡改的 SOP 闭环结果，推动企业固定成本下调。",
       btnApply: "申请试用席位",
       btnPricing: "了解套餐计费",
@@ -305,15 +305,17 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     try {
       const savedLang = localStorage.getItem("lang") as Language;
+      const host = typeof window !== "undefined" ? window.location.hostname.toLowerCase() : "";
+
       if (savedLang === "zh" || savedLang === "en") {
         setLanguageState(savedLang);
+      } else if (host.endsWith(".tech") || host.endsWith(".xyz")) {
+        setLanguageState("en");
+      } else if (host.endsWith(".cn")) {
+        setLanguageState("zh");
       } else {
         const browserLang = navigator.language.toLowerCase();
-        if (browserLang.includes("en")) {
-          setLanguageState("en");
-        } else {
-          setLanguageState("zh");
-        }
+        setLanguageState(browserLang.includes("en") ? "en" : "zh");
       }
     } catch (e) {
       console.error("Failed to load language preference:", e);

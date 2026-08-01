@@ -1,12 +1,12 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import ThemeToggle from "./ThemeToggle";
 import { useTranslation } from "../context/LanguageContext";
 
 const PixelPalIcon = () => (
   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" style={{ imageRendering: 'pixelated' }}>
-    {/* 8-bit Robot eye icon */}
     <rect x="2" y="4" width="20" height="14" fill="var(--color-bg-primary)" stroke="#00c981" strokeWidth="2" />
     <rect x="6" y="8" width="4" height="4" fill="#00c981" />
     <rect x="14" y="8" width="4" height="4" fill="#00c981" />
@@ -15,8 +15,24 @@ const PixelPalIcon = () => (
   </svg>
 );
 
+const HamburgerIcon = () => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+    <line x1="3" y1="6" x2="21" y2="6" />
+    <line x1="3" y1="12" x2="21" y2="12" />
+    <line x1="3" y1="18" x2="21" y2="18" />
+  </svg>
+);
+
+const CloseIcon = () => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+    <line x1="18" y1="6" x2="6" y2="18" />
+    <line x1="6" y1="6" x2="18" y2="18" />
+  </svg>
+);
+
 export default function Header() {
   const { language, setLanguage, t } = useTranslation();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
     <header style={{
@@ -35,10 +51,11 @@ export default function Header() {
       <div className="container" style={{
         display: 'flex',
         alignItems: 'center',
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
+        position: 'relative'
       }}>
         {/* Brand Logo */}
-        <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+        <Link href="/" onClick={() => setIsMenuOpen(false)} style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
           <PixelPalIcon />
           <span style={{
             fontFamily: 'var(--font-outfit)',
@@ -49,9 +66,8 @@ export default function Header() {
           }}>{t("common.brand")}</span>
         </Link>
         
-        {/* Navigation Links */}
-        <nav className="header-nav" style={{ 
-          display: 'flex', 
+        {/* Desktop Navigation Links */}
+        <nav className="header-nav desktop-only" style={{ 
           gap: '2.5rem', 
           fontSize: '0.9rem', 
           fontWeight: 500 
@@ -62,8 +78,8 @@ export default function Header() {
           <Link href="/partner">{t("nav.partner")}</Link>
         </nav>
         
-        {/* Actions */}
-        <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
+        {/* Desktop Actions */}
+        <div className="desktop-only" style={{ gap: '1rem', alignItems: 'center' }}>
           <ThemeToggle />
           <button 
             onClick={() => setLanguage(language === "zh" ? "en" : "zh")}
@@ -83,14 +99,6 @@ export default function Header() {
               height: '35px'
             }}
             title={language === "zh" ? "Switch to English" : "切换为中文"}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.borderColor = 'var(--color-text-primary)';
-              e.currentTarget.style.color = 'var(--color-text-primary)';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.borderColor = 'var(--color-border)';
-              e.currentTarget.style.color = 'var(--color-text-secondary)';
-            }}
           >
             {language === "zh" ? "EN" : "中"}
           </button>
@@ -105,6 +113,99 @@ export default function Header() {
             </button>
           </Link>
         </div>
+
+        {/* Mobile Hamburger Toggle Button */}
+        <button 
+          className="mobile-toggle"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          aria-label="Toggle navigation menu"
+          style={{
+            background: 'transparent',
+            border: '1px solid var(--color-border)',
+            borderRadius: '6px',
+            padding: '6px',
+            color: 'var(--color-text-primary)',
+            cursor: 'pointer',
+            height: '38px',
+            width: '38px',
+            alignItems: 'center',
+            justifyContent: 'center'
+          }}
+        >
+          {isMenuOpen ? <CloseIcon /> : <HamburgerIcon />}
+        </button>
+
+        {/* Mobile Dropdown Menu Overlay */}
+        {isMenuOpen && (
+          <div className="mobile-dropdown" style={{
+            position: 'absolute',
+            top: '60px',
+            left: 0,
+            right: 0,
+            background: 'var(--color-bg-primary)',
+            border: '1px solid var(--color-border)',
+            borderRadius: '12px',
+            padding: '1.5rem',
+            boxShadow: '0 20px 40px rgba(0,0,0,0.3)',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '1.25rem',
+            zIndex: 200,
+            backdropFilter: 'blur(16px)'
+          }}>
+            <nav style={{ display: 'flex', flexDirection: 'column', gap: '1rem', fontSize: '1rem' }}>
+              <Link href="/#features" onClick={() => setIsMenuOpen(false)} style={{ color: 'var(--color-text-primary)' }}>
+                {t("nav.features")}
+              </Link>
+              <Link href="/pricing" onClick={() => setIsMenuOpen(false)} style={{ color: 'var(--color-text-primary)' }}>
+                {t("nav.pricing")}
+              </Link>
+              <Link href="/security" onClick={() => setIsMenuOpen(false)} style={{ color: 'var(--color-text-primary)' }}>
+                {t("nav.security")}
+              </Link>
+              <Link href="/partner" onClick={() => setIsMenuOpen(false)} style={{ color: 'var(--color-text-primary)' }}>
+                {t("nav.partner")}
+              </Link>
+            </nav>
+
+            <div style={{ height: '1px', background: 'var(--color-border)', width: '100%' }} />
+
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+              <span style={{ fontSize: '0.9rem', color: 'var(--color-text-secondary)' }}>主题与语言</span>
+              <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'center' }}>
+                <ThemeToggle />
+                <button 
+                  onClick={() => setLanguage(language === "zh" ? "en" : "zh")}
+                  style={{
+                    background: 'transparent',
+                    border: '1px solid var(--color-border)',
+                    borderRadius: '6px',
+                    padding: '0.45rem 0.75rem',
+                    fontSize: '0.8rem',
+                    fontWeight: 600,
+                    color: 'var(--color-text-primary)',
+                    cursor: 'pointer'
+                  }}
+                >
+                  {language === "zh" ? "English (EN)" : "中文 (ZH)"}
+                </button>
+              </div>
+            </div>
+
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', marginTop: '0.5rem' }}>
+              <Link href="/partner/login" onClick={() => setIsMenuOpen(false)} style={{ width: '100%' }}>
+                <button className="btn-secondary" style={{ width: '100%', justifyContent: 'center', height: '42px' }}>
+                  {t("nav.login")}
+                </button>
+              </Link>
+              <Link href="/console/login" onClick={() => setIsMenuOpen(false)} style={{ width: '100%' }}>
+                <button className="btn-primary" style={{ width: '100%', justifyContent: 'center', height: '42px' }}>
+                  {t("nav.apply")}
+                </button>
+              </Link>
+            </div>
+          </div>
+        )}
       </div>
     </header>
   );
