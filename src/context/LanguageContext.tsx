@@ -36,31 +36,31 @@ const translations: Record<Language, TranslationDict> = {
       tag: "企业级多职能交付系统",
       title: "专注交付，",
       titleHighlight: "覆盖全职能",
-      desc: "KH × WF × CP —— 行业知识、SOP 产线、推理算力三者相乘。覆盖研发、内容生产、运营分发全职能场景。安全合规，全程可追溯，你花钱买成果，不是买工具。",
+      desc: "行业知识、SOP 产线与推理算力三层能力协同联动。覆盖研发、内容生产、运营分发全职能场景。安全合规，全程可追溯，你花钱买成果，不是买工具。",
       btnApply: "代理申请",
       btnPricing: "马上体验",
       tip: "* 支持自备 API 密钥接入（BYOK）或订阅平台托管算力，两种模式均可。"
     },
     features: {
-      title: "KH × WF × CP — 三层能力乘法",
-      desc: "行业知识、SOP 产线与推理算力并非功能拼凑，而是互为放大器。任何一项为零，系统整体价值归零。三者协同，才是 univerOS。",
+      title: "Three-Layer Capability Multiplier — 三层能力乘法",
+      desc: "行业知识、SOP 产线与推理算力并非功能拼凑，而是互为放大器。三层能力协同联动，打造企业级安全交付体系。",
       rd: {
-        title: "行业知识（Know-How · KH）",
+        title: "行业知识（Know-How）",
         desc: "平台标准知识包 + 租户共建贡献知识，双轨制生命周期管理。作为每次执行的“决策上下文”，指导 SOP 产线生成精准动作，从根本上降低 AI 理解特定行业业务的门槛。",
         tag1: "平台知识轨",
         tag2: "共建贡献轨",
         tag3: "决策上下文注入"
       },
       gen: {
-        title: "SOP 产线（Workflow · WF）",
+        title: "SOP 产线（Workflow）",
         desc: "软件研发（yz-RD）、多模态内容生产（yz-CF）等经过严肃生产验证的固化执行流水线。承载物理动作的落地，将业务意图直接转化为真实生产交付物，而非报告或建议。",
         tag1: "软件研发自动化",
         tag2: "多模态内容生产",
         tag3: "REAL 级生产交付"
       },
       ing: {
-        title: "推理算力（Computing Power · CP）",
-        desc: "驱动系统运转的能源。支持自备 API 密钥接入（BYOK）或订阅平台托管算力，两种模式灵活切换。算力稳定供给，保证 KH × WF 飞轮持续高速运转。（* yz-IB 全网情报采集：灰度开放中）",
+        title: "推理算力（Computing Power）",
+        desc: "驱动系统运转的能源。支持自备 API 密钥接入（BYOK）或订阅平台托管算力，两种模式灵活切换。算力稳定供给，保证产线飞轮持续高速运转。（* yz-IB 全网情报采集：灰度开放中）",
         tag1: "BYOK 自备接入",
         tag2: "平台托管算力",
         tag3: "弹性供给保障"
@@ -198,31 +198,31 @@ const translations: Record<Language, TranslationDict> = {
       tag: "Enterprise Multi-Function Delivery System",
       title: "Built to Deliver.",
       titleHighlight: "Across Every Function.",
-      desc: "KH × WF × CP — Industry Know-How, SOP Pipelines, and Computing Power, multiplied. Covers software R&D, content production, and operations end-to-end. Secure, auditable, and outcome-driven. You pay for results, not tools.",
+      desc: "Three-Layer Capability Multiplier — Industry Know-How, SOP Pipelines, and Computing Power working in synergy. Covers software R&D, content production, and operations end-to-end. Secure, auditable, and outcome-driven. You pay for results, not tools.",
       btnApply: "Partner Application",
       btnPricing: "Get Started",
       tip: "* Supports BYOK (bring your own API key) or platform-managed compute — your choice."
     },
     features: {
-      title: "KH × WF × CP — Three-Layer Capability Multiplier",
-      desc: "Industry Know-How, SOP Pipelines, and Computing Power are not feature additions — they are mutual amplifiers. Any one at zero collapses the whole. Together, they are univerOS.",
+      title: "Three-Layer Capability Multiplier",
+      desc: "Industry Know-How, SOP Pipelines, and Computing Power are not feature additions — they are mutual amplifiers. Working in synergy to build enterprise-grade delivery.",
       rd: {
-        title: "Industry Know-How (KH)",
+        title: "Industry Know-How",
         desc: "Platform standard knowledge packs + tenant-contributed shared knowledge, managed under a dual-track lifecycle model. Injected as decision context before every execution — reducing the barrier for AI to understand your specific industry and business logic.",
         tag1: "Platform Track",
         tag2: "Contribution Track",
         tag3: "Context Injection"
       },
       gen: {
-        title: "SOP Pipelines (WF)",
+        title: "SOP Pipelines",
         desc: "Production-validated execution pipelines covering software R&D (yz-RD) and multimodal content production (yz-CF). Translates business intent directly into real, deliverable production outputs — not reports or suggestions.",
         tag1: "Software R&D Auto",
         tag2: "Multimodal Content",
         tag3: "REAL-Grade Delivery"
       },
       ing: {
-        title: "Computing Power (CP)",
-        desc: "The fuel that drives the system. Supports BYOK (bring your own API keys) or platform-managed compute via subscription credits. Stable supply keeps the KH × WF flywheel running at full speed. (* yz-IB Global Intelligence Intake: Gray-release)",
+        title: "Computing Power",
+        desc: "The fuel that drives the system. Supports BYOK (bring your own API keys) or platform-managed compute via subscription credits. Stable supply keeps the delivery flywheel running at full speed. (* yz-IB Global Intelligence Intake: Gray-release)",
         tag1: "BYOK Integration",
         tag2: "Managed Compute",
         tag3: "Elastic Supply"
