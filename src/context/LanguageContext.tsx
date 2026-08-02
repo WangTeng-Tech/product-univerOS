@@ -45,21 +45,21 @@ const translations: Record<Language, TranslationDict> = {
       title: "Three-Layer Capability Multiplier — 三层能力乘法",
       desc: "行业知识、SOP 产线与推理算力并非功能拼凑，而是互为放大器。三层能力协同联动，打造企业级安全交付体系。",
       rd: {
-        title: "行业知识（Know-How）",
+        title: "行业知识",
         desc: "平台标准知识包 + 租户共建贡献知识，双轨制生命周期管理。作为每次执行的“决策上下文”，指导 SOP 产线生成精准动作，从根本上降低 AI 理解特定行业业务的门槛。",
         tag1: "平台知识轨",
         tag2: "共建贡献轨",
         tag3: "决策上下文注入"
       },
       gen: {
-        title: "SOP 产线（Workflow）",
+        title: "SOP 产线",
         desc: "软件研发（yz-RD）、多模态内容生产（yz-CF）等经过严肃生产验证的固化执行流水线。承载物理动作的落地，将业务意图直接转化为真实生产交付物，而非报告或建议。",
         tag1: "软件研发自动化",
         tag2: "多模态内容生产",
         tag3: "REAL 级生产交付"
       },
       ing: {
-        title: "推理算力（Computing Power）",
+        title: "推理算力",
         desc: "驱动系统运转的能源。支持自备 API 密钥接入（BYOK）或订阅平台托管算力，两种模式灵活切换。算力稳定供给，保证产线飞轮持续高速运转。（* yz-IB 全网情报采集：灰度开放中）",
         tag1: "BYOK 自备接入",
         tag2: "平台托管算力",
