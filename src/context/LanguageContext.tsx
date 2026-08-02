@@ -33,37 +33,37 @@ const translations: Record<Language, TranslationDict> = {
       copyright: "©2026 univerOS • Audit-ready execution records"
     },
     hero: {
-      tag: "企业级物理隔离执行引擎",
-      title: "企业级多职能",
-      titleHighlight: "交付系统",
-      desc: "特定多职能流程自动化交付系统。自备算力，物理隔离，不代理销售大模型 Token，交付经过 Reality Ledger 审计防篡改的 SOP 闭环结果，推动企业固定成本下调。",
+      tag: "企业级经验操作系统",
+      title: "企业的",
+      titleHighlight: "经验操作系统",
+      desc: "每一次 SOP 执行，都在沉淀你的行业 Know-How。经验不离场，壁垒自生长。自备算力，物理隔离，零留痕交付存证结果。",
       btnApply: "代理申请",
       btnPricing: "马上体验",
       tip: "* 提示：大模型 API 密钥由客户自备并在本地客户端加载，云端零留痕。"
     },
     features: {
-      title: "univerOS 三大核心产线",
-      desc: "面向严肃企业场景，通过影子工作区、FishTTS、多模态审计与自愈矩阵接管核心业务流程。",
+      title: "univerOS 三大核心经验飞轮",
+      desc: "行业情报自动抓取、多职能 SOP 自动执行与私有 Know-How 资产持续沉淀。",
       rd: {
-        title: "RD 研发产线",
-        desc: "面向 Git 影子工作区的自动化开发。支持分支隔离与 CodeVision 语义影响审计，通过 V1-V4 级测试矩阵验证后提交至目标流程等待确认或合并。",
-        tag1: "Shadow Worktree",
-        tag2: "CodeVision 审计",
-        tag3: "V1-V4 验证"
+        title: "① 全网情报采集 (yz-IB)",
+        desc: "把行业动态、竞品信号、内容素材与情报数据自动采集进来，形成企业定制化前沿语料与决策支撑。",
+        tag1: "多源自动抓取",
+        tag2: "竞品信号分析",
+        tag3: "结构化提炼"
       },
       gen: {
-        title: "Generator 营销产线",
-        desc: "视频营销自动化生成流水线。脚本分镜智能规划，拟真 FishTTS 配音合成，辅以多模态 VCO 视觉一致性审计，批量交付企业营销视频。",
-        tag1: "智能分镜规划",
-        tag2: "FishTTS 配音",
-        tag3: "VCO 视觉质检"
+        title: "② SOP 自动执行 (yz-RD / yz-CF)",
+        desc: "软件研发、内容工厂、运营分发全流程自动化闭环交付，输出经过 Reality Ledger 防篡改审计的真实成果。",
+        tag1: "Shadow Worktree",
+        tag2: "多模态内容生成",
+        tag3: "V1-V4 自愈验证"
       },
       ing: {
-        title: "Ingestor 运营分发",
-        desc: "多源内容采集、清洗与分发。Whisper 双轨音频转写与智能重写，接口化同步至企业内部渠道，现阶段仅向特定受邀客户提供私有化部署。",
-        tag1: "多源采集",
-        tag2: "结构化重写",
-        tag3: "受邀私有化部署"
+        title: "③ 经验持续沉淀 (Heart × Memory)",
+        desc: "每次 SOP 执行经验自动由 AI 提炼总结，永久存入企业私有向量知识库，随运行次数递增自生长专有壁垒。",
+        tag1: "Know-How 提炼",
+        tag2: "LanceDB 私有存储",
+        tag3: "经验壁垒自生长"
       }
     },
     security: {
@@ -172,37 +172,37 @@ const translations: Record<Language, TranslationDict> = {
       copyright: "©2026 univerOS • Audit-ready execution records"
     },
     hero: {
-      tag: "Enterprise-Grade Isolated Execution Engine",
-      title: "Enterprise Multi-Functional",
-      titleHighlight: "SOP Delivery System",
-      desc: "Domain-specific multi-functional workflow automation delivery system. Bring your own compute, physical isolation. We do not resell LLM Tokens, delivering tamper-proof SOP execution outcomes audited by Reality Ledger to reduce corporate fixed costs.",
+      tag: "Enterprise Experience Operating System",
+      title: "Enterprise Experience",
+      titleHighlight: "Operating System",
+      desc: "Every SOP execution distills your industry Know-How. Experience stays in-house; domain barriers grow automatically. Bring your own compute, zero cloud footprints.",
       btnApply: "Partner Application",
       btnPricing: "Try Now",
       tip: "* Note: LLM API keys are loaded locally inside client memory; zero records remain on cloud servers."
     },
     features: {
-      title: "Three Core Product Lines",
-      desc: "Built for critical corporate tasks, orchestrating pipelines via Shadow Worktrees, FishTTS, Multimodal Audits, and Self-Healing Matricies.",
+      title: "Three Core Experience Flywheels",
+      desc: "Automated intelligence intake, multi-role SOP execution, and private Know-How distillation.",
       rd: {
-        title: "RD Auto-Developer",
-        desc: "Automated coding with Git Shadow Worktree. Supports branch isolation, CodeVision semantic impact analysis, and V1-V4 verification before sending pull requests.",
-        tag1: "Shadow Worktree",
-        tag2: "CodeVision Audit",
-        tag3: "V1-V4 Check"
+        title: "① Global Intelligence Intake (yz-IB)",
+        desc: "Automatically ingest industry trends, competitor signals, and content assets to power enterprise decision-making and customized knowledge.",
+        tag1: "Multi-Source Intake",
+        tag2: "Signal Analysis",
+        tag3: "Structured Distillation"
       },
       gen: {
-        title: "Generator Marketing Line",
-        desc: "Automated marketing video pipeline. Features automated storyboard drafting, realistic FishTTS speech synthesis, and VCO visual consistency check.",
-        tag1: "Storyboard Planner",
-        tag2: "FishTTS Synthesis",
-        tag3: "VCO Visual Audit"
+        title: "② Automated SOP Execution (yz-RD / yz-CF)",
+        desc: "Full-stack automated delivery across software R&D, content factory, and operations, producing tamper-proof execution outcomes audited by Reality Ledger.",
+        tag1: "Shadow Worktree",
+        tag2: "Multimodal Generation",
+        tag3: "V1-V4 Self-Healing"
       },
       ing: {
-        title: "Ingestor Operations & Distribution",
-        desc: "Multi-source content collection, cleaning, and syndication. Dual Whisper translation/editing and automated distribution. Private deployment only.",
-        tag1: "Multi-Source Intake",
-        tag2: "Structured Edit",
-        tag3: "Private Deploy"
+        title: "③ Continuous Experience Distillation (Heart × Memory)",
+        desc: "Every execution lesson is automatically extracted and stored in your private LanceDB vector database, compounding your proprietary competitive advantage.",
+        tag1: "Know-How Extraction",
+        tag2: "LanceDB Private Store",
+        tag3: "Compounding Barriers"
       }
     },
     security: {
