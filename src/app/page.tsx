@@ -34,6 +34,13 @@ const SecurityIcon = () => (
   </svg>
 );
 
+const ShieldCheckIcon = () => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="var(--color-accent-main)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="m9 12 2 2 4-4" stroke="var(--color-text-secondary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+  </svg>
+);
+
 export default function Home() {
   const { t } = useTranslation();
 
@@ -125,10 +132,105 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Trust & Delivery Assurance Section */}
+      <section id="trust" style={{
+        padding: '5rem 0',
+        background: 'var(--color-bg-primary)',
+        borderBottom: '1px solid var(--color-border)'
+      }}>
+        <div className="container">
+          <div style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
+            <h2 style={{ fontSize: '2rem', marginBottom: '1rem', color: 'var(--color-text-primary)' }}>
+              {t("trust.title")}
+            </h2>
+            <p style={{ maxWidth: '600px', margin: '0 auto', color: 'var(--color-text-secondary)', fontSize: '0.95rem' }}>
+              {t("trust.desc")}
+            </p>
+          </div>
+
+          <div className="grid-cols-3">
+            <div style={{
+              background: 'var(--color-bg-secondary)',
+              border: '1px solid var(--color-border)',
+              borderRadius: '12px',
+              padding: '2rem',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'space-between'
+            }}>
+              <div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1rem' }}>
+                  <ShieldCheckIcon />
+                  <span style={{ fontSize: '0.75rem', padding: '0.2rem 0.5rem', background: 'var(--color-accent-light)', color: 'var(--color-accent-main)', borderRadius: '4px', fontWeight: 600 }}>
+                    {t("trust.t1.badge")}
+                  </span>
+                </div>
+                <h3 style={{ fontSize: '1.2rem', marginBottom: '0.75rem', color: 'var(--color-text-primary)' }}>
+                  {t("trust.t1.title")}
+                </h3>
+                <p style={{ fontSize: '0.85rem', color: 'var(--color-text-secondary)', lineHeight: '1.6' }}>
+                  {t("trust.t1.desc")}
+                </p>
+              </div>
+            </div>
+
+            <div style={{
+              background: 'var(--color-bg-secondary)',
+              border: '1px solid var(--color-border)',
+              borderRadius: '12px',
+              padding: '2rem',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'space-between'
+            }}>
+              <div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1rem' }}>
+                  <ShieldCheckIcon />
+                  <span style={{ fontSize: '0.75rem', padding: '0.2rem 0.5rem', background: 'var(--color-accent-light)', color: 'var(--color-accent-main)', borderRadius: '4px', fontWeight: 600 }}>
+                    {t("trust.t2.badge")}
+                  </span>
+                </div>
+                <h3 style={{ fontSize: '1.2rem', marginBottom: '0.75rem', color: 'var(--color-text-primary)' }}>
+                  {t("trust.t2.title")}
+                </h3>
+                <p style={{ fontSize: '0.85rem', color: 'var(--color-text-secondary)', lineHeight: '1.6' }}>
+                  {t("trust.t2.desc")}
+                </p>
+              </div>
+            </div>
+
+            <div style={{
+              background: 'var(--color-bg-secondary)',
+              border: '1px solid var(--color-border)',
+              borderRadius: '12px',
+              padding: '2rem',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'space-between'
+            }}>
+              <div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1rem' }}>
+                  <ShieldCheckIcon />
+                  <span style={{ fontSize: '0.75rem', padding: '0.2rem 0.5rem', background: 'var(--color-accent-light)', color: 'var(--color-accent-main)', borderRadius: '4px', fontWeight: 600 }}>
+                    {t("trust.t3.badge")}
+                  </span>
+                </div>
+                <h3 style={{ fontSize: '1.2rem', marginBottom: '0.75rem', color: 'var(--color-text-primary)' }}>
+                  {t("trust.t3.title")}
+                </h3>
+                <p style={{ fontSize: '0.85rem', color: 'var(--color-text-secondary)', lineHeight: '1.6' }}>
+                  {t("trust.t3.desc")}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Credentials and Security Section */}
       <section style={{
         padding: '5rem 0',
-        background: 'var(--color-bg-primary)',
+        background: 'var(--color-bg-secondary)',
         borderBottom: '1px solid var(--color-border)'
       }}>
         <div className="container" style={{
@@ -199,7 +301,7 @@ export default function Home() {
           {/* Right illustration / Info box */}
           <div style={{ 
             flex: '1 1 400px',
-            background: 'var(--color-bg-secondary)',
+            background: 'var(--color-bg-primary)',
             border: '1px solid var(--color-border)',
             borderRadius: '12px',
             padding: '2.5rem'
@@ -232,7 +334,7 @@ export default function Home() {
       {/* Partner Banner Section */}
       <section style={{
         padding: '5rem 0',
-        background: 'var(--color-bg-secondary)',
+        background: 'var(--color-bg-primary)',
         borderBottom: '1px solid var(--color-border)',
         textAlign: 'center'
       }}>
@@ -254,7 +356,7 @@ export default function Home() {
       {/* FAQ Section */}
       <section style={{
         padding: '5rem 0',
-        background: 'var(--color-bg-primary)'
+        background: 'var(--color-bg-secondary)'
       }}>
         <div className="container" style={{ maxWidth: '800px' }}>
           <h2 style={{ fontSize: '2rem', textAlign: 'center', marginBottom: '3.5rem', color: 'var(--color-text-primary)' }}>
@@ -287,13 +389,37 @@ export default function Home() {
             </div>
 
             <div style={{ 
-              paddingBottom: '0.5rem'
+              borderBottom: '1px solid var(--color-border)',
+              paddingBottom: '1.5rem'
             }}>
               <h4 style={{ fontSize: '1rem', color: 'var(--color-text-primary)', marginBottom: '0.5rem' }}>
                 {t("faq.q3")}
               </h4>
               <p style={{ fontSize: '0.85rem', color: 'var(--color-text-secondary)', lineHeight: '1.6' }}>
                 {t("faq.a3")}
+              </p>
+            </div>
+
+            <div style={{ 
+              borderBottom: '1px solid var(--color-border)',
+              paddingBottom: '1.5rem'
+            }}>
+              <h4 style={{ fontSize: '1rem', color: 'var(--color-text-primary)', marginBottom: '0.5rem' }}>
+                {t("faq.q4")}
+              </h4>
+              <p style={{ fontSize: '0.85rem', color: 'var(--color-text-secondary)', lineHeight: '1.6' }}>
+                {t("faq.a4")}
+              </p>
+            </div>
+
+            <div style={{ 
+              paddingBottom: '0.5rem'
+            }}>
+              <h4 style={{ fontSize: '1rem', color: 'var(--color-text-primary)', marginBottom: '0.5rem' }}>
+                {t("faq.q5")}
+              </h4>
+              <p style={{ fontSize: '0.85rem', color: 'var(--color-text-secondary)', lineHeight: '1.6' }}>
+                {t("faq.a5")}
               </p>
             </div>
           </div>

@@ -12,15 +12,15 @@ const translations: Record<Language, TranslationDict> = {
   zh: {
     common: {
       brand: "univerOS",
-      brandDesc: "企业级 SOP Agent 工作流执行系统。自备大模型算力，提供物理隔离的高效流程闭环自愈能力。"
+      brandDesc: "企业级多职能交付系统。行业知识 × SOP 产线 × 推理算力，安全交付真实生产成果。"
     },
     nav: {
-      features: "产线中心",
+      features: "产品能力",
       pricing: "套餐计费",
       security: "安全白皮书",
       partner: "代理生态",
       login: "代理商登录",
-      apply: "申请试用"
+      apply: "申请内测"
     },
     footer: {
       terms: "使用条款 (Terms)",
@@ -30,71 +30,94 @@ const translations: Record<Language, TranslationDict> = {
       github: "GitHub 源码",
       sales: "联系我们 (Sales)",
       partner: "合作伙伴 (Partner)",
-      copyright: "©2026 univerOS • Audit-ready execution records"
+      copyright: "©2026 univerOS · 企业级多职能交付系统"
     },
     hero: {
-      tag: "企业级经验操作系统",
-      title: "企业的",
-      titleHighlight: "经验操作系统",
-      desc: "每一次 SOP 执行，都在沉淀你的行业 Know-How。经验不离场，壁垒自生长。自备算力，物理隔离，零留痕交付存证结果。",
+      tag: "企业级多职能交付系统",
+      title: "专注交付，",
+      titleHighlight: "覆盖全职能",
+      desc: "KH × WF × CP —— 行业知识、SOP 产线、推理算力三者相乘。覆盖研发、内容生产、运营分发全职能场景。安全合规，全程可追溯，你花钱买成果，不是买工具。",
       btnApply: "代理申请",
       btnPricing: "马上体验",
-      tip: "* 提示：大模型 API 密钥由客户自备并在本地客户端加载，云端零留痕。"
+      tip: "* 支持自备 API 密钥接入（BYOK）或订阅平台托管算力，两种模式均可。"
     },
     features: {
-      title: "univerOS 三大核心经验飞轮",
-      desc: "行业情报自动抓取、多职能 SOP 自动执行与私有 Know-How 资产持续沉淀。",
+      title: "KH × WF × CP — 三层能力乘法",
+      desc: "行业知识、SOP 产线与推理算力并非功能拼凑，而是互为放大器。任何一项为零，系统整体价值归零。三者协同，才是 univerOS。",
       rd: {
-        title: "① 全网情报采集 (yz-IB)",
-        desc: "把行业动态、竞品信号、内容素材与情报数据自动采集进来，形成企业定制化前沿语料与决策支撑。",
-        tag1: "多源自动抓取",
-        tag2: "竞品信号分析",
-        tag3: "结构化提炼"
+        title: "行业知识（Know-How · KH）",
+        desc: "平台标准知识包 + 租户共建贡献知识，双轨制生命周期管理。作为每次执行的“决策上下文”，指导 SOP 产线生成精准动作，从根本上降低 AI 理解特定行业业务的门槛。",
+        tag1: "平台知识轨",
+        tag2: "共建贡献轨",
+        tag3: "决策上下文注入"
       },
       gen: {
-        title: "② SOP 自动执行 (yz-RD / yz-CF)",
-        desc: "软件研发、内容工厂、运营分发全流程自动化闭环交付，输出经过 Reality Ledger 防篡改审计的真实成果。",
-        tag1: "Shadow Worktree",
-        tag2: "多模态内容生成",
-        tag3: "V1-V4 自愈验证"
+        title: "SOP 产线（Workflow · WF）",
+        desc: "软件研发（yz-RD）、多模态内容生产（yz-CF）等经过严肃生产验证的固化执行流水线。承载物理动作的落地，将业务意图直接转化为真实生产交付物，而非报告或建议。",
+        tag1: "软件研发自动化",
+        tag2: "多模态内容生产",
+        tag3: "REAL 级生产交付"
       },
       ing: {
-        title: "③ 经验持续沉淀 (Heart × Memory)",
-        desc: "每次 SOP 执行经验自动由 AI 提炼总结，永久存入企业私有向量知识库，随运行次数递增自生长专有壁垒。",
-        tag1: "Know-How 提炼",
-        tag2: "LanceDB 私有存储",
-        tag3: "经验壁垒自生长"
+        title: "推理算力（Computing Power · CP）",
+        desc: "驱动系统运转的能源。支持自备 API 密钥接入（BYOK）或订阅平台托管算力，两种模式灵活切换。算力稳定供给，保证 KH × WF 飞轮持续高速运转。（* yz-IB 全网情报采集：灰度开放中）",
+        tag1: "BYOK 自备接入",
+        tag2: "平台托管算力",
+        tag3: "弹性供给保障"
+      }
+    },
+    trust: {
+      title: "安全交付的三重保障",
+      desc: "univerOS 在执行层内置三套机制，确保每一次交付都可信、可审计、可恢复。",
+      t1: {
+        title: "风险仲裁（L1 / L2 / L3）",
+        desc: "每一个执行动作按风险等级自动分级。低风险静默执行，中风险推送审批窗口（60 分钟自动失效），高风险强制阻塞等待人工显式授权，写操作不会在你不知情时发生。",
+        badge: "L1-L3 风险仲裁"
+      },
+      t2: {
+        title: "MAPE-K 自愈闭环",
+        desc: "系统持续监控每个执行节点的健康状态。一旦检测到异常，自动触发诊断→修复→验证三重闭环，V1-V4 四级黑盒测试矩阵确保修复结果在合并前通过完整验证。",
+        badge: "V1-V4 自愈黑盒"
+      },
+      t3: {
+        title: "Reality Ledger 全链路存证",
+        desc: "每一次任务的指令下发、状态流转、审批记录与计费账单，均生成哈希链落库，Append-only 不可篡改。随时可导出，满足企业安全审计“Audit-Ready”要求。",
+        badge: "Append-only 存证"
       }
     },
     security: {
-      title: "凭证主权隔离与可溯审计",
-      desc: "为了保障企业客户的核心数字资产安全，univerOS 将凭证存储与云端控制进行双轨隔离，并在底层内置审计机制。",
+      title: "你的数据，永远在你手里",
+      desc: "univerOS 从架构层保障企业数字主权。凭证不上云，数据不共享，租户之间物理隔离。",
       cup: {
-        title: "平台侧不接触明文凭证 (CUP 协议)",
-        desc: "大模型 API 密钥、Git 部署证书锁死在本地客户端安全隔离区。云端控制台只中继规划指令，运行期数据内存装载即时销毁。"
+        title: "API 密钥本地锁死，平台零接触",
+        desc: "大模型密钥和代码凭证只存在于你的本地客户端安全隔离区。云端只传递任务指令，密钥明文永远不经过平台服务器。"
       },
       ledger: {
-        title: "支持就绪审计的执行记录 (Reality Ledger)",
-        desc: "每一次任务的指令派发、状态扭转及计费账单，均计算哈希链落库，为企业安全审计提供“Audit-Ready”的可追溯事实证据。"
+        title: "每次执行，全程可追溯",
+        desc: "Reality Ledger 对每一步执行生成哈希存证，Append-only 防篡改，可随时导出用于企业合规审计。"
       },
-      boxTitle: "// 安全合规边界",
-      item1: "本地LanceDB向量数据库: 任务经验沉淀（Lesson）全部保存在租户本地隔离的嵌入式向量库中，不上传平台服务器。",
-      item2: "双轨成本监控限制: Token CFO 运行于本地客户端对 API 消耗执行配额封顶熔断，杜绝产生越界账单风险。",
-      item3: "NATS 命名空间阻断: 云端采用 DID 逻辑租户隔离，严格切断不同客户之间的任务传输。"
+      boxTitle: "// 数据主权边界",
+      item1: "凭证物理隔离（CUP 协议）：API 密钥等敏感凭证存储在本地，平台侧零接触明文。",
+      item2: "租户命名空间阻断：基于 DID 的 NATS 命名空间隔离，严格切断不同企业的数据传输。",
+      item3: "Append-only 审计链：Reality Ledger 哈希链不可逆写入，满足企业安全合规审计要求。"
     },
     partner: {
-      title: "加入univerOS 合作伙伴生态",
-      desc: "我们正在招募 IT 系统集成商、数字化咨询顾问与技术方案团队，提供最高 20% 的推荐席位与超量流量消费阶梯分润。基于账单透明哈希线下按月结算。",
+      title: "成为 univerOS 生态合作伙伴",
+      desc: "全国范围招募 IT 系统集成商、数字化咨询团队与技术服务商。提供最高 20% 推荐分润 + 梯度超量分成，按月透明结算。一次签约，持续收益。",
       btn: "申请成为代理商"
     },
     faq: {
-      title: "常见问题解答",
-      q1: "Q：univerOS 是如何收取费用和统计流量的？",
-      a1: "A：univerOS 实行“席位订阅费 + 超量调用按次计费”的双轨模式。平台仅根据任务写入 NATS proposed 主题 of 次数扣减额度，不在平台侧垫付或销售 Token。结果自负（类似运营商模式）。",
-      q2: "Q：大模型 API Key 必须自备吗？数据会被平台收集吗？",
-      a2: "A：是的，企业必须自备 LLM / 视觉多模态 API 凭证。univerOS 在设计上秉持凭证主权，平台侧不接触任何明文密钥，模型调用在本地内存完成，绝不在云端留存明文凭证。",
-      q3: "Q：RD 产线的 V1-V4 测试自愈矩阵是如何工作的？",
-      a3: "A：当任务触发代码变更后，系统自动在本地影子分支（Shadow Worktree）触发编译（V1）、进程健康检测（V2）、日志错误扫描（V3）、接口测试（V4）共四级黑盒测试。测试通过后才提交至目标流程等待确认合并。"
+      title: "常见问题",
+      q1: "Q: univerOS 和市面上的 AI 工具有什么区别？",
+      a1: "A: 大多数 AI 工具提供“辅助建议”——你还是要自己做。univerOS 提供的是“执行交付”——输入业务意图，系统自动完成整个流程并交付可用成果。配合风险仲裁机制，高风险动作必须人工确权，低风险动作系统自动执行，你控制边界，系统负责跑通。",
+      q2: "Q: “花钱买成果”是什么意思？收费怎么计算？",
+      a2: "A: 你不需要购买 AI 工具或学习提示词工程。你为实际执行的业务任务付费。采用“席位订阅 + 超量按次”双轨模式：订阅覆盖基础调用配额，超出后按实际调用次数计费，无隐藏费用。代理商另有专属分润结算通道。",
+      q3: "Q: 我的数据和 API 密钥安全吗？",
+      a3: "A: 完全安全。univerOS 采用 CUP 凭证隔离协议——大模型密钥、Git 凭证等仅存在于你本地客户端的安全隔离区，平台服务器从不接触明文。同时，基于 DID 的 NATS 命名空间隔离确保不同企业之间数据严格切断。",
+      q4: "Q: 算力需要自己准备吗？",
+      a4: "A: 不是必须的。univerOS 同时支持两种模式：① BYOK（自备 API 密钥）：接入 DeepSeek、OpenAI、Qwen 等，成本完全自控；② 平台托管算力：直接订阅平台积分即可使用，无需管理 API 账号。两种模式可按需切换。",
+      q5: "Q: 目前支持哪些业务场景？",
+      a5: "A: Phase 1 当前支持三大场景：① 软件研发自动化（yz-RD）：从意图孵化到代码提交的全流程自动化；② 多模态内容生产（yz-CF）：短视频批量生产、脚本生成、多平台分发；③ 全网情报采集（yz-IB）：灰度开放中，邀请制准入，请联系我们申请。服务中大型企业、SaaS 公司、新媒体机构与技术团队。"
     },
     pricing: {
       header: {
@@ -151,10 +174,10 @@ const translations: Record<Language, TranslationDict> = {
   en: {
     common: {
       brand: "univerOS",
-      brandDesc: "Enterprise-grade SOP Agent workflow execution system. Bring your own LLM keys, physical isolation with self-healing flow execution."
+      brandDesc: "Enterprise Multi-Function Delivery System. Know-How × Workflow × Computing Power — safe, auditable, real delivery."
     },
     nav: {
-      features: "Products",
+      features: "Capabilities",
       pricing: "Pricing",
       security: "Security",
       partner: "Partners",
@@ -169,71 +192,94 @@ const translations: Record<Language, TranslationDict> = {
       github: "GitHub Source",
       sales: "Contact Sales",
       partner: "Partners",
-      copyright: "©2026 univerOS • Audit-ready execution records"
+      copyright: "©2026 univerOS · Enterprise Multi-Function Delivery System"
     },
     hero: {
-      tag: "Enterprise Experience Operating System",
-      title: "Enterprise Experience",
-      titleHighlight: "Operating System",
-      desc: "Every SOP execution distills your industry Know-How. Experience stays in-house; domain barriers grow automatically. Bring your own compute, zero cloud footprints.",
+      tag: "Enterprise Multi-Function Delivery System",
+      title: "Built to Deliver.",
+      titleHighlight: "Across Every Function.",
+      desc: "KH × WF × CP — Industry Know-How, SOP Pipelines, and Computing Power, multiplied. Covers software R&D, content production, and operations end-to-end. Secure, auditable, and outcome-driven. You pay for results, not tools.",
       btnApply: "Partner Application",
-      btnPricing: "Try Now",
-      tip: "* Note: LLM API keys are loaded locally inside client memory; zero records remain on cloud servers."
+      btnPricing: "Get Started",
+      tip: "* Supports BYOK (bring your own API key) or platform-managed compute — your choice."
     },
     features: {
-      title: "Three Core Experience Flywheels",
-      desc: "Automated intelligence intake, multi-role SOP execution, and private Know-How distillation.",
+      title: "KH × WF × CP — Three-Layer Capability Multiplier",
+      desc: "Industry Know-How, SOP Pipelines, and Computing Power are not feature additions — they are mutual amplifiers. Any one at zero collapses the whole. Together, they are univerOS.",
       rd: {
-        title: "① Global Intelligence Intake (yz-IB)",
-        desc: "Automatically ingest industry trends, competitor signals, and content assets to power enterprise decision-making and customized knowledge.",
-        tag1: "Multi-Source Intake",
-        tag2: "Signal Analysis",
-        tag3: "Structured Distillation"
+        title: "Industry Know-How (KH)",
+        desc: "Platform standard knowledge packs + tenant-contributed shared knowledge, managed under a dual-track lifecycle model. Injected as decision context before every execution — reducing the barrier for AI to understand your specific industry and business logic.",
+        tag1: "Platform Track",
+        tag2: "Contribution Track",
+        tag3: "Context Injection"
       },
       gen: {
-        title: "② Automated SOP Execution (yz-RD / yz-CF)",
-        desc: "Full-stack automated delivery across software R&D, content factory, and operations, producing tamper-proof execution outcomes audited by Reality Ledger.",
-        tag1: "Shadow Worktree",
-        tag2: "Multimodal Generation",
-        tag3: "V1-V4 Self-Healing"
+        title: "SOP Pipelines (WF)",
+        desc: "Production-validated execution pipelines covering software R&D (yz-RD) and multimodal content production (yz-CF). Translates business intent directly into real, deliverable production outputs — not reports or suggestions.",
+        tag1: "Software R&D Auto",
+        tag2: "Multimodal Content",
+        tag3: "REAL-Grade Delivery"
       },
       ing: {
-        title: "③ Continuous Experience Distillation (Heart × Memory)",
-        desc: "Every execution lesson is automatically extracted and stored in your private LanceDB vector database, compounding your proprietary competitive advantage.",
-        tag1: "Know-How Extraction",
-        tag2: "LanceDB Private Store",
-        tag3: "Compounding Barriers"
+        title: "Computing Power (CP)",
+        desc: "The fuel that drives the system. Supports BYOK (bring your own API keys) or platform-managed compute via subscription credits. Stable supply keeps the KH × WF flywheel running at full speed. (* yz-IB Global Intelligence Intake: Gray-release)",
+        tag1: "BYOK Integration",
+        tag2: "Managed Compute",
+        tag3: "Elastic Supply"
+      }
+    },
+    trust: {
+      title: "Three Layers of Delivery Assurance",
+      desc: "univerOS embeds three mechanisms at the execution layer to ensure every delivery is trustworthy, auditable, and recoverable.",
+      t1: {
+        title: "Risk Arbitration (L1 / L2 / L3)",
+        desc: "Every action is auto-classified by risk level. Low-risk actions execute silently. Medium-risk actions push an approval window (auto-expires in 60 min). High-risk actions hard-block until explicit human authorization. Write actions never happen without your awareness.",
+        badge: "L1-L3 Arbitration"
+      },
+      t2: {
+        title: "MAPE-K Self-Healing Loop",
+        desc: "The system continuously monitors every execution node. On anomaly detection, it automatically triggers a diagnose → fix → verify loop. A V1-V4 four-stage blackbox test matrix ensures fixes are validated before any merge or delivery.",
+        badge: "V1-V4 Matrix"
+      },
+      t3: {
+        title: "Reality Ledger — Full-Chain Audit Trail",
+        desc: "Every task dispatch, state transition, approval record, and billing entry generates a hash-chained immutable record. Append-only, tamper-proof, and exportable — fully Audit-Ready for enterprise compliance requirements.",
+        badge: "Append-only Trail"
       }
     },
     security: {
-      title: "Credential Isolation & Reality Ledger",
-      desc: "To safeguard enterprise digital assets, univerOS isolates credential storage from cloud orchestrators and embeds cryptographic audit logs.",
+      title: "Your Data. Always Under Your Control.",
+      desc: "univerOS is architected for enterprise data sovereignty — credentials never leave your perimeter, data is never shared, tenants are physically isolated.",
       cup: {
-        title: "Zero Cloud Contact with Plaintext Credentials (CUP)",
-        desc: "API Keys and Git deploy keys are locked locally. The cloud console only relays plan nodes, and run-time data is wiped immediately from memory after execution."
+        title: "API Keys Locked Locally. Zero Cloud Contact.",
+        desc: "LLM API keys and Git deploy credentials live only in your local client's secure vault. The cloud orchestrator relays only task plans — your plaintext credentials never touch platform servers."
       },
       ledger: {
-        title: "Audit-Ready Execution Logs (Reality Ledger)",
-        desc: "Every task node, state transition, and billing statement generates a hash chain record, providing tamper-proof evidence for corporate security audits."
+        title: "Every Step. Fully Traceable.",
+        desc: "Reality Ledger generates a cryptographic hash chain for every execution step — append-only, tamper-proof, and exportable for enterprise compliance audits."
       },
-      boxTitle: "// Compliance Safeguards",
-      item1: "Local LanceDB Vector Store: Historical task lessons are kept entirely in the tenant's local database, never uploaded to platform servers.",
-      item2: "Dual-Track Cost Controller: Token CFO limits API usage locally with a hard cap to avoid runaway invoices.",
-      item3: "NATS Namespace Isolation: Complete tenant partitioning based on DID keys to prevent cross-tenant message leakage."
+      boxTitle: "// Data Sovereignty Boundary",
+      item1: "Credential Physical Isolation (CUP Protocol): Sensitive API keys and tokens are stored locally — zero plaintext contact on the platform side.",
+      item2: "Tenant Namespace Partitioning: DID-based NATS namespace isolation strictly prevents cross-tenant data leakage.",
+      item3: "Append-Only Audit Chain: Reality Ledger hash records are irreversibly written, satisfying enterprise security compliance requirements."
     },
     partner: {
       title: "Join the univerOS Partner Ecosystem",
-      desc: "Recruiting IT integrators, digital consultants, and technical teams. We offer up to 20% commission on subscriptions and excess workflows, paid monthly.",
-      btn: "Apply to Be Partner"
+      desc: "Recruiting IT integrators, digital transformation consultants, and technical service teams nationwide. Earn up to 20% referral commission plus tiered overage sharing — settled monthly with full billing transparency.",
+      btn: "Apply to Become a Partner"
     },
     faq: {
       title: "Frequently Asked Questions",
-      q1: "Q: How does univerOS charge and track consumption?",
-      a1: "A: univerOS utilizes a dual-track model consisting of a flat seat subscription fee and consumption-based workflow charges. We deduct balance based on tasks dispatched to the NATS queue, and we do not markup or resell Token bandwidth. Users are responsible for plan execution results (similar to telecom operators).",
-      q2: "Q: Are LLM API keys mandatory? Will my data be collected by the platform?",
-      a2: "A: Yes, tenants must provide their own LLM/multimodal API credentials. univerOS respects credential sovereignty: plain keys remain inside local client memory during execution, and no plain text credentials pass through or are saved on platform cloud servers.",
-      q3: "Q: How does the V1-V4 self-healing test matrix work in the RD pipeline?",
-      a3: "A: Once code modifications are planned, the system automatically spawns a local Shadow Worktree to run compilation checks (V1), process health checks (V2), logs scan (V3), and API interface tests (V4). It only submits a Pull Request for manual confirmation after all four levels of check pass."
+      q1: "Q: How is univerOS different from other AI tools?",
+      a1: "A: Most AI tools give you suggestions — you still do the work. univerOS delivers execution outcomes. You input a business intent; the system completes the full workflow and delivers a usable result. Combined with risk arbitration gates, high-risk actions require your explicit approval, while low-risk actions run automatically. You set the boundary; the system handles the rest.",
+      q2: "Q: What does \"pay for results\" mean? How is pricing structured?",
+      a2: "A: You don't buy AI tools or learn prompt engineering. You pay for actual business tasks executed. Pricing uses a dual-track model: a flat seat subscription covers base workflow quota, with consumption-based overage fees for usage beyond quota. No hidden fees. Partner channels have a dedicated commission settlement track.",
+      q3: "Q: Is my data and API key secure?",
+      a3: "A: Completely. univerOS uses the CUP credential isolation protocol — LLM API keys, Git credentials, and other sensitive assets live only in your local client's secure vault. Platform servers never touch plaintext credentials. DID-based NATS namespace isolation ensures strict data partitioning between different enterprise tenants.",
+      q4: "Q: Do I need to bring my own compute?",
+      a4: "A: Not required. univerOS supports two modes: ① BYOK: Connect your own DeepSeek, OpenAI, Qwen, or other API keys — full cost control; ② Platform-managed compute: Subscribe to platform credits and use them directly, no API account needed. Both modes can be switched flexibly based on your preference.",
+      q5: "Q: What business scenarios are currently supported?",
+      a5: "A: Phase 1 currently supports three scenarios: ① Software R&D automation (yz-RD): Full-pipeline automation from intent to code commit; ② Multimodal content production (yz-CF): Video batch production, script generation, multi-channel distribution; ③ Global intelligence intake (yz-IB): Currently in gray-release — invite-only. Contact us to apply. Primary targets: mid-to-large enterprises, SaaS companies, digital media organizations, and tech teams."
     },
     pricing: {
       header: {
@@ -372,4 +418,3 @@ export function useTranslation() {
 }
 
 export const useLanguage = useTranslation;
-
