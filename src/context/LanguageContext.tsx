@@ -12,7 +12,7 @@ const translations: Record<Language, TranslationDict> = {
   zh: {
     common: {
       brand: "univerOS",
-      brandDesc: "企业级多职能交付系统。行业知识 × SOP 产线 × 推理算力，安全交付真实生产成果。"
+      brandDesc: "企业级多职能交付系统。深度整合行业知识、SOP 产线与推理算力，覆盖研发、内容生产、运营分发全职能场景，安全交付真实生产成果。"
     },
     nav: {
       features: "产品能力",
@@ -174,7 +174,7 @@ const translations: Record<Language, TranslationDict> = {
   en: {
     common: {
       brand: "univerOS",
-      brandDesc: "Enterprise Multi-Function Delivery System. Know-How × Workflow × Computing Power — safe, auditable, real delivery."
+      brandDesc: "Enterprise Multi-Function Delivery System. Integrating Industry Knowledge, SOP Pipelines, and Computing Power across R&D, content, and operations — safe, auditable, real delivery."
     },
     nav: {
       features: "Capabilities",
