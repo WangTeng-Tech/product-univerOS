@@ -57,7 +57,7 @@ export default function Home() {
             
             <h1 className="hero-title">
               {t("hero.title")}<br />
-              <span style={{ color: 'var(--color-accent-main)', marginLeft: '50px', display: 'inline-block' }}>{t("hero.titleHighlight")}</span>
+              <span style={{ color: 'var(--color-accent-main)', marginLeft: '130px', display: 'inline-block' }}>{t("hero.titleHighlight")}</span>
             </h1>
             
             <p className="hero-desc">
