@@ -102,15 +102,14 @@ export default function Home() {
             <ConsoleBlock />
           </div>
         </div>
-      </section>
 
-      {/* Big Tech Infinite Marquee Logo Wall (Positioned directly BELOW Hero Section) */}
-      <section style={{
-        padding: '3rem 0',
-        background: 'var(--color-bg-secondary)',
-        borderBottom: '1px solid var(--color-border)'
-      }}>
-        <div className="container">
+        {/* Big Tech Infinite Marquee Logo Wall (Merged INTO Hero Section) */}
+        <div style={{
+          marginTop: '4rem',
+          paddingTop: '2.5rem',
+          borderTop: '1px dashed var(--color-border)',
+          width: '100%'
+        }}>
           <p style={{
             textAlign: 'center',
             fontSize: '0.75rem',
@@ -140,7 +139,7 @@ export default function Home() {
             <div style={{
               display: 'inline-flex',
               gap: '3.5rem',
-              animation: 'marqueeRoll 25s linear infinite',
+              animation: 'marqueeRoll 50s linear infinite',
               width: 'max-content',
               alignItems: 'center'
             }}>
@@ -295,110 +294,29 @@ export default function Home() {
               <h3 style={{ fontSize: '1.1rem', marginBottom: '0.5rem', color: 'var(--color-text-primary)' }}>{t("architecture.healing")}</h3>
               <p style={{ fontSize: '0.85rem', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>{t("architecture.healingDesc")}</p>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Big Tech Infinite Marquee Logo Wall (Positioned ABOVE Customers Section) */}
-      <section style={{
-        padding: '3.5rem 0',
-        background: 'var(--color-bg-secondary)',
-        borderBottom: '1px solid var(--color-border)'
-      }}>
-        <div className="container">
-          <p style={{
-            textAlign: 'center',
-            fontSize: '0.75rem',
-            fontWeight: 600,
-            letterSpacing: '0.1em',
-            color: 'var(--color-text-secondary)',
-            textTransform: 'uppercase',
-            marginBottom: '2rem'
-          }}>
-            {t("customers.techWallTitle")}
-          </p>
-
-          <style>{`
-            @keyframes marqueeRoll {
-              0% { transform: translateX(0%); }
-              100% { transform: translateX(-50%); }
-            }
-          `}</style>
-
-          <div style={{
-            overflow: 'hidden',
-            whiteSpace: 'nowrap',
-            position: 'relative',
-            WebkitMaskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)',
-            maskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)'
-          }}>
-            <div style={{
-              display: 'inline-flex',
-              gap: '3.5rem',
-              animation: 'marqueeRoll 25s linear infinite',
-              width: 'max-content',
-              alignItems: 'center'
-            }}>
-              {[
-                { name: "NVIDIA", icon: "https://api.iconify.design/simple-icons:nvidia.svg?color=%2376b900" },
-                { name: "Tesla", icon: "https://api.iconify.design/simple-icons:tesla.svg?color=%23e82127" },
-                { name: "Meta", icon: "https://api.iconify.design/simple-icons:meta.svg?color=%230081fb" },
-                { name: "Apple", icon: "https://api.iconify.design/simple-icons:apple.svg?color=%23000000" },
-                { name: "Oracle", icon: "https://api.iconify.design/simple-icons:oracle.svg?color=%23f80000" },
-                { name: "SAP", icon: "https://api.iconify.design/simple-icons:sap.svg?color=%230faaff" },
-                { name: "Pfizer", icon: "https://api.iconify.design/simple-icons:pfizer.svg?color=%23000036" },
-                { name: "Accenture", icon: "https://api.iconify.design/simple-icons:accenture.svg?color=%23a100ff" },
-                { name: "Chevron", icon: "https://api.iconify.design/simple-icons:chevron.svg?color=%23005a9c" },
-                { name: "AT&T", icon: "https://api.iconify.design/simple-icons:att.svg?color=%2300a8e0" },
-                { name: "Dropbox", icon: "https://api.iconify.design/simple-icons:dropbox.svg?color=%230061ff" },
-                { name: "Nike", icon: "https://api.iconify.design/simple-icons:nike.svg?color=%23000000" },
-                { name: "Chase", icon: "https://api.iconify.design/simple-icons:chase.svg?color=%231175e8" },
-                { name: "Wise", icon: "https://api.iconify.design/simple-icons:wise.svg?color=%23163300" },
-
-                // Duplicate array for seamless infinite marquee loop
-                { name: "NVIDIA", icon: "https://api.iconify.design/simple-icons:nvidia.svg?color=%2376b900" },
-                { name: "Tesla", icon: "https://api.iconify.design/simple-icons:tesla.svg?color=%23e82127" },
-                { name: "Meta", icon: "https://api.iconify.design/simple-icons:meta.svg?color=%230081fb" },
-                { name: "Apple", icon: "https://api.iconify.design/simple-icons:apple.svg?color=%23000000" },
-                { name: "Oracle", icon: "https://api.iconify.design/simple-icons:oracle.svg?color=%23f80000" },
-                { name: "SAP", icon: "https://api.iconify.design/simple-icons:sap.svg?color=%230faaff" },
-                { name: "Pfizer", icon: "https://api.iconify.design/simple-icons:pfizer.svg?color=%23000036" },
-                { name: "Accenture", icon: "https://api.iconify.design/simple-icons:accenture.svg?color=%23a100ff" },
-                { name: "Chevron", icon: "https://api.iconify.design/simple-icons:chevron.svg?color=%23005a9c" },
-                { name: "AT&T", icon: "https://api.iconify.design/simple-icons:att.svg?color=%2300a8e0" },
-                { name: "Dropbox", icon: "https://api.iconify.design/simple-icons:dropbox.svg?color=%230061ff" },
-                { name: "Nike", icon: "https://api.iconify.design/simple-icons:nike.svg?color=%23000000" },
-                { name: "Chase", icon: "https://api.iconify.design/simple-icons:chase.svg?color=%231175e8" },
-                { name: "Wise", icon: "https://api.iconify.design/simple-icons:wise.svg?color=%23163300" }
-              ].map((logo, index) => (
-                <div key={index} style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '0.85rem',
-                  padding: '0.4rem 0.5rem',
-                  opacity: 0.9,
-                  transition: 'all 0.3s ease'
-                }}>
-                  <img 
-                    src={logo.icon} 
-                    alt={logo.name} 
-                    onError={(e) => { e.currentTarget.style.display = 'none'; }}
-                    style={{ width: '32px', height: '32px', objectFit: 'contain', flexShrink: 0 }} 
-                  />
-                  <span style={{
-                    fontWeight: 700,
-                    fontSize: '1.1rem',
-                    letterSpacing: '-0.02em',
-                    color: 'var(--color-text-primary)'
-                  }}>
-                    {logo.name}
-                  </span>
-                </div>
-              ))}
+            {/* CUP Isolation */}
+            <div style={{ background: 'var(--color-bg-primary)', border: '1px solid var(--color-border)', borderRadius: '12px', padding: '1.5rem' }}>
+              <div style={{ fontSize: '0.75rem', fontWeight: 800, color: 'var(--color-accent-main)', letterSpacing: '0.08em', marginBottom: '0.75rem' }}>06 / ISOLATION</div>
+              <h3 style={{ fontSize: '1.1rem', marginBottom: '0.5rem', color: 'var(--color-text-primary)' }}>{t("trust.t1.title")}</h3>
+              <p style={{ fontSize: '0.85rem', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>{t("trust.t1.desc")}</p>
+            </div>
+            {/* Append-only Ledger */}
+            <div style={{ background: 'var(--color-bg-primary)', border: '1px solid var(--color-border)', borderRadius: '12px', padding: '1.5rem' }}>
+              <div style={{ fontSize: '0.75rem', fontWeight: 800, color: 'var(--color-accent-main)', letterSpacing: '0.08em', marginBottom: '0.75rem' }}>07 / LEDGER</div>
+              <h3 style={{ fontSize: '1.1rem', marginBottom: '0.5rem', color: 'var(--color-text-primary)' }}>{t("trust.t2.title")}</h3>
+              <p style={{ fontSize: '0.85rem', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>{t("trust.t2.desc")}</p>
+            </div>
+            {/* Safe Deployment */}
+            <div style={{ background: 'var(--color-bg-primary)', border: '1px solid var(--color-border)', borderRadius: '12px', padding: '1.5rem' }}>
+              <div style={{ fontSize: '0.75rem', fontWeight: 800, color: 'var(--color-accent-main)', letterSpacing: '0.08em', marginBottom: '0.75rem' }}>08 / CONFIRMATION</div>
+              <h3 style={{ fontSize: '1.1rem', marginBottom: '0.5rem', color: 'var(--color-text-primary)' }}>{t("trust.t3.title")}</h3>
+              <p style={{ fontSize: '0.85rem', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>{t("trust.t3.desc")}</p>
             </div>
           </div>
         </div>
       </section>
+
+
 
       {/* Enterprise Scale & Customers Section */}
       <section id="customers" style={{
@@ -513,102 +431,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* Trust & Delivery Assurance Section */}
-      <section id="trust" style={{
-        padding: '5rem 0',
-        background: 'var(--color-bg-primary)',
-        borderBottom: '1px solid var(--color-border)'
-      }}>
-        <div className="container">
-          <div style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
-            <h2 style={{ fontSize: '2rem', marginBottom: '1rem', color: 'var(--color-text-primary)' }}>
-              {t("trust.title")}
-            </h2>
-            <p style={{ maxWidth: '600px', margin: '0 auto', color: 'var(--color-text-secondary)', fontSize: '0.95rem' }}>
-              {t("trust.desc")}
-            </p>
           </div>
-
-          <div className="grid-cols-3">
-            <div style={{
-              background: 'var(--color-bg-secondary)',
-              border: '1px solid var(--color-border)',
-              borderRadius: '12px',
-              padding: '2rem',
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'space-between'
-            }}>
-              <div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1rem' }}>
-                  <ShieldCheckIcon />
-                  <span style={{ fontSize: '0.75rem', padding: '0.2rem 0.5rem', background: 'var(--color-accent-light)', color: 'var(--color-accent-main)', borderRadius: '4px', fontWeight: 600 }}>
-                    {t("trust.t1.badge")}
-                  </span>
-                </div>
-                <h3 style={{ fontSize: '1.2rem', marginBottom: '0.75rem', color: 'var(--color-text-primary)' }}>
-                  {t("trust.t1.title")}
-                </h3>
-                <p style={{ fontSize: '0.85rem', color: 'var(--color-text-secondary)', lineHeight: '1.6' }}>
-                  {t("trust.t1.desc")}
-                </p>
-              </div>
-            </div>
-
-            <div style={{
-              background: 'var(--color-bg-secondary)',
-              border: '1px solid var(--color-border)',
-              borderRadius: '12px',
-              padding: '2rem',
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'space-between'
-            }}>
-              <div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1rem' }}>
-                  <ShieldCheckIcon />
-                  <span style={{ fontSize: '0.75rem', padding: '0.2rem 0.5rem', background: 'var(--color-accent-light)', color: 'var(--color-accent-main)', borderRadius: '4px', fontWeight: 600 }}>
-                    {t("trust.t2.badge")}
-                  </span>
-                </div>
-                <h3 style={{ fontSize: '1.2rem', marginBottom: '0.75rem', color: 'var(--color-text-primary)' }}>
-                  {t("trust.t2.title")}
-                </h3>
-                <p style={{ fontSize: '0.85rem', color: 'var(--color-text-secondary)', lineHeight: '1.6' }}>
-                  {t("trust.t2.desc")}
-                </p>
-              </div>
-            </div>
-
-            <div style={{
-              background: 'var(--color-bg-secondary)',
-              border: '1px solid var(--color-border)',
-              borderRadius: '12px',
-              padding: '2rem',
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'space-between'
-            }}>
-              <div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1rem' }}>
-                  <ShieldCheckIcon />
-                  <span style={{ fontSize: '0.75rem', padding: '0.2rem 0.5rem', background: 'var(--color-accent-light)', color: 'var(--color-accent-main)', borderRadius: '4px', fontWeight: 600 }}>
-                    {t("trust.t3.badge")}
-                  </span>
-                </div>
-                <h3 style={{ fontSize: '1.2rem', marginBottom: '0.75rem', color: 'var(--color-text-primary)' }}>
-                  {t("trust.t3.title")}
-                </h3>
-                <p style={{ fontSize: '0.85rem', color: 'var(--color-text-secondary)', lineHeight: '1.6' }}>
-                  {t("trust.t3.desc")}
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
       </section>
 
       {/* Credentials and Security Section */}
@@ -724,22 +547,9 @@ export default function Home() {
             <h3 style={{ fontSize: '2.2rem', fontWeight: 800, marginBottom: '0.75rem', color: 'var(--color-text-primary)' }}>
               {t("stats.title")}
             </h3>
-            <p style={{ fontSize: '1.05rem', color: 'var(--color-text-secondary)', marginBottom: '2rem' }}>
+            <p style={{ fontSize: '1.05rem', color: 'var(--color-text-secondary)', marginBottom: '3.5rem' }}>
               {t("stats.subtitle")}
             </p>
-
-            {/* Chips */}
-            <div style={{ display: 'flex', justifyContent: 'center', gap: '0.75rem', marginBottom: '3.5rem', flexWrap: 'wrap' }}>
-              <span style={{ padding: '0.4rem 1rem', background: '#2d1b4e', color: '#c084fc', borderRadius: '20px', fontSize: '0.85rem', fontWeight: 600 }}>
-                {t("stats.chip1")}
-              </span>
-              <span style={{ padding: '0.4rem 1rem', background: '#1e293b', color: '#38bdf8', borderRadius: '20px', fontSize: '0.85rem', fontWeight: 600 }}>
-                {t("stats.chip2")}
-              </span>
-              <span style={{ padding: '0.4rem 1rem', background: '#3b1c1c', color: '#f87171', borderRadius: '20px', fontSize: '0.85rem', fontWeight: 600 }}>
-                {t("stats.chip3")}
-              </span>
-            </div>
 
             {/* Large Numbers */}
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '2rem', alignItems: 'center' }}>
@@ -832,59 +642,45 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Partner Banner Section */}
-      <section style={{
+      {/* Combined Partner Ecosystem & Contact Section */}
+      <section id="contact" style={{
         padding: '5rem 0',
         background: 'var(--color-bg-primary)',
         borderBottom: '1px solid var(--color-border)',
         textAlign: 'center'
       }}>
-        <div className="container" style={{ maxWidth: '800px' }}>
+        <div className="container" style={{ maxWidth: '850px' }}>
           <h2 style={{ fontSize: '2rem', marginBottom: '1.25rem', color: 'var(--color-text-primary)' }}>
-            {t("partner.title")}
+            {t("partner.title")} & {t("nav.contact")}
           </h2>
-          <p style={{ color: 'var(--color-text-secondary)', marginBottom: '2rem', fontSize: '0.95rem', lineHeight: '1.7' }}>
-            {t("partner.desc")}
+          <p style={{ color: 'var(--color-text-secondary)', marginBottom: '2.5rem', fontSize: '0.95rem', lineHeight: '1.7' }}>
+            {t("partner.desc")} 专属客户经理与技术顾问 24/7 为您提供严肃企业级 AI Workforce 落地咨询与解决方案架构支持。
           </p>
-          <Link href="/partner">
-            <button className="btn-primary" style={{ padding: '0.75rem 2rem' }}>
-              {t("partner.btn")}
-            </button>
-          </Link>
-        </div>
-      </section>
 
-      {/* Contact Section */}
-      <section id="contact" style={{
-        padding: '4.5rem 0',
-        background: 'var(--color-bg-secondary)',
-        borderBottom: '1px solid var(--color-border)',
-        textAlign: 'center'
-      }}>
-        <div className="container" style={{ maxWidth: '800px' }}>
-          <h2 style={{ fontSize: '2rem', marginBottom: '1rem', color: 'var(--color-text-primary)' }}>
-            {t("footer.sales")}
-          </h2>
-          <p style={{ color: 'var(--color-text-secondary)', marginBottom: '2.5rem', fontSize: '0.95rem' }}>
-            专属客户经理与技术顾问 24/7 为您提供严肃企业级 AI Workforce 落地咨询与解决方案架构支持。
-          </p>
+          <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '3rem' }}>
+            <Link href="/partner">
+              <button className="btn-primary" style={{ padding: '0.75rem 2.5rem', fontSize: '0.95rem' }}>
+                {t("partner.btn")}
+              </button>
+            </Link>
+          </div>
 
           <div style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
             gap: '1.5rem',
             textAlign: 'left'
           }}>
-            <div style={{ background: 'var(--color-bg-primary)', padding: '1.5rem', borderRadius: '12px', border: '1px solid var(--color-border)' }}>
+            <div style={{ background: 'var(--color-bg-secondary)', padding: '1.75rem', borderRadius: '12px', border: '1px solid var(--color-border)' }}>
               <div style={{ fontSize: '0.75rem', fontWeight: 800, color: 'var(--color-accent-main)', letterSpacing: '0.08em', marginBottom: '0.5rem' }}>BUSINESS & SALES</div>
               <h4 style={{ fontSize: '1.05rem', color: 'var(--color-text-primary)', marginBottom: '0.5rem' }}>商务对接与方案咨询</h4>
-              <p style={{ fontSize: '0.85rem', color: 'var(--color-text-secondary)' }}>sales@univeros.cn</p>
+              <p style={{ fontSize: '0.9rem', color: 'var(--color-text-secondary)', fontWeight: 600 }}>sales@univeros.cn</p>
             </div>
 
-            <div style={{ background: 'var(--color-bg-primary)', padding: '1.5rem', borderRadius: '12px', border: '1px solid var(--color-border)' }}>
+            <div style={{ background: 'var(--color-bg-secondary)', padding: '1.75rem', borderRadius: '12px', border: '1px solid var(--color-border)' }}>
               <div style={{ fontSize: '0.75rem', fontWeight: 800, color: 'var(--color-accent-main)', letterSpacing: '0.08em', marginBottom: '0.5rem' }}>PARTNER ECOSYSTEM</div>
               <h4 style={{ fontSize: '1.05rem', color: 'var(--color-text-primary)', marginBottom: '0.5rem' }}>代理加盟与渠道合作</h4>
-              <p style={{ fontSize: '0.85rem', color: 'var(--color-text-secondary)' }}>partner@univeros.cn</p>
+              <p style={{ fontSize: '0.9rem', color: 'var(--color-text-secondary)', fontWeight: 600 }}>partner@univeros.cn</p>
             </div>
           </div>
         </div>
