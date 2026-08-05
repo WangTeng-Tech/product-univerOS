@@ -275,6 +275,43 @@ const translations: Record<Language, TranslationDict> = {
       enterprise: {
         badge: "Private Deploy / Top Security",
         title: "Large Enterprises & Conglomerates",
+        desc: "Built for mission-critical industries (finance, healthcare, manufacturing). Fully isolated local deployment keeps credentials and data on-premise."
+      }
+    },
+    trust: {
+      title: "Built-In Enterprise Security & Auto-Healing",
+      desc: "No need to worry about AI running wild. Built-in triple safeguards protect your business boundaries and operational continuity.",
+      t1: {
+        title: "Dynamic Smart Approval",
+        desc: "Distinguishes routine tasks from high-risk actions. Routine work runs automatically; critical actions prompt for your explicit approval.",
+        badge: "Smart Approval Control"
+      },
+      t2: {
+        title: "Smart Auto-Healing",
+        desc: "Monitors execution 24/7. When an anomaly occurs, AI teams diagnose, fix, and re-test automatically until verified.",
+        badge: "Automatic Error Fixing"
+      },
+      t3: {
+        title: "Full Audit Logging",
+        desc: "Every command, step, and approval generates a tamper-proof log. Fully transparent, exportable anytime to satisfy compliance.",
+        badge: "Compliant Audit Trail"
+      }
+    },
+    security: {
+      title: "Your Data. Always Under Your Control.",
+      desc: "Architected for data sovereignty — credentials live locally, data is isolated, and our platform never touches your plaintext assets.",
+      cup: {
+        title: "Local Password Vault (CUP Protocol)",
+        desc: "LLM API keys and passwords live in your local computer's vault. Only task plans pass through the cloud."
+      },
+      ledger: {
+        title: "Critical Approvals Under Your Control",
+        desc: "High-risk actions require your explicit approval in the console. Platform admin backends have zero control widgets."
+      },
+      boxTitle: "// univerOS Security Commitment",
+      item1: "Local Password Encryption: Sensitive credentials stay in your local client vault.",
+      item2: "Enterprise Data Isolation: Cross-company data channels are strictly partitioned.",
+      item3: "Tamper-Proof Audit Logging: All operations leave verifiable audit records."
     },
     partner: {
       title: "Build the Agent Swarm Ecosystem Together",
@@ -339,72 +376,10 @@ const translations: Record<Language, TranslationDict> = {
         }
       },
       policy: {
-        title: "Billing Policy & Disclaimer",
-        item1: "1. Billing Start Trigger: Consumption is deducted once a task is written into the NATS queue.",
-        item2: "2. Quality Commitment: Agent Swarms combined with MAPE-K self-healing ensure high-quality execution.",
-        item3: "3. Credential Sovereignty: univerOS never hosts plaintext API keys. Keys remain in local client vaults."
-      }
-    }
-  }
-};tes, high-risk actions require your explicit approval, while low-risk actions run automatically. You set the boundary; the system handles the rest.",
-      q2: "Q: What does \"pay for results\" mean? How is pricing structured?",
-      a2: "A: You don't buy AI tools or learn prompt engineering. You pay for actual business tasks executed. Pricing uses a dual-track model: a flat seat subscription covers base workflow quota, with consumption-based overage fees for usage beyond quota. No hidden fees. Partner channels have a dedicated commission settlement track.",
-      q3: "Q: Is my data and API key secure?",
-      a3: "A: Completely. univerOS uses the CUP credential isolation protocol — LLM API keys, Git credentials, and other sensitive assets live only in your local client's secure vault. Platform servers never touch plaintext credentials. DID-based NATS namespace isolation ensures strict data partitioning between different enterprise tenants.",
-      q4: "Q: Do I need to bring my own compute?",
-      a4: "A: Not required. univerOS supports two modes: ① BYOK: Connect your own DeepSeek, OpenAI, Qwen, or other API keys — full cost control; ② Platform-managed compute: Subscribe to platform credits and use them directly, no API account needed. Both modes can be switched flexibly based on your preference.",
-      q5: "Q: What business scenarios are currently supported?",
-      a5: "A: Phase 1 currently supports three scenarios: ① Software R&D automation (yz-RD): Full-pipeline automation from intent to code commit; ② Multimodal content production (yz-CF): Video batch production, script generation, multi-channel distribution; ③ Global intelligence intake (yz-IB): Currently in gray-release — invite-only. Contact us to apply. Primary targets: mid-to-large enterprises, SaaS companies, digital media organizations, and tech teams."
-    },
-    pricing: {
-      header: {
-        tag: "Dual-Track Elastic Financial Model",
-        title: "Seat Subscription & Overage Billing Details",
-        desc: "univerOS does not resell LLM Tokens. We implement a dual-track model consisting of flat Tool Seat Fees and consumption-based overage fees (under the Call to Bill compute & Token premium sharing model)."
-      },
-      cards: {
-        rd: {
-          title: "RD Auto-Developer Seat",
-          price: "Trial Special / Contact Sales",
-          quota: "1,000 workflows / month",
-          overagePrice: "Settled via monthly invoice during trial operation",
-          f1: "Git Shadow Branch Isolation",
-          f2: "CodeVision Semantic Dependency Audit",
-          f3: "V1-V4 Self-Healing Test Matrix",
-          f4: "Submit PR for Manual Merge",
-          f5: "Tenant DID Cryptographic Isolation",
-          btn: "Subscribe to RD Trial"
-        },
-        gen: {
-          title: "Generator Marketing Seat",
-          price: "Trial Special / Contact Sales",
-          quota: "800 workflows / month",
-          overagePrice: "Settled via monthly invoice during trial operation",
-          f1: "Storyboard Script Planner",
-          f2: "Local FishTTS Voice Synthesis",
-          f3: "VCO/CCO Visual Consistency Audit",
-          f4: "Multimodal Video Batch Delivery",
-          f5: "Local LanceDB Vector Store",
-          btn: "Subscribe to Generator Trial"
-        },
-        ing: {
-          title: "Ingestor Dedicated Line",
-          price: "Private Deploy / Quote Request",
-          quota: "Customized by Node Topology",
-          overagePrice: "Fully Customized",
-          f1: "Whisper Dual-Track Audio Transcription",
-          f2: "LLM-based Content Rewriting",
-          f3: "One-click Syndication to Channels",
-          f4: "On-premise Node Deployment",
-          f5: "Enterprise Compliance Data Pipeline",
-          btn: "Contact Account Manager"
-        }
-      },
-      policy: {
-        title: "Billing Policy & Disclaimer",
-        item1: "1. Billing Start Trigger: Overage consumption is deducted once a task is successfully written into the NATS proposed queue (the `xt.tasks.proposed` subject).",
-        item2: "2. Execution Accountability: The engine operates as a lower-level execution relay similar to telecom carriers. Workflow costs are deducted upon task dispatch, and execution success/failure does not affect the consumption deduction; tenants carry planning risks.",
-        item3: "3. Credential Sovereignty: univerOS never hosts plaintext API keys. Your LLM/multimodal keys remain in local client memory during execution, and we do not add markups or surcharges on LLM bandwidth."
+        title: "Billing & Service Commitment",
+        item1: "1. Billing Trigger: Quota is deducted once a task is submitted and AI teams start processing.",
+        item2: "2. Quality Guarantee: AI teams combined with auto-healing ensure high-quality execution.",
+        item3: "3. Credential Security: univerOS never hosts plaintext passwords; keys live on your local computer."
       }
     }
   }
