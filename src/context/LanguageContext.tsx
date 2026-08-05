@@ -12,16 +12,16 @@ const translations: Record<Language, TranslationDict> = {
   zh: {
     common: {
       brand: "univerOS",
-      brandDesc: "企业级多职能交付系统。univerOS 给你更好的 AI Workforce 体验，安全、交付！覆盖软件研发、内容工厂与摄取分发，安全合规，自愈可控。"
+      brandDesc: "企业级多职能交付系统。univerOS 给你更好的 AI Workforce 体验，安全、交付！覆盖软件研发、内容工厂与摄取分发，简单好用，安全省心。"
     },
     nav: {
       features: "产品能力",
       customers: "适用场景",
       pricing: "套餐计费",
-      security: "企业级安全",
+      security: "安全保障",
       partner: "代理生态",
       login: "代理商登录",
-      apply: "申请内测"
+      apply: "申请体验"
     },
     footer: {
       terms: "使用条款 (Terms)",
@@ -37,162 +37,162 @@ const translations: Record<Language, TranslationDict> = {
       tag: "企业级多职能交付系统",
       title: "univerOS 给你更好的",
       titleHighlight: "AI Workforce 体验，安全、交付！",
-      desc: "Agent Swarm 自主协作，MAPE-K 自愈闭环，Reality Ledger 全链路存证。从超级个体到大型集团，安全可控，严肃交付成果。",
-      btnApply: "代理申请",
+      desc: "AI 数字员工团队自主协作，遇到问题自动纠错修复，全流程安全留痕。从个人工作室到大型集团，省心省力，稳妥交付成果。",
+      btnApply: "代理加盟",
       btnPricing: "马上体验",
-      tip: "* 支持自备 API 密钥接入（BYOK）或订阅平台托管算力，两种模式均可。"
+      tip: "* 支持自备 AI 大模型账号（BYOK），或直接由平台全托管开箱即用。"
     },
     features: {
-      title: "Agent Swarm 三大核心产品产线",
-      desc: "基于严肃生产验证的 Agent 协作团队，直接交付可用的研发代码、多模态营销内容与全网情报萃取成果。",
+      title: "三大核心 AI 数字团队",
+      desc: "无需懂代码或提示词，AI 团队帮你搞定软件开发、营销内容制作与全网情报搜集，直接交付能用的成果。",
       rd: {
         title: "软件研发",
-        desc: "Agent Swarm 自主完成需求分析、架构规划、代码生成与单元测试。Git 影子沙箱隔离执行，V1-V4 自愈黑盒验证，PR 自动提交等待合并，写操作绝不在你不知情时发生。",
-        tag1: "Agent Swarm 协作",
-        tag2: "V1-V4 自愈黑盒",
-        tag3: "Git 影子沙箱"
+        desc: "AI 研发团队自动理解业务需求、设计方案、编写代码并完成测试。在独立安全环境运行，所有关键改动必须由你确认后才上线，绝不瞎改乱改。",
+        tag1: "AI 团队自主协作",
+        tag2: "自动测试与修复",
+        tag3: "确认后再上线"
       },
       gen: {
         title: "内容工厂",
-        desc: "多模态 Agent 全链路协作：短视频脚本分镜、拟真声音合成、视觉素材设计与多平台批量分发一键完成。语义一致性审计保证交付质量，输出真实可用的营销结果。",
-        tag1: "多模态批量生产",
-        tag2: "视觉与音效一致性",
-        tag3: "全平台一键分发"
+        desc: "AI 营销团队全自动搞定短视频脚本创作、拟真人声配音、画面设计与多平台一键发布。保持品牌风格统一，直接交付能直接用的营销素材。",
+        tag1: "短视频与文案批量做",
+        tag2: "真人音效与视觉统一",
+        tag3: "多平台一站式发布"
       },
       ing: {
         title: "摄取分发",
-        desc: "全网情报与多源内容自动化采集、双轨转录、大模型结构化改写与多渠道分发。四阶段 Agent 流水线全程无人值守推演，为企业持续供给知识与营销原料。（* 灰度开放中，申请准入）",
-        tag1: "多源自动化采集",
-        tag2: "AI 结构化改写",
-        tag3: "四阶段无人流转"
+        desc: "全网热点与情报自动采集、语音自动转文字、AI 提炼重写并多渠道发布。24 小时无人值守，源源不断为你的企业输送营销素材与行业知识。（* 灰度开放中，支持申请）",
+        tag1: "全网热点自动抓",
+        tag2: "AI 智能提炼重写",
+        tag3: "全天候无人自动跑"
       }
     },
     customers: {
-      title: "全规模覆盖的企业级交付方案",
-      desc: "无论是超级个体还是世界 500 强，univerOS 提供差异化的部署与服务策略，应对企业级自动化诉求。",
+      title: "适合不同规模企业的省心方案",
+      desc: "无论你是 1 人的个人创业者，还是上千人的大型企业，univerOS 都提供开箱即用、安全合规的落地策略。",
       opc: {
-        badge: "1-3 人团队 / 早期验证",
-        title: "超级个体企业 (OPC)",
-        desc: "精简团队，强烈需要 AI 替代研发、营销与运营多职能工作。通过高密度 Agent 自动化释放创始人生产力，实现极速迭代。"
+        badge: "1-3 人团队 / 创业工作室",
+        title: "超级个体与小微工作室",
+        desc: "一个人就是一家公司。用 AI 替代繁琐的软件开发、文案营销与日常运营杂活，释放创始人精力，专注于做业务和赚利润。"
       },
       sme: {
-        badge: "10-200 人 / 核心腰部",
+        badge: "10-200 人 / 快速增长企业",
         title: "高成长型中小企业",
-        desc: "无需显著增加员工编制即可实现产能规模化扩大。解决“产品持续迭代，但市场表达与获客跟不上”的痛点，提供清晰可衡量的 ROI。"
+        desc: "不大幅增加招人成本，也能让业务产能翻倍。解决“产品很好但市场推广跟不上”的痛点，用更少投入换来更清晰的收益回报。"
       },
       trad: {
-        badge: "零技术门槛 / 托管算力",
-        title: "非技术垂直行业企业",
-        desc: "面向工业、传统制造、餐饮等零技术基础企业。通过“托管算力模式”零门槛接入，开箱即用订阅按次/按月套餐，由平台托管推理通道。"
+        badge: "零技术门槛 / 平台全托管",
+        title: "传统与非技术行业企业",
+        desc: "面向餐饮、制造、传统服务等零技术基础企业。不需要懂 AI 概念或申请账号，开箱即用订阅服务，平台帮你搞定一切后台。"
       },
       enterprise: {
         badge: "专有部署 / 极致安全",
-        title: "大型行业企业与国央企集团",
-        desc: "面向金融、医疗、工业等重度行业。完全物理隔离部署，NATS 跨网调度，CUP 凭证自持零离场，Append-only 存证落链，确保核心链条无人化刚性运转。"
+        title: "大型行业企业与集团公司",
+        desc: "面向金融、医疗、工业等对合规要求极高的行业。提供完全隔离的本地部署方案，密码和数据留在企业内部，安全合规无风险。"
       }
     },
     trust: {
-      title: "Agent Swarm 内置企业级安全与自愈保障",
-      desc: "每一个自主执行动作，都有三套企业级机制在底层守护你的业务边界与生产连续性。",
+      title: "AI 团队内置企业级安全与自动修复",
+      desc: "无需担心 AI 乱跑或出错，系统内置三重保障机制，守护你的业务安全与正常运转。",
       t1: {
-        title: "L1-L3 动态风险仲裁",
-        desc: "按风险等级自动分级。低风险自主执行，中风险推送 60 分钟审批窗口，高风险强制阻塞等待授权。写操作绝不在你不知情时发生，Agent 有能力，更有边界。",
-        badge: "L1-L3 风险仲裁"
+        title: "动态安全审批",
+        desc: "区分常规任务与高风险操作。常规日常工作 AI 自动完成；涉及修改重要数据或上线等高风险动作，自动弹出确认提示，关键开关始终握在你手里。",
+        badge: "智能安全把关"
       },
       t2: {
-        title: "MAPE-K 自愈黑盒",
-        desc: "实时监控节点健康。检测到异常自动触发 诊断→修复→验证 闭环，V1-V4 四级黑盒测试确保修复结果通过完整验证后再合并。Agent 团队自动修复，不打扰你。",
-        badge: "V1-V4 自愈闭环"
+        title: "智能自动修复",
+        desc: "系统 24 小时实时监控运行状态。一旦遇到报错或异常，AI 团队会自动诊断原因并尝试修复测试，直到验证无误再提交，不需要你懂技术去折腾。",
+        badge: "故障自动修复"
       },
       t3: {
-        title: "Reality Ledger 全链路存证",
-        desc: "任务指令、状态流转、审批记录与账单全部生成哈希链落库，Append-only 不可篡改。随时导出，满足企业安全合规“Audit-Ready”审计要求。",
-        badge: "Append-only 存证"
+        title: "全流程安全存证",
+        desc: "每一个指令下发、执行步骤和操作记录都自动生成防篡改日志，全过程透明清晰，随时可以导出，轻松满足企业安全合规要求。",
+        badge: "安全合规可查"
       }
     },
     security: {
-      title: "企业级安全，保障数据主权",
-      desc: "univerOS 从架构层保障企业数字主权。凭证物理隔离，租户隔离，平台零接触明文。",
+      title: "你的数据，始终安全可控",
+      desc: "univerOS 从底层架构保护企业的数据安全。密码留在本地，数据独立隔离，平台绝不触碰你的核心资产。",
       cup: {
-        title: "API 密钥本地物理隔离（CUP 协议）",
-        desc: "大模型 Key 与 Git 凭证死锁在本地安全区，平台云端零接触明文，绝对不离场。"
+        title: "账号密码本地锁定（密码保险箱）",
+        desc: "大模型账号 Key 和软件密码保存在你自己的电脑本地，云端只传递任务指令，明文密码绝对不上云。"
       },
       ledger: {
-        title: "业务审批主权归属租户",
-        desc: "业务 L3 高风险操作仅租户 Tenant UI 可显式授权，平台后台物理剥离审批控件，杜绝越权。"
+        title: "关键审批由你做主",
+        desc: "高风险操作必须由你在控制台点击确认才生效，平台管理员后台无法越权干预，防止任何未经授权的操作。"
       },
-      boxTitle: "// 钧曦 AI-OS 安全边界宣言",
-      item1: "凭证物理隔离（CUP 协议）：API 密钥与部署凭证存储在本地，平台侧零接触明文。",
-      item2: "租户命名空间阻断：基于 DID 的 NATS 物理隔离，严格切断跨企业数据传输。",
-      item3: "Append-only 审计链：Reality Ledger 哈希链不可逆写入，满足企业安全合规 Audit-Ready 审计要求。"
+      boxTitle: "// univerOS 安全保障承诺",
+      item1: "账号密码本地加密：敏感凭证保存在本地客户端，平台服务端零接触。",
+      item2: "企业数据独立隔离：不同企业之间的数据通道严格切断，互不影响。",
+      item3: "全流程日志防篡改：所有操作自动留痕存证，满足企业安全审计要求。"
     },
     partner: {
-      title: "共同建设 Agent Swarm 代理生态",
-      desc: "全国范围招募 IT 集成商、数字化转型咨询团队与技术服务商。提供首次订阅高额分润 + 长尾算力永续分成，基于 Reality Ledger 账本按月透明结算。一次签约，长期收益。",
-      btn: "立即申请代理商资格"
+      title: "共同建设 AI Workforce 代理生态",
+      desc: "面向全国招募 IT 服务商、咨询团队与代理伙伴。提供高额首次推荐分成 + 长尾服务永续收益，账目透明按月结算。一次签约，长期共享 AI 红利。",
+      btn: "立即申请代理加盟"
     },
     faq: {
       title: "常见问题解答",
       q1: "Q: univerOS 能给企业带来什么体验？",
-      a1: "A: univerOS 给你更好的 AI Workforce 体验，安全、交付！传统 AI 工具只给建议，univerOS 依靠 Agent Swarm 自主协作与自愈机制，安全地完成代码编写、内容批量生产与情报摄取分发，直接交付生产结果。",
-      q2: "Q: 算力需要自己准备吗？",
-      a2: "A: 支持两种灵活模式：① BYOK（自备 API 密钥）：接入 DeepSeek、OpenAI、Qwen 等，成本完全自控；② 平台托管算力：非技术企业订阅平台积分即可开箱即用，无需管理 API 账号。",
-      q3: "Q: 我们的敏感凭证和数据安全吗？",
-      a3: "A: 绝对安全。CUP 凭证隔离协议保障密钥死锁在本地，平台云端零接触明文；业务 L3 高风险操作必须经由租户（Tenant UI）显式授权，平台后台无权介入，数据完全在你的掌控下。",
-      q4: "Q: univerOS 覆盖哪些规模的企业？",
-      a4: "A: 全规模覆盖！从 1-3 人超级个体 (OPC) 释放创始人生产力、到 10-200 人高成长中小企业扩大产能 ROI、非技术传统行业托管零门槛接入，再到大型国央企与 500 强专有部署物理隔离，都有匹配的交付方案。",
-      q5: "Q: 目前对外开放哪些产品产线？",
-      a5: "A: 当前开放三大核心产线：① 软件研发：从需求到 PR 代码提交的全流程自动化；② 内容工厂：多模态内容批量生产与全平台分发；③ 摄取分发：全网情报与知识自动化采集与转写（灰度邀请中）。"
+      a1: "A: univerOS 给你更好的 AI Workforce 体验，安全、交付！市面上的 AI 工具只给你给建议、写草稿；univerOS 依靠 AI 数字团队自主协作与自动修复，帮你把软件改好、把内容做好、把情报抓好，直接交卷。",
+      q2: "Q: 使用 univerOS 需要懂技术或大模型知识吗？",
+      a2: "A: 完全不需要！univerOS 支持全托管模式，你不需要申请 API Key 或学习复杂的提示词。像平时点外卖一样输入你的需求，AI 团队就会自动去干活。",
+      q3: "Q: 我们的数据和密码安全吗？",
+      a3: "A: 非常安全！你的账号密码保存在你本地电脑的“密码保险箱”中，平台不上云接触；重要的高风险修改必须你亲自确认才生效，平台后台无法越权操作。",
+      q4: "Q: 适合哪些规模的企业使用？",
+      a4: "A: 各种规模都适合！1-3 人的创业工作室可以省下招人成本，10-200 人的中小企业可以快速扩大产能，传统非技术企业可以开箱即用全托管，大型集团可以私有化部署。",
+      q5: "Q: 目前开通了哪些业务服务？",
+      a5: "A: 当前已开放三大核心服务：① 软件研发：自动写代码和做测试；② 内容工厂：批量做短视频、配音和发布；③ 摄取分发：自动抓取热点和提炼知识（邀请制测试中）。"
     },
     pricing: {
       header: {
-        tag: "双轨弹性财务模式",
-        title: "产线席位订阅与计费细则",
-        desc: "univerOS 采用“工具席位费 + 运行消耗费”的双轨弹性结算机制，支持自备算力（BYOK）或订阅平台托管算力。"
+        tag: "灵活透明的付费模式",
+        title: "套餐席位与计费说明",
+        desc: "采用“基础席位费 + 实际消耗”的透明模式，支持使用自己的大模型账号（BYOK），也支持直接订阅托管算力。"
       },
       cards: {
         rd: {
           title: "软件研发席位",
-          price: "内测特惠 / 联系销售",
-          quota: "1,000 次工作流调用/月",
-          overagePrice: "试运营期间根据人工核账并按次结算",
-          f1: "Agent Swarm 协同研发",
-          f2: "Git 影子工作区 (Shadow Branch)",
-          f3: "V1-V4 级黑盒测试验证自愈",
-          f4: "提交 Pull Request 目标等待合并",
-          f5: "DID 租户身份逻辑隔离",
-          btn: "开通软件研发席位"
+          price: "内测特惠 / 联系客服",
+          quota: "1,000 次任务/月",
+          overagePrice: "超出部分按实际调用次数透明结算",
+          f1: "AI 团队协同研发",
+          f2: "独立隔离安全测试",
+          f3: "自动诊断与修复报错",
+          f4: "成果确认后再上线",
+          f5: "企业数据独立保护",
+          btn: "开通软件研发"
         },
         gen: {
           title: "内容工厂席位",
-          price: "内测特惠 / 联系销售",
-          quota: "800 次工作流调用/月",
-          overagePrice: "试运营期间根据人工核账并按次结算",
-          f1: "短视频分镜脚本智能规划",
-          f2: "FishTTS 本地化拟真声音合成",
-          f3: "语义一致性一致性审计",
-          f4: "多模态素材剪辑与批量交付",
-          f5: "全平台一键发布分发",
-          btn: "开通内容工厂席位"
+          price: "内测特惠 / 联系客服",
+          quota: "800 次任务/月",
+          overagePrice: "超出部分按实际调用次数透明结算",
+          f1: "短视频脚本智能生成",
+          f2: "拟真实人发音配音",
+          f3: "画面风格一致性把控",
+          f4: "营销素材批量剪辑交付",
+          f5: "全平台一键发布",
+          btn: "开通内容工厂"
         },
         ing: {
           title: "摄取分发专线",
-          price: "专线部署 / 评估报价",
-          quota: "根据物理节点部署协商设定",
-          overagePrice: "按需定制",
-          f1: "Whisper 音轨双轨采集与结构化转写",
-          f2: "大模型智能结构化重写",
-          f3: "一键同步至企业社交渠道矩阵",
-          f4: "企业本地物理节点独占部署",
-          f5: "四阶段无人推演流转",
+          price: "专线部署 / 定制报价",
+          quota: "根据企业实际需求评估定制",
+          overagePrice: "按需灵活定制",
+          f1: "语音智能识别转写",
+          f2: "AI 智能提炼与改写",
+          f3: "自动同步到企业账号矩阵",
+          f4: "企业本地物理节点部署",
+          f5: "24 小时无人值守运行",
           btn: "联系客户经理"
         }
       },
       policy: {
-        title: "计费扣减规则与免责声明",
-        item1: "1. 计费起点认定：计费扣减以 Brain 服务接收到请求并成功写入 NATS 任务队列的主题为准。",
-        item2: "2. 交付质量承诺：Agent Swarm 配合 MAPE-K 自愈黑盒确保任务的高质量推演与刚性执行。",
-        item3: "3. 算力密钥隔离：univerOS 绝不托管任何明文 API Key。您的 LLM / 视觉多模态密钥仅保存在本地客户端物理存储中。"
+        title: "计费说明与服务承诺",
+        item1: "1. 计费起点：任务成功提交并开始由 AI 团队处理时计算额度。",
+        item2: "2. 交付保障：AI 团队结合自动纠错机制，全力保障任务的高质量交付。",
+        item3: "3. 密码安全：univerOS 不会保管你的明文密码，大模型账号保存在你本地电脑。"
       }
     }
   },
@@ -224,94 +224,57 @@ const translations: Record<Language, TranslationDict> = {
       tag: "Enterprise Multi-Function Delivery System",
       title: "univerOS Gives You a Better",
       titleHighlight: "AI Workforce Experience. Secure, Delivered!",
-      desc: "Autonomous Agent Swarm collaboration, MAPE-K self-healing loop, and Reality Ledger full-chain audit trail. From OPCs to Fortune 500 enterprises — secure, governed, and real delivery.",
+      desc: "AI digital teams collaborate autonomously, auto-correcting errors and keeping full audit trails. From OPCs to conglomerates — simple, secure, real results delivered.",
       btnApply: "Partner Application",
       btnPricing: "Get Started",
-      tip: "* Supports BYOK (bring your own API key) or platform-managed compute — your choice."
+      tip: "* Bring your own LLM keys (BYOK) or use our fully managed turnkey compute."
     },
     features: {
-      title: "Agent Swarm Core Production Lines",
-      desc: "Production-validated Agent Swarm teams delivering usable R&D code, multimodal marketing content, and global intelligence intake.",
+      title: "Three Core AI Digital Teams",
+      desc: "No code or prompt skills needed. AI teams handle R&D, content creation, and global intelligence intake, delivering ready-to-use outcomes.",
       rd: {
         title: "Software R&D",
-        desc: "Agent Swarm autonomously completes requirement analysis, architecture design, code generation, and unit testing. Git shadow sandbox execution, V1-V4 self-healing validation, auto PR submission — no code changes happen without your awareness.",
-        tag1: "Agent Swarm Collab",
-        tag2: "V1-V4 Self-Healing",
-        tag3: "Git Shadow Sandbox"
+        desc: "AI R&D teams understand requirements, design solutions, write code, and run tests automatically. Executes in isolated sandboxes — key changes wait for your explicit approval before going live.",
+        tag1: "Autonomous AI Team",
+        tag2: "Auto Testing & Fixes",
+        tag3: "Review Before Merge"
       },
       gen: {
         title: "Content Factory",
-        desc: "Multimodal Agent end-to-end collaboration: video storyboard planning, realistic voice synthesis, visual asset design, and multi-channel batch distribution in one run. Semantic consistency audit ensures real marketing deliverables.",
-        tag1: "Multimodal Production",
-        tag2: "Visual & Voice Audit",
-        tag3: "Multi-Channel Publish"
+        desc: "AI marketing teams handle video scriptwriting, voice synthesis, visual design, and multi-channel batch publishing in one click. Maintains brand consistency to deliver ready-to-use marketing assets.",
+        tag1: "Batch Script & Video",
+        tag2: "Realistic Voice & Style",
+        tag3: "One-Click Distribution"
       },
       ing: {
         title: "Intelligence Intake",
-        desc: "Automated multi-source intelligence intake, dual-track transcription, LLM rewriting, and multi-channel distribution. Unattended four-stage Agent pipeline continuously feeding knowledge assets. (* Gray-release invite-only)",
-        tag1: "Multi-Source Intake",
-        tag2: "AI Structured Rewrite",
-        tag3: "Four-Stage Pipeline"
+        desc: "Automated intelligence intake, voice-to-text, AI rewriting, and multi-channel distribution. Runs 24/7 unattended, feeding your business with fresh marketing and knowledge assets. (* Gray release)",
+        tag1: "Automated Global Intake",
+        tag2: "AI Summarize & Rewrite",
+        tag3: "24/7 Unattended Engine"
       }
     },
     customers: {
-      title: "Delivery Solutions Across Every Scale",
-      desc: "From OPCs to global conglomerates, univerOS provides tailored deployment strategies to fulfill enterprise automation needs.",
+      title: "Worry-Free Solutions for Every Business Scale",
+      desc: "Whether you are a solo entrepreneur or a thousand-employee corporation, univerOS offers turnkey, secure, and compliant deployment strategies.",
       opc: {
-        badge: "1-3 Team / Seed Growth",
-        title: "One-Person Company (OPC)",
-        desc: "Lean teams using AI Workforce to replace R&D, marketing, and operations. High-density Agent automation liberates founder bandwidth for rapid iteration."
+        badge: "1-3 Team / Solo Studio",
+        title: "Solo Entrepreneurs & Micro Studios",
+        desc: "One person as a full company. Let AI take over tedious R&D, content, and operation tasks so you can focus on core strategy and revenue."
       },
       sme: {
-        badge: "10-200 Staff / Core Market",
+        badge: "10-200 Staff / High Growth",
         title: "High-Growth SMEs",
-        desc: "Scale output capacity without expanding headcount. Directly solves the pain point of 'fast product updates but lagging marketing and acquisition' with measurable ROI."
+        desc: "Double output capacity without doubling headcount. Solves 'great product but weak marketing' pain points with clear, measurable ROI."
       },
       trad: {
-        badge: "Zero Tech Barrier / Managed",
-        title: "Non-Tech Vertical Enterprises",
-        desc: "Designed for traditional industries (manufacturing, dining, etc.) with zero LLM/API background. Turnkey managed compute subscription for instant automation."
+        badge: "Zero Tech Barrier / Fully Managed",
+        title: "Traditional & Non-Tech Enterprises",
+        desc: "Designed for non-tech industries (dining, manufacturing, traditional services). No API keys or technical skills needed — turnkey subscription managed by us."
       },
       enterprise: {
-        badge: "Private On-Prem / Ultimate Security",
+        badge: "Private Deploy / Top Security",
         title: "Large Enterprises & Conglomerates",
-        desc: "Built for mission-critical industries (finance, healthcare, mining). Fully isolated deployment, cross-net NATS dispatch, CUP local credential vaults, and Append-only audit logging."
-      }
-    },
-    trust: {
-      title: "Agent Swarm Built-in Enterprise Safety & Self-Healing",
-      desc: "Every autonomous execution step is safeguarded by three enterprise-grade security and self-healing mechanisms at the core.",
-      t1: {
-        title: "L1-L3 Dynamic Risk Arbitration",
-        desc: "Automatic risk-level classification. Low-risk executes silently, medium-risk pushes a 60-min approval window, high-risk hard-blocks for explicit authorization. Write actions never happen without your knowledge.",
-        badge: "L1-L3 Arbitration"
-      },
-      t2: {
-        title: "MAPE-K Self-Healing Loop",
-        desc: "Real-time node monitoring. Anomalies automatically trigger diagnose → fix → verify loops. V1-V4 stage blackbox matrix ensures fixes pass full validation before any merge. Agents fix themselves silently.",
-        badge: "V1-V4 Self-Healing"
-      },
-      t3: {
-        title: "Reality Ledger — Full Audit Trail",
-        desc: "Task dispatches, state transitions, approval logs, and billing entries generate hash-chained immutable records. Append-only, tamper-proof, fully Audit-Ready for enterprise compliance.",
-        badge: "Append-Only Audit"
-      }
-    },
-    security: {
-      title: "Enterprise-Grade Data Sovereignty",
-      desc: "Architected for data sovereignty — credentials live locally, tenant namespaces are isolated, platform has zero contact with plaintext.",
-      cup: {
-        title: "API Keys Physical Local Isolation (CUP Protocol)",
-        desc: "LLM API keys and deployment credentials live strictly in your local client vault. Zero plaintext contact on cloud servers."
-      },
-      ledger: {
-        title: "Tenant-Owned Approval Sovereignty",
-        desc: "Business L3 high-risk actions can only be authorized in the Tenant UI. The platform admin dashboard has no control widgets, eliminating overreach."
-      },
-      boxTitle: "// univerOS Security Boundary",
-      item1: "Credential Physical Isolation (CUP Protocol): API keys and tokens are stored locally — zero plaintext contact on platform servers.",
-      item2: "Tenant Namespace Partitioning: DID-based NATS namespace physical isolation strictly prevents cross-tenant data leaks.",
-      item3: "Append-Only Audit Chain: Reality Ledger hash records are irreversibly written to satisfy Audit-Ready compliance requirements."
     },
     partner: {
       title: "Build the Agent Swarm Ecosystem Together",
