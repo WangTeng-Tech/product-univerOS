@@ -259,6 +259,98 @@ export default function Home() {
               </div>
             </div>
           </div>
+
+          {/* Big Tech Infinite Marquee Logo Wall */}
+          <div style={{ marginTop: '4.5rem', paddingTop: '2.5rem', borderTop: '1px dashed var(--color-border)' }}>
+            <p style={{
+              textAlign: 'center',
+              fontSize: '0.75rem',
+              fontWeight: 600,
+              letterSpacing: '0.1em',
+              color: 'var(--color-text-secondary)',
+              textTransform: 'uppercase',
+              marginBottom: '2rem'
+            }}>
+              {t("customers.techWallTitle")}
+            </p>
+
+            <style>{`
+              @keyframes marqueeRoll {
+                0% { transform: translateX(0%); }
+                100% { transform: translateX(-50%); }
+              }
+            `}</style>
+
+            <div style={{
+              overflow: 'hidden',
+              whiteSpace: 'nowrap',
+              position: 'relative',
+              WebkitMaskImage: 'linear-gradient(to right, transparent, black 12%, black 88%, transparent)',
+              maskImage: 'linear-gradient(to right, transparent, black 12%, black 88%, transparent)'
+            }}>
+              <div style={{
+                display: 'inline-flex',
+                gap: '2.5rem',
+                animation: 'marqueeRoll 25s linear infinite',
+                width: 'max-content'
+              }}>
+                {[
+                  { name: "OpenAI", tag: "GPT-4o / O3" },
+                  { name: "DeepSeek", tag: "V3 / R1" },
+                  { name: "Google Cloud", tag: "Gemini Pro" },
+                  { name: "Microsoft Azure", tag: "Enterprise AI" },
+                  { name: "AWS", tag: "Bedrock & EC2" },
+                  { name: "NVIDIA", tag: "Tensor Core" },
+                  { name: "Meta AI", tag: "Llama 3" },
+                  { name: "Hugging Face", tag: "Open Models" },
+                  { name: "Anthropic", tag: "Claude 3.5" },
+                  { name: "GitHub", tag: "Shadow Branch" },
+
+                  // Duplicate array for seamless infinite marquee loop
+                  { name: "OpenAI", tag: "GPT-4o / O3" },
+                  { name: "DeepSeek", tag: "V3 / R1" },
+                  { name: "Google Cloud", tag: "Gemini Pro" },
+                  { name: "Microsoft Azure", tag: "Enterprise AI" },
+                  { name: "AWS", tag: "Bedrock & EC2" },
+                  { name: "NVIDIA", tag: "Tensor Core" },
+                  { name: "Meta AI", tag: "Llama 3" },
+                  { name: "Hugging Face", tag: "Open Models" },
+                  { name: "Anthropic", tag: "Claude 3.5" },
+                  { name: "GitHub", tag: "Shadow Branch" }
+                ].map((logo, index) => (
+                  <div key={index} style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '0.6rem',
+                    background: 'var(--color-bg-secondary)',
+                    border: '1px solid var(--color-border)',
+                    padding: '0.6rem 1.25rem',
+                    borderRadius: '30px',
+                    opacity: 0.85,
+                    transition: 'all 0.3s ease'
+                  }}>
+                    <span style={{
+                      fontWeight: 700,
+                      fontSize: '0.9rem',
+                      color: 'var(--color-text-primary)'
+                    }}>
+                      {logo.name}
+                    </span>
+                    <span style={{
+                      fontSize: '0.7rem',
+                      padding: '0.1rem 0.4rem',
+                      background: 'var(--color-accent-light)',
+                      color: 'var(--color-accent-main)',
+                      borderRadius: '10px',
+                      fontWeight: 600
+                    }}>
+                      {logo.tag}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 

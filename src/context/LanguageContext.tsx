@@ -71,6 +71,7 @@ const translations: Record<Language, TranslationDict> = {
     customers: {
       title: "适合不同规模企业的省心方案",
       desc: "无论你是 1 人的个人创业者，还是上千人的大型企业，univerOS 都提供开箱即用、安全合规的落地策略。",
+      techWallTitle: "无缝兼容全球顶尖 AI 模型与云计算基础设施",
       opc: {
         badge: "1-3 人团队 / 创业工作室",
         title: "超级个体与小微工作室",
@@ -259,6 +260,7 @@ const translations: Record<Language, TranslationDict> = {
     customers: {
       title: "Worry-Free Solutions for Every Business Scale",
       desc: "Whether you are a solo entrepreneur or a thousand-employee corporation, univerOS offers turnkey, secure, and compliant deployment strategies.",
+      techWallTitle: "SEAMLESS INTEGRATION WITH GLOBAL TECH ECOSYSTEM & CLOUD INFRASTRUCTURE",
       opc: {
         badge: "1-3 Team / Solo Studio",
         title: "Solo Entrepreneurs & Micro Studios",
