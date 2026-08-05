@@ -329,36 +329,19 @@ export default function Home() {
                   <div key={index} style={{
                     display: 'inline-flex',
                     alignItems: 'center',
-                    gap: '0.75rem',
+                    justifyContent: 'center',
                     background: 'var(--color-bg-secondary)',
                     border: '1px solid var(--color-border)',
-                    padding: '0.6rem 1.25rem',
-                    borderRadius: '30px',
-                    opacity: 0.95,
+                    padding: '0.85rem 1.75rem',
+                    borderRadius: '40px',
+                    opacity: 0.9,
                     transition: 'all 0.3s ease'
-                  }}>
+                  }} title={logo.name}>
                     <img 
                       src={logo.icon} 
                       alt={logo.name} 
-                      style={{ width: '22px', height: '22px', objectFit: 'contain', flexShrink: 0 }} 
+                      style={{ height: '32px', maxWidth: '90px', objectFit: 'contain', flexShrink: 0 }} 
                     />
-                    <span style={{
-                      fontWeight: 700,
-                      fontSize: '0.9rem',
-                      color: 'var(--color-text-primary)'
-                    }}>
-                      {logo.name}
-                    </span>
-                    <span style={{
-                      fontSize: '0.7rem',
-                      padding: '0.1rem 0.4rem',
-                      background: 'var(--color-accent-light)',
-                      color: 'var(--color-accent-main)',
-                      borderRadius: '10px',
-                      fontWeight: 600
-                    }}>
-                      {logo.tag}
-                    </span>
                   </div>
                 ))}
               </div>
