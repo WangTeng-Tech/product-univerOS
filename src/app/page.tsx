@@ -64,7 +64,7 @@ export default function Home() {
               {t("hero.desc")}
             </p>
 
-            <div className="hero-actions">
+            <div className="hero-actions" style={{ display: 'flex', justifyContent: 'center' }}>
               <a href="https://app.univeros.cn/explore" target="_blank" rel="noopener noreferrer">
                 <button className="btn-primary hero-btn">
                   {t("hero.btnPricing")}
