@@ -41,100 +41,44 @@ const ShieldCheckIcon = () => (
   </svg>
 );
 
-const CompanyLogoIcon = ({ slug, name }: { slug: string; name: string }) => {
-  switch (slug) {
-    case "nvidia":
-      return (
-        <svg width="28" height="22" viewBox="0 0 24 24" fill="none" style={{ flexShrink: 0 }}>
-          <path d="M12.4 4c-4.4 0-8 3.6-8 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8zm4.3 12.6c-.6.6-1.5 1-2.4 1v-2.3c.4 0 .8-.2 1.1-.5.6-.6.6-1.5 0-2.1l-2.6-2.6v-2.8c2.2.4 3.9 2.3 3.9 4.6 0 1.8-.8 3.5-2.1 4.7z" fill="#76B900" />
-        </svg>
-      );
-    case "tesla":
-      return (
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" style={{ flexShrink: 0 }}>
-          <path d="M12 2C6.5 2 2 2.8 2 2.8l1.6 3.1s3.6-.9 8.4-.9c4.8 0 8.4.9 8.4.9L22 2.8S17.5 2 12 2zm0 4.8c-3.1 0-5.8.5-7.6 1.3l.8 2.2c1.4-.6 3.7-1 6.8-1 3.1 0 5.4.4 6.8 1l.8-2.2c-1.8-.8-4.5-1.3-7.6-1.3zm-1 4.5v10.7h2V11.3h-2z" fill="#E82127" />
-        </svg>
-      );
-    case "meta":
-      return (
-        <svg width="28" height="20" viewBox="0 0 24 16" fill="none" style={{ flexShrink: 0 }}>
-          <path d="M16.5 2C14.2 2 12.4 3.6 11.2 5.5 10 3.6 8.2 2 5.9 2 2.6 2 0 4.7 0 8s2.6 6 5.9 6c2.3 0 4.1-1.6 5.3-3.5 1.2 1.9 3 3.5 5.3 3.5 3.3 0 5.9-2.7 5.9-6S19.8 2 16.5 2zm-10.6 9.6C3.9 11.6 2.2 9.9 2.2 8s1.7-3.6 3.7-3.6c1.6 0 3 1.1 3.9 2.6-.9 1.5-2.3 2.6-3.9 2.6zm10.6 0c-1.6 0-3-1.1-3.9-2.6.9-1.5 2.3-2.6 3.9-2.6 2 0 3.7 1.7 3.7 3.6s-1.7 3.6-3.7 3.6z" fill="#0081FB" />
-        </svg>
-      );
-    case "apple":
-      return (
-        <svg width="22" height="24" viewBox="0 0 24 24" fill="none" style={{ flexShrink: 0 }}>
-          <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.34c.66-.8 1.11-1.92.99-3.04-.96.04-2.12.64-2.8 1.44-.61.71-1.14 1.86-1 2.97 1.07.08 2.15-.57 2.81-1.37z" fill="var(--color-text-primary)" />
-        </svg>
-      );
-    case "oracle":
-      return (
-        <svg width="42" height="24" viewBox="0 0 100 40" fill="none" style={{ flexShrink: 0 }}>
-          <rect width="100" height="40" rx="8" fill="#F80000" />
-          <text x="50" y="26" fontFamily="Arial, sans-serif" fontSize="16" fontWeight="bold" fill="#FFFFFF" textAnchor="middle">ORACLE</text>
-        </svg>
-      );
-    case "sap":
-      return (
-        <svg width="40" height="24" viewBox="0 0 100 40" fill="none" style={{ flexShrink: 0 }}>
-          <path d="M0 0h100v40H0z" fill="#0FAAFF" />
-          <text x="50" y="27" fontFamily="Arial, sans-serif" fontSize="20" fontWeight="900" fontStyle="italic" fill="#FFFFFF" textAnchor="middle">SAP</text>
-        </svg>
-      );
-    case "pfizer":
-      return (
-        <svg width="38" height="24" viewBox="0 0 120 50" fill="none" style={{ flexShrink: 0 }}>
-          <ellipse cx="60" cy="25" rx="55" ry="22" fill="#0072CE" />
-          <text x="60" y="33" fontFamily="Arial, sans-serif" fontSize="24" fontWeight="bold" fontStyle="italic" fill="#FFFFFF" textAnchor="middle">Pfizer</text>
-        </svg>
-      );
-    case "accenture":
-      return (
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" style={{ flexShrink: 0 }}>
-          <path d="M12 4L20 12L12 20" stroke="#A100FF" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
-        </svg>
-      );
-    case "chevron":
-      return (
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" style={{ flexShrink: 0 }}>
-          <path d="M2 5l10 5 10-5M2 13l10 5 10-5" stroke="#005A9C" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" />
-        </svg>
-      );
-    case "att":
-      return (
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" style={{ flexShrink: 0 }}>
-          <circle cx="12" cy="12" r="10" fill="#00A8E0" />
-          <path d="M2 12h20M3.5 7.5h17M3.5 16.5h17" stroke="#FFFFFF" strokeWidth="1.8" />
-        </svg>
-      );
-    case "dropbox":
-      return (
-        <svg width="26" height="24" viewBox="0 0 24 24" fill="none" style={{ flexShrink: 0 }}>
-          <path d="M6 2l6 4-6 4-6-4 6-4zm12 0l6 4-6 4-6-4 6-4zM0 10l6 4 6-4-6-4-6 4zm18-4l-6 4 6 4 6-4-6-4zM6 15l6 4 6-4-6-4-6 4z" fill="#0061FF" />
-        </svg>
-      );
-    case "nike":
-      return (
-        <svg width="32" height="18" viewBox="0 0 24 12" fill="none" style={{ flexShrink: 0 }}>
-          <path d="M21.7 0.8C14.8 4.2 8.7 8.2 2.1 11.2C0.7 11.8 0 11.1 0.7 9.8C2.3 6.9 5.8 3.9 9.8 1.9C13.8 0 18.2-0.6 21.7 0.8Z" fill="var(--color-text-primary)" />
-        </svg>
-      );
-    case "chase":
-      return (
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" style={{ flexShrink: 0 }}>
-          <path d="M4 4h7v7H4zM13 4h7v7h-7zM13 13h7v7h-7zM4 13h7v7H4z" fill="#1175E8" />
-        </svg>
-      );
-    case "wise":
-      return (
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" style={{ flexShrink: 0 }}>
-          <path d="M4 4h16l-6 9h5l-9 9 2-8H7l3-10z" fill="#163300" />
-        </svg>
-      );
-    default:
-      return null;
-  }
+const SPRITE_MAP: Record<string, { x: number; y: number; w: number; h: number }> = {
+  nvidia:    { x: 35,  y: 25,  w: 120, h: 42 },
+  tesla:     { x: 180, y: 25,  w: 110, h: 42 },
+  meta:      { x: 315, y: 25,  w: 110, h: 42 },
+  apple:     { x: 450, y: 25,  w: 90,  h: 42 },
+  oracle:    { x: 575, y: 25,  w: 120, h: 42 },
+  sap:       { x: 720, y: 25,  w: 95,  h: 42 },
+  pfizer:    { x: 35,  y: 105, w: 120, h: 42 },
+  accenture: { x: 180, y: 105, w: 135, h: 42 },
+  chevron:   { x: 335, y: 105, w: 115, h: 42 },
+  att:       { x: 475, y: 105, w: 105, h: 42 },
+  dropbox:   { x: 605, y: 105, w: 115, h: 42 },
+  nike:      { x: 740, y: 105, w: 100, h: 42 },
+  chase:     { x: 35,  y: 185, w: 120, h: 42 },
+  wise:      { x: 180, y: 185, w: 110, h: 42 },
 };
+
+function CompanyLogoSprite({ slug, name }: { slug: string; name: string }) {
+  const pos = SPRITE_MAP[slug];
+  if (!pos) return null;
+
+  return (
+    <div 
+      title={name}
+      style={{
+        width: `${pos.w}px`,
+        height: `${pos.h}px`,
+        backgroundImage: 'url("/Most-Famous-Companies-with-Modern-Logos.png")',
+        backgroundPosition: `-${pos.x}px -${pos.y}px`,
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: '950px auto',
+        flexShrink: 0,
+        display: 'inline-block',
+        borderRadius: '6px'
+      }}
+    />
+  );
+}
 
 export default function Home() {
   const { t } = useTranslation();
@@ -291,7 +235,7 @@ export default function Home() {
                   opacity: 0.95,
                   transition: 'all 0.3s ease'
                 }}>
-                  <CompanyLogoIcon slug={logo.slug} name={logo.name} />
+                  <CompanyLogoSprite slug={logo.slug} name={logo.name} />
                   <span style={{
                     fontWeight: 700,
                     fontSize: '1.15rem',
