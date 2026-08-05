@@ -20,6 +20,7 @@ const translations: Record<Language, TranslationDict> = {
       pricing: "套餐计费",
       security: "安全保障",
       partner: "代理生态",
+      contact: "联系我们",
       login: "代理商登录",
       apply: "申请体验"
     },
@@ -46,15 +47,19 @@ const translations: Record<Language, TranslationDict> = {
     stats: {
       title: "大规模企业级 AI Workforce 落地推演",
       subtitle: "构建全自主 Agent Swarm 突破生产力瓶颈",
-      chip1: "🤖 Brain 调度",
-      chip2: "💬 Agent 战队",
-      chip3: "📊 存证自愈",
+      chip1: "Brain 调度",
+      chip2: "Agent 战队",
+      chip3: "存证自愈",
       num1: "1,500K+",
       label1: "AI 任务已推演",
       num2: "+2.4M",
       label2: "代码与多模态交付",
       num3: "< 15s",
       label3: "故障自动修复响应"
+    },
+    systemFeatures: {
+      title: "univerOS 系统特性",
+      desc: "融合多职能 Agent Swarm 协作、物理级凭证隔离、MAPE-K 自愈闭环与 Append-only 存证的企业级基础设施"
     },
     architecture: {
       title: "univerOS 五维核心系统架构",
@@ -236,6 +241,7 @@ const translations: Record<Language, TranslationDict> = {
       pricing: "Pricing",
       security: "Enterprise Security",
       partner: "Partners",
+      contact: "Contact",
       login: "Partner Login",
       apply: "Apply Trial"
     },
@@ -262,15 +268,19 @@ const translations: Record<Language, TranslationDict> = {
     stats: {
       title: "Enterprise AI Workforce In Action",
       subtitle: "Building Autonomous Agent Swarms to Break Productivity Bottlenecks",
-      chip1: "🤖 Brain Dispatch",
-      chip2: "💬 Agent Squads",
-      chip3: "📊 Audit & Healing",
+      chip1: "Brain Dispatch",
+      chip2: "Agent Squads",
+      chip3: "Audit & Healing",
       num1: "1,500K+",
       label1: "AI Tasks Dispatched",
       num2: "+2.4M",
       label2: "Code & Multimodal Delivered",
       num3: "< 15s",
       label3: "Auto-Fix Response Time"
+    },
+    systemFeatures: {
+      title: "univerOS System Features",
+      desc: "Enterprise infrastructure integrating multi-agent swarm collaboration, credentials isolation, and self-healing"
     },
     architecture: {
       title: "univerOS Five Core System Architectures",

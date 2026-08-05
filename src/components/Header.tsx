@@ -76,6 +76,7 @@ export default function Header() {
           <Link href="/pricing">{t("nav.pricing")}</Link>
           <Link href="/security">{t("nav.security")}</Link>
           <Link href="/partner">{t("nav.partner")}</Link>
+          <Link href="/#contact">{t("nav.contact")}</Link>
         </nav>
         
         {/* Desktop Actions */}
@@ -165,6 +166,9 @@ export default function Header() {
               </Link>
               <Link href="/partner" onClick={() => setIsMenuOpen(false)} style={{ color: 'var(--color-text-primary)' }}>
                 {t("nav.partner")}
+              </Link>
+              <Link href="/#contact" onClick={() => setIsMenuOpen(false)} style={{ color: 'var(--color-text-primary)' }}>
+                {t("nav.contact")}
               </Link>
             </nav>
 

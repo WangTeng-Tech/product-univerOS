@@ -104,10 +104,111 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Big Tech Infinite Marquee Logo Wall (Positioned directly BELOW Hero Section) */}
+      <section style={{
+        padding: '3rem 0',
+        background: 'var(--color-bg-secondary)',
+        borderBottom: '1px solid var(--color-border)'
+      }}>
+        <div className="container">
+          <p style={{
+            textAlign: 'center',
+            fontSize: '0.75rem',
+            fontWeight: 600,
+            letterSpacing: '0.1em',
+            color: 'var(--color-text-secondary)',
+            textTransform: 'uppercase',
+            marginBottom: '1.75rem'
+          }}>
+            {t("customers.techWallTitle")}
+          </p>
+
+          <style>{`
+            @keyframes marqueeRoll {
+              0% { transform: translateX(0%); }
+              100% { transform: translateX(-50%); }
+            }
+          `}</style>
+
+          <div style={{
+            overflow: 'hidden',
+            whiteSpace: 'nowrap',
+            position: 'relative',
+            WebkitMaskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)',
+            maskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)'
+          }}>
+            <div style={{
+              display: 'inline-flex',
+              gap: '3.5rem',
+              animation: 'marqueeRoll 25s linear infinite',
+              width: 'max-content',
+              alignItems: 'center'
+            }}>
+              {[
+                { name: "NVIDIA", icon: "https://api.iconify.design/simple-icons:nvidia.svg?color=%2376b900" },
+                { name: "Tesla", icon: "https://api.iconify.design/simple-icons:tesla.svg?color=%23e82127" },
+                { name: "Meta", icon: "https://api.iconify.design/simple-icons:meta.svg?color=%230081fb" },
+                { name: "Apple", icon: "https://api.iconify.design/simple-icons:apple.svg?color=%23000000" },
+                { name: "Oracle", icon: "https://api.iconify.design/simple-icons:oracle.svg?color=%23f80000" },
+                { name: "SAP", icon: "https://api.iconify.design/simple-icons:sap.svg?color=%230faaff" },
+                { name: "Pfizer", icon: "https://api.iconify.design/simple-icons:pfizer.svg?color=%23000036" },
+                { name: "Accenture", icon: "https://api.iconify.design/simple-icons:accenture.svg?color=%23a100ff" },
+                { name: "Chevron", icon: "https://api.iconify.design/simple-icons:chevron.svg?color=%23005a9c" },
+                { name: "AT&T", icon: "https://api.iconify.design/simple-icons:att.svg?color=%2300a8e0" },
+                { name: "Dropbox", icon: "https://api.iconify.design/simple-icons:dropbox.svg?color=%230061ff" },
+                { name: "Nike", icon: "https://api.iconify.design/simple-icons:nike.svg?color=%23000000" },
+                { name: "Chase", icon: "https://api.iconify.design/simple-icons:chase.svg?color=%231175e8" },
+                { name: "Wise", icon: "https://api.iconify.design/simple-icons:wise.svg?color=%23163300" },
+
+                // Duplicate array for seamless infinite marquee loop
+                { name: "NVIDIA", icon: "https://api.iconify.design/simple-icons:nvidia.svg?color=%2376b900" },
+                { name: "Tesla", icon: "https://api.iconify.design/simple-icons:tesla.svg?color=%23e82127" },
+                { name: "Meta", icon: "https://api.iconify.design/simple-icons:meta.svg?color=%230081fb" },
+                { name: "Apple", icon: "https://api.iconify.design/simple-icons:apple.svg?color=%23000000" },
+                { name: "Oracle", icon: "https://api.iconify.design/simple-icons:oracle.svg?color=%23f80000" },
+                { name: "SAP", icon: "https://api.iconify.design/simple-icons:sap.svg?color=%230faaff" },
+                { name: "Pfizer", icon: "https://api.iconify.design/simple-icons:pfizer.svg?color=%23000036" },
+                { name: "Accenture", icon: "https://api.iconify.design/simple-icons:accenture.svg?color=%23a100ff" },
+                { name: "Chevron", icon: "https://api.iconify.design/simple-icons:chevron.svg?color=%23005a9c" },
+                { name: "AT&T", icon: "https://api.iconify.design/simple-icons:att.svg?color=%2300a8e0" },
+                { name: "Dropbox", icon: "https://api.iconify.design/simple-icons:dropbox.svg?color=%230061ff" },
+                { name: "Nike", icon: "https://api.iconify.design/simple-icons:nike.svg?color=%23000000" },
+                { name: "Chase", icon: "https://api.iconify.design/simple-icons:chase.svg?color=%231175e8" },
+                { name: "Wise", icon: "https://api.iconify.design/simple-icons:wise.svg?color=%23163300" }
+              ].map((logo, index) => (
+                <div key={index} style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '0.85rem',
+                  padding: '0.4rem 0.5rem',
+                  opacity: 0.9,
+                  transition: 'all 0.3s ease'
+                }}>
+                  <img 
+                    src={logo.icon} 
+                    alt={logo.name} 
+                    onError={(e) => { e.currentTarget.style.display = 'none'; }}
+                    style={{ width: '32px', height: '32px', objectFit: 'contain', flexShrink: 0 }} 
+                  />
+                  <span style={{
+                    fontWeight: 700,
+                    fontSize: '1.1rem',
+                    letterSpacing: '-0.02em',
+                    color: 'var(--color-text-primary)'
+                  }}>
+                    {logo.name}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Product Lines Section */}
       <section id="features" style={{
         padding: '5rem 0',
-        background: 'var(--color-bg-secondary)',
+        background: 'var(--color-bg-primary)',
         borderBottom: '1px solid var(--color-border)'
       }}>
         <div className="container">
@@ -147,49 +248,49 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Architecture Core Section (Brain, Agent, Skills, Memory, Self-Healing) */}
+      {/* Combined: univerOS System Features Section (univerOS 系统特性) */}
       <section style={{
         padding: '5rem 0',
-        background: 'var(--color-bg-primary)',
+        background: 'var(--color-bg-secondary)',
         borderBottom: '1px solid var(--color-border)'
       }}>
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
             <h2 style={{ fontSize: '2rem', marginBottom: '1rem', color: 'var(--color-text-primary)' }}>
-              {t("architecture.title")}
+              {t("systemFeatures.title")}
             </h2>
-            <p style={{ maxWidth: '650px', margin: '0 auto', color: 'var(--color-text-secondary)', fontSize: '0.95rem' }}>
-              {t("architecture.desc")}
+            <p style={{ maxWidth: '700px', margin: '0 auto', color: 'var(--color-text-secondary)', fontSize: '0.95rem' }}>
+              {t("systemFeatures.desc")}
             </p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1.25rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1.25rem' }}>
             {/* Brain */}
-            <div style={{ background: 'var(--color-bg-secondary)', border: '1px solid var(--color-border)', borderRadius: '12px', padding: '1.5rem' }}>
+            <div style={{ background: 'var(--color-bg-primary)', border: '1px solid var(--color-border)', borderRadius: '12px', padding: '1.5rem' }}>
               <div style={{ fontSize: '0.75rem', fontWeight: 800, color: 'var(--color-accent-main)', letterSpacing: '0.08em', marginBottom: '0.75rem' }}>01 / DISPATCH</div>
               <h3 style={{ fontSize: '1.1rem', marginBottom: '0.5rem', color: 'var(--color-text-primary)' }}>{t("architecture.brain")}</h3>
               <p style={{ fontSize: '0.85rem', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>{t("architecture.brainDesc")}</p>
             </div>
             {/* Agent */}
-            <div style={{ background: 'var(--color-bg-secondary)', border: '1px solid var(--color-border)', borderRadius: '12px', padding: '1.5rem' }}>
+            <div style={{ background: 'var(--color-bg-primary)', border: '1px solid var(--color-border)', borderRadius: '12px', padding: '1.5rem' }}>
               <div style={{ fontSize: '0.75rem', fontWeight: 800, color: 'var(--color-accent-main)', letterSpacing: '0.08em', marginBottom: '0.75rem' }}>02 / SWARM</div>
               <h3 style={{ fontSize: '1.1rem', marginBottom: '0.5rem', color: 'var(--color-text-primary)' }}>{t("architecture.agent")}</h3>
               <p style={{ fontSize: '0.85rem', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>{t("architecture.agentDesc")}</p>
             </div>
             {/* Skills */}
-            <div style={{ background: 'var(--color-bg-secondary)', border: '1px solid var(--color-border)', borderRadius: '12px', padding: '1.5rem' }}>
+            <div style={{ background: 'var(--color-bg-primary)', border: '1px solid var(--color-border)', borderRadius: '12px', padding: '1.5rem' }}>
               <div style={{ fontSize: '0.75rem', fontWeight: 800, color: 'var(--color-accent-main)', letterSpacing: '0.08em', marginBottom: '0.75rem' }}>03 / SKILLS</div>
               <h3 style={{ fontSize: '1.1rem', marginBottom: '0.5rem', color: 'var(--color-text-primary)' }}>{t("architecture.skills")}</h3>
               <p style={{ fontSize: '0.85rem', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>{t("architecture.skillsDesc")}</p>
             </div>
             {/* Memory */}
-            <div style={{ background: 'var(--color-bg-secondary)', border: '1px solid var(--color-border)', borderRadius: '12px', padding: '1.5rem' }}>
+            <div style={{ background: 'var(--color-bg-primary)', border: '1px solid var(--color-border)', borderRadius: '12px', padding: '1.5rem' }}>
               <div style={{ fontSize: '0.75rem', fontWeight: 800, color: 'var(--color-accent-main)', letterSpacing: '0.08em', marginBottom: '0.75rem' }}>04 / MEMORY</div>
               <h3 style={{ fontSize: '1.1rem', marginBottom: '0.5rem', color: 'var(--color-text-primary)' }}>{t("architecture.memory")}</h3>
               <p style={{ fontSize: '0.85rem', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>{t("architecture.memoryDesc")}</p>
             </div>
             {/* Self-Healing */}
-            <div style={{ background: 'var(--color-bg-secondary)', border: '1px solid var(--color-border)', borderRadius: '12px', padding: '1.5rem' }}>
+            <div style={{ background: 'var(--color-bg-primary)', border: '1px solid var(--color-border)', borderRadius: '12px', padding: '1.5rem' }}>
               <div style={{ fontSize: '0.75rem', fontWeight: 800, color: 'var(--color-accent-main)', letterSpacing: '0.08em', marginBottom: '0.75rem' }}>05 / HEALING</div>
               <h3 style={{ fontSize: '1.1rem', marginBottom: '0.5rem', color: 'var(--color-text-primary)' }}>{t("architecture.healing")}</h3>
               <p style={{ fontSize: '0.85rem', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>{t("architecture.healingDesc")}</p>
@@ -750,6 +851,42 @@ export default function Home() {
               {t("partner.btn")}
             </button>
           </Link>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section id="contact" style={{
+        padding: '4.5rem 0',
+        background: 'var(--color-bg-secondary)',
+        borderBottom: '1px solid var(--color-border)',
+        textAlign: 'center'
+      }}>
+        <div className="container" style={{ maxWidth: '800px' }}>
+          <h2 style={{ fontSize: '2rem', marginBottom: '1rem', color: 'var(--color-text-primary)' }}>
+            {t("footer.sales")}
+          </h2>
+          <p style={{ color: 'var(--color-text-secondary)', marginBottom: '2.5rem', fontSize: '0.95rem' }}>
+            专属客户经理与技术顾问 24/7 为您提供严肃企业级 AI Workforce 落地咨询与解决方案架构支持。
+          </p>
+
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
+            gap: '1.5rem',
+            textAlign: 'left'
+          }}>
+            <div style={{ background: 'var(--color-bg-primary)', padding: '1.5rem', borderRadius: '12px', border: '1px solid var(--color-border)' }}>
+              <div style={{ fontSize: '0.75rem', fontWeight: 800, color: 'var(--color-accent-main)', letterSpacing: '0.08em', marginBottom: '0.5rem' }}>BUSINESS & SALES</div>
+              <h4 style={{ fontSize: '1.05rem', color: 'var(--color-text-primary)', marginBottom: '0.5rem' }}>商务对接与方案咨询</h4>
+              <p style={{ fontSize: '0.85rem', color: 'var(--color-text-secondary)' }}>sales@univeros.cn</p>
+            </div>
+
+            <div style={{ background: 'var(--color-bg-primary)', padding: '1.5rem', borderRadius: '12px', border: '1px solid var(--color-border)' }}>
+              <div style={{ fontSize: '0.75rem', fontWeight: 800, color: 'var(--color-accent-main)', letterSpacing: '0.08em', marginBottom: '0.5rem' }}>PARTNER ECOSYSTEM</div>
+              <h4 style={{ fontSize: '1.05rem', color: 'var(--color-text-primary)', marginBottom: '0.5rem' }}>代理加盟与渠道合作</h4>
+              <p style={{ fontSize: '0.85rem', color: 'var(--color-text-secondary)' }}>partner@univeros.cn</p>
+            </div>
+          </div>
         </div>
       </section>
     </div>
