@@ -81,7 +81,7 @@ export default function Home() {
               {t("hero.tip")}
             </span>
 
-            <div style={{ marginTop: '1rem' }}>
+            <div style={{ marginTop: '1rem', display: 'flex', justifyContent: 'flex-end' }}>
               <span style={{
                 fontSize: '0.75rem',
                 padding: '0.25rem 0.75rem',
@@ -285,14 +285,15 @@ export default function Home() {
               overflow: 'hidden',
               whiteSpace: 'nowrap',
               position: 'relative',
-              WebkitMaskImage: 'linear-gradient(to right, transparent, black 12%, black 88%, transparent)',
-              maskImage: 'linear-gradient(to right, transparent, black 12%, black 88%, transparent)'
+              WebkitMaskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)',
+              maskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)'
             }}>
               <div style={{
                 display: 'inline-flex',
-                gap: '2.5rem',
+                gap: '3.5rem',
                 animation: 'marqueeRoll 25s linear infinite',
-                width: 'max-content'
+                width: 'max-content',
+                alignItems: 'center'
               }}>
                 {[
                   { name: "NVIDIA", icon: "https://api.iconify.design/simple-icons:nvidia.svg?color=%2376b900" },
@@ -329,23 +330,21 @@ export default function Home() {
                   <div key={index} style={{
                     display: 'inline-flex',
                     alignItems: 'center',
-                    gap: '0.65rem',
-                    background: 'var(--color-bg-secondary)',
-                    border: '1px solid var(--color-border)',
-                    padding: '0.55rem 1.25rem',
-                    borderRadius: '30px',
-                    opacity: 0.95,
+                    gap: '0.85rem',
+                    padding: '0.4rem 0.5rem',
+                    opacity: 0.9,
                     transition: 'all 0.3s ease'
                   }}>
                     <img 
                       src={logo.icon} 
                       alt={logo.name} 
                       onError={(e) => { e.currentTarget.style.display = 'none'; }}
-                      style={{ width: '20px', height: '20px', objectFit: 'contain', flexShrink: 0 }} 
+                      style={{ width: '32px', height: '32px', objectFit: 'contain', flexShrink: 0 }} 
                     />
                     <span style={{
                       fontWeight: 700,
-                      fontSize: '0.9rem',
+                      fontSize: '1.1rem',
+                      letterSpacing: '-0.02em',
                       color: 'var(--color-text-primary)'
                     }}>
                       {logo.name}
