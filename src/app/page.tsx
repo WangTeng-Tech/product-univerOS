@@ -132,6 +132,122 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Enterprise Scale & Customers Section */}
+      <section id="customers" style={{
+        padding: '5rem 0',
+        background: 'var(--color-bg-primary)',
+        borderBottom: '1px solid var(--color-border)'
+      }}>
+        <div className="container">
+          <div style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
+            <h2 style={{ fontSize: '2rem', marginBottom: '1rem', color: 'var(--color-text-primary)' }}>
+              {t("customers.title")}
+            </h2>
+            <p style={{ maxWidth: '600px', margin: '0 auto', color: 'var(--color-text-secondary)', fontSize: '0.95rem' }}>
+              {t("customers.desc")}
+            </p>
+          </div>
+
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
+            gap: '1.5rem'
+          }}>
+            {/* OPC */}
+            <div style={{
+              background: 'var(--color-bg-secondary)',
+              border: '1px solid var(--color-border)',
+              borderRadius: '12px',
+              padding: '1.75rem',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'space-between'
+            }}>
+              <div>
+                <span style={{ fontSize: '0.75rem', padding: '0.2rem 0.5rem', background: 'var(--color-accent-light)', color: 'var(--color-accent-main)', borderRadius: '4px', fontWeight: 600, display: 'inline-block', marginBottom: '0.75rem' }}>
+                  {t("customers.opc.badge")}
+                </span>
+                <h3 style={{ fontSize: '1.15rem', marginBottom: '0.75rem', color: 'var(--color-text-primary)' }}>
+                  {t("customers.opc.title")}
+                </h3>
+                <p style={{ fontSize: '0.85rem', color: 'var(--color-text-secondary)', lineHeight: '1.6' }}>
+                  {t("customers.opc.desc")}
+                </p>
+              </div>
+            </div>
+
+            {/* SME */}
+            <div style={{
+              background: 'var(--color-bg-secondary)',
+              border: '1px solid var(--color-border)',
+              borderRadius: '12px',
+              padding: '1.75rem',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'space-between'
+            }}>
+              <div>
+                <span style={{ fontSize: '0.75rem', padding: '0.2rem 0.5rem', background: 'var(--color-accent-light)', color: 'var(--color-accent-main)', borderRadius: '4px', fontWeight: 600, display: 'inline-block', marginBottom: '0.75rem' }}>
+                  {t("customers.sme.badge")}
+                </span>
+                <h3 style={{ fontSize: '1.15rem', marginBottom: '0.75rem', color: 'var(--color-text-primary)' }}>
+                  {t("customers.sme.title")}
+                </h3>
+                <p style={{ fontSize: '0.85rem', color: 'var(--color-text-secondary)', lineHeight: '1.6' }}>
+                  {t("customers.sme.desc")}
+                </p>
+              </div>
+            </div>
+
+            {/* Traditional */}
+            <div style={{
+              background: 'var(--color-bg-secondary)',
+              border: '1px solid var(--color-border)',
+              borderRadius: '12px',
+              padding: '1.75rem',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'space-between'
+            }}>
+              <div>
+                <span style={{ fontSize: '0.75rem', padding: '0.2rem 0.5rem', background: 'var(--color-accent-light)', color: 'var(--color-accent-main)', borderRadius: '4px', fontWeight: 600, display: 'inline-block', marginBottom: '0.75rem' }}>
+                  {t("customers.trad.badge")}
+                </span>
+                <h3 style={{ fontSize: '1.15rem', marginBottom: '0.75rem', color: 'var(--color-text-primary)' }}>
+                  {t("customers.trad.title")}
+                </h3>
+                <p style={{ fontSize: '0.85rem', color: 'var(--color-text-secondary)', lineHeight: '1.6' }}>
+                  {t("customers.trad.desc")}
+                </p>
+              </div>
+            </div>
+
+            {/* Enterprise */}
+            <div style={{
+              background: 'var(--color-bg-secondary)',
+              border: '1px solid var(--color-border)',
+              borderRadius: '12px',
+              padding: '1.75rem',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'space-between'
+            }}>
+              <div>
+                <span style={{ fontSize: '0.75rem', padding: '0.2rem 0.5rem', background: 'var(--color-accent-light)', color: 'var(--color-accent-main)', borderRadius: '4px', fontWeight: 600, display: 'inline-block', marginBottom: '0.75rem' }}>
+                  {t("customers.enterprise.badge")}
+                </span>
+                <h3 style={{ fontSize: '1.15rem', marginBottom: '0.75rem', color: 'var(--color-text-primary)' }}>
+                  {t("customers.enterprise.title")}
+                </h3>
+                <p style={{ fontSize: '0.85rem', color: 'var(--color-text-secondary)', lineHeight: '1.6' }}>
+                  {t("customers.enterprise.desc")}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Trust & Delivery Assurance Section */}
       <section id="trust" style={{
         padding: '5rem 0',
