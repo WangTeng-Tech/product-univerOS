@@ -41,6 +41,54 @@ const ShieldCheckIcon = () => (
   </svg>
 );
 
+const CompanyLogoIcon = ({ slug, name }: { slug: string; name: string }) => {
+  switch (slug) {
+    case "pfizer":
+      return (
+        <svg width="38" height="24" viewBox="0 0 120 50" fill="none" style={{ flexShrink: 0 }}>
+          <ellipse cx="60" cy="25" rx="55" ry="22" fill="#0072CE" />
+          <text x="60" y="33" fontFamily="Arial, sans-serif" fontSize="24" fontWeight="bold" fontStyle="italic" fill="#FFFFFF" textAnchor="middle">Pfizer</text>
+        </svg>
+      );
+    case "accenture":
+      return (
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" style={{ flexShrink: 0 }}>
+          <path d="M12 4L20 12L12 20" stroke="#A100FF" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      );
+    case "att":
+      return (
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" style={{ flexShrink: 0 }}>
+          <circle cx="12" cy="12" r="10" fill="#00A8E0" />
+          <path d="M2 12h20M3.5 7.5h17M3.5 16.5h17" stroke="#FFFFFF" strokeWidth="1.8" />
+        </svg>
+      );
+    case "chase":
+      return (
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" style={{ flexShrink: 0 }}>
+          <path d="M4 4h7v7H4zM13 4h7v7h-7zM13 13h7v7h-7zM4 13h7v7H4z" fill="#1175E8" />
+        </svg>
+      );
+    default:
+      return (
+        <img 
+          src={`https://cdn.simpleicons.org/${slug}`} 
+          alt={name} 
+          onError={(e) => { 
+            const img = e.currentTarget;
+            if (!img.dataset.retried) {
+              img.dataset.retried = 'true';
+              img.src = `https://api.iconify.design/simple-icons:${slug}.svg`;
+            } else {
+              img.style.display = 'none';
+            }
+          }}
+          style={{ width: '28px', height: '28px', objectFit: 'contain', flexShrink: 0 }} 
+        />
+      );
+  }
+};
+
 export default function Home() {
   const { t } = useTranslation();
 
@@ -183,20 +231,7 @@ export default function Home() {
                   opacity: 0.9,
                   transition: 'all 0.3s ease'
                 }}>
-                  <img 
-                    src={`https://cdn.simpleicons.org/${logo.slug}`} 
-                    alt={logo.name} 
-                    onError={(e) => { 
-                      const img = e.currentTarget;
-                      if (!img.dataset.retried) {
-                        img.dataset.retried = 'true';
-                        img.src = `https://api.iconify.design/simple-icons:${logo.slug}.svg`;
-                      } else {
-                        img.style.display = 'none';
-                      }
-                    }}
-                    style={{ width: '28px', height: '28px', objectFit: 'contain', flexShrink: 0 }} 
-                  />
+                  <CompanyLogoIcon slug={logo.slug} name={logo.name} />
                   <span style={{
                     fontWeight: 700,
                     fontSize: '1.1rem',
@@ -659,37 +694,18 @@ export default function Home() {
       }}>
         <div className="container" style={{ maxWidth: '850px' }}>
           <h2 style={{ fontSize: '2rem', marginBottom: '1.25rem', color: 'var(--color-text-primary)' }}>
-            {t("partner.title")} & {t("nav.contact")}
+            联系我们 共建 AI Workforce 生态
           </h2>
           <p style={{ color: 'var(--color-text-secondary)', marginBottom: '2.5rem', fontSize: '0.95rem', lineHeight: '1.7' }}>
             {t("partner.desc")} 专属客户经理与技术顾问 24/7 为您提供严肃企业级 AI Workforce 落地咨询与解决方案架构支持。
           </p>
 
-          <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '3rem' }}>
+          <div style={{ display: 'flex', justifyContent: 'center' }}>
             <Link href="/partner">
               <button className="btn-primary" style={{ padding: '0.75rem 2.5rem', fontSize: '0.95rem' }}>
                 {t("partner.btn")}
               </button>
             </Link>
-          </div>
-
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
-            gap: '1.5rem',
-            textAlign: 'left'
-          }}>
-            <div style={{ background: 'var(--color-bg-secondary)', padding: '1.75rem', borderRadius: '12px', border: '1px solid var(--color-border)' }}>
-              <div style={{ fontSize: '0.75rem', fontWeight: 800, color: 'var(--color-accent-main)', letterSpacing: '0.08em', marginBottom: '0.5rem' }}>BUSINESS & SALES</div>
-              <h4 style={{ fontSize: '1.05rem', color: 'var(--color-text-primary)', marginBottom: '0.5rem' }}>商务对接与方案咨询</h4>
-              <p style={{ fontSize: '0.9rem', color: 'var(--color-text-secondary)', fontWeight: 600 }}>sales@univeros.cn</p>
-            </div>
-
-            <div style={{ background: 'var(--color-bg-secondary)', padding: '1.75rem', borderRadius: '12px', border: '1px solid var(--color-border)' }}>
-              <div style={{ fontSize: '0.75rem', fontWeight: 800, color: 'var(--color-accent-main)', letterSpacing: '0.08em', marginBottom: '0.5rem' }}>PARTNER ECOSYSTEM</div>
-              <h4 style={{ fontSize: '1.05rem', color: 'var(--color-text-primary)', marginBottom: '0.5rem' }}>代理加盟与渠道合作</h4>
-              <p style={{ fontSize: '0.9rem', color: 'var(--color-text-secondary)', fontWeight: 600 }}>partner@univeros.cn</p>
-            </div>
           </div>
         </div>
       </section>
