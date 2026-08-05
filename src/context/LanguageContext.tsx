@@ -34,16 +34,17 @@ const translations: Record<Language, TranslationDict> = {
       copyright: "©2026 univerOS · 企业级多职能交付系统"
     },
     hero: {
-      tag: "企业级多职能交付系统",
-      title: "univerOS 给你更好的",
-      titleHighlight: "AI Workforce 体验，安全、交付！",
-      desc: "AI 数字员工团队自主协作，遇到问题自动纠错修复，全流程安全留痕。从个人工作室到大型集团，省心省力，稳妥交付成果。",
+      tag: "univerOS",
+      badge: "智能 · 安全 · 交付",
+      title: "企业级 AI Workforce",
+      titleHighlight: "多职能交付系统",
+      desc: "univerOS AI 数字员工团队自主协作，从个人工作室到大型集团，不负所托，稳定交付成果，全流程安全留痕，给你更好的 AI Workforce 体验！",
       btnApply: "代理加盟",
       btnPricing: "马上体验",
       tip: "* 支持自备 AI 大模型账号（BYOK），或直接由平台全托管开箱即用。"
     },
     features: {
-      title: "三大核心 AI 数字团队",
+      title: "三大核心 AI 数字战队",
       desc: "无需懂代码或提示词，AI 团队帮你搞定软件全流程开发、全模态内容制作与全球情报摄取分发，直接交付生产成果。",
       rd: {
         title: "软件研发",
@@ -221,16 +222,17 @@ const translations: Record<Language, TranslationDict> = {
       copyright: "©2026 univerOS · Enterprise Multi-Function Delivery System"
     },
     hero: {
-      tag: "Enterprise Multi-Function Delivery System",
-      title: "univerOS Gives You a Better",
-      titleHighlight: "AI Workforce Experience. Secure, Delivered!",
-      desc: "AI digital teams collaborate autonomously, auto-correcting errors and keeping full audit trails. From OPCs to conglomerates — simple, secure, real results delivered.",
+      tag: "univerOS",
+      badge: "Smart · Secure · Delivered",
+      title: "Enterprise AI Workforce",
+      titleHighlight: "Multi-Function Delivery System",
+      desc: "univerOS AI digital teams collaborate autonomously, from solo studios to large conglomerates — reliable delivery, secure audit trails, giving you a better AI Workforce experience!",
       btnApply: "Partner Application",
       btnPricing: "Get Started",
       tip: "* Bring your own LLM keys (BYOK) or use our fully managed turnkey compute."
     },
     features: {
-      title: "Three Core AI Digital Teams",
+      title: "Three Core AI Digital Squads",
       desc: "No code or prompt skills needed. AI teams handle R&D, content creation, and global intelligence intake, delivering ready-to-use outcomes.",
       rd: {
         title: "Software R&D",

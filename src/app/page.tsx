@@ -51,9 +51,21 @@ export default function Home() {
         <div className="container hero-container">
           {/* Left Hero copy */}
           <div className="hero-copy animate-fade-in">
-            <span className="hero-tag">
-              {t("hero.tag")}
-            </span>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.25rem', flexWrap: 'wrap' }}>
+              <span className="hero-tag">
+                {t("hero.tag")}
+              </span>
+              <span style={{
+                fontSize: '0.75rem',
+                padding: '0.2rem 0.6rem',
+                background: 'var(--color-accent-light)',
+                color: 'var(--color-accent-main)',
+                borderRadius: '20px',
+                fontWeight: 600
+              }}>
+                {t("hero.badge")}
+              </span>
+            </div>
             
             <h1 className="hero-title">
               {t("hero.title")}<br />
