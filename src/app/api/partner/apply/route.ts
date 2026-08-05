@@ -10,6 +10,39 @@ export async function POST(req: Request) {
         }
 
         const feishuWebhook = process.env.FEISHU_WEBHOOK_URL
+        const resendApiKey = process.env.RESEND_API_KEY
+        const adminEmail = process.env.ADMIN_EMAIL || "partner@univeros.cn"
+
+        if (resendApiKey) {
+            try {
+                await fetch("https://api.resend.com/emails", {
+                    method: "POST",
+                    headers: {
+                        "Authorization": `Bearer ${resendApiKey}`,
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        from: "univerOS Partner <onboarding@resend.dev>",
+                        to: [adminEmail],
+                        subject: `🤝 新代理商加盟申请通知 - ${companyName || contactName}`,
+                        html: `
+                            <div style="font-family: sans-serif; padding: 20px; line-height: 1.6;">
+                                <h2>🤝 新代理商加盟申请通知</h2>
+                                <p><strong>🏢 公司/机构名称：</strong>${companyName || "个人/未填"}</p>
+                                <p><strong>👤 联系人姓名：</strong>${contactName}</p>
+                                <p><strong>📞 手机/微信：</strong>${phone || "未填"}</p>
+                                <p><strong>✉️ 电子邮箱：</strong>${email || "未填"}</p>
+                                <p><strong>💎 意向合作级别：</strong>${tier || "标准合伙人"}</p>
+                                <p><strong>📍 意向覆盖区域：</strong>${region || "全国"}</p>
+                                <p><strong>📝 团队简介/备注：</strong>${notes || "无"}</p>
+                            </div>
+                        `
+                    })
+                })
+            } catch (resendErr) {
+                console.error("Resend email notify error:", resendErr)
+            }
+        }
 
         if (feishuWebhook) {
             try {

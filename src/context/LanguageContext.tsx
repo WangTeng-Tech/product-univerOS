@@ -43,6 +43,33 @@ const translations: Record<Language, TranslationDict> = {
       btnPricing: "马上体验",
       tip: "* 支持自备 AI 大模型账号（BYOK），或直接由平台全托管开箱即用。"
     },
+    stats: {
+      title: "大规模企业级 AI Workforce 落地推演",
+      subtitle: "构建全自主 Agent Swarm 突破生产力瓶颈",
+      chip1: "🤖 Brain 调度",
+      chip2: "💬 Agent 战队",
+      chip3: "📊 存证自愈",
+      num1: "1,500K+",
+      label1: "AI 任务已推演",
+      num2: "+2.4M",
+      label2: "代码与多模态交付",
+      num3: "< 15s",
+      label3: "故障自动修复响应"
+    },
+    architecture: {
+      title: "univerOS 五维核心系统架构",
+      desc: "围绕意图调度、多技能执行与自动修复建立的严肃生产级 AI Workforce 架构底座",
+      brain: "Brain 调度中心",
+      brainDesc: "全局业务意图分析、任务分解与 NATS 高性能物理隔离中继。",
+      agent: "Agent 数字战队",
+      agentDesc: "多职能 Agent Swarm 团队，各司其职，高效协同推演。",
+      skills: "Skills 技能库",
+      skillsDesc: "模块化固化 SOP 技能包，按需上下文动态注入与闭环执行。",
+      memory: "Memory 记忆上下文",
+      memoryDesc: "向量知识库与长短期上下文状态追踪，降低行业理解门槛。",
+      healing: "Self-Healing 自愈闭环",
+      healingDesc: "MAPE-K 自愈机制与 V1-V4 黑盒测试，自动诊断并修复报错。"
+    },
     features: {
       title: "三大核心 AI 数字战队",
       desc: "无需懂代码或提示词，AI 团队帮你搞定软件全流程开发、全模态内容制作与全球情报摄取分发，直接交付生产成果。",
@@ -231,6 +258,33 @@ const translations: Record<Language, TranslationDict> = {
       btnApply: "Partner Application",
       btnPricing: "Get Started",
       tip: "* Bring your own LLM keys (BYOK) or use our fully managed turnkey compute."
+    },
+    stats: {
+      title: "Enterprise AI Workforce In Action",
+      subtitle: "Building Autonomous Agent Swarms to Break Productivity Bottlenecks",
+      chip1: "🤖 Brain Dispatch",
+      chip2: "💬 Agent Squads",
+      chip3: "📊 Audit & Healing",
+      num1: "1,500K+",
+      label1: "AI Tasks Dispatched",
+      num2: "+2.4M",
+      label2: "Code & Multimodal Delivered",
+      num3: "< 15s",
+      label3: "Auto-Fix Response Time"
+    },
+    architecture: {
+      title: "univerOS Five Core System Architectures",
+      desc: "Production-grade AI Workforce architecture built around intent dispatch, skill execution, and self-healing",
+      brain: "Brain Dispatch Center",
+      brainDesc: "Global business intent analysis, task decomposition, and NATS isolated relay.",
+      agent: "Agent Digital Squads",
+      agentDesc: "Multi-functional Agent Swarm teams operating synchronously.",
+      skills: "Skills Library",
+      skillsDesc: "Modular SOP skill packs injected as dynamic execution contexts.",
+      memory: "Memory Context",
+      memoryDesc: "Vector knowledge bases and long/short-term context state tracking.",
+      healing: "Self-Healing Loop",
+      healingDesc: "MAPE-K self-healing loop and V1-V4 blackbox matrix auto-fixing anomalies."
     },
     features: {
       title: "Three Core AI Digital Squads",
