@@ -51,25 +51,13 @@ export default function Home() {
         <div className="container hero-container">
           {/* Left Hero copy */}
           <div className="hero-copy animate-fade-in">
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.25rem', flexWrap: 'wrap' }}>
-              <span className="hero-tag">
-                {t("hero.tag")}
-              </span>
-              <span style={{
-                fontSize: '0.75rem',
-                padding: '0.2rem 0.6rem',
-                background: 'var(--color-accent-light)',
-                color: 'var(--color-accent-main)',
-                borderRadius: '20px',
-                fontWeight: 600
-              }}>
-                {t("hero.badge")}
-              </span>
-            </div>
+            <span className="hero-tag">
+              {t("hero.tag")}
+            </span>
             
             <h1 className="hero-title">
               {t("hero.title")}<br />
-              <span style={{ color: 'var(--color-accent-main)' }}>{t("hero.titleHighlight")}</span>
+              <span style={{ color: 'var(--color-accent-main)', marginLeft: '50px', display: 'inline-block' }}>{t("hero.titleHighlight")}</span>
             </h1>
             
             <p className="hero-desc">
@@ -92,6 +80,20 @@ export default function Home() {
             <span className="hero-tip">
               {t("hero.tip")}
             </span>
+
+            <div style={{ marginTop: '1rem' }}>
+              <span style={{
+                fontSize: '0.75rem',
+                padding: '0.25rem 0.75rem',
+                background: 'var(--color-accent-light)',
+                color: 'var(--color-accent-main)',
+                borderRadius: '20px',
+                fontWeight: 600,
+                display: 'inline-block'
+              }}>
+                {t("hero.badge")}
+              </span>
+            </div>
           </div>
 
           {/* Right Console block */}
