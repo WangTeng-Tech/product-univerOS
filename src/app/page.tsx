@@ -251,16 +251,57 @@ export default function Home() {
               width: 'max-content',
               alignItems: 'center'
             }}>
-              <img 
-                src="/Most-Famous-Companies-with-Modern-Logos.png" 
-                alt="Most Famous Companies Logos" 
-                style={{ height: '42px', objectFit: 'contain', opacity: 0.95 }}
-              />
-              <img 
-                src="/Most-Famous-Companies-with-Modern-Logos.png" 
-                alt="Most Famous Companies Logos Duplicate" 
-                style={{ height: '42px', objectFit: 'contain', opacity: 0.95 }}
-              />
+              {[
+                { name: "NVIDIA", slug: "nvidia" },
+                { name: "Tesla", slug: "tesla" },
+                { name: "Meta", slug: "meta" },
+                { name: "Apple", slug: "apple" },
+                { name: "Oracle", slug: "oracle" },
+                { name: "SAP", slug: "sap" },
+                { name: "Pfizer", slug: "pfizer" },
+                { name: "Accenture", slug: "accenture" },
+                { name: "Chevron", slug: "chevron" },
+                { name: "AT&T", slug: "att" },
+                { name: "Dropbox", slug: "dropbox" },
+                { name: "Nike", slug: "nike" },
+                { name: "Chase", slug: "chase" },
+                { name: "Wise", slug: "wise" },
+
+                // Duplicate array for seamless infinite marquee loop
+                { name: "NVIDIA", slug: "nvidia" },
+                { name: "Tesla", slug: "tesla" },
+                { name: "Meta", slug: "meta" },
+                { name: "Apple", slug: "apple" },
+                { name: "Oracle", slug: "oracle" },
+                { name: "SAP", slug: "sap" },
+                { name: "Pfizer", slug: "pfizer" },
+                { name: "Accenture", slug: "accenture" },
+                { name: "Chevron", slug: "chevron" },
+                { name: "AT&T", slug: "att" },
+                { name: "Dropbox", slug: "dropbox" },
+                { name: "Nike", slug: "nike" },
+                { name: "Chase", slug: "chase" },
+                { name: "Wise", slug: "wise" }
+              ].map((logo, index) => (
+                <div key={index} style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '0.85rem',
+                  padding: '0.4rem 0.5rem',
+                  opacity: 0.95,
+                  transition: 'all 0.3s ease'
+                }}>
+                  <CompanyLogoIcon slug={logo.slug} name={logo.name} />
+                  <span style={{
+                    fontWeight: 700,
+                    fontSize: '1.15rem',
+                    letterSpacing: '-0.02em',
+                    color: 'var(--color-text-primary)'
+                  }}>
+                    {logo.name}
+                  </span>
+                </div>
+              ))}
             </div>
           </div>
         </div>
