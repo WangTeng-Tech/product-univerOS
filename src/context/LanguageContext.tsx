@@ -44,27 +44,27 @@ const translations: Record<Language, TranslationDict> = {
     },
     features: {
       title: "三大核心 AI 数字团队",
-      desc: "无需懂代码或提示词，AI 团队帮你搞定软件开发、营销内容制作与全网情报搜集，直接交付能用的成果。",
+      desc: "无需懂代码或提示词，AI 团队帮你搞定软件全流程开发、全模态内容制作与全球情报摄取分发，直接交付生产成果。",
       rd: {
         title: "软件研发",
-        desc: "AI 研发团队自动理解业务需求、设计方案、编写代码并完成测试。在独立安全环境运行，所有关键改动必须由你确认后才上线，绝不瞎改乱改。",
-        tag1: "AI 团队自主协作",
-        tag2: "自动测试与修复",
-        tag3: "确认后再上线"
+        desc: "覆盖 AI 官网、AI 小程序、AI-H5 落地宣传页、AI-OA、AI-CRM、AI-ERP 及 AI 财务软件等各类系统。AI 团队一站式搞定设计、开发、测试与交付全流程，安全可控。",
+        tag1: "官网/小程序/H5/OA/CRM/ERP",
+        tag2: "AI 设计/开发/测试/交付全流程",
+        tag3: "安全隔离确认后上线"
       },
       gen: {
         title: "内容工厂",
-        desc: "AI 营销团队全自动搞定短视频脚本创作、拟真人声配音、画面设计与多平台一键发布。保持品牌风格统一，直接交付能直接用的营销素材。",
-        tag1: "短视频与文案批量做",
-        tag2: "真人音效与视觉统一",
-        tag3: "多平台一站式发布"
+        desc: "具备 AI 营销文案、AI 小说改编、AI 图片打标、AI 短视频制作及 AI 全模态批量生产能力。一键流水线输出高质量营销素材与创意成果。",
+        tag1: "营销文案/小说改编/短视频",
+        tag2: "AI 图片打标与全模态生产",
+        tag3: "全平台批量一站式交付"
       },
       ing: {
         title: "摄取分发",
-        desc: "全网热点与情报自动采集、语音自动转文字、AI 提炼重写并多渠道发布。24 小时无人值守，源源不断为你的企业输送营销素材与行业知识。（* 灰度开放中，支持申请）",
-        tag1: "全网热点自动抓",
-        tag2: "AI 智能提炼重写",
-        tag3: "全天候无人自动跑"
+        desc: "具备全球跨时区多节点同步、AI 社媒舆情监控、AI 行业经验采集、AI 知识库构建、AI 视频采集、AI 音频内容提取、AI 内容分发与 AI 播客推流能力，24 小时无人值守。（* 灰度开放中）",
+        tag1: "跨时区多节点/社媒舆情监控",
+        tag2: "音视频提取与知识库构建",
+        tag3: "内容一键分发与播客推流"
       }
     },
     customers: {
@@ -234,24 +234,24 @@ const translations: Record<Language, TranslationDict> = {
       desc: "No code or prompt skills needed. AI teams handle R&D, content creation, and global intelligence intake, delivering ready-to-use outcomes.",
       rd: {
         title: "Software R&D",
-        desc: "AI R&D teams understand requirements, design solutions, write code, and run tests automatically. Executes in isolated sandboxes — key changes wait for your explicit approval before going live.",
-        tag1: "Autonomous AI Team",
-        tag2: "Auto Testing & Fixes",
-        tag3: "Review Before Merge"
+        desc: "Covers AI websites, mini-programs, H5 landing pages, OA, CRM, ERP, and finance software. One-stop AI design, development, testing, and delivery workflow.",
+        tag1: "Website/Mini-App/H5/OA/CRM/ERP",
+        tag2: "AI Design/Dev/Test/Deploy Flow",
+        tag3: "Isolated Review Before Live"
       },
       gen: {
         title: "Content Factory",
-        desc: "AI marketing teams handle video scriptwriting, voice synthesis, visual design, and multi-channel batch publishing in one click. Maintains brand consistency to deliver ready-to-use marketing assets.",
-        tag1: "Batch Script & Video",
-        tag2: "Realistic Voice & Style",
-        tag3: "One-Click Distribution"
+        desc: "Powers AI marketing copy, novel adaptation, image tagging, short video production, and multimodal batch generation. Turnkey pipeline delivering ready-to-use assets.",
+        tag1: "Copywriting/Adaptation/Videos",
+        tag2: "Image Tagging & Multimodal",
+        tag3: "Batch Multi-Channel Delivery"
       },
       ing: {
         title: "Intelligence Intake",
-        desc: "Automated intelligence intake, voice-to-text, AI rewriting, and multi-channel distribution. Runs 24/7 unattended, feeding your business with fresh marketing and knowledge assets. (* Gray release)",
-        tag1: "Automated Global Intake",
-        tag2: "AI Summarize & Rewrite",
-        tag3: "24/7 Unattended Engine"
+        desc: "Features cross-timezone multi-node sync, social media monitoring, industry experience intake, knowledge base building, video/audio extraction, content syndication, and podcast streaming 24/7.",
+        tag1: "Multi-Node Sync & Social Monitor",
+        tag2: "Audio/Video & Knowledge Base",
+        tag3: "Syndication & Podcast Stream"
       }
     },
     customers: {
