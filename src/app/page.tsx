@@ -43,6 +43,44 @@ const ShieldCheckIcon = () => (
 
 const CompanyLogoIcon = ({ slug, name }: { slug: string; name: string }) => {
   switch (slug) {
+    case "nvidia":
+      return (
+        <svg width="28" height="24" viewBox="0 0 24 24" fill="none" style={{ flexShrink: 0 }}>
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 14.5v-3.8c1.8.2 3.2 1.4 3.2 3.8h-3.2zm-2.8-5.3c0-2.2 1.8-4 4-4v2.5c-.8 0-1.5.7-1.5 1.5H10.2z" fill="#76B900" />
+        </svg>
+      );
+    case "tesla":
+      return (
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" style={{ flexShrink: 0 }}>
+          <path d="M12 5.2L16.5 2H7.5L12 5.2zm0 2.2L5 3v2l7 4 7-4V3l-7 4.4zM12 10v12h2V10h-2z" fill="#E82127" />
+        </svg>
+      );
+    case "meta":
+      return (
+        <svg width="28" height="20" viewBox="0 0 24 16" fill="none" style={{ flexShrink: 0 }}>
+          <path d="M16.5 2C14.2 2 12.4 3.6 11.2 5.5 10 3.6 8.2 2 5.9 2 2.6 2 0 4.7 0 8s2.6 6 5.9 6c2.3 0 4.1-1.6 5.3-3.5 1.2 1.9 3 3.5 5.3 3.5 3.3 0 5.9-2.7 5.9-6S19.8 2 16.5 2zm-10.6 9.6C3.9 11.6 2.2 9.9 2.2 8s1.7-3.6 3.7-3.6c1.6 0 3 1.1 3.9 2.6-.9 1.5-2.3 2.6-3.9 2.6zm10.6 0c-1.6 0-3-1.1-3.9-2.6.9-1.5 2.3-2.6 3.9-2.6 2 0 3.7 1.7 3.7 3.6s-1.7 3.6-3.7 3.6z" fill="#0081FB" />
+        </svg>
+      );
+    case "apple":
+      return (
+        <svg width="22" height="24" viewBox="0 0 24 24" fill="none" style={{ flexShrink: 0 }}>
+          <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.34c.66-.8 1.11-1.92.99-3.04-.96.04-2.12.64-2.8 1.44-.61.71-1.14 1.86-1 2.97 1.07.08 2.15-.57 2.81-1.37z" fill="var(--color-text-primary)" />
+        </svg>
+      );
+    case "oracle":
+      return (
+        <svg width="42" height="24" viewBox="0 0 100 40" fill="none" style={{ flexShrink: 0 }}>
+          <rect width="100" height="40" rx="8" fill="#F80000" />
+          <text x="50" y="26" fontFamily="Arial, sans-serif" fontSize="16" fontWeight="bold" fill="#FFFFFF" textAnchor="middle">ORACLE</text>
+        </svg>
+      );
+    case "sap":
+      return (
+        <svg width="40" height="24" viewBox="0 0 100 40" fill="none" style={{ flexShrink: 0 }}>
+          <path d="M0 0h100v40H0z" fill="#0FAAFF" />
+          <text x="50" y="27" fontFamily="Arial, sans-serif" fontSize="20" fontWeight="900" fontStyle="italic" fill="#FFFFFF" textAnchor="middle">SAP</text>
+        </svg>
+      );
     case "pfizer":
       return (
         <svg width="38" height="24" viewBox="0 0 120 50" fill="none" style={{ flexShrink: 0 }}>
@@ -56,11 +94,29 @@ const CompanyLogoIcon = ({ slug, name }: { slug: string; name: string }) => {
           <path d="M12 4L20 12L12 20" stroke="#A100FF" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       );
+    case "chevron":
+      return (
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" style={{ flexShrink: 0 }}>
+          <path d="M2 5l10 5 10-5M2 13l10 5 10-5" stroke="#005A9C" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      );
     case "att":
       return (
         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" style={{ flexShrink: 0 }}>
           <circle cx="12" cy="12" r="10" fill="#00A8E0" />
           <path d="M2 12h20M3.5 7.5h17M3.5 16.5h17" stroke="#FFFFFF" strokeWidth="1.8" />
+        </svg>
+      );
+    case "dropbox":
+      return (
+        <svg width="26" height="24" viewBox="0 0 24 24" fill="none" style={{ flexShrink: 0 }}>
+          <path d="M6 2l6 4-6 4-6-4 6-4zm12 0l6 4-6 4-6-4 6-4zM0 10l6 4 6-4-6-4-6 4zm18-4l-6 4 6 4 6-4-6-4zM6 15l6 4 6-4-6-4-6 4z" fill="#0061FF" />
+        </svg>
+      );
+    case "nike":
+      return (
+        <svg width="32" height="20" viewBox="0 0 24 16" fill="none" style={{ flexShrink: 0 }}>
+          <path d="M21.71 2.29C15.63 7.85 9.8 12.83 2 13.9c6.64 0 13.06-4.5 19.71-11.61z" fill="var(--color-text-primary)" />
         </svg>
       );
     case "chase":
@@ -69,23 +125,14 @@ const CompanyLogoIcon = ({ slug, name }: { slug: string; name: string }) => {
           <path d="M4 4h7v7H4zM13 4h7v7h-7zM13 13h7v7h-7zM4 13h7v7H4z" fill="#1175E8" />
         </svg>
       );
-    default:
+    case "wise":
       return (
-        <img 
-          src={`https://cdn.simpleicons.org/${slug}`} 
-          alt={name} 
-          onError={(e) => { 
-            const img = e.currentTarget;
-            if (!img.dataset.retried) {
-              img.dataset.retried = 'true';
-              img.src = `https://api.iconify.design/simple-icons:${slug}.svg`;
-            } else {
-              img.style.display = 'none';
-            }
-          }}
-          style={{ width: '28px', height: '28px', objectFit: 'contain', flexShrink: 0 }} 
-        />
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" style={{ flexShrink: 0 }}>
+          <path d="M4 4h16l-6 9h5l-9 9 2-8H7l3-10z" fill="#163300" />
+        </svg>
       );
+    default:
+      return null;
   }
 };
 
