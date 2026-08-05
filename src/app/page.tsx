@@ -45,14 +45,14 @@ const CompanyLogoIcon = ({ slug, name }: { slug: string; name: string }) => {
   switch (slug) {
     case "nvidia":
       return (
-        <svg width="28" height="24" viewBox="0 0 24 24" fill="none" style={{ flexShrink: 0 }}>
-          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 14.5v-3.8c1.8.2 3.2 1.4 3.2 3.8h-3.2zm-2.8-5.3c0-2.2 1.8-4 4-4v2.5c-.8 0-1.5.7-1.5 1.5H10.2z" fill="#76B900" />
+        <svg width="28" height="22" viewBox="0 0 24 24" fill="none" style={{ flexShrink: 0 }}>
+          <path d="M12.4 4c-4.4 0-8 3.6-8 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8zm4.3 12.6c-.6.6-1.5 1-2.4 1v-2.3c.4 0 .8-.2 1.1-.5.6-.6.6-1.5 0-2.1l-2.6-2.6v-2.8c2.2.4 3.9 2.3 3.9 4.6 0 1.8-.8 3.5-2.1 4.7z" fill="#76B900" />
         </svg>
       );
     case "tesla":
       return (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" style={{ flexShrink: 0 }}>
-          <path d="M12 5.2L16.5 2H7.5L12 5.2zm0 2.2L5 3v2l7 4 7-4V3l-7 4.4zM12 10v12h2V10h-2z" fill="#E82127" />
+          <path d="M12 2C6.5 2 2 2.8 2 2.8l1.6 3.1s3.6-.9 8.4-.9c4.8 0 8.4.9 8.4.9L22 2.8S17.5 2 12 2zm0 4.8c-3.1 0-5.8.5-7.6 1.3l.8 2.2c1.4-.6 3.7-1 6.8-1 3.1 0 5.4.4 6.8 1l.8-2.2c-1.8-.8-4.5-1.3-7.6-1.3zm-1 4.5v10.7h2V11.3h-2z" fill="#E82127" />
         </svg>
       );
     case "meta":
@@ -115,8 +115,8 @@ const CompanyLogoIcon = ({ slug, name }: { slug: string; name: string }) => {
       );
     case "nike":
       return (
-        <svg width="32" height="20" viewBox="0 0 24 16" fill="none" style={{ flexShrink: 0 }}>
-          <path d="M21.71 2.29C15.63 7.85 9.8 12.83 2 13.9c6.64 0 13.06-4.5 19.71-11.61z" fill="var(--color-text-primary)" />
+        <svg width="32" height="18" viewBox="0 0 24 12" fill="none" style={{ flexShrink: 0 }}>
+          <path d="M21.7 0.8C14.8 4.2 8.7 8.2 2.1 11.2C0.7 11.8 0 11.1 0.7 9.8C2.3 6.9 5.8 3.9 9.8 1.9C13.8 0 18.2-0.6 21.7 0.8Z" fill="var(--color-text-primary)" />
         </svg>
       );
     case "chase":
