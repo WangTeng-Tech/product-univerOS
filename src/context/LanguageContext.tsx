@@ -129,17 +129,17 @@ const translations: Record<Language, TranslationDict> = {
       title: "AI 团队内置企业级安全与自动修复",
       desc: "无需担心 AI 乱跑或出错，系统内置三重保障机制，守护你的业务安全与正常运转。",
       t1: {
-        title: "动态安全审批",
+        title: "多渠道审批",
         desc: "区分常规任务与高风险操作。常规日常工作 AI 自动完成；涉及修改重要数据或上线等高风险动作，自动弹出确认提示，关键开关始终握在你手里。",
         badge: "智能安全把关"
       },
       t2: {
-        title: "智能自动修复",
+        title: "乐观契约机制",
         desc: "系统 24 小时实时监控运行状态。一旦遇到报错或异常，AI 团队会自动诊断原因并尝试修复测试，直到验证无误再提交，不需要你懂技术去折腾。",
         badge: "故障自动修复"
       },
       t3: {
-        title: "全流程安全存证",
+        title: "全流程可追溯",
         desc: "每一个指令下发、执行步骤和操作记录都自动生成防篡改日志，全过程透明清晰，随时可以导出，轻松满足企业安全合规要求。",
         badge: "安全合规可查"
       }
@@ -350,17 +350,17 @@ const translations: Record<Language, TranslationDict> = {
       title: "Built-In Enterprise Security & Auto-Healing",
       desc: "No need to worry about AI running wild. Built-in triple safeguards protect your business boundaries and operational continuity.",
       t1: {
-        title: "Dynamic Smart Approval",
+        title: "Multi-Channel Approval",
         desc: "Distinguishes routine tasks from high-risk actions. Routine work runs automatically; critical actions prompt for your explicit approval.",
         badge: "Smart Approval Control"
       },
       t2: {
-        title: "Smart Auto-Healing",
+        title: "Optimistic Contract Mechanism",
         desc: "Monitors execution 24/7. When an anomaly occurs, AI teams diagnose, fix, and re-test automatically until verified.",
         badge: "Automatic Error Fixing"
       },
       t3: {
-        title: "Full Audit Logging",
+        title: "End-to-End Traceability",
         desc: "Every command, step, and approval generates a tamper-proof log. Fully transparent, exportable anytime to satisfy compliance.",
         badge: "Compliant Audit Trail"
       }

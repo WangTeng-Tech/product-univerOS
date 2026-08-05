@@ -92,7 +92,7 @@ export default function Home() {
               </Link>
             </div>
 
-            <span className="hero-tip">
+            <span className="hero-tip" style={{ display: 'block', textAlign: 'center', margin: '0.75rem auto 0 auto' }}>
               {t("hero.tip")}
             </span>
           </div>
@@ -144,36 +144,36 @@ export default function Home() {
               alignItems: 'center'
             }}>
               {[
-                { name: "NVIDIA", icon: "https://api.iconify.design/simple-icons:nvidia.svg?color=%2376b900" },
-                { name: "Tesla", icon: "https://api.iconify.design/simple-icons:tesla.svg?color=%23e82127" },
-                { name: "Meta", icon: "https://api.iconify.design/simple-icons:meta.svg?color=%230081fb" },
-                { name: "Apple", icon: "https://api.iconify.design/simple-icons:apple.svg?color=%23000000" },
-                { name: "Oracle", icon: "https://api.iconify.design/simple-icons:oracle.svg?color=%23f80000" },
-                { name: "SAP", icon: "https://api.iconify.design/simple-icons:sap.svg?color=%230faaff" },
-                { name: "Pfizer", icon: "https://api.iconify.design/simple-icons:pfizer.svg?color=%23000036" },
-                { name: "Accenture", icon: "https://api.iconify.design/simple-icons:accenture.svg?color=%23a100ff" },
-                { name: "Chevron", icon: "https://api.iconify.design/simple-icons:chevron.svg?color=%23005a9c" },
-                { name: "AT&T", icon: "https://api.iconify.design/simple-icons:att.svg?color=%2300a8e0" },
-                { name: "Dropbox", icon: "https://api.iconify.design/simple-icons:dropbox.svg?color=%230061ff" },
-                { name: "Nike", icon: "https://api.iconify.design/simple-icons:nike.svg?color=%23000000" },
-                { name: "Chase", icon: "https://api.iconify.design/simple-icons:chase.svg?color=%231175e8" },
-                { name: "Wise", icon: "https://api.iconify.design/simple-icons:wise.svg?color=%23163300" },
+                { name: "NVIDIA", slug: "nvidia" },
+                { name: "Tesla", slug: "tesla" },
+                { name: "Meta", slug: "meta" },
+                { name: "Apple", slug: "apple" },
+                { name: "Oracle", slug: "oracle" },
+                { name: "SAP", slug: "sap" },
+                { name: "Pfizer", slug: "pfizer" },
+                { name: "Accenture", slug: "accenture" },
+                { name: "Chevron", slug: "chevron" },
+                { name: "AT&T", slug: "att" },
+                { name: "Dropbox", slug: "dropbox" },
+                { name: "Nike", slug: "nike" },
+                { name: "Chase", slug: "chase" },
+                { name: "Wise", slug: "wise" },
 
                 // Duplicate array for seamless infinite marquee loop
-                { name: "NVIDIA", icon: "https://api.iconify.design/simple-icons:nvidia.svg?color=%2376b900" },
-                { name: "Tesla", icon: "https://api.iconify.design/simple-icons:tesla.svg?color=%23e82127" },
-                { name: "Meta", icon: "https://api.iconify.design/simple-icons:meta.svg?color=%230081fb" },
-                { name: "Apple", icon: "https://api.iconify.design/simple-icons:apple.svg?color=%23000000" },
-                { name: "Oracle", icon: "https://api.iconify.design/simple-icons:oracle.svg?color=%23f80000" },
-                { name: "SAP", icon: "https://api.iconify.design/simple-icons:sap.svg?color=%230faaff" },
-                { name: "Pfizer", icon: "https://api.iconify.design/simple-icons:pfizer.svg?color=%23000036" },
-                { name: "Accenture", icon: "https://api.iconify.design/simple-icons:accenture.svg?color=%23a100ff" },
-                { name: "Chevron", icon: "https://api.iconify.design/simple-icons:chevron.svg?color=%23005a9c" },
-                { name: "AT&T", icon: "https://api.iconify.design/simple-icons:att.svg?color=%2300a8e0" },
-                { name: "Dropbox", icon: "https://api.iconify.design/simple-icons:dropbox.svg?color=%230061ff" },
-                { name: "Nike", icon: "https://api.iconify.design/simple-icons:nike.svg?color=%23000000" },
-                { name: "Chase", icon: "https://api.iconify.design/simple-icons:chase.svg?color=%231175e8" },
-                { name: "Wise", icon: "https://api.iconify.design/simple-icons:wise.svg?color=%23163300" }
+                { name: "NVIDIA", slug: "nvidia" },
+                { name: "Tesla", slug: "tesla" },
+                { name: "Meta", slug: "meta" },
+                { name: "Apple", slug: "apple" },
+                { name: "Oracle", slug: "oracle" },
+                { name: "SAP", slug: "sap" },
+                { name: "Pfizer", slug: "pfizer" },
+                { name: "Accenture", slug: "accenture" },
+                { name: "Chevron", slug: "chevron" },
+                { name: "AT&T", slug: "att" },
+                { name: "Dropbox", slug: "dropbox" },
+                { name: "Nike", slug: "nike" },
+                { name: "Chase", slug: "chase" },
+                { name: "Wise", slug: "wise" }
               ].map((logo, index) => (
                 <div key={index} style={{
                   display: 'inline-flex',
@@ -184,10 +184,18 @@ export default function Home() {
                   transition: 'all 0.3s ease'
                 }}>
                   <img 
-                    src={logo.icon} 
+                    src={`https://cdn.simpleicons.org/${logo.slug}`} 
                     alt={logo.name} 
-                    onError={(e) => { e.currentTarget.style.display = 'none'; }}
-                    style={{ width: '32px', height: '32px', objectFit: 'contain', flexShrink: 0 }} 
+                    onError={(e) => { 
+                      const img = e.currentTarget;
+                      if (!img.dataset.retried) {
+                        img.dataset.retried = 'true';
+                        img.src = `https://api.iconify.design/simple-icons:${logo.slug}.svg`;
+                      } else {
+                        img.style.display = 'none';
+                      }
+                    }}
+                    style={{ width: '28px', height: '28px', objectFit: 'contain', flexShrink: 0 }} 
                   />
                   <span style={{
                     fontWeight: 700,
