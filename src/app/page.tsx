@@ -295,52 +295,53 @@ export default function Home() {
                 width: 'max-content'
               }}>
                 {[
-                  { name: "NVIDIA", tag: "AI Computing" },
-                  { name: "Tesla", tag: "Automotive & Energy" },
-                  { name: "Meta", tag: "AI & Social" },
-                  { name: "Apple", tag: "Consumer Tech" },
-                  { name: "Oracle", tag: "Enterprise Cloud" },
-                  { name: "SAP", tag: "Enterprise ERP" },
-                  { name: "Pfizer", tag: "BioPharma" },
-                  { name: "Accenture", tag: "Global Consulting" },
-                  { name: "Ping An", tag: "Financial Tech" },
-                  { name: "China Construction Bank", tag: "Global Banking" },
-                  { name: "Chevron", tag: "Energy & Energy" },
-                  { name: "AT&T", tag: "Telecom Network" },
-                  { name: "Dropbox", tag: "Cloud Storage" },
-                  { name: "Nike", tag: "Global Sportswear" },
-                  { name: "Chase", tag: "Global Financial" },
-                  { name: "Wise", tag: "Cross-Border FinTech" },
+                  { name: "NVIDIA", icon: "https://cdn.simpleicons.org/nvidia/76B900", tag: "AI Computing" },
+                  { name: "Tesla", icon: "https://cdn.simpleicons.org/tesla/E82127", tag: "Automotive & Energy" },
+                  { name: "Meta", icon: "https://cdn.simpleicons.org/meta/0081FB", tag: "AI & Social" },
+                  { name: "Apple", icon: "https://cdn.simpleicons.org/apple/000000", tag: "Consumer Tech" },
+                  { name: "Oracle", icon: "https://cdn.simpleicons.org/oracle/F80000", tag: "Enterprise Cloud" },
+                  { name: "SAP", icon: "https://cdn.simpleicons.org/sap/0FAAFF", tag: "Enterprise ERP" },
+                  { name: "Pfizer", icon: "https://cdn.simpleicons.org/pfizer/000036", tag: "BioPharma" },
+                  { name: "Accenture", icon: "https://cdn.simpleicons.org/accenture/A100FF", tag: "Global Consulting" },
+                  { name: "Chevron", icon: "https://cdn.simpleicons.org/chevron/005A9C", tag: "Energy" },
+                  { name: "AT&T", icon: "https://cdn.simpleicons.org/att/00A8E0", tag: "Telecom Network" },
+                  { name: "Dropbox", icon: "https://cdn.simpleicons.org/dropbox/0061FF", tag: "Cloud Storage" },
+                  { name: "Nike", icon: "https://cdn.simpleicons.org/nike/000000", tag: "Global Sportswear" },
+                  { name: "Chase", icon: "https://cdn.simpleicons.org/chase/1175E8", tag: "Global Financial" },
+                  { name: "Wise", icon: "https://cdn.simpleicons.org/wise/163300", tag: "Cross-Border FinTech" },
 
                   // Duplicate array for seamless infinite marquee loop
-                  { name: "NVIDIA", tag: "AI Computing" },
-                  { name: "Tesla", tag: "Automotive & Energy" },
-                  { name: "Meta", tag: "AI & Social" },
-                  { name: "Apple", tag: "Consumer Tech" },
-                  { name: "Oracle", tag: "Enterprise Cloud" },
-                  { name: "SAP", tag: "Enterprise ERP" },
-                  { name: "Pfizer", tag: "BioPharma" },
-                  { name: "Accenture", tag: "Global Consulting" },
-                  { name: "Ping An", tag: "Financial Tech" },
-                  { name: "China Construction Bank", tag: "Global Banking" },
-                  { name: "Chevron", tag: "Energy & Energy" },
-                  { name: "AT&T", tag: "Telecom Network" },
-                  { name: "Dropbox", tag: "Cloud Storage" },
-                  { name: "Nike", tag: "Global Sportswear" },
-                  { name: "Chase", tag: "Global Financial" },
-                  { name: "Wise", tag: "Cross-Border FinTech" }
+                  { name: "NVIDIA", icon: "https://cdn.simpleicons.org/nvidia/76B900", tag: "AI Computing" },
+                  { name: "Tesla", icon: "https://cdn.simpleicons.org/tesla/E82127", tag: "Automotive & Energy" },
+                  { name: "Meta", icon: "https://cdn.simpleicons.org/meta/0081FB", tag: "AI & Social" },
+                  { name: "Apple", icon: "https://cdn.simpleicons.org/apple/000000", tag: "Consumer Tech" },
+                  { name: "Oracle", icon: "https://cdn.simpleicons.org/oracle/F80000", tag: "Enterprise Cloud" },
+                  { name: "SAP", icon: "https://cdn.simpleicons.org/sap/0FAAFF", tag: "Enterprise ERP" },
+                  { name: "Pfizer", icon: "https://cdn.simpleicons.org/pfizer/000036", tag: "BioPharma" },
+                  { name: "Accenture", icon: "https://cdn.simpleicons.org/accenture/A100FF", tag: "Global Consulting" },
+                  { name: "Chevron", icon: "https://cdn.simpleicons.org/chevron/005A9C", tag: "Energy" },
+                  { name: "AT&T", icon: "https://cdn.simpleicons.org/att/00A8E0", tag: "Telecom Network" },
+                  { name: "Dropbox", icon: "https://cdn.simpleicons.org/dropbox/0061FF", tag: "Cloud Storage" },
+                  { name: "Nike", icon: "https://cdn.simpleicons.org/nike/000000", tag: "Global Sportswear" },
+                  { name: "Chase", icon: "https://cdn.simpleicons.org/chase/1175E8", tag: "Global Financial" },
+                  { name: "Wise", icon: "https://cdn.simpleicons.org/wise/163300", tag: "Cross-Border FinTech" }
                 ].map((logo, index) => (
                   <div key={index} style={{
                     display: 'inline-flex',
                     alignItems: 'center',
-                    gap: '0.6rem',
+                    gap: '0.75rem',
                     background: 'var(--color-bg-secondary)',
                     border: '1px solid var(--color-border)',
                     padding: '0.6rem 1.25rem',
                     borderRadius: '30px',
-                    opacity: 0.85,
+                    opacity: 0.95,
                     transition: 'all 0.3s ease'
                   }}>
+                    <img 
+                      src={logo.icon} 
+                      alt={logo.name} 
+                      style={{ width: '22px', height: '22px', objectFit: 'contain', flexShrink: 0 }} 
+                    />
                     <span style={{
                       fontWeight: 700,
                       fontSize: '0.9rem',
