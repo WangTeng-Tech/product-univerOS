@@ -76,7 +76,7 @@ const translations: Record<Language, TranslationDict> = {
       healingDesc: "MAPE-K 自愈机制与 V1-V4 黑盒测试，自动诊断并修复报错。"
     },
     features: {
-      title: "三大核心 AI 数字战队",
+      title: "三大核心 AI 产线",
       desc: "无需懂代码或提示词，AI 团队帮你搞定软件全流程开发、全模态内容制作与全球情报摄取分发，直接交付生产成果。",
       rd: {
         title: "软件研发",
@@ -101,7 +101,7 @@ const translations: Record<Language, TranslationDict> = {
       }
     },
     customers: {
-      title: "适合不同规模企业的省心方案",
+      title: "univerOS 适合不同规模企业的省心方案",
       desc: "无论你是 1 人的个人创业者，还是上千人的大型企业，univerOS 都提供开箱即用、安全合规的落地策略。",
       techWallTitle: "无缝兼容全球顶尖 AI 模型与云计算基础设施",
       opc: {
@@ -297,7 +297,7 @@ const translations: Record<Language, TranslationDict> = {
       healingDesc: "MAPE-K self-healing loop and V1-V4 blackbox matrix auto-fixing anomalies."
     },
     features: {
-      title: "Three Core AI Digital Squads",
+      title: "Three Core AI Production Lines",
       desc: "No code or prompt skills needed. AI teams handle R&D, content creation, and global intelligence intake, delivering ready-to-use outcomes.",
       rd: {
         title: "Software R&D",
@@ -322,7 +322,7 @@ const translations: Record<Language, TranslationDict> = {
       }
     },
     customers: {
-      title: "Worry-Free Solutions for Every Business Scale",
+      title: "univerOS Solutions for Every Business Scale",
       desc: "Whether you are a solo entrepreneur or a thousand-employee corporation, univerOS offers turnkey, secure, and compliant deployment strategies.",
       techWallTitle: "SEAMLESS INTEGRATION WITH GLOBAL TECH ECOSYSTEM & CLOUD INFRASTRUCTURE",
       opc: {

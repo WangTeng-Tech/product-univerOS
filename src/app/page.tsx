@@ -222,6 +222,19 @@ export default function Home() {
               0% { transform: translateX(0%); }
               100% { transform: translateX(-50%); }
             }
+            .system-feature-card {
+              background: var(--color-bg-primary);
+              border: 1px solid var(--color-border);
+              border-radius: 12px;
+              padding: 1.5rem;
+              transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+              cursor: pointer;
+            }
+            .system-feature-card:hover {
+              transform: translateY(-5px);
+              border-color: var(--color-accent-main);
+              box-shadow: 0 12px 30px rgba(0, 201, 129, 0.15);
+            }
           `}</style>
 
           <div style={{
@@ -233,62 +246,21 @@ export default function Home() {
           }}>
             <div style={{
               display: 'inline-flex',
-              gap: '3.5rem',
+              gap: '4rem',
               animation: 'marqueeRoll 50s linear infinite',
               width: 'max-content',
               alignItems: 'center'
             }}>
-              {[
-                { name: "NVIDIA", slug: "nvidia" },
-                { name: "Tesla", slug: "tesla" },
-                { name: "Meta", slug: "meta" },
-                { name: "Apple", slug: "apple" },
-                { name: "Oracle", slug: "oracle" },
-                { name: "SAP", slug: "sap" },
-                { name: "Pfizer", slug: "pfizer" },
-                { name: "Accenture", slug: "accenture" },
-                { name: "Chevron", slug: "chevron" },
-                { name: "AT&T", slug: "att" },
-                { name: "Dropbox", slug: "dropbox" },
-                { name: "Nike", slug: "nike" },
-                { name: "Chase", slug: "chase" },
-                { name: "Wise", slug: "wise" },
-
-                // Duplicate array for seamless infinite marquee loop
-                { name: "NVIDIA", slug: "nvidia" },
-                { name: "Tesla", slug: "tesla" },
-                { name: "Meta", slug: "meta" },
-                { name: "Apple", slug: "apple" },
-                { name: "Oracle", slug: "oracle" },
-                { name: "SAP", slug: "sap" },
-                { name: "Pfizer", slug: "pfizer" },
-                { name: "Accenture", slug: "accenture" },
-                { name: "Chevron", slug: "chevron" },
-                { name: "AT&T", slug: "att" },
-                { name: "Dropbox", slug: "dropbox" },
-                { name: "Nike", slug: "nike" },
-                { name: "Chase", slug: "chase" },
-                { name: "Wise", slug: "wise" }
-              ].map((logo, index) => (
-                <div key={index} style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '0.85rem',
-                  padding: '0.4rem 0.5rem',
-                  opacity: 0.9,
-                  transition: 'all 0.3s ease'
-                }}>
-                  <CompanyLogoIcon slug={logo.slug} name={logo.name} />
-                  <span style={{
-                    fontWeight: 700,
-                    fontSize: '1.1rem',
-                    letterSpacing: '-0.02em',
-                    color: 'var(--color-text-primary)'
-                  }}>
-                    {logo.name}
-                  </span>
-                </div>
-              ))}
+              <img 
+                src="/Most-Famous-Companies-with-Modern-Logos.png" 
+                alt="Most Famous Companies Logos" 
+                style={{ height: '42px', objectFit: 'contain', opacity: 0.95 }}
+              />
+              <img 
+                src="/Most-Famous-Companies-with-Modern-Logos.png" 
+                alt="Most Famous Companies Logos Duplicate" 
+                style={{ height: '42px', objectFit: 'contain', opacity: 0.95 }}
+              />
             </div>
           </div>
         </div>
@@ -355,49 +327,49 @@ export default function Home() {
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1.25rem' }}>
             {/* Brain */}
-            <div style={{ background: 'var(--color-bg-primary)', border: '1px solid var(--color-border)', borderRadius: '12px', padding: '1.5rem' }}>
+            <div className="system-feature-card">
               <div style={{ fontSize: '0.75rem', fontWeight: 800, color: 'var(--color-accent-main)', letterSpacing: '0.08em', marginBottom: '0.75rem' }}>01 / DISPATCH</div>
               <h3 style={{ fontSize: '1.1rem', marginBottom: '0.5rem', color: 'var(--color-text-primary)' }}>{t("architecture.brain")}</h3>
               <p style={{ fontSize: '0.85rem', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>{t("architecture.brainDesc")}</p>
             </div>
             {/* Agent */}
-            <div style={{ background: 'var(--color-bg-primary)', border: '1px solid var(--color-border)', borderRadius: '12px', padding: '1.5rem' }}>
+            <div className="system-feature-card">
               <div style={{ fontSize: '0.75rem', fontWeight: 800, color: 'var(--color-accent-main)', letterSpacing: '0.08em', marginBottom: '0.75rem' }}>02 / SWARM</div>
               <h3 style={{ fontSize: '1.1rem', marginBottom: '0.5rem', color: 'var(--color-text-primary)' }}>{t("architecture.agent")}</h3>
               <p style={{ fontSize: '0.85rem', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>{t("architecture.agentDesc")}</p>
             </div>
             {/* Skills */}
-            <div style={{ background: 'var(--color-bg-primary)', border: '1px solid var(--color-border)', borderRadius: '12px', padding: '1.5rem' }}>
+            <div className="system-feature-card">
               <div style={{ fontSize: '0.75rem', fontWeight: 800, color: 'var(--color-accent-main)', letterSpacing: '0.08em', marginBottom: '0.75rem' }}>03 / SKILLS</div>
               <h3 style={{ fontSize: '1.1rem', marginBottom: '0.5rem', color: 'var(--color-text-primary)' }}>{t("architecture.skills")}</h3>
               <p style={{ fontSize: '0.85rem', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>{t("architecture.skillsDesc")}</p>
             </div>
             {/* Memory */}
-            <div style={{ background: 'var(--color-bg-primary)', border: '1px solid var(--color-border)', borderRadius: '12px', padding: '1.5rem' }}>
+            <div className="system-feature-card">
               <div style={{ fontSize: '0.75rem', fontWeight: 800, color: 'var(--color-accent-main)', letterSpacing: '0.08em', marginBottom: '0.75rem' }}>04 / MEMORY</div>
               <h3 style={{ fontSize: '1.1rem', marginBottom: '0.5rem', color: 'var(--color-text-primary)' }}>{t("architecture.memory")}</h3>
               <p style={{ fontSize: '0.85rem', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>{t("architecture.memoryDesc")}</p>
             </div>
             {/* Self-Healing */}
-            <div style={{ background: 'var(--color-bg-primary)', border: '1px solid var(--color-border)', borderRadius: '12px', padding: '1.5rem' }}>
+            <div className="system-feature-card">
               <div style={{ fontSize: '0.75rem', fontWeight: 800, color: 'var(--color-accent-main)', letterSpacing: '0.08em', marginBottom: '0.75rem' }}>05 / HEALING</div>
               <h3 style={{ fontSize: '1.1rem', marginBottom: '0.5rem', color: 'var(--color-text-primary)' }}>{t("architecture.healing")}</h3>
               <p style={{ fontSize: '0.85rem', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>{t("architecture.healingDesc")}</p>
             </div>
             {/* CUP Isolation */}
-            <div style={{ background: 'var(--color-bg-primary)', border: '1px solid var(--color-border)', borderRadius: '12px', padding: '1.5rem' }}>
+            <div className="system-feature-card">
               <div style={{ fontSize: '0.75rem', fontWeight: 800, color: 'var(--color-accent-main)', letterSpacing: '0.08em', marginBottom: '0.75rem' }}>06 / ISOLATION</div>
               <h3 style={{ fontSize: '1.1rem', marginBottom: '0.5rem', color: 'var(--color-text-primary)' }}>{t("trust.t1.title")}</h3>
               <p style={{ fontSize: '0.85rem', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>{t("trust.t1.desc")}</p>
             </div>
             {/* Append-only Ledger */}
-            <div style={{ background: 'var(--color-bg-primary)', border: '1px solid var(--color-border)', borderRadius: '12px', padding: '1.5rem' }}>
+            <div className="system-feature-card">
               <div style={{ fontSize: '0.75rem', fontWeight: 800, color: 'var(--color-accent-main)', letterSpacing: '0.08em', marginBottom: '0.75rem' }}>07 / LEDGER</div>
               <h3 style={{ fontSize: '1.1rem', marginBottom: '0.5rem', color: 'var(--color-text-primary)' }}>{t("trust.t2.title")}</h3>
               <p style={{ fontSize: '0.85rem', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>{t("trust.t2.desc")}</p>
             </div>
             {/* Safe Deployment */}
-            <div style={{ background: 'var(--color-bg-primary)', border: '1px solid var(--color-border)', borderRadius: '12px', padding: '1.5rem' }}>
+            <div className="system-feature-card">
               <div style={{ fontSize: '0.75rem', fontWeight: 800, color: 'var(--color-accent-main)', letterSpacing: '0.08em', marginBottom: '0.75rem' }}>08 / CONFIRMATION</div>
               <h3 style={{ fontSize: '1.1rem', marginBottom: '0.5rem', color: 'var(--color-text-primary)' }}>{t("trust.t3.title")}</h3>
               <p style={{ fontSize: '0.85rem', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>{t("trust.t3.desc")}</p>
