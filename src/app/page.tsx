@@ -295,53 +295,61 @@ export default function Home() {
                 width: 'max-content'
               }}>
                 {[
-                  { name: "NVIDIA", icon: "https://cdn.simpleicons.org/nvidia/76B900", tag: "AI Computing" },
-                  { name: "Tesla", icon: "https://cdn.simpleicons.org/tesla/E82127", tag: "Automotive & Energy" },
-                  { name: "Meta", icon: "https://cdn.simpleicons.org/meta/0081FB", tag: "AI & Social" },
-                  { name: "Apple", icon: "https://cdn.simpleicons.org/apple/000000", tag: "Consumer Tech" },
-                  { name: "Oracle", icon: "https://cdn.simpleicons.org/oracle/F80000", tag: "Enterprise Cloud" },
-                  { name: "SAP", icon: "https://cdn.simpleicons.org/sap/0FAAFF", tag: "Enterprise ERP" },
-                  { name: "Pfizer", icon: "https://cdn.simpleicons.org/pfizer/000036", tag: "BioPharma" },
-                  { name: "Accenture", icon: "https://cdn.simpleicons.org/accenture/A100FF", tag: "Global Consulting" },
-                  { name: "Chevron", icon: "https://cdn.simpleicons.org/chevron/005A9C", tag: "Energy" },
-                  { name: "AT&T", icon: "https://cdn.simpleicons.org/att/00A8E0", tag: "Telecom Network" },
-                  { name: "Dropbox", icon: "https://cdn.simpleicons.org/dropbox/0061FF", tag: "Cloud Storage" },
-                  { name: "Nike", icon: "https://cdn.simpleicons.org/nike/000000", tag: "Global Sportswear" },
-                  { name: "Chase", icon: "https://cdn.simpleicons.org/chase/1175E8", tag: "Global Financial" },
-                  { name: "Wise", icon: "https://cdn.simpleicons.org/wise/163300", tag: "Cross-Border FinTech" },
+                  { name: "NVIDIA", icon: "https://api.iconify.design/simple-icons:nvidia.svg?color=%2376b900" },
+                  { name: "Tesla", icon: "https://api.iconify.design/simple-icons:tesla.svg?color=%23e82127" },
+                  { name: "Meta", icon: "https://api.iconify.design/simple-icons:meta.svg?color=%230081fb" },
+                  { name: "Apple", icon: "https://api.iconify.design/simple-icons:apple.svg?color=%23000000" },
+                  { name: "Oracle", icon: "https://api.iconify.design/simple-icons:oracle.svg?color=%23f80000" },
+                  { name: "SAP", icon: "https://api.iconify.design/simple-icons:sap.svg?color=%230faaff" },
+                  { name: "Pfizer", icon: "https://api.iconify.design/simple-icons:pfizer.svg?color=%23000036" },
+                  { name: "Accenture", icon: "https://api.iconify.design/simple-icons:accenture.svg?color=%23a100ff" },
+                  { name: "Chevron", icon: "https://api.iconify.design/simple-icons:chevron.svg?color=%23005a9c" },
+                  { name: "AT&T", icon: "https://api.iconify.design/simple-icons:att.svg?color=%2300a8e0" },
+                  { name: "Dropbox", icon: "https://api.iconify.design/simple-icons:dropbox.svg?color=%230061ff" },
+                  { name: "Nike", icon: "https://api.iconify.design/simple-icons:nike.svg?color=%23000000" },
+                  { name: "Chase", icon: "https://api.iconify.design/simple-icons:chase.svg?color=%231175e8" },
+                  { name: "Wise", icon: "https://api.iconify.design/simple-icons:wise.svg?color=%23163300" },
 
                   // Duplicate array for seamless infinite marquee loop
-                  { name: "NVIDIA", icon: "https://cdn.simpleicons.org/nvidia/76B900", tag: "AI Computing" },
-                  { name: "Tesla", icon: "https://cdn.simpleicons.org/tesla/E82127", tag: "Automotive & Energy" },
-                  { name: "Meta", icon: "https://cdn.simpleicons.org/meta/0081FB", tag: "AI & Social" },
-                  { name: "Apple", icon: "https://cdn.simpleicons.org/apple/000000", tag: "Consumer Tech" },
-                  { name: "Oracle", icon: "https://cdn.simpleicons.org/oracle/F80000", tag: "Enterprise Cloud" },
-                  { name: "SAP", icon: "https://cdn.simpleicons.org/sap/0FAAFF", tag: "Enterprise ERP" },
-                  { name: "Pfizer", icon: "https://cdn.simpleicons.org/pfizer/000036", tag: "BioPharma" },
-                  { name: "Accenture", icon: "https://cdn.simpleicons.org/accenture/A100FF", tag: "Global Consulting" },
-                  { name: "Chevron", icon: "https://cdn.simpleicons.org/chevron/005A9C", tag: "Energy" },
-                  { name: "AT&T", icon: "https://cdn.simpleicons.org/att/00A8E0", tag: "Telecom Network" },
-                  { name: "Dropbox", icon: "https://cdn.simpleicons.org/dropbox/0061FF", tag: "Cloud Storage" },
-                  { name: "Nike", icon: "https://cdn.simpleicons.org/nike/000000", tag: "Global Sportswear" },
-                  { name: "Chase", icon: "https://cdn.simpleicons.org/chase/1175E8", tag: "Global Financial" },
-                  { name: "Wise", icon: "https://cdn.simpleicons.org/wise/163300", tag: "Cross-Border FinTech" }
+                  { name: "NVIDIA", icon: "https://api.iconify.design/simple-icons:nvidia.svg?color=%2376b900" },
+                  { name: "Tesla", icon: "https://api.iconify.design/simple-icons:tesla.svg?color=%23e82127" },
+                  { name: "Meta", icon: "https://api.iconify.design/simple-icons:meta.svg?color=%230081fb" },
+                  { name: "Apple", icon: "https://api.iconify.design/simple-icons:apple.svg?color=%23000000" },
+                  { name: "Oracle", icon: "https://api.iconify.design/simple-icons:oracle.svg?color=%23f80000" },
+                  { name: "SAP", icon: "https://api.iconify.design/simple-icons:sap.svg?color=%230faaff" },
+                  { name: "Pfizer", icon: "https://api.iconify.design/simple-icons:pfizer.svg?color=%23000036" },
+                  { name: "Accenture", icon: "https://api.iconify.design/simple-icons:accenture.svg?color=%23a100ff" },
+                  { name: "Chevron", icon: "https://api.iconify.design/simple-icons:chevron.svg?color=%23005a9c" },
+                  { name: "AT&T", icon: "https://api.iconify.design/simple-icons:att.svg?color=%2300a8e0" },
+                  { name: "Dropbox", icon: "https://api.iconify.design/simple-icons:dropbox.svg?color=%230061ff" },
+                  { name: "Nike", icon: "https://api.iconify.design/simple-icons:nike.svg?color=%23000000" },
+                  { name: "Chase", icon: "https://api.iconify.design/simple-icons:chase.svg?color=%231175e8" },
+                  { name: "Wise", icon: "https://api.iconify.design/simple-icons:wise.svg?color=%23163300" }
                 ].map((logo, index) => (
                   <div key={index} style={{
                     display: 'inline-flex',
                     alignItems: 'center',
-                    justifyContent: 'center',
+                    gap: '0.65rem',
                     background: 'var(--color-bg-secondary)',
                     border: '1px solid var(--color-border)',
-                    padding: '0.85rem 1.75rem',
-                    borderRadius: '40px',
-                    opacity: 0.9,
+                    padding: '0.55rem 1.25rem',
+                    borderRadius: '30px',
+                    opacity: 0.95,
                     transition: 'all 0.3s ease'
-                  }} title={logo.name}>
+                  }}>
                     <img 
                       src={logo.icon} 
                       alt={logo.name} 
-                      style={{ height: '32px', maxWidth: '90px', objectFit: 'contain', flexShrink: 0 }} 
+                      onError={(e) => { e.currentTarget.style.display = 'none'; }}
+                      style={{ width: '20px', height: '20px', objectFit: 'contain', flexShrink: 0 }} 
                     />
+                    <span style={{
+                      fontWeight: 700,
+                      fontSize: '0.9rem',
+                      color: 'var(--color-text-primary)'
+                    }}>
+                      {logo.name}
+                    </span>
                   </div>
                 ))}
               </div>
