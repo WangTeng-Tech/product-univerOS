@@ -104,64 +104,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Stats Data Section (Ref to Image 1) */}
-      <section style={{
-        padding: '4.5rem 0',
-        background: 'var(--color-bg-primary)',
-        borderBottom: '1px solid var(--color-border)',
-        textAlign: 'center'
-      }}>
-        <div className="container">
-          <h2 style={{ fontSize: '2.2rem', fontWeight: 800, marginBottom: '0.75rem', color: 'var(--color-text-primary)' }}>
-            {t("stats.title")}
-          </h2>
-          <p style={{ fontSize: '1.05rem', color: 'var(--color-text-secondary)', marginBottom: '2rem' }}>
-            {t("stats.subtitle")}
-          </p>
-
-          {/* Chips */}
-          <div style={{ display: 'flex', justifyContent: 'center', gap: '0.75rem', marginBottom: '3.5rem', flexWrap: 'wrap' }}>
-            <span style={{ padding: '0.4rem 1rem', background: '#2d1b4e', color: '#c084fc', borderRadius: '20px', fontSize: '0.85rem', fontWeight: 600 }}>
-              {t("stats.chip1")}
-            </span>
-            <span style={{ padding: '0.4rem 1rem', background: '#1e293b', color: '#38bdf8', borderRadius: '20px', fontSize: '0.85rem', fontWeight: 600 }}>
-              {t("stats.chip2")}
-            </span>
-            <span style={{ padding: '0.4rem 1rem', background: '#3b1c1c', color: '#f87171', borderRadius: '20px', fontSize: '0.85rem', fontWeight: 600 }}>
-              {t("stats.chip3")}
-            </span>
-          </div>
-
-          {/* Large Numbers (Ref to Image 1) */}
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '2rem', alignItems: 'center' }}>
-            <div>
-              <div style={{ fontSize: '3.5rem', fontWeight: 900, color: 'var(--color-text-primary)', lineHeight: 1.1 }}>
-                {t("stats.num1")}
-              </div>
-              <p style={{ fontSize: '0.9rem', color: 'var(--color-text-secondary)', marginTop: '0.5rem', fontWeight: 600 }}>
-                {t("stats.label1")}
-              </p>
-            </div>
-            <div>
-              <div style={{ fontSize: '3.5rem', fontWeight: 900, color: 'var(--color-text-primary)', lineHeight: 1.1 }}>
-                {t("stats.num2")}
-              </div>
-              <p style={{ fontSize: '0.9rem', color: 'var(--color-text-secondary)', marginTop: '0.5rem', fontWeight: 600 }}>
-                {t("stats.label2")}
-              </p>
-            </div>
-            <div>
-              <div style={{ fontSize: '3.5rem', fontWeight: 900, color: 'var(--color-text-primary)', lineHeight: 1.1 }}>
-                {t("stats.num3")}
-              </div>
-              <p style={{ fontSize: '0.9rem', color: 'var(--color-text-secondary)', marginTop: '0.5rem', fontWeight: 600 }}>
-                {t("stats.label3")}
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Product Lines Section */}
       <section id="features" style={{
         padding: '5rem 0',
@@ -224,31 +166,31 @@ export default function Home() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1.25rem' }}>
             {/* Brain */}
             <div style={{ background: 'var(--color-bg-secondary)', border: '1px solid var(--color-border)', borderRadius: '12px', padding: '1.5rem' }}>
-              <div style={{ fontSize: '1.75rem', marginBottom: '0.75rem' }}>🧠</div>
+              <div style={{ fontSize: '0.75rem', fontWeight: 800, color: 'var(--color-accent-main)', letterSpacing: '0.08em', marginBottom: '0.75rem' }}>01 / DISPATCH</div>
               <h3 style={{ fontSize: '1.1rem', marginBottom: '0.5rem', color: 'var(--color-text-primary)' }}>{t("architecture.brain")}</h3>
               <p style={{ fontSize: '0.85rem', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>{t("architecture.brainDesc")}</p>
             </div>
             {/* Agent */}
             <div style={{ background: 'var(--color-bg-secondary)', border: '1px solid var(--color-border)', borderRadius: '12px', padding: '1.5rem' }}>
-              <div style={{ fontSize: '1.75rem', marginBottom: '0.75rem' }}>🤖</div>
+              <div style={{ fontSize: '0.75rem', fontWeight: 800, color: 'var(--color-accent-main)', letterSpacing: '0.08em', marginBottom: '0.75rem' }}>02 / SWARM</div>
               <h3 style={{ fontSize: '1.1rem', marginBottom: '0.5rem', color: 'var(--color-text-primary)' }}>{t("architecture.agent")}</h3>
               <p style={{ fontSize: '0.85rem', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>{t("architecture.agentDesc")}</p>
             </div>
             {/* Skills */}
             <div style={{ background: 'var(--color-bg-secondary)', border: '1px solid var(--color-border)', borderRadius: '12px', padding: '1.5rem' }}>
-              <div style={{ fontSize: '1.75rem', marginBottom: '0.75rem' }}>⚡</div>
+              <div style={{ fontSize: '0.75rem', fontWeight: 800, color: 'var(--color-accent-main)', letterSpacing: '0.08em', marginBottom: '0.75rem' }}>03 / SKILLS</div>
               <h3 style={{ fontSize: '1.1rem', marginBottom: '0.5rem', color: 'var(--color-text-primary)' }}>{t("architecture.skills")}</h3>
               <p style={{ fontSize: '0.85rem', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>{t("architecture.skillsDesc")}</p>
             </div>
             {/* Memory */}
             <div style={{ background: 'var(--color-bg-secondary)', border: '1px solid var(--color-border)', borderRadius: '12px', padding: '1.5rem' }}>
-              <div style={{ fontSize: '1.75rem', marginBottom: '0.75rem' }}>💾</div>
+              <div style={{ fontSize: '0.75rem', fontWeight: 800, color: 'var(--color-accent-main)', letterSpacing: '0.08em', marginBottom: '0.75rem' }}>04 / MEMORY</div>
               <h3 style={{ fontSize: '1.1rem', marginBottom: '0.5rem', color: 'var(--color-text-primary)' }}>{t("architecture.memory")}</h3>
               <p style={{ fontSize: '0.85rem', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>{t("architecture.memoryDesc")}</p>
             </div>
             {/* Self-Healing */}
             <div style={{ background: 'var(--color-bg-secondary)', border: '1px solid var(--color-border)', borderRadius: '12px', padding: '1.5rem' }}>
-              <div style={{ fontSize: '1.75rem', marginBottom: '0.75rem' }}>🛡️</div>
+              <div style={{ fontSize: '0.75rem', fontWeight: 800, color: 'var(--color-accent-main)', letterSpacing: '0.08em', marginBottom: '0.75rem' }}>05 / HEALING</div>
               <h3 style={{ fontSize: '1.1rem', marginBottom: '0.5rem', color: 'var(--color-text-primary)' }}>{t("architecture.healing")}</h3>
               <p style={{ fontSize: '0.85rem', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>{t("architecture.healingDesc")}</p>
             </div>
@@ -470,101 +412,6 @@ export default function Home() {
               </div>
             </div>
           </div>
-
-          {/* Big Tech Infinite Marquee Logo Wall */}
-          <div style={{ marginTop: '4.5rem', paddingTop: '2.5rem', borderTop: '1px dashed var(--color-border)' }}>
-            <p style={{
-              textAlign: 'center',
-              fontSize: '0.75rem',
-              fontWeight: 600,
-              letterSpacing: '0.1em',
-              color: 'var(--color-text-secondary)',
-              textTransform: 'uppercase',
-              marginBottom: '2rem'
-            }}>
-              {t("customers.techWallTitle")}
-            </p>
-
-            <style>{`
-              @keyframes marqueeRoll {
-                0% { transform: translateX(0%); }
-                100% { transform: translateX(-50%); }
-              }
-            `}</style>
-
-            <div style={{
-              overflow: 'hidden',
-              whiteSpace: 'nowrap',
-              position: 'relative',
-              WebkitMaskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)',
-              maskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)'
-            }}>
-              <div style={{
-                display: 'inline-flex',
-                gap: '3.5rem',
-                animation: 'marqueeRoll 25s linear infinite',
-                width: 'max-content',
-                alignItems: 'center'
-              }}>
-                {[
-                  { name: "NVIDIA", icon: "https://api.iconify.design/simple-icons:nvidia.svg?color=%2376b900" },
-                  { name: "Tesla", icon: "https://api.iconify.design/simple-icons:tesla.svg?color=%23e82127" },
-                  { name: "Meta", icon: "https://api.iconify.design/simple-icons:meta.svg?color=%230081fb" },
-                  { name: "Apple", icon: "https://api.iconify.design/simple-icons:apple.svg?color=%23000000" },
-                  { name: "Oracle", icon: "https://api.iconify.design/simple-icons:oracle.svg?color=%23f80000" },
-                  { name: "SAP", icon: "https://api.iconify.design/simple-icons:sap.svg?color=%230faaff" },
-                  { name: "Pfizer", icon: "https://api.iconify.design/simple-icons:pfizer.svg?color=%23000036" },
-                  { name: "Accenture", icon: "https://api.iconify.design/simple-icons:accenture.svg?color=%23a100ff" },
-                  { name: "Chevron", icon: "https://api.iconify.design/simple-icons:chevron.svg?color=%23005a9c" },
-                  { name: "AT&T", icon: "https://api.iconify.design/simple-icons:att.svg?color=%2300a8e0" },
-                  { name: "Dropbox", icon: "https://api.iconify.design/simple-icons:dropbox.svg?color=%230061ff" },
-                  { name: "Nike", icon: "https://api.iconify.design/simple-icons:nike.svg?color=%23000000" },
-                  { name: "Chase", icon: "https://api.iconify.design/simple-icons:chase.svg?color=%231175e8" },
-                  { name: "Wise", icon: "https://api.iconify.design/simple-icons:wise.svg?color=%23163300" },
-
-                  // Duplicate array for seamless infinite marquee loop
-                  { name: "NVIDIA", icon: "https://api.iconify.design/simple-icons:nvidia.svg?color=%2376b900" },
-                  { name: "Tesla", icon: "https://api.iconify.design/simple-icons:tesla.svg?color=%23e82127" },
-                  { name: "Meta", icon: "https://api.iconify.design/simple-icons:meta.svg?color=%230081fb" },
-                  { name: "Apple", icon: "https://api.iconify.design/simple-icons:apple.svg?color=%23000000" },
-                  { name: "Oracle", icon: "https://api.iconify.design/simple-icons:oracle.svg?color=%23f80000" },
-                  { name: "SAP", icon: "https://api.iconify.design/simple-icons:sap.svg?color=%230faaff" },
-                  { name: "Pfizer", icon: "https://api.iconify.design/simple-icons:pfizer.svg?color=%23000036" },
-                  { name: "Accenture", icon: "https://api.iconify.design/simple-icons:accenture.svg?color=%23a100ff" },
-                  { name: "Chevron", icon: "https://api.iconify.design/simple-icons:chevron.svg?color=%23005a9c" },
-                  { name: "AT&T", icon: "https://api.iconify.design/simple-icons:att.svg?color=%2300a8e0" },
-                  { name: "Dropbox", icon: "https://api.iconify.design/simple-icons:dropbox.svg?color=%230061ff" },
-                  { name: "Nike", icon: "https://api.iconify.design/simple-icons:nike.svg?color=%23000000" },
-                  { name: "Chase", icon: "https://api.iconify.design/simple-icons:chase.svg?color=%231175e8" },
-                  { name: "Wise", icon: "https://api.iconify.design/simple-icons:wise.svg?color=%23163300" }
-                ].map((logo, index) => (
-                  <div key={index} style={{
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: '0.85rem',
-                    padding: '0.4rem 0.5rem',
-                    opacity: 0.9,
-                    transition: 'all 0.3s ease'
-                  }}>
-                    <img 
-                      src={logo.icon} 
-                      alt={logo.name} 
-                      onError={(e) => { e.currentTarget.style.display = 'none'; }}
-                      style={{ width: '32px', height: '32px', objectFit: 'contain', flexShrink: 0 }} 
-                    />
-                    <span style={{
-                      fontWeight: 700,
-                      fontSize: '1.1rem',
-                      letterSpacing: '-0.02em',
-                      color: 'var(--color-text-primary)'
-                    }}>
-                      {logo.name}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 
@@ -765,59 +612,117 @@ export default function Home() {
             </ul>
           </div>
 
-          {/* Integrated FAQ Sub-block into Security */}
+          {/* Integrated Stats Data Section (Ref to Image 1 - Upgraded Style) */}
           <div style={{
             width: '100%',
-            marginTop: '3.5rem',
-            paddingTop: '3rem',
-            borderTop: '1px dashed var(--color-border)'
+            marginTop: '4rem',
+            paddingTop: '3.5rem',
+            borderTop: '1px dashed var(--color-border)',
+            textAlign: 'center'
           }}>
-            <h3 style={{ fontSize: '1.5rem', color: 'var(--color-text-primary)', marginBottom: '2rem', textAlign: 'center' }}>
-              {t("faq.title")} (FAQ)
+            <h3 style={{ fontSize: '2.2rem', fontWeight: 800, marginBottom: '0.75rem', color: 'var(--color-text-primary)' }}>
+              {t("stats.title")}
+            </h3>
+            <p style={{ fontSize: '1.05rem', color: 'var(--color-text-secondary)', marginBottom: '2rem' }}>
+              {t("stats.subtitle")}
+            </p>
+
+            {/* Chips */}
+            <div style={{ display: 'flex', justifyContent: 'center', gap: '0.75rem', marginBottom: '3.5rem', flexWrap: 'wrap' }}>
+              <span style={{ padding: '0.4rem 1rem', background: '#2d1b4e', color: '#c084fc', borderRadius: '20px', fontSize: '0.85rem', fontWeight: 600 }}>
+                {t("stats.chip1")}
+              </span>
+              <span style={{ padding: '0.4rem 1rem', background: '#1e293b', color: '#38bdf8', borderRadius: '20px', fontSize: '0.85rem', fontWeight: 600 }}>
+                {t("stats.chip2")}
+              </span>
+              <span style={{ padding: '0.4rem 1rem', background: '#3b1c1c', color: '#f87171', borderRadius: '20px', fontSize: '0.85rem', fontWeight: 600 }}>
+                {t("stats.chip3")}
+              </span>
+            </div>
+
+            {/* Large Numbers */}
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '2rem', alignItems: 'center' }}>
+              <div>
+                <div style={{ fontSize: '3.5rem', fontWeight: 900, color: 'var(--color-text-primary)', lineHeight: 1.1 }}>
+                  {t("stats.num1")}
+                </div>
+                <p style={{ fontSize: '0.9rem', color: 'var(--color-text-secondary)', marginTop: '0.5rem', fontWeight: 600 }}>
+                  {t("stats.label1")}
+                </p>
+              </div>
+              <div>
+                <div style={{ fontSize: '3.5rem', fontWeight: 900, color: 'var(--color-text-primary)', lineHeight: 1.1 }}>
+                  {t("stats.num2")}
+                </div>
+                <p style={{ fontSize: '0.9rem', color: 'var(--color-text-secondary)', marginTop: '0.5rem', fontWeight: 600 }}>
+                  {t("stats.label2")}
+                </p>
+              </div>
+              <div>
+                <div style={{ fontSize: '3.5rem', fontWeight: 900, color: 'var(--color-text-primary)', lineHeight: 1.1 }}>
+                  {t("stats.num3")}
+                </div>
+                <p style={{ fontSize: '0.9rem', color: 'var(--color-text-secondary)', marginTop: '0.5rem', fontWeight: 600 }}>
+                  {t("stats.label3")}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Integrated FAQ (Restored Original Clean List Style) */}
+          <div style={{
+            width: '100%',
+            maxWidth: '800px',
+            margin: '4rem auto 0 auto',
+            paddingTop: '3.5rem',
+            borderTop: '1px solid var(--color-border)'
+          }}>
+            <h3 style={{ fontSize: '2rem', textAlign: 'center', marginBottom: '3.5rem', color: 'var(--color-text-primary)' }}>
+              {t("faq.title")}
             </h3>
             
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '1.5rem' }}>
-              <div style={{ background: 'var(--color-bg-primary)', padding: '1.5rem', borderRadius: '10px', border: '1px solid var(--color-border)' }}>
-                <h4 style={{ fontSize: '0.95rem', color: 'var(--color-text-primary)', marginBottom: '0.5rem', fontWeight: 700 }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+              <div style={{ borderBottom: '1px solid var(--color-border)', paddingBottom: '1.5rem' }}>
+                <h4 style={{ fontSize: '1.05rem', color: 'var(--color-text-primary)', marginBottom: '0.5rem', fontWeight: 700 }}>
                   {t("faq.q1")}
                 </h4>
-                <p style={{ fontSize: '0.85rem', color: 'var(--color-text-secondary)', lineHeight: '1.6' }}>
+                <p style={{ fontSize: '0.9rem', color: 'var(--color-text-secondary)', lineHeight: '1.7' }}>
                   {t("faq.a1")}
                 </p>
               </div>
 
-              <div style={{ background: 'var(--color-bg-primary)', padding: '1.5rem', borderRadius: '10px', border: '1px solid var(--color-border)' }}>
-                <h4 style={{ fontSize: '0.95rem', color: 'var(--color-text-primary)', marginBottom: '0.5rem', fontWeight: 700 }}>
+              <div style={{ borderBottom: '1px solid var(--color-border)', paddingBottom: '1.5rem' }}>
+                <h4 style={{ fontSize: '1.05rem', color: 'var(--color-text-primary)', marginBottom: '0.5rem', fontWeight: 700 }}>
                   {t("faq.q2")}
                 </h4>
-                <p style={{ fontSize: '0.85rem', color: 'var(--color-text-secondary)', lineHeight: '1.6' }}>
+                <p style={{ fontSize: '0.9rem', color: 'var(--color-text-secondary)', lineHeight: '1.7' }}>
                   {t("faq.a2")}
                 </p>
               </div>
 
-              <div style={{ background: 'var(--color-bg-primary)', padding: '1.5rem', borderRadius: '10px', border: '1px solid var(--color-border)' }}>
-                <h4 style={{ fontSize: '0.95rem', color: 'var(--color-text-primary)', marginBottom: '0.5rem', fontWeight: 700 }}>
+              <div style={{ borderBottom: '1px solid var(--color-border)', paddingBottom: '1.5rem' }}>
+                <h4 style={{ fontSize: '1.05rem', color: 'var(--color-text-primary)', marginBottom: '0.5rem', fontWeight: 700 }}>
                   {t("faq.q3")}
                 </h4>
-                <p style={{ fontSize: '0.85rem', color: 'var(--color-text-secondary)', lineHeight: '1.6' }}>
+                <p style={{ fontSize: '0.9rem', color: 'var(--color-text-secondary)', lineHeight: '1.7' }}>
                   {t("faq.a3")}
                 </p>
               </div>
 
-              <div style={{ background: 'var(--color-bg-primary)', padding: '1.5rem', borderRadius: '10px', border: '1px solid var(--color-border)' }}>
-                <h4 style={{ fontSize: '0.95rem', color: 'var(--color-text-primary)', marginBottom: '0.5rem', fontWeight: 700 }}>
+              <div style={{ borderBottom: '1px solid var(--color-border)', paddingBottom: '1.5rem' }}>
+                <h4 style={{ fontSize: '1.05rem', color: 'var(--color-text-primary)', marginBottom: '0.5rem', fontWeight: 700 }}>
                   {t("faq.q4")}
                 </h4>
-                <p style={{ fontSize: '0.85rem', color: 'var(--color-text-secondary)', lineHeight: '1.6' }}>
+                <p style={{ fontSize: '0.9rem', color: 'var(--color-text-secondary)', lineHeight: '1.7' }}>
                   {t("faq.a4")}
                 </p>
               </div>
 
-              <div style={{ background: 'var(--color-bg-primary)', padding: '1.5rem', borderRadius: '10px', border: '1px solid var(--color-border)' }}>
-                <h4 style={{ fontSize: '0.95rem', color: 'var(--color-text-primary)', marginBottom: '0.5rem', fontWeight: 700 }}>
+              <div style={{ paddingBottom: '0.5rem' }}>
+                <h4 style={{ fontSize: '1.05rem', color: 'var(--color-text-primary)', marginBottom: '0.5rem', fontWeight: 700 }}>
                   {t("faq.q5")}
                 </h4>
-                <p style={{ fontSize: '0.85rem', color: 'var(--color-text-secondary)', lineHeight: '1.6' }}>
+                <p style={{ fontSize: '0.9rem', color: 'var(--color-text-secondary)', lineHeight: '1.7' }}>
                   {t("faq.a5")}
                 </p>
               </div>
