@@ -101,7 +101,7 @@ const translations: Record<Language, TranslationDict> = {
       }
     },
     customers: {
-      title: "univerOS 适合不同规模企业的省心方案",
+      title: "univerOS适合不同规模企业的省心方案",
       desc: "无论你是 1 人的个人创业者，还是上千人的大型企业，univerOS 都提供开箱即用、安全合规的落地策略。",
       techWallTitle: "无缝兼容全球顶尖 AI 模型与云计算基础设施",
       opc: {
