@@ -145,9 +145,9 @@ a {
 }
 
 .product-card:hover {
-  border-color: var(--color-accent-main);
-  box-shadow: var(--box-shadow-hover);
-  transform: translateY(-3px);
+  border-color: rgba(0, 201, 129, 0.4);
+  box-shadow: 0 6px 16px rgba(0, 201, 129, 0.06);
+  transform: translateY(-2px);
 }
 
 /* Interactive Logs Console */
@@ -169,6 +169,15 @@ a {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes marqueeRoll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
   }
 }
 
@@ -281,8 +290,11 @@ input:focus {
   margin-bottom: 2rem;
 }
 
+/* 1. 按钮组中对齐 */
 .hero-actions {
   display: flex;
+  justify-content: center;
+  align-items: center;
   gap: 1rem;
   flex-wrap: wrap;
   margin-bottom: 1.5rem;
@@ -296,6 +308,7 @@ input:focus {
   font-size: 0.75rem;
   color: var(--color-text-muted);
   display: block;
+  text-align: center;
 }
 
 .hero-visual {
@@ -322,7 +335,7 @@ input:focus {
   .hero-copy {
     max-width: 100%;
     width: 100%;
-    text-align: left;
+    text-align: center;
   }
 
   .hero-title {
@@ -331,6 +344,8 @@ input:focus {
 
   .hero-desc {
     max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .hero-visual {
@@ -355,10 +370,11 @@ input:focus {
   display: inline-block;
 }
 
+/* 1. Tags 标签置右 */
 .hero-badge-container {
   margin-bottom: 0.75rem;
   display: flex;
-  justify-content: flex-start;
+  justify-content: flex-end;
 }
 
 .hero-badge-tag {
@@ -372,6 +388,7 @@ input:focus {
   border: 1px solid rgba(0, 201, 129, 0.2);
 }
 
+/* 2. Logo 墙滚动修复 */
 .tech-marquee-wrapper {
   margin-top: 4rem;
   padding-top: 2.5rem;
@@ -400,9 +417,14 @@ input:focus {
 .tech-marquee-track {
   display: inline-flex;
   gap: 4rem;
-  animation: marqueeRoll 50s linear infinite;
+  animation: marqueeRoll 40s linear infinite;
   width: max-content;
   align-items: center;
+  will-change: transform;
+}
+
+.tech-marquee-track:hover {
+  animation-play-state: paused;
 }
 
 .tech-logo-item {
@@ -421,50 +443,7 @@ input:focus {
   transform: translateY(-2px);
 }
 
-/* ==========================================================================
-   全新二期重构类名（剥离 page.tsx 内联样式）
-   ========================================================================== */
-
-/* Section 通用容器 */
-.site-section {
-  padding: 5rem 0;
-  border-bottom: 1px solid var(--color-border);
-}
-
-.site-section-primary {
-  background: var(--color-bg-primary);
-}
-
-.site-section-secondary {
-  background: var(--color-bg-secondary);
-}
-
-.site-section-header {
-  text-align: center;
-  margin-bottom: 3.5rem;
-}
-
-.site-section-title {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  color: var(--color-text-primary);
-}
-
-.site-section-desc {
-  max-width: 600px;
-  margin: 0 auto;
-  color: var(--color-text-secondary);
-  font-size: 0.95rem;
-}
-
-.site-section-desc-wide {
-  max-width: 700px;
-  margin: 0 auto;
-  color: var(--color-text-secondary);
-  font-size: 0.95rem;
-}
-
-/* 02. System Features (系统特性网格) */
+/* 3. 悬停边框收敛 */
 .system-features-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -476,14 +455,14 @@ input:focus {
   border: 1px solid var(--color-border);
   border-radius: 12px;
   padding: 1.5rem;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
   cursor: pointer;
 }
 
 .system-feature-card:hover {
-  transform: translateY(-5px);
-  border-color: var(--color-accent-main);
-  box-shadow: 0 12px 30px rgba(0, 201, 129, 0.15);
+  transform: translateY(-2px);
+  border-color: rgba(0, 201, 129, 0.4);
+  box-shadow: 0 6px 16px rgba(0, 201, 129, 0.08);
 }
 
 .feature-card-step {
@@ -506,7 +485,7 @@ input:focus {
   line-height: 1.6;
 }
 
-/* 03. Customer Cases (客户案例) */
+/* 03. Customer Cases (客户案例收敛) */
 .customer-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -521,6 +500,13 @@ input:focus {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.customer-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(0, 201, 129, 0.35);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.04);
 }
 
 .customer-badge {
@@ -546,7 +532,7 @@ input:focus {
   line-height: 1.6;
 }
 
-/* 04. Security & Isolation (安全与凭证) */
+/* 04. Security & Isolation */
 .security-container {
   display: flex;
   justify-content: space-between;
@@ -629,7 +615,7 @@ input:focus {
   gap: 1rem;
 }
 
-/* 05. Stats (数据流与对比) */
+/* 05. Stats */
 .stats-wrapper {
   width: 100%;
   margin-top: 4rem;
@@ -672,7 +658,7 @@ input:focus {
   font-weight: 600;
 }
 
-/* 06. FAQ (问答列表) */
+/* 06. FAQ */
 .faq-wrapper {
   width: 100%;
   max-width: 800px;
@@ -716,7 +702,7 @@ input:focus {
   line-height: 1.7;
 }
 
-/* 07. Partner / Contact (生态合作与联系) */
+/* 07. Partner / Contact */
 .contact-container {
   max-width: 850px;
   margin: 0 auto;
