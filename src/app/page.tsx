@@ -160,13 +160,13 @@ export default function Home() {
             </p>
 
             {/* hero.badge 统一排版流 */}
-            <div className="hero-badge-container">
+            <div className="hero-badge-container" style={{ display: 'flex', justifyContent: 'flex-end' }}>
               <span className="hero-badge-tag">
                 {t("hero.badge")}
               </span>
             </div>
 
-            <div className="hero-actions">
+            <div className="hero-actions" style={{ display: 'flex', justifyContent: 'center' }}>
               <a href="https://app.univeros.cn/explore" target="_blank" rel="noopener noreferrer">
                 <button className="btn-primary hero-btn">
                   {t("hero.btnPricing")}
