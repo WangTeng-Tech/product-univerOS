@@ -152,29 +152,21 @@ export default function Home() {
             
             <h1 className="hero-title">
               {t("hero.title")}<br />
-              <span style={{ color: 'var(--color-accent-main)', marginLeft: '130px', display: 'inline-block' }}>{t("hero.titleHighlight")}</span>
+              <span className="hero-title-highlight">{t("hero.titleHighlight")}</span>
             </h1>
             
             <p className="hero-desc">
               {t("hero.desc")}
             </p>
 
-            {/* hero.badge 居右展示于按钮上方 */}
-            <div style={{ marginBottom: '0.75rem', display: 'flex', justifyContent: 'flex-end' }}>
-              <span style={{
-                fontSize: '0.75rem',
-                padding: '0.25rem 0.75rem',
-                background: 'var(--color-accent-light)',
-                color: 'var(--color-accent-main)',
-                borderRadius: '20px',
-                fontWeight: 600,
-                display: 'inline-block'
-              }}>
+            {/* hero.badge 统一排版流 */}
+            <div className="hero-badge-container">
+              <span className="hero-badge-tag">
                 {t("hero.badge")}
               </span>
             </div>
 
-            <div className="hero-actions" style={{ display: 'flex', justifyContent: 'center' }}>
+            <div className="hero-actions">
               <a href="https://app.univeros.cn/explore" target="_blank" rel="noopener noreferrer">
                 <button className="btn-primary hero-btn">
                   {t("hero.btnPricing")}
@@ -187,7 +179,7 @@ export default function Home() {
               </Link>
             </div>
 
-            <span className="hero-tip" style={{ display: 'block', textAlign: 'center', margin: '0.75rem auto 0 auto' }}>
+            <span className="hero-tip">
               {t("hero.tip")}
             </span>
           </div>
@@ -198,22 +190,9 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Big Tech Infinite Marquee Logo Wall (Merged INTO Hero Section) */}
-        <div style={{
-          marginTop: '4rem',
-          paddingTop: '2.5rem',
-          borderTop: '1px dashed var(--color-border)',
-          width: '100%'
-        }}>
-          <p style={{
-            textAlign: 'center',
-            fontSize: '0.75rem',
-            fontWeight: 600,
-            letterSpacing: '0.1em',
-            color: 'var(--color-text-secondary)',
-            textTransform: 'uppercase',
-            marginBottom: '1.75rem'
-          }}>
+        {/* Big Tech Infinite Marquee Logo Wall */}
+        <div className="tech-marquee-wrapper">
+          <p className="tech-marquee-title">
             {t("customers.techWallTitle")}
           </p>
 
@@ -237,20 +216,8 @@ export default function Home() {
             }
           `}</style>
 
-          <div style={{
-            overflow: 'hidden',
-            whiteSpace: 'nowrap',
-            position: 'relative',
-            WebkitMaskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)',
-            maskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)'
-          }}>
-            <div style={{
-              display: 'inline-flex',
-              gap: '4rem',
-              animation: 'marqueeRoll 50s linear infinite',
-              width: 'max-content',
-              alignItems: 'center'
-            }}>
+          <div className="tech-marquee-track-container">
+            <div className="tech-marquee-track">
               {[
                 { name: "NVIDIA", slug: "nvidia" },
                 { name: "Tesla", slug: "tesla" },
@@ -283,14 +250,7 @@ export default function Home() {
                 { name: "Chase", slug: "chase" },
                 { name: "Wise", slug: "wise" }
               ].map((logo, index) => (
-                <div key={index} style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '0.85rem',
-                  padding: '0.4rem 0.5rem',
-                  opacity: 0.95,
-                  transition: 'all 0.3s ease'
-                }}>
+                <div key={index} className="tech-logo-item">
                   <CompanyLogoIcon slug={logo.slug} name={logo.name} />
                   <span style={{
                     fontWeight: 700,
@@ -298,6 +258,7 @@ export default function Home() {
                     letterSpacing: '-0.02em',
                     color: 'var(--color-text-primary)'
                   }}>
+
                     {logo.name}
                   </span>
                 </div>

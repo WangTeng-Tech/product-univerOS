@@ -346,20 +346,79 @@ input:focus {
   }
 }
 
-@media (max-width: 480px) {
-  .hero-title {
-    font-size: 1.85rem;
-  }
 
-  .hero-actions {
-    flex-direction: column;
-    width: 100%;
-  }
+/* Refactored Hero & Marquee Utility Classes (Persuade Mode) */
+.hero-title-highlight {
+  color: var(--color-accent-main);
+  background: linear-gradient(135deg, var(--color-accent-main) 0%, #00f2fe 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
 
-  .hero-actions a,
-  .hero-btn {
-    width: 100%;
-    justify-content: center;
-  }
+.hero-badge-container {
+  margin-bottom: 0.75rem;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.hero-badge-tag {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.75rem;
+  background: var(--color-accent-light);
+  color: var(--color-accent-main);
+  border-radius: 20px;
+  font-weight: 600;
+  display: inline-block;
+  border: 1px solid rgba(0, 201, 129, 0.2);
+}
+
+.tech-marquee-wrapper {
+  margin-top: 4rem;
+  padding-top: 2.5rem;
+  border-top: 1px dashed var(--color-border);
+  width: 100%;
+}
+
+.tech-marquee-title {
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  margin-bottom: 1.75rem;
+}
+
+.tech-marquee-track-container {
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.tech-marquee-track {
+  display: inline-flex;
+  gap: 4rem;
+  animation: marqueeRoll 50s linear infinite;
+  width: max-content;
+  align-items: center;
+}
+
+.tech-logo-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.4rem 0.5rem;
+  opacity: 0.85;
+  transition: opacity var(--transition-smooth), transform var(--transition-smooth), filter var(--transition-smooth);
+  filter: grayscale(30%);
+}
+
+.tech-logo-item:hover {
+  opacity: 1;
+  filter: grayscale(0%);
+  transform: translateY(-2px);
 }
 
