@@ -84,6 +84,7 @@ export default function Header() {
           <ThemeToggle />
           <button 
             onClick={() => setLanguage(language === "zh" ? "en" : "zh")}
+            className="lang-toggle-btn"
             style={{
               background: 'transparent',
               border: '1px solid var(--color-border)',
@@ -117,7 +118,7 @@ export default function Header() {
 
         {/* Mobile Hamburger Toggle Button */}
         <button 
-          className="mobile-toggle"
+          className="mobile-toggle mobile-toggle-btn"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           aria-label="Toggle navigation menu"
           style={{

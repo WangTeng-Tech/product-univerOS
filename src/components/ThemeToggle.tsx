@@ -44,6 +44,7 @@ export default function ThemeToggle() {
     <button
       onClick={toggleTheme}
       aria-label="Toggle theme"
+      className="theme-toggle-btn"
       style={{
         background: "transparent",
         border: "1px solid var(--color-border)",
@@ -56,14 +57,6 @@ export default function ThemeToggle() {
         justifyContent: "center",
         color: "var(--color-text-primary)",
         transition: "border-color var(--transition-smooth), background-color var(--transition-smooth), transform var(--transition-smooth)",
-      }}
-      onMouseEnter={(e) => {
-        e.currentTarget.style.backgroundColor = "var(--color-bg-secondary)";
-        e.currentTarget.style.borderColor = "var(--color-text-primary)";
-      }}
-      onMouseLeave={(e) => {
-        e.currentTarget.style.backgroundColor = "transparent";
-        e.currentTarget.style.borderColor = "var(--color-border)";
       }}
     >
       {theme === "light" ? (

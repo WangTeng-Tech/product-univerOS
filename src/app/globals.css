@@ -107,9 +107,19 @@ a {
 }
 
 .btn-secondary:hover {
-  border-color: var(--color-text-primary);
+  border-color: rgba(0, 201, 129, 0.45);
   background-color: var(--color-bg-secondary);
+  color: var(--color-accent-main);
   transform: translateY(-1px);
+}
+
+/* Header Toggle Buttons Hover Converge */
+.theme-toggle-btn:hover,
+.lang-toggle-btn:hover,
+.mobile-toggle-btn:hover {
+  border-color: rgba(0, 201, 129, 0.45) !important;
+  background-color: var(--color-bg-secondary) !important;
+  color: var(--color-accent-main) !important;
 }
 
 /* Nav Hover */
