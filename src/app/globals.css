@@ -233,7 +233,7 @@ input:focus {
   }
 }
 
-/* Hero 区域响应式样式（解决竖屏/窄屏图片与控制台错位问题） */
+/* Hero 区域响应式样式 */
 .hero-section {
   padding: 5rem 0;
   background: radial-gradient(ellipse at top right, var(--color-accent-light) 0%, transparent 60%);
@@ -346,8 +346,7 @@ input:focus {
   }
 }
 
-
-/* Refactored Hero & Marquee Utility Classes (Persuade Mode) */
+/* Hero & Marquee Utility Classes */
 .hero-title-highlight {
   color: var(--color-accent-main);
   background: linear-gradient(135deg, var(--color-accent-main) 0%, #00f2fe 100%);
@@ -422,3 +421,326 @@ input:focus {
   transform: translateY(-2px);
 }
 
+/* ==========================================================================
+   全新二期重构类名（剥离 page.tsx 内联样式）
+   ========================================================================== */
+
+/* Section 通用容器 */
+.site-section {
+  padding: 5rem 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.site-section-primary {
+  background: var(--color-bg-primary);
+}
+
+.site-section-secondary {
+  background: var(--color-bg-secondary);
+}
+
+.site-section-header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.site-section-title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--color-text-primary);
+}
+
+.site-section-desc {
+  max-width: 600px;
+  margin: 0 auto;
+  color: var(--color-text-secondary);
+  font-size: 0.95rem;
+}
+
+.site-section-desc-wide {
+  max-width: 700px;
+  margin: 0 auto;
+  color: var(--color-text-secondary);
+  font-size: 0.95rem;
+}
+
+/* 02. System Features (系统特性网格) */
+.system-features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+}
+
+.system-feature-card {
+  background: var(--color-bg-primary);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.system-feature-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--color-accent-main);
+  box-shadow: 0 12px 30px rgba(0, 201, 129, 0.15);
+}
+
+.feature-card-step {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: var(--color-accent-main);
+  letter-spacing: 0.08em;
+  margin-bottom: 0.75rem;
+}
+
+.feature-card-title {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-text-primary);
+}
+
+.feature-card-desc {
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+/* 03. Customer Cases (客户案例) */
+.customer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.customer-card {
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.customer-badge {
+  font-size: 0.75rem;
+  padding: 0.2rem 0.5rem;
+  background: var(--color-accent-light);
+  color: var(--color-accent-main);
+  border-radius: 4px;
+  font-weight: 600;
+  display: inline-block;
+  margin-bottom: 0.75rem;
+}
+
+.customer-title {
+  font-size: 1.15rem;
+  margin-bottom: 0.75rem;
+  color: var(--color-text-primary);
+}
+
+.customer-desc {
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+/* 04. Security & Isolation (安全与凭证) */
+.security-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4rem;
+}
+
+.security-content {
+  flex: 1 1 500px;
+}
+
+.security-title {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: var(--color-text-primary);
+}
+
+.security-desc {
+  color: var(--color-text-secondary);
+  margin-bottom: 2.5rem;
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.security-feature-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.security-feature-item {
+  display: flex;
+  gap: 1rem;
+}
+
+.security-icon-wrapper {
+  background: var(--color-accent-light);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.security-feature-title {
+  font-size: 1rem;
+  color: var(--color-text-primary);
+  margin-bottom: 0.4rem;
+}
+
+.security-feature-desc {
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+.security-box {
+  flex: 1 1 400px;
+  background: var(--color-bg-primary);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 2.5rem;
+}
+
+.security-box-title {
+  font-size: 1.15rem;
+  color: var(--color-text-primary);
+  margin-bottom: 1.25rem;
+}
+
+.security-box-list {
+  list-style: none;
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* 05. Stats (数据流与对比) */
+.stats-wrapper {
+  width: 100%;
+  margin-top: 4rem;
+  padding-top: 3.5rem;
+  border-top: 1px dashed var(--color-border);
+  text-align: center;
+}
+
+.stats-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 0.75rem;
+  color: var(--color-text-primary);
+}
+
+.stats-subtitle {
+  font-size: 1.05rem;
+  color: var(--color-text-secondary);
+  margin-bottom: 3.5rem;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  align-items: center;
+}
+
+.stats-number {
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: var(--color-text-primary);
+  line-height: 1.1;
+}
+
+.stats-label {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  margin-top: 0.5rem;
+  font-weight: 600;
+}
+
+/* 06. FAQ (问答列表) */
+.faq-wrapper {
+  width: 100%;
+  max-width: 800px;
+  margin: 4rem auto 0 auto;
+  padding-top: 3.5rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.faq-title {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 3.5rem;
+  color: var(--color-text-primary);
+}
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.faq-item {
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 1.5rem;
+}
+
+.faq-item-last {
+  padding-bottom: 0.5rem;
+}
+
+.faq-question {
+  font-size: 1.05rem;
+  color: var(--color-text-primary);
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.faq-answer {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+}
+
+/* 07. Partner / Contact (生态合作与联系) */
+.contact-container {
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.contact-title {
+  font-size: 2rem;
+  margin-bottom: 1.25rem;
+  color: var(--color-text-primary);
+}
+
+.contact-desc {
+  color: var(--color-text-secondary);
+  margin-bottom: 2.5rem;
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.contact-btn-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.contact-btn {
+  padding: 0.75rem 2.5rem;
+  font-size: 0.95rem;
+}
