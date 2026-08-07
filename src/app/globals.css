@@ -242,7 +242,7 @@ input:focus {
   }
 }
 
-/* Hero 区域响应式样式 */
+/* Hero 区域样式 */
 .hero-section {
   padding: 5rem 0;
   background: radial-gradient(ellipse at top right, var(--color-accent-light) 0%, transparent 60%);
@@ -290,7 +290,6 @@ input:focus {
   margin-bottom: 2rem;
 }
 
-/* 1. 按钮组中对齐 */
 .hero-actions {
   display: flex;
   justify-content: center;
@@ -370,7 +369,6 @@ input:focus {
   display: inline-block;
 }
 
-/* 1. Tags 标签置右 */
 .hero-badge-container {
   margin-bottom: 0.75rem;
   display: flex;
@@ -388,7 +386,6 @@ input:focus {
   border: 1px solid rgba(0, 201, 129, 0.2);
 }
 
-/* 2. Logo 墙滚动修复 */
 .tech-marquee-wrapper {
   margin-top: 4rem;
   padding-top: 2.5rem;
@@ -443,7 +440,50 @@ input:focus {
   transform: translateY(-2px);
 }
 
-/* 3. 悬停边框收敛 */
+/* ==========================================================================
+   全新二期重构类名（剥离 page.tsx 内联样式）
+   ========================================================================== */
+
+/* Section 通用容器 */
+.site-section {
+  padding: 5rem 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.site-section-primary {
+  background: var(--color-bg-primary);
+}
+
+.site-section-secondary {
+  background: var(--color-bg-secondary);
+}
+
+.site-section-header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.site-section-title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--color-text-primary);
+}
+
+.site-section-desc {
+  max-width: 600px;
+  margin: 0 auto;
+  color: var(--color-text-secondary);
+  font-size: 0.95rem;
+}
+
+.site-section-desc-wide {
+  max-width: 700px;
+  margin: 0 auto;
+  color: var(--color-text-secondary);
+  font-size: 0.95rem;
+}
+
+/* 02. System Features (系统特性网格) */
 .system-features-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
