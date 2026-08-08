@@ -1,0 +1,594 @@
+"use client";
+
+import Link from "next/link";
+import ProductCard from "../components/ProductCard";
+import ConsoleBlock from "../components/ConsoleBlock";
+import { useTranslation } from "../context/LanguageContext";
+
+// SVG icons for cards
+const RDIcon = () => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+    <rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="var(--color-accent-main)" strokeWidth="2" />
+    <path d="M7 8h10M7 12h7M7 16h10" stroke="var(--color-text-secondary)" strokeWidth="2" strokeLinecap="round" />
+  </svg>
+);
+
+const GeneratorIcon = () => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+    <rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="var(--color-accent-main)" strokeWidth="2" />
+    <polygon points="10 8 16 12 10 16 10 8" fill="var(--color-text-secondary)" />
+  </svg>
+);
+
+const IngestorIcon = () => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+    <rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="var(--color-accent-main)" strokeWidth="2" />
+    <path d="M12 6v12M8 10l4-4 4 4" stroke="var(--color-text-secondary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+  </svg>
+);
+
+const SecurityIcon = () => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+    <rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="var(--color-accent-main)" strokeWidth="2" />
+    <circle cx="12" cy="12" r="4" stroke="var(--color-text-secondary)" strokeWidth="2" />
+  </svg>
+);
+
+const CompanyLogoIcon = ({ slug, name }: { slug: string; name: string }) => {
+  switch (slug) {
+    case "nvidia":
+      return (
+        <svg width="28" height="22" viewBox="0 0 24 24" fill="none" className="shrink-0">
+          <path d="M12.4 4c-4.4 0-8 3.6-8 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8zm4.3 12.6c-.6.6-1.5 1-2.4 1v-2.3c.4 0 .8-.2 1.1-.5.6-.6.6-1.5 0-2.1l-2.6-2.6v-2.8c2.2.4 3.9 2.3 3.9 4.6 0 1.8-.8 3.5-2.1 4.7z" fill="#76B900" />
+        </svg>
+      );
+    case "tesla":
+      return (
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="shrink-0">
+          <path d="M12 2C6.5 2 2 2.8 2 2.8l1.6 3.1s3.6-.9 8.4-.9c4.8 0 8.4.9 8.4.9L22 2.8S17.5 2 12 2zm0 4.8c-3.1 0-5.8.5-7.6 1.3l.8 2.2c1.4-.6 3.7-1 6.8-1 3.1 0 5.4.4 6.8 1l.8-2.2c-1.8-.8-4.5-1.3-7.6-1.3zm-1 4.5v10.7h2V11.3h-2z" fill="#E82127" />
+        </svg>
+      );
+    case "meta":
+      return (
+        <svg width="28" height="20" viewBox="0 0 24 16" fill="none" className="shrink-0">
+          <path d="M16.5 2C14.2 2 12.4 3.6 11.2 5.5 10 3.6 8.2 2 5.9 2 2.6 2 0 4.7 0 8s2.6 6 5.9 6c2.3 0 4.1-1.6 5.3-3.5 1.2 1.9 3 3.5 5.3 3.5 3.3 0 5.9-2.7 5.9-6S19.8 2 16.5 2zm-10.6 9.6C3.9 11.6 2.2 9.9 2.2 8s1.7-3.6 3.7-3.6c1.6 0 3 1.1 3.9 2.6-.9 1.5-2.3 2.6-3.9 2.6zm10.6 0c-1.6 0-3-1.1-3.9-2.6.9-1.5 2.3-2.6 3.9-2.6 2 0 3.7 1.7 3.7 3.6s-1.7 3.6-3.7 3.6z" fill="#0081FB" />
+        </svg>
+      );
+    case "apple":
+      return (
+        <svg width="22" height="24" viewBox="0 0 24 24" fill="none" className="shrink-0">
+          <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.34c.66-.8 1.11-1.92.99-3.04-.96.04-2.12.64-2.8 1.44-.61.71-1.14 1.86-1 2.97 1.07.08 2.15-.57 2.81-1.37z" fill="var(--color-text-primary)" />
+        </svg>
+      );
+    case "oracle":
+      return (
+        <svg width="42" height="24" viewBox="0 0 100 40" fill="none" className="shrink-0">
+          <rect width="100" height="40" rx="8" fill="#F80000" />
+          <text x="50" y="26" fontFamily="Arial, sans-serif" fontSize="16" fontWeight="bold" fill="#FFFFFF" textAnchor="middle">ORACLE</text>
+        </svg>
+      );
+    case "sap":
+      return (
+        <svg width="40" height="24" viewBox="0 0 100 40" fill="none" className="shrink-0">
+          <path d="M0 0h100v40H0z" fill="#0FAAFF" />
+          <text x="50" y="27" fontFamily="Arial, sans-serif" fontSize="20" fontWeight="900" fontStyle="italic" fill="#FFFFFF" textAnchor="middle">SAP</text>
+        </svg>
+      );
+    case "pfizer":
+      return (
+        <svg width="38" height="24" viewBox="0 0 120 50" fill="none" className="shrink-0">
+          <ellipse cx="60" cy="25" rx="55" ry="22" fill="#0072CE" />
+          <text x="60" y="33" fontFamily="Arial, sans-serif" fontSize="24" fontWeight="bold" fontStyle="italic" fill="#FFFFFF" textAnchor="middle">Pfizer</text>
+        </svg>
+      );
+    case "accenture":
+      return (
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="shrink-0">
+          <path d="M12 4L20 12L12 20" stroke="#A100FF" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      );
+    case "chevron":
+      return (
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" className="shrink-0">
+          <path d="M2 5l10 5 10-5M2 13l10 5 10-5" stroke="#005A9C" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      );
+    case "att":
+      return (
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" className="shrink-0">
+          <circle cx="12" cy="12" r="10" fill="#00A8E0" />
+          <path d="M2 12h20M3.5 7.5h17M3.5 16.5h17" stroke="#FFFFFF" strokeWidth="1.8" />
+        </svg>
+      );
+    case "dropbox":
+      return (
+        <svg width="26" height="24" viewBox="0 0 24 24" fill="none" className="shrink-0">
+          <path d="M6 2l6 4-6 4-6-4 6-4zm12 0l6 4-6 4-6-4 6-4zM0 10l6 4 6-4-6-4-6 4zm18-4l-6 4 6 4 6-4-6-4zM6 15l6 4 6-4-6-4-6 4z" fill="#0061FF" />
+        </svg>
+      );
+    case "nike":
+      return (
+        <svg width="32" height="18" viewBox="0 0 24 12" fill="none" className="shrink-0">
+          <path d="M21.7 0.8C14.8 4.2 8.7 8.2 2.1 11.2C0.7 11.8 0 11.1 0.7 9.8C2.3 6.9 5.8 3.9 9.8 1.9C13.8 0 18.2-0.6 21.7 0.8Z" fill="var(--color-text-primary)" />
+        </svg>
+      );
+    case "chase":
+      return (
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="shrink-0">
+          <path d="M4 4h7v7H4zM13 4h7v7h-7zM13 13h7v7h-7zM4 13h7v7H4z" fill="#1175E8" />
+        </svg>
+      );
+    case "wise":
+      return (
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="shrink-0">
+          <path d="M4 4h16l-6 9h5l-9 9 2-8H7l3-10z" fill="#163300" />
+        </svg>
+      );
+    default:
+      return null;
+  }
+};
+
+export default function Home() {
+  const { t } = useTranslation();
+
+  return (
+    <div>
+      {/* Hero Section */}
+      <section className="hero-section">
+        <div className="container hero-container">
+          {/* Left Hero copy */}
+          <div className="hero-copy animate-fade-in">
+            <span className="hero-tag">
+              {t("hero.tag")}
+            </span>
+            
+            <h1 className="hero-title">
+              {t("hero.title")}<br />
+              <span className="hero-title-highlight">{t("hero.titleHighlight")}</span>
+            </h1>
+            
+            <p className="hero-desc">
+              {t("hero.desc")}
+            </p>
+
+            {/* hero.badge 统一排版流 */}
+            <div className="hero-badge-container">
+              <span className="hero-badge-tag">
+                {t("hero.badge")}
+              </span>
+            </div>
+
+            <div className="hero-actions">
+              <a href="https://app.univeros.cn/explore" target="_blank" rel="noopener noreferrer">
+                <button className="btn-primary hero-btn">
+                  {t("hero.btnPricing")}
+                </button>
+              </a>
+              <Link href="/partner#apply-form">
+                <button className="btn-secondary hero-btn">
+                  {t("hero.btnApply")}
+                </button>
+              </Link>
+            </div>
+
+            <span className="hero-tip">
+              {t("hero.tip")}
+            </span>
+          </div>
+
+          {/* Right Console block */}
+          <div className="hero-visual animate-fade-in delay-2">
+            <ConsoleBlock />
+          </div>
+        </div>
+
+        {/* Big Tech Infinite Marquee Logo Wall */}
+        <div className="tech-marquee-wrapper">
+          <p className="tech-marquee-title">
+            {t("customers.techWallTitle")}
+          </p>
+
+          <div className="tech-marquee-track-container">
+            <div className="tech-marquee-track">
+              {[
+                { name: "NVIDIA", slug: "nvidia" },
+                { name: "Tesla", slug: "tesla" },
+                { name: "Meta", slug: "meta" },
+                { name: "Apple", slug: "apple" },
+                { name: "Oracle", slug: "oracle" },
+                { name: "SAP", slug: "sap" },
+                { name: "Pfizer", slug: "pfizer" },
+                { name: "Accenture", slug: "accenture" },
+                { name: "Chevron", slug: "chevron" },
+                { name: "AT&T", slug: "att" },
+                { name: "Dropbox", slug: "dropbox" },
+                { name: "Nike", slug: "nike" },
+                { name: "Chase", slug: "chase" },
+                { name: "Wise", slug: "wise" },
+
+                // Duplicate array for seamless infinite marquee loop
+                { name: "NVIDIA", slug: "nvidia" },
+                { name: "Tesla", slug: "tesla" },
+                { name: "Meta", slug: "meta" },
+                { name: "Apple", slug: "apple" },
+                { name: "Oracle", slug: "oracle" },
+                { name: "SAP", slug: "sap" },
+                { name: "Pfizer", slug: "pfizer" },
+                { name: "Accenture", slug: "accenture" },
+                { name: "Chevron", slug: "chevron" },
+                { name: "AT&T", slug: "att" },
+                { name: "Dropbox", slug: "dropbox" },
+                { name: "Nike", slug: "nike" },
+                { name: "Chase", slug: "chase" },
+                { name: "Wise", slug: "wise" }
+              ].map((logo, index) => (
+                <div key={index} className="tech-logo-item">
+                  <CompanyLogoIcon slug={logo.slug} name={logo.name} />
+                  <span className="font-bold text-lg tracking-tight text-[var(--color-text-primary)]">
+                    {logo.name}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Product Lines Section */}
+      <section id="features" className="site-section site-section-primary">
+        <div className="container">
+          <div className="site-section-header">
+            <h2 className="site-section-title">
+              {t("features.title")}
+            </h2>
+            <p className="site-section-desc">
+              {t("features.desc")}
+            </p>
+          </div>
+
+          <div className="grid-cols-3">
+            <ProductCard 
+              number="00"
+              title={t("features.rd.title")}
+              description={t("features.rd.desc")}
+              tags={[t("features.rd.tag1"), t("features.rd.tag2"), t("features.rd.tag3")]}
+              icon={<RDIcon />}
+            />
+            <ProductCard 
+              number="01"
+              title={t("features.gen.title")}
+              description={t("features.gen.desc")}
+              tags={[t("features.gen.tag1"), t("features.gen.tag2"), t("features.gen.tag3")]}
+              icon={<GeneratorIcon />}
+            />
+            <ProductCard 
+              number="02"
+              title={t("features.ing.title")}
+              description={t("features.ing.desc")}
+              tags={[t("features.ing.tag1"), t("features.ing.tag2"), t("features.ing.tag3")]}
+              icon={<IngestorIcon />}
+              invited={true}
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Combined: univerOS System Features Section (univerOS 系统特性) */}
+      <section className="site-section site-section-secondary">
+        <div className="container">
+          <div className="site-section-header">
+            <h2 className="site-section-title">
+              {t("systemFeatures.title")}
+            </h2>
+            <p className="site-section-desc-wide">
+              {t("systemFeatures.desc")}
+            </p>
+          </div>
+
+          <div className="system-features-grid">
+            {/* Brain */}
+            <div className="system-feature-card">
+              <div className="feature-card-step">01 / DISPATCH</div>
+              <h3 className="feature-card-title">{t("architecture.brain")}</h3>
+              <p className="feature-card-desc">{t("architecture.brainDesc")}</p>
+            </div>
+            {/* Agent */}
+            <div className="system-feature-card">
+              <div className="feature-card-step">02 / SWARM</div>
+              <h3 className="feature-card-title">{t("architecture.agent")}</h3>
+              <p className="feature-card-desc">{t("architecture.agentDesc")}</p>
+            </div>
+            {/* Skills */}
+            <div className="system-feature-card">
+              <div className="feature-card-step">03 / SKILLS</div>
+              <h3 className="feature-card-title">{t("architecture.skills")}</h3>
+              <p className="feature-card-desc">{t("architecture.skillsDesc")}</p>
+            </div>
+            {/* Memory */}
+            <div className="system-feature-card">
+              <div className="feature-card-step">04 / MEMORY</div>
+              <h3 className="feature-card-title">{t("architecture.memory")}</h3>
+              <p className="feature-card-desc">{t("architecture.memoryDesc")}</p>
+            </div>
+            {/* Self-Healing */}
+            <div className="system-feature-card">
+              <div className="feature-card-step">05 / HEALING</div>
+              <h3 className="feature-card-title">{t("architecture.healing")}</h3>
+              <p className="feature-card-desc">{t("architecture.healingDesc")}</p>
+            </div>
+            {/* CUP Isolation */}
+            <div className="system-feature-card">
+              <div className="feature-card-step">06 / ISOLATION</div>
+              <h3 className="feature-card-title">{t("trust.t1.title")}</h3>
+              <p className="feature-card-desc">{t("trust.t1.desc")}</p>
+            </div>
+            {/* Append-only Ledger */}
+            <div className="system-feature-card">
+              <div className="feature-card-step">07 / LEDGER</div>
+              <h3 className="feature-card-title">{t("trust.t2.title")}</h3>
+              <p className="feature-card-desc">{t("trust.t2.desc")}</p>
+            </div>
+            {/* Safe Deployment */}
+            <div className="system-feature-card">
+              <div className="feature-card-step">08 / CONFIRMATION</div>
+              <h3 className="feature-card-title">{t("trust.t3.title")}</h3>
+              <p className="feature-card-desc">{t("trust.t3.desc")}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Enterprise Scale & Customers Section */}
+      <section id="customers" className="site-section site-section-primary">
+        <div className="container">
+          <div className="site-section-header">
+            <h2 className="site-section-title">
+              {t("customers.title")}
+            </h2>
+            <p className="site-section-desc">
+              {t("customers.desc")}
+            </p>
+          </div>
+
+          <div className="customer-grid">
+            {/* OPC */}
+            <div className="customer-card">
+              <div>
+                <span className="customer-badge">
+                  {t("customers.opc.badge")}
+                </span>
+                <h3 className="customer-title">
+                  {t("customers.opc.title")}
+                </h3>
+                <p className="customer-desc">
+                  {t("customers.opc.desc")}
+                </p>
+              </div>
+            </div>
+
+            {/* SME */}
+            <div className="customer-card">
+              <div>
+                <span className="customer-badge">
+                  {t("customers.sme.badge")}
+                </span>
+                <h3 className="customer-title">
+                  {t("customers.sme.title")}
+                </h3>
+                <p className="customer-desc">
+                  {t("customers.sme.desc")}
+                </p>
+              </div>
+            </div>
+
+            {/* Traditional */}
+            <div className="customer-card">
+              <div>
+                <span className="customer-badge">
+                  {t("customers.trad.badge")}
+                </span>
+                <h3 className="customer-title">
+                  {t("customers.trad.title")}
+                </h3>
+                <p className="customer-desc">
+                  {t("customers.trad.desc")}
+                </p>
+              </div>
+            </div>
+
+            {/* Enterprise */}
+            <div className="customer-card">
+              <div>
+                <span className="customer-badge">
+                  {t("customers.enterprise.badge")}
+                </span>
+                <h3 className="customer-title">
+                  {t("customers.enterprise.title")}
+                </h3>
+                <p className="customer-desc">
+                  {t("customers.enterprise.desc")}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Credentials and Security Section */}
+      <section className="site-section site-section-secondary">
+        <div className="container security-container">
+          {/* Left Details */}
+          <div className="security-content">
+            <h2 className="security-title">
+              {t("security.title")}
+            </h2>
+            <p className="security-desc">
+              {t("security.desc")}
+            </p>
+
+            <div className="security-feature-list">
+              <div className="security-feature-item">
+                <div className="security-icon-wrapper">
+                  <SecurityIcon />
+                </div>
+                <div>
+                  <h4 className="security-feature-title">
+                    {t("security.cup.title")}
+                  </h4>
+                  <p className="security-feature-desc">
+                    {t("security.cup.desc")}
+                  </p>
+                </div>
+              </div>
+
+              <div className="security-feature-item">
+                <div className="security-icon-wrapper">
+                  <SecurityIcon />
+                </div>
+                <div>
+                  <h4 className="security-feature-title">
+                    {t("security.ledger.title")}
+                  </h4>
+                  <p className="security-feature-desc">
+                    {t("security.ledger.desc")}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Right illustration / Info box */}
+          <div className="security-box">
+            <h3 className="security-box-title">
+              {t("security.boxTitle")}
+            </h3>
+            <ul className="security-box-list">
+              <li>
+                <strong>✓</strong> {t("security.item1")}
+              </li>
+              <li>
+                <strong>✓</strong> {t("security.item2")}
+              </li>
+              <li>
+                <strong>✓</strong> {t("security.item3")}
+              </li>
+            </ul>
+          </div>
+
+          {/* Integrated Stats Data Section */}
+          <div className="stats-wrapper">
+            <h3 className="stats-title">
+              {t("stats.title")}
+            </h3>
+            <p className="stats-subtitle">
+              {t("stats.subtitle")}
+            </p>
+
+            {/* Large Numbers */}
+            <div className="stats-grid">
+              <div>
+                <div className="stats-number">
+                  {t("stats.num1")}
+                </div>
+                <p className="stats-label">
+                  {t("stats.label1")}
+                </p>
+              </div>
+              <div>
+                <div className="stats-number">
+                  {t("stats.num2")}
+                </div>
+                <p className="stats-label">
+                  {t("stats.label2")}
+                </p>
+              </div>
+              <div>
+                <div className="stats-number">
+                  {t("stats.num3")}
+                </div>
+                <p className="stats-label">
+                  {t("stats.label3")}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Integrated FAQ */}
+          <div className="faq-wrapper">
+            <h3 className="faq-title">
+              {t("faq.title")}
+            </h3>
+            
+            <div className="faq-list">
+              <div className="faq-item">
+                <h4 className="faq-question">
+                  {t("faq.q1")}
+                </h4>
+                <p className="faq-answer">
+                  {t("faq.a1")}
+                </p>
+              </div>
+
+              <div className="faq-item">
+                <h4 className="faq-question">
+                  {t("faq.q2")}
+                </h4>
+                <p className="faq-answer">
+                  {t("faq.a2")}
+                </p>
+              </div>
+
+              <div className="faq-item">
+                <h4 className="faq-question">
+                  {t("faq.q3")}
+                </h4>
+                <p className="faq-answer">
+                  {t("faq.a3")}
+                </p>
+              </div>
+
+              <div className="faq-item">
+                <h4 className="faq-question">
+                  {t("faq.q4")}
+                </h4>
+                <p className="faq-answer">
+                  {t("faq.a4")}
+                </p>
+              </div>
+
+              <div className="faq-item-last">
+                <h4 className="faq-question">
+                  {t("faq.q5")}
+                </h4>
+                <p className="faq-answer">
+                  {t("faq.a5")}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Combined Partner Ecosystem & Contact Section */}
+      <section id="contact" className="site-section site-section-primary text-center">
+        <div className="container contact-container">
+          <h2 className="contact-title">
+            联系我们 共建 AI Workforce 生态
+          </h2>
+          <p className="contact-desc">
+            {t("partner.desc")} 专属客户经理与技术顾问 24/7 为您提供严肃企业级 AI Workforce 落地咨询与解决方案架构支持。
+          </p>
+
+          <div className="contact-btn-wrapper">
+            <Link href="/partner">
+              <button className="btn-primary contact-btn">
+                {t("partner.btn")}
+              </button>
+            </Link>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}

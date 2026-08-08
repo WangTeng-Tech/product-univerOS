@@ -1,0 +1,86 @@
+:root, [data-theme="light"] {
+  /* 背景体系 */
+  --color-bg-primary: #ffffff;
+  --color-bg-secondary: #f7f8fa;
+  --color-border: #e5e7eb;
+
+  /* 文字体系 */
+  --color-text-primary: #101418;
+  --color-text-secondary: #4b5563;
+  --color-text-muted: #8c9ba5;
+
+  /* 强调色体系 */
+  --color-accent-main: #00c981;       /* 核心强调：智能绿 */
+  --color-accent-hover: #00b272;
+  --color-accent-secondary: #17bebb;  /* 辅助青色 */
+  --color-accent-light: #dffbf1;      /* 绿底浅色渐变 */
+
+  /* 深色控制台专区（仅限局部产品运行状态展示） */
+  --color-console-bg: #0d1117;
+  --color-console-card: #151a20;
+  --color-console-text: #e6edf3;
+  --color-console-border: #30363d;
+  
+  /* 头部背景 */
+  --color-header-bg: rgba(255, 255, 255, 0.85);
+  
+  /* 动效与交互过渡 */
+  --transition-smooth: 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  --box-shadow-hover: 0 8px 24px rgba(16, 20, 24, 0.04);
+}
+
+/* 系统深色模式自适应 */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    /* 背景体系 */
+    --color-bg-primary: #000000;
+    --color-bg-secondary: #0a0a0a;
+    --color-border: #1e1e20;
+
+    /* 文字体系 */
+    --color-text-primary: #ffffff;
+    --color-text-secondary: #e4e4e7;
+    --color-text-muted: #8e8e93;
+
+    /* 强调色体系 */
+    --color-accent-light: rgba(0, 201, 129, 0.1);
+    
+    /* 局部控制台微调，使其在暗色模式下拥有微弱对比度 */
+    --color-console-bg: #050505;
+    --color-console-card: #0a0a0a;
+    --color-console-border: #1e1e20;
+    
+    /* 头部背景 */
+    --color-header-bg: rgba(0, 0, 0, 0.85);
+
+    /* 动效与阴影 */
+    --box-shadow-hover: 0 8px 24px rgba(0, 201, 129, 0.15);
+  }
+}
+
+/* 显式深色模式覆盖 */
+[data-theme="dark"] {
+  /* 背景体系 */
+  --color-bg-primary: #000000;
+  --color-bg-secondary: #0a0a0a;
+  --color-border: #1e1e20;
+
+  /* 文字体系 */
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #e4e4e7;
+  --color-text-muted: #8e8e93;
+
+  /* 强调色体系 */
+  --color-accent-light: rgba(0, 201, 129, 0.1);
+  
+  /* 局部控制台微调，使其在暗色模式下拥有微弱对比度 */
+  --color-console-bg: #050505;
+  --color-console-card: #0a0a0a;
+  --color-console-border: #1e1e20;
+  
+  /* 头部背景 */
+  --color-header-bg: rgba(0, 0, 0, 0.85);
+
+  /* 动效与阴影 */
+  --box-shadow-hover: 0 8px 24px rgba(0, 201, 129, 0.15);
+}
