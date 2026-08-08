@@ -165,7 +165,7 @@ export default function Home() {
                   {t("hero.btnPricing")}
                 </button>
               </a>
-              <Link href="/checkout">
+              <Link href="/partner#apply-form">
                 <button className="btn-secondary hero-btn">
                   {t("hero.btnApply")}
                 </button>
