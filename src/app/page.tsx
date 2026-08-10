@@ -1,3 +1,8 @@
+// PageBudget:
+//   summary_cards: 4
+//   charts:        0
+//   tables:        0
+//   forms:         0
 "use client";
 
 import Link from "next/link";
