@@ -76,7 +76,7 @@ function CheckoutContent() {
   const handleMockPay = () => {
     // Generate a mock DID
     const prefix = planParam.toUpperCase();
-    const generatedDid = `did:xt:${prefix.slice(0, 3)}:${Math.random().toString(36).substring(2, 10).toUpperCase()}`;
+    const generatedDid = `did:uos:${prefix.slice(0, 3)}:${Math.random().toString(36).substring(2, 10).toUpperCase()}`;
     setDid(generatedDid);
     setStep(3);
 

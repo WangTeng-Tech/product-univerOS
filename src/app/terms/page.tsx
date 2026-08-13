@@ -23,8 +23,8 @@ export default function TermsPage() {
             </h2>
             <p>
               {language === "zh"
-                ? "欢迎使用 univerOS（以下简称“本平台”或“本系统”）。本协议由您（企业客户或个人用户）与 univerOS 运营团队共同订立。当您访问平台、注册账号或使用本系统的任何 SOP 产线（包括但不限于 yz-RD、yz-CF、yz-IB）时，即表示您已阅读、理解并同意接受本服务条款的约束。"
-                : "Welcome to univerOS ('the Platform' or 'the System'). This Agreement is entered into between you (Enterprise Tenant or Individual User) and univerOS. By accessing the Platform, creating an account, or invoking any SOP pipelines (including yz-RD, yz-CF, yz-IB), you agree to be bound by these Terms of Service."}
+                ? "欢迎使用 univerOS（以下简称“本平台”或“本系统”）。本协议由您（企业客户或个人用户）与 univerOS 运营团队共同订立。当您访问平台、注册账号或使用本系统的任何 SOP 产线（包括但不限于 uos-RD、uos-CF、uos-IB）时，即表示您已阅读、理解并同意接受本服务条款的约束。"
+                : "Welcome to univerOS ('the Platform' or 'the System'). This Agreement is entered into between you (Enterprise Tenant or Individual User) and univerOS. By accessing the Platform, creating an account, or invoking any SOP pipelines (including uos-RD, uos-CF, uos-IB), you agree to be bound by these Terms of Service."}
             </p>
           </section>
 
