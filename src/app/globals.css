@@ -430,7 +430,7 @@ input:focus {
 .tech-marquee-track {
   display: flex;
   width: max-content;
-  animation: marqueeRoll 25s linear infinite;
+  animation: marqueeRoll 35s linear infinite;
   will-change: transform;
 }
 
