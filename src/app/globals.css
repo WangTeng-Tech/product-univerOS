@@ -87,7 +87,7 @@ a {
   border-radius: 8px;
   border: 1px solid var(--color-accent-main);
   cursor: pointer;
-  transition: all var(--transition-smooth);
+  transition: background-color var(--transition-smooth);
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
@@ -96,31 +96,26 @@ a {
 .btn-primary:hover {
   background-color: var(--color-accent-hover);
   border-color: var(--color-accent-hover);
-  transform: translateY(-1px);
-  box-shadow: 0 4px 14px rgba(0, 201, 129, 0.25);
 }
 
 .btn-secondary {
   background: var(--color-surface-card);
-  backdrop-filter: blur(10px);
   color: var(--color-text-primary);
   font-weight: 500;
   padding: 0.75rem 1.5rem;
   border-radius: 8px;
   border: 1px solid var(--color-border);
   cursor: pointer;
-  transition: all var(--transition-smooth);
+  transition: border-color var(--transition-smooth), background-color var(--transition-smooth), color var(--transition-smooth);
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
 }
 
 .btn-secondary:hover {
-  border-color: var(--color-border-glow);
+  border-color: rgba(0, 201, 129, 0.45);
   background-color: var(--color-bg-secondary);
   color: var(--color-accent-main);
-  transform: translateY(-1px);
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
 }
 
 /* Header Toggle Buttons Hover Converge */
@@ -139,7 +134,7 @@ a {
   font-weight: 500;
   padding: 0.35rem 0.75rem;
   border-radius: 6px;
-  transition: all var(--transition-smooth);
+  transition: color var(--transition-smooth), background-color var(--transition-smooth);
   display: inline-flex;
   align-items: center;
 }
@@ -147,7 +142,6 @@ a {
 .header-nav a:hover {
   color: var(--color-accent-main);
   background-color: var(--color-accent-light);
-  transform: translateY(-1px);
 }
 
 /* Footer Hover */
@@ -161,25 +155,22 @@ a {
   color: var(--color-text-primary);
 }
 
-/* Product Card (ui-ux-pro-max Glassmorphic) */
+/* Product Card */
 .product-card {
   background: var(--color-surface-card);
-  backdrop-filter: blur(12px);
   border: 1px solid var(--color-border);
-  border-radius: 14px;
+  border-radius: 12px;
   padding: 2.25rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  transition: all var(--transition-smooth);
+  transition: border-color var(--transition-smooth);
   position: relative;
   overflow: hidden;
 }
 
 .product-card:hover {
-  border-color: var(--color-border-glow);
-  box-shadow: var(--shadow-ambient);
-  transform: translateY(-3px);
+  border-color: rgba(0, 201, 129, 0.45);
 }
 
 /* Interactive Logs Console */
@@ -189,7 +180,7 @@ a {
   border-radius: 10px;
   font-family: monospace;
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
 }
 
 /* Animations */
@@ -533,14 +524,12 @@ input:focus {
   border: 1px solid var(--color-border);
   border-radius: 12px;
   padding: 1.5rem;
-  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+  transition: border-color var(--transition-smooth);
   cursor: pointer;
 }
 
 .system-feature-card:hover {
-  transform: translateY(-2px);
   border-color: rgba(0, 201, 129, 0.4);
-  box-shadow: 0 6px 16px rgba(0, 201, 129, 0.08);
 }
 
 .feature-card-step {
@@ -578,13 +567,11 @@ input:focus {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+  transition: border-color var(--transition-smooth);
 }
 
 .customer-card:hover {
-  transform: translateY(-2px);
-  border-color: rgba(0, 201, 129, 0.35);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.04);
+  border-color: rgba(0, 201, 129, 0.4);
 }
 
 .customer-badge {
@@ -843,14 +830,12 @@ input:focus {
 .arch-tab-btn:hover {
   border-color: rgba(0, 201, 129, 0.4);
   color: var(--color-text-primary);
-  transform: translateY(-1px);
 }
 
 .arch-tab-btn.active {
   background: var(--color-accent-main);
   border-color: var(--color-accent-main);
   color: #ffffff;
-  box-shadow: 0 4px 16px rgba(0, 201, 129, 0.25);
 }
 
 .arch-cards-grid {
@@ -879,15 +864,13 @@ input:focus {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+  transition: border-color var(--transition-smooth);
   position: relative;
   overflow: hidden;
 }
 
 .arch-card:hover {
-  transform: translateY(-2px);
   border-color: rgba(0, 201, 129, 0.45);
-  box-shadow: 0 10px 28px rgba(0, 201, 129, 0.1);
 }
 
 .arch-card-header {
@@ -957,13 +940,12 @@ input:focus {
   font-weight: 600;
   color: var(--color-text-secondary);
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.15s ease;
 }
 
 .pricing-pill-btn.active {
   background: var(--color-accent-main);
   color: #ffffff;
-  box-shadow: 0 2px 8px rgba(0, 201, 129, 0.2);
 }
 
 .pricing-discount-badge {
@@ -999,17 +981,15 @@ input:focus {
   flex-direction: column;
   justify-content: space-between;
   position: relative;
-  transition: all 0.3s ease;
+  transition: border-color var(--transition-smooth);
 }
 
 .pricing-card-v3:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.05);
+  border-color: rgba(0, 201, 129, 0.45);
 }
 
 .pricing-card-v3.highlighted {
   border-color: var(--color-accent-main);
-  box-shadow: 0 12px 36px rgba(0, 201, 129, 0.12);
 }
 
 .pricing-card-v3.highlighted::before {
@@ -1091,7 +1071,7 @@ input:focus {
 }
 
 /* ==========================================================================
-   10. Pulsing indicator for live console & status
+   10. Clean indicator for live console & status
    ========================================================================== */
 .pulsing-indicator {
   display: inline-block;
@@ -1099,19 +1079,5 @@ input:focus {
   height: 8px;
   border-radius: 50%;
   background: var(--color-accent-main);
-  box-shadow: 0 0 0 rgba(0, 201, 129, 0.4);
-  animation: pulse-glow 2s infinite;
-}
-
-@keyframes pulse-glow {
-  0% {
-    box-shadow: 0 0 0 0 rgba(0, 201, 129, 0.7);
-  }
-  70% {
-    box-shadow: 0 0 0 6px rgba(0, 201, 129, 0);
-  }
-  100% {
-    box-shadow: 0 0 0 0 rgba(0, 201, 129, 0);
-  }
 }
 

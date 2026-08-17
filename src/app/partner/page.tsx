@@ -270,46 +270,41 @@ export default function UpgradedPartnerPage() {
         .partner-benefit-card {
           background: var(--partner-benefit-bg, #ffffff);
           border: 1px solid var(--partner-card-border, rgba(0, 0, 0, 0.08));
-          border-radius: 16px;
+          border-radius: 14px;
           padding: 2rem;
-          box-shadow: var(--partner-card-shadow, 0 4px 20px rgba(0, 0, 0, 0.03));
-          transition: all 0.3s ease;
+          transition: border-color var(--transition-smooth, 0.15s ease);
         }
 
         .partner-benefit-card:hover {
-          transform: translateY(-2px);
-          border-color: rgba(99, 102, 241, 0.3);
+          border-color: rgba(99, 102, 241, 0.4);
         }
 
         .btn-glowing-primary {
           background: #4f46e5;
           color: #ffffff !important;
           border: 1px solid #6366f1;
-          border-radius: 9999px;
+          border-radius: 8px;
           padding: 0.85rem 2rem;
           font-weight: 700;
           font-size: 0.95rem;
           cursor: pointer;
-          transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-          box-shadow: 0 2px 8px rgba(79, 70, 229, 0.12);
+          transition: background-color var(--transition-smooth, 0.15s ease);
         }
 
         .btn-glowing-primary:hover {
           background: #4338ca;
-          box-shadow: 0 4px 14px rgba(79, 70, 229, 0.22);
-          transform: translateY(-1px);
         }
 
         .btn-glowing-secondary {
           background: var(--partner-btn-sec-bg, rgba(0, 0, 0, 0.05));
           color: var(--color-text-primary, #101418) !important;
           border: 1px solid var(--partner-card-border, rgba(0, 0, 0, 0.15));
-          border-radius: 9999px;
+          border-radius: 8px;
           padding: 0.85rem 2rem;
           font-weight: 600;
           font-size: 0.95rem;
           cursor: pointer;
-          transition: all 0.3s ease;
+          transition: border-color var(--transition-smooth, 0.15s ease), background-color var(--transition-smooth, 0.15s ease);
         }
 
         .btn-glowing-secondary:hover {
@@ -709,8 +704,7 @@ export default function UpgradedPartnerPage() {
                     borderRadius: '12px',
                     padding: '1.25rem 1.5rem',
                     cursor: 'pointer',
-                    transition: 'all 0.2s ease',
-                    boxShadow: 'var(--partner-card-shadow, 0 4px 15px rgba(0,0,0,0.02))'
+                    transition: 'border-color 0.15s ease'
                   }}
                 >
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '1rem' }}>
@@ -734,12 +728,11 @@ export default function UpgradedPartnerPage() {
         <div style={{
           background: 'var(--partner-section-bg, rgba(248, 250, 252, 0.9))',
           border: '1px solid var(--partner-card-border, rgba(0, 0, 0, 0.08))',
-          borderRadius: '24px',
+          borderRadius: '20px',
           padding: '4rem 2rem',
           textAlign: 'center',
           position: 'relative',
-          overflow: 'hidden',
-          boxShadow: 'var(--partner-card-shadow, 0 8px 30px rgba(0, 0, 0, 0.03))'
+          overflow: 'hidden'
         }}>
           <h2 style={{ fontSize: '2rem', fontWeight: 900, marginBottom: '1rem', color: 'var(--color-text-primary, #0f172a)' }}>
             {t.ctaTitle}
