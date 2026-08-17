@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import ThemeToggle from "./ThemeToggle";
 import { useTranslation } from "../context/LanguageContext";
 
@@ -33,6 +34,12 @@ const CloseIcon = () => (
 export default function Header() {
   const { language, setLanguage, t } = useTranslation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const pathname = usePathname();
+
+  const isActive = (path: string) => {
+    if (path === "/") return pathname === "/";
+    return pathname.startsWith(path);
+  };
 
   return (
     <header style={{
@@ -68,14 +75,14 @@ export default function Header() {
         
         {/* Desktop Navigation Links */}
         <nav className="header-nav desktop-only" style={{ 
-          gap: '2.5rem', 
+          gap: '1.5rem', 
           fontSize: '0.9rem', 
           fontWeight: 500 
         }}>
-          <Link href="/#features">{t("nav.features")}</Link>
-          <Link href="/pricing">{t("nav.pricing")}</Link>
-          <Link href="/security">{t("nav.security")}</Link>
-          <Link href="/partner">{t("nav.partner")}</Link>
+          <Link href="/#features" className={isActive("/#features") ? "active-link" : ""}>{t("nav.features")}</Link>
+          <Link href="/pricing" style={{ color: isActive("/pricing") ? "var(--color-accent-main)" : undefined, fontWeight: isActive("/pricing") ? 700 : undefined }}>{t("nav.pricing")}</Link>
+          <Link href="/security" style={{ color: isActive("/security") ? "var(--color-accent-main)" : undefined, fontWeight: isActive("/security") ? 700 : undefined }}>{t("nav.security")}</Link>
+          <Link href="/partner" style={{ color: isActive("/partner") ? "var(--color-accent-main)" : undefined, fontWeight: isActive("/partner") ? 700 : undefined }}>{t("nav.partner")}</Link>
           <Link href="/#contact">{t("nav.contact")}</Link>
         </nav>
         
