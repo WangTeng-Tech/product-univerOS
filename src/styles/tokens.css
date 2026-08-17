@@ -12,6 +12,9 @@
   --color-accent-secondary: #0ea5e9;  /* 辅助海蓝 */
   --color-accent-light: rgba(0, 201, 129, 0.06);
 
+  /* 绿色主按钮前景色（浅色模式白字，暗色模式高对比黑字） */
+  --color-btn-primary-text: #ffffff;
+
   /* 文字体系 */
   --color-text-primary: #0f172a;
   --color-text-secondary: #475569;
@@ -47,8 +50,9 @@
     --color-text-secondary: #cbd5e1;
     --color-text-muted: #64748b;
 
-    /* 强调色体系 */
+    /* 强调色体系与暗色模式下绿色按钮文字前景色 */
     --color-accent-light: rgba(0, 201, 129, 0.08);
+    --color-btn-primary-text: #05130e;
     
     /* 卡片与 Surface */
     --color-surface-card: #0b0f19;
@@ -78,8 +82,9 @@
   --color-text-secondary: #cbd5e1;
   --color-text-muted: #64748b;
 
-  /* 强调色体系 */
+  /* 强调色体系与暗色模式下绿色按钮文字前景色 */
   --color-accent-light: rgba(0, 201, 129, 0.08);
+  --color-btn-primary-text: #05130e;
   
   /* 卡片与 Surface */
   --color-surface-card: #0b0f19;
