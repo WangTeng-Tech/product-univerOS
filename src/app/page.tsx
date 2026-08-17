@@ -105,7 +105,7 @@ export default function Home() {
             </span>
             
             <h1 className="hero-title">
-              {t("hero.title")}<br />
+              {t("hero.title") ? <>{t("hero.title")}<br /></> : null}
               <span className="hero-title-highlight">{t("hero.titleHighlight")}</span>
             </h1>
             
@@ -145,25 +145,38 @@ export default function Home() {
 
           <div className="tech-marquee-track-container">
             <div className="tech-marquee-track">
-              {[
-                { name: "NVIDIA", slug: "nvidia" },
-                { name: "Tesla", slug: "tesla" },
-                { name: "Meta", slug: "meta" },
-                { name: "Apple", slug: "apple" },
-                { name: "Oracle", slug: "oracle" },
-                { name: "NVIDIA", slug: "nvidia" },
-                { name: "Tesla", slug: "tesla" },
-                { name: "Meta", slug: "meta" },
-                { name: "Apple", slug: "apple" },
-                { name: "Oracle", slug: "oracle" }
-              ].map((logo, index) => (
-                <div key={index} className="tech-logo-item">
-                  <CompanyLogoIcon slug={logo.slug} name={logo.name} />
-                  <span className="font-bold text-lg tracking-tight text-[var(--color-text-primary)]">
-                    {logo.name}
-                  </span>
-                </div>
-              ))}
+              <div className="tech-marquee-content">
+                {[
+                  { name: "NVIDIA", slug: "nvidia" },
+                  { name: "Tesla", slug: "tesla" },
+                  { name: "Meta", slug: "meta" },
+                  { name: "Apple", slug: "apple" },
+                  { name: "Oracle", slug: "oracle" }
+                ].map((logo, index) => (
+                  <div key={index} className="tech-logo-item">
+                    <CompanyLogoIcon slug={logo.slug} name={logo.name} />
+                    <span className="font-bold text-lg tracking-tight text-[var(--color-text-primary)]">
+                      {logo.name}
+                    </span>
+                  </div>
+                ))}
+              </div>
+              <div className="tech-marquee-content" aria-hidden="true">
+                {[
+                  { name: "NVIDIA", slug: "nvidia" },
+                  { name: "Tesla", slug: "tesla" },
+                  { name: "Meta", slug: "meta" },
+                  { name: "Apple", slug: "apple" },
+                  { name: "Oracle", slug: "oracle" }
+                ].map((logo, index) => (
+                  <div key={`dup-${index}`} className="tech-logo-item">
+                    <CompanyLogoIcon slug={logo.slug} name={logo.name} />
+                    <span className="font-bold text-lg tracking-tight text-[var(--color-text-primary)]">
+                      {logo.name}
+                    </span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -515,7 +528,7 @@ export default function Home() {
       </section>
 
       {/* Section E: CTA */}
-      <section className="site-section site-section-secondary">
+      <section id="contact" className="site-section site-section-secondary">
         <div className="container">
           <div className="contact-container text-center" style={{ textAlign: 'center' }}>
             <h2 className="contact-title">{t("partner.title")}</h2>

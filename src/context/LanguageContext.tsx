@@ -36,13 +36,13 @@ const translations: Record<Language, TranslationDict> = {
       copyright: "©2026 univerOS · 具备全域认知感知的企业级 AI Workforce 操作系统"
     },
     hero: {
-      tag: "安全受控 (Governed) · 自主可控 (Sovereign) · 全域感知 (Cognitive)",
+      tag: "univerOS",
       badge: "智能 · 安全 · 交付",
-      title: "具备认知感知、动态审批受控、多职能协同自进化的",
-      titleHighlight: "企业级 AI Workforce 操作系统",
-      desc: "融合软件研发、内容矩阵营销与全球全域认知感知。独创 Dual-Rail 动态审批门与自主可控基础设施，兼具 Agent Swarm 极致生产力与企业级安全合规。",
-      btnApply: "代理加盟 / 私有部署",
-      btnPricing: "马上体验 / 探索能力",
+      title: "",
+      titleHighlight: "多职能协同自进化的企业级 AI Workforce 操作系统",
+      desc: "融合软件研发、内容矩阵营销与全域认知感知。独创 Dual-Rail 动态审批门与自主可控基础设施，兼具 Agent Swarm 极致生产力与企业级安全合规。",
+      btnApply: "代理加盟",
+      btnPricing: "马上体验",
       tip: "* 支持自备 AI 大模型账号（BYOK 纯软件订阅），或直接选用平台全托管多模态算力。"
     },
     stats: {
@@ -62,21 +62,21 @@ const translations: Record<Language, TranslationDict> = {
       title: "三大核心 SOP 业务产线",
       desc: "无需懂代码或复杂提示词，AI 团队帮你搞定软件全流程开发、120 站点内容营销与全球情报感知，直接交付业务成果。",
       cf: {
-        title: "内容工厂 (Content Factory)",
+        title: "内容工厂",
         desc: "一键联动全网 120+ 个已上线 AI 子站点，内置小红书、闲鱼、掘金及 X 跨平台爆款提示词模版，打通带 HMAC 签名的飞书卡片即时审批与全模态流水线交付。",
         tag1: "120+ 垂直 AI 站点营销矩阵",
         tag2: "小红书/闲鱼/掘金/X 爆款提示词",
         tag3: "飞书互动卡片即时审批放行"
       },
       ib: {
-        title: "认知感知 (Cognitive Perception)",
+        title: "认知感知",
         desc: "全天候感知小红书、抖音、快手、掘金、Reddit、X、YouTube、TikTok 及 GitHub 11+ 全域生态，集成多模态 ASR 逐字稿提纯与去 Google 化自主可控底座，持续反哺业务自进化。",
         tag1: "11+ 全域社媒与视频流媒体感知",
         tag2: "多模态音视频 ASR 逐字稿提纯",
         tag3: "企业私有对象存储与自托管工作流"
       },
       rd: {
-        title: "软件研发 (AI App Builder)",
+        title: "软件研发",
         desc: "覆盖 AI 官网、小程序、H5、OA、CRM、ERP 及财务系统。具备 AST CodeVision 架构审计、纯净沙箱环境与 Git PR / ZIP 双轨交付能力，安全隔离自愈。",
         tag1: "AST 依赖图谱与合规审计",
         tag2: "租户独立沙箱隔离构建",
@@ -292,13 +292,13 @@ const translations: Record<Language, TranslationDict> = {
       copyright: "©2026 univerOS · Enterprise Cognitive AI Workforce Operating System"
     },
     hero: {
-      tag: "Governed · Sovereign · Cognitive",
+      tag: "univerOS",
       badge: "Intelligent · Governed · Delivered",
-      title: "Enterprise AI Workforce Operating System with",
-      titleHighlight: "Cognitive Perception & Dynamic Approval",
-      desc: "Integrating software R&D, viral content marketing, and global omni-channel perception. Featuring Dual-Rail dynamic approval gates and sovereign infrastructure for enterprise safety and Swarm productivity.",
-      btnApply: "Partner Program / Private On-Prem",
-      btnPricing: "Get Started / Explore",
+      title: "",
+      titleHighlight: "Autonomous Multi-Role Enterprise AI Workforce Operating System",
+      desc: "Integrating software R&D, viral content marketing, and omni-channel perception. Featuring Dual-Rail dynamic approval gates and sovereign infrastructure for enterprise safety and Swarm productivity.",
+      btnApply: "Partner Program",
+      btnPricing: "Try Now",
       tip: "* Supports Bring Your Own Key (BYOK software tier) or fully managed multimodal inference compute."
     },
     stats: {
@@ -316,23 +316,23 @@ const translations: Record<Language, TranslationDict> = {
     },
     features: {
       title: "Three Core SOP Product Lines",
-      desc: "No code or complex prompt engineering required. Autonomous AI teams handle software engineering, viral marketing, and global intelligence intake.",
+      desc: "No code or complex prompt engineering required. Autonomous AI teams handle software engineering, viral marketing, and intelligence intake.",
       cf: {
-        title: "Content Factory (univerOS-CF)",
+        title: "Content Factory",
         desc: "Orchestrate 120+ vertical live AI sites with viral prompts for Xiaohongshu, Xianyu, Juejin, and X. Instant approval via HMAC-signed Feishu interactive cards and multimodal batch pipeline delivery.",
         tag1: "120+ Live AI Sites Matrix",
         tag2: "Cross-Platform Viral Prompts",
         tag3: "Feishu Interactive Card Approval"
       },
       ib: {
-        title: "Cognitive Perception (univerOS-IB)",
+        title: "Cognitive Perception",
         desc: "24/7 omni-intake across Xiaohongshu, Douyin, Kuaishou, Juejin, Reddit, X, YouTube, TikTok, and GitHub. Multimodal ASR distillation and sovereign S3/workflow backend for continuous self-evolution.",
         tag1: "11+ Global & Domestic Platforms",
         tag2: "Multimodal Video ASR Distillation",
         tag3: "Sovereign S3 & Workflow Pipeline"
       },
       rd: {
-        title: "Software R&D (univerOS-RD)",
+        title: "Software R&D",
         desc: "From Web apps, mini-programs, and H5 landing pages to OA, CRM, ERP, and Finance systems. Features AST CodeVision architecture audits, sandbox environments, and automated Git PR / ZIP delivery.",
         tag1: "AST Dependency & Compliance Audit",
         tag2: "Isolated Tenant Sandbox Build",

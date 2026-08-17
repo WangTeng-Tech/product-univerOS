@@ -127,11 +127,17 @@ a {
   color: var(--color-text-secondary);
   font-size: 0.9rem;
   font-weight: 500;
-  transition: color var(--transition-smooth);
+  padding: 0.35rem 0.75rem;
+  border-radius: 6px;
+  transition: all var(--transition-smooth);
+  display: inline-flex;
+  align-items: center;
 }
 
 .header-nav a:hover {
   color: var(--color-accent-main);
+  background-color: var(--color-accent-light);
+  transform: translateY(-1px);
 }
 
 /* Footer Hover */
@@ -415,23 +421,29 @@ input:focus {
 
 .tech-marquee-track-container {
   overflow: hidden;
-  white-space: nowrap;
   position: relative;
+  width: 100%;
   -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
   mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
 }
 
 .tech-marquee-track {
-  display: inline-flex;
-  gap: 4rem;
-  animation: marqueeRoll 40s linear infinite;
+  display: flex;
   width: max-content;
-  align-items: center;
+  animation: marqueeRoll 25s linear infinite;
   will-change: transform;
 }
 
 .tech-marquee-track:hover {
   animation-play-state: paused;
+}
+
+.tech-marquee-content {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  padding-right: 4rem;
+  flex-shrink: 0;
 }
 
 .tech-logo-item {

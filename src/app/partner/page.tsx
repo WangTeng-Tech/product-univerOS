@@ -290,14 +290,14 @@ export default function UpgradedPartnerPage() {
           font-weight: 700;
           font-size: 0.95rem;
           cursor: pointer;
-          transition: all 0.3s ease;
-          box-shadow: 0 0 20px rgba(79, 70, 229, 0.35);
+          transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+          box-shadow: 0 2px 8px rgba(79, 70, 229, 0.12);
         }
 
         .btn-glowing-primary:hover {
           background: #4338ca;
-          box-shadow: 0 0 30px rgba(79, 70, 229, 0.55);
-          transform: scale(1.02);
+          box-shadow: 0 4px 14px rgba(79, 70, 229, 0.22);
+          transform: translateY(-1px);
         }
 
         .btn-glowing-secondary {
