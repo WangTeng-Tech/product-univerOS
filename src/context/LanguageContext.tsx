@@ -12,7 +12,7 @@ const translations: Record<Language, TranslationDict> = {
   zh: {
     common: {
       brand: "univerOS",
-      brandDesc: "具备认知感知、动态审批受控、多职能协同自进化的企业级 AI Workforce 操作系统。覆盖软件研发、内容营销与全域认知感知。"
+      brandDesc: "具备认知感知、动态审批受控的企业级多职能 AI Workforce 交付系统。覆盖软件研发、内容营销与全域认知感知。"
     },
     nav: {
       features: "业务产线",
@@ -33,13 +33,13 @@ const translations: Record<Language, TranslationDict> = {
       github: "GitHub 源码",
       sales: "商务咨询 (Sales)",
       partner: "合作伙伴 (Partner)",
-      copyright: "©2026 univerOS · 具备全域认知感知的企业级 AI Workforce 操作系统"
+      copyright: "©2026 univerOS · 企业级多职能 AI Workforce 交付系统"
     },
     hero: {
       tag: "univerOS",
       badge: "智能 · 安全 · 交付",
       title: "",
-      titleHighlight: "多职能协同自进化的企业级 AI Workforce 操作系统",
+      titleHighlight: "企业级多职能 AI Workforce 交付系统",
       desc: "融合软件研发、内容矩阵营销与全域认知感知。独创 Dual-Rail 动态审批门与自主可控基础设施，兼具 Agent Swarm 极致生产力与企业级安全合规。",
       btnApply: "代理加盟",
       btnPricing: "马上体验",
@@ -268,7 +268,7 @@ const translations: Record<Language, TranslationDict> = {
   en: {
     common: {
       brand: "univerOS",
-      brandDesc: "Enterprise AI Workforce Operating System with Cognitive Perception, Dynamic Approval Gate, and Multi-Role Autonomous Evolution."
+      brandDesc: "Enterprise Multi-Role AI Workforce Delivery System with Cognitive Perception, Dynamic Approval Gate, and Sovereign Infrastructure."
     },
     nav: {
       features: "Product Lines",
@@ -289,13 +289,13 @@ const translations: Record<Language, TranslationDict> = {
       github: "GitHub Source",
       sales: "Contact Sales",
       partner: "Partners",
-      copyright: "©2026 univerOS · Enterprise Cognitive AI Workforce Operating System"
+      copyright: "©2026 univerOS · Enterprise Multi-Role AI Workforce Delivery System"
     },
     hero: {
       tag: "univerOS",
       badge: "Intelligent · Governed · Delivered",
       title: "",
-      titleHighlight: "Autonomous Multi-Role Enterprise AI Workforce Operating System",
+      titleHighlight: "Enterprise Multi-Role AI Workforce Delivery System",
       desc: "Integrating software R&D, viral content marketing, and omni-channel perception. Featuring Dual-Rail dynamic approval gates and sovereign infrastructure for enterprise safety and Swarm productivity.",
       btnApply: "Partner Program",
       btnPricing: "Try Now",
