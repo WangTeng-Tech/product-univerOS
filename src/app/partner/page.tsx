@@ -315,7 +315,7 @@ export default function UpgradedPartnerPage() {
         .partner-input {
           width: 100%;
           padding: 0.75rem 1rem;
-          background: var(--partner-input-bg, #ffffff) !important;
+          background-color: var(--partner-input-bg, #ffffff) !important;
           border: 1px solid var(--partner-card-border, #e2e8f0) !important;
           border-radius: 8px;
           color: var(--color-text-primary, #0f172a) !important;
@@ -324,9 +324,14 @@ export default function UpgradedPartnerPage() {
           transition: all 0.2s ease;
         }
 
+        .partner-input option {
+          background-color: #ffffff;
+          color: #0f172a;
+        }
+
         .partner-input:focus {
           border-color: #6366f1 !important;
-          box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+          box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.25);
         }
 
         .step-circle {
@@ -347,40 +352,52 @@ export default function UpgradedPartnerPage() {
         /* ── 深色模式自适应变量 ── */
         @media (prefers-color-scheme: dark) {
           :root:not([data-theme="light"]) {
-            --partner-card-bg: rgba(18, 18, 22, 0.75);
-            --partner-card-border: rgba(255, 255, 255, 0.08);
-            --partner-card-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+            --partner-card-bg: rgba(18, 18, 22, 0.85);
+            --partner-card-border: rgba(255, 255, 255, 0.12);
+            --partner-card-shadow: none;
             --partner-popular-bg: rgba(24, 24, 32, 0.95);
-            --partner-section-bg: rgba(18, 18, 24, 0.6);
-            --partner-benefit-bg: rgba(255, 255, 255, 0.02);
+            --partner-section-bg: rgba(18, 18, 24, 0.7);
+            --partner-benefit-bg: rgba(255, 255, 255, 0.03);
             --partner-btn-sec-bg: rgba(255, 255, 255, 0.06);
             --partner-btn-sec-hover: rgba(255, 255, 255, 0.12);
-            --partner-input-bg: rgba(255, 255, 255, 0.04);
+            --partner-input-bg: #0b0f19;
+          }
+          :root:not([data-theme="light"]) .partner-input option {
+            background-color: #0b0f19 !important;
+            color: #f8fafc !important;
           }
         }
         [data-theme="dark"] {
-          --partner-card-bg: rgba(18, 18, 22, 0.75);
-          --partner-card-border: rgba(255, 255, 255, 0.08);
-          --partner-card-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+          --partner-card-bg: rgba(18, 18, 22, 0.85);
+          --partner-card-border: rgba(255, 255, 255, 0.12);
+          --partner-card-shadow: none;
           --partner-popular-bg: rgba(24, 24, 32, 0.95);
-          --partner-section-bg: rgba(18, 18, 24, 0.6);
-          --partner-benefit-bg: rgba(255, 255, 255, 0.02);
+          --partner-section-bg: rgba(18, 18, 24, 0.7);
+          --partner-benefit-bg: rgba(255, 255, 255, 0.03);
           --partner-btn-sec-bg: rgba(255, 255, 255, 0.06);
           --partner-btn-sec-hover: rgba(255, 255, 255, 0.12);
-          --partner-input-bg: rgba(255, 255, 255, 0.04);
+          --partner-input-bg: #0b0f19;
+        }
+        [data-theme="dark"] .partner-input option {
+          background-color: #0b0f19 !important;
+          color: #f8fafc !important;
         }
 
         /* ── 浅色模式显式变量定义 ── */
         [data-theme="light"] {
           --partner-card-bg: rgba(255, 255, 255, 0.9);
           --partner-card-border: rgba(226, 232, 240, 0.9);
-          --partner-card-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+          --partner-card-shadow: none;
           --partner-popular-bg: rgba(245, 247, 255, 0.95);
           --partner-section-bg: rgba(248, 250, 252, 0.9);
           --partner-benefit-bg: #ffffff;
           --partner-btn-sec-bg: rgba(0, 0, 0, 0.04);
           --partner-btn-sec-hover: rgba(0, 0, 0, 0.08);
           --partner-input-bg: #ffffff;
+        }
+        [data-theme="light"] .partner-input option {
+          background-color: #ffffff !important;
+          color: #0f172a !important;
         }
       `}</style>
 
