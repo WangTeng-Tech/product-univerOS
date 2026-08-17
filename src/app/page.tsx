@@ -5,12 +5,45 @@
 //   forms:         0
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import ProductCard from "../components/ProductCard";
 import ConsoleBlock from "../components/ConsoleBlock";
 import { useTranslation } from "../context/LanguageContext";
+import { 
+  ShieldCheck, 
+  Cpu, 
+  Layers, 
+  Network, 
+  Bot, 
+  Sparkles, 
+  FileText, 
+  Globe, 
+  Headphones, 
+  Database, 
+  Workflow, 
+  Radio, 
+  Key, 
+  Zap, 
+  Server, 
+  CheckCircle2 
+} from "lucide-react";
 
 // SVG icons for cards
+const CFIcon = () => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+    <rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="var(--color-accent-main)" strokeWidth="2" />
+    <polygon points="10 8 16 12 10 16 10 8" fill="var(--color-text-secondary)" />
+  </svg>
+);
+
+const IBIcon = () => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+    <rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="var(--color-accent-main)" strokeWidth="2" />
+    <path d="M12 6v12M8 10l4-4 4 4" stroke="var(--color-text-secondary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+  </svg>
+);
+
 const RDIcon = () => (
   <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
     <rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="var(--color-accent-main)" strokeWidth="2" />
@@ -18,28 +51,7 @@ const RDIcon = () => (
   </svg>
 );
 
-const GeneratorIcon = () => (
-  <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-    <rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="var(--color-accent-main)" strokeWidth="2" />
-    <polygon points="10 8 16 12 10 16 10 8" fill="var(--color-text-secondary)" />
-  </svg>
-);
-
-const IngestorIcon = () => (
-  <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-    <rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="var(--color-accent-main)" strokeWidth="2" />
-    <path d="M12 6v12M8 10l4-4 4 4" stroke="var(--color-text-secondary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-  </svg>
-);
-
-const SecurityIcon = () => (
-  <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-    <rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="var(--color-accent-main)" strokeWidth="2" />
-    <circle cx="12" cy="12" r="4" stroke="var(--color-text-secondary)" strokeWidth="2" />
-  </svg>
-);
-
-const CompanyLogoIcon = ({ slug, name }: { slug: string; name: string }) => {
+const CompanyLogoIcon = ({ slug }: { slug: string; name: string }) => {
   switch (slug) {
     case "nvidia":
       return (
@@ -72,63 +84,6 @@ const CompanyLogoIcon = ({ slug, name }: { slug: string; name: string }) => {
           <text x="50" y="26" fontFamily="Arial, sans-serif" fontSize="16" fontWeight="bold" fill="#FFFFFF" textAnchor="middle">ORACLE</text>
         </svg>
       );
-    case "sap":
-      return (
-        <svg width="40" height="24" viewBox="0 0 100 40" fill="none" className="shrink-0">
-          <path d="M0 0h100v40H0z" fill="#0FAAFF" />
-          <text x="50" y="27" fontFamily="Arial, sans-serif" fontSize="20" fontWeight="900" fontStyle="italic" fill="#FFFFFF" textAnchor="middle">SAP</text>
-        </svg>
-      );
-    case "pfizer":
-      return (
-        <svg width="38" height="24" viewBox="0 0 120 50" fill="none" className="shrink-0">
-          <ellipse cx="60" cy="25" rx="55" ry="22" fill="#0072CE" />
-          <text x="60" y="33" fontFamily="Arial, sans-serif" fontSize="24" fontWeight="bold" fontStyle="italic" fill="#FFFFFF" textAnchor="middle">Pfizer</text>
-        </svg>
-      );
-    case "accenture":
-      return (
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="shrink-0">
-          <path d="M12 4L20 12L12 20" stroke="#A100FF" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
-        </svg>
-      );
-    case "chevron":
-      return (
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" className="shrink-0">
-          <path d="M2 5l10 5 10-5M2 13l10 5 10-5" stroke="#005A9C" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" />
-        </svg>
-      );
-    case "att":
-      return (
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" className="shrink-0">
-          <circle cx="12" cy="12" r="10" fill="#00A8E0" />
-          <path d="M2 12h20M3.5 7.5h17M3.5 16.5h17" stroke="#FFFFFF" strokeWidth="1.8" />
-        </svg>
-      );
-    case "dropbox":
-      return (
-        <svg width="26" height="24" viewBox="0 0 24 24" fill="none" className="shrink-0">
-          <path d="M6 2l6 4-6 4-6-4 6-4zm12 0l6 4-6 4-6-4 6-4zM0 10l6 4 6-4-6-4-6 4zm18-4l-6 4 6 4 6-4-6-4zM6 15l6 4 6-4-6-4-6 4z" fill="#0061FF" />
-        </svg>
-      );
-    case "nike":
-      return (
-        <svg width="32" height="18" viewBox="0 0 24 12" fill="none" className="shrink-0">
-          <path d="M21.7 0.8C14.8 4.2 8.7 8.2 2.1 11.2C0.7 11.8 0 11.1 0.7 9.8C2.3 6.9 5.8 3.9 9.8 1.9C13.8 0 18.2-0.6 21.7 0.8Z" fill="var(--color-text-primary)" />
-        </svg>
-      );
-    case "chase":
-      return (
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="shrink-0">
-          <path d="M4 4h7v7H4zM13 4h7v7h-7zM13 13h7v7h-7zM4 13h7v7H4z" fill="#1175E8" />
-        </svg>
-      );
-    case "wise":
-      return (
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="shrink-0">
-          <path d="M4 4h16l-6 9h5l-9 9 2-8H7l3-10z" fill="#163300" />
-        </svg>
-      );
     default:
       return null;
   }
@@ -136,10 +91,11 @@ const CompanyLogoIcon = ({ slug, name }: { slug: string; name: string }) => {
 
 export default function Home() {
   const { t } = useTranslation();
+  const [activeTab, setActiveTab] = useState<"infra" | "worker" | "ecosystem">("infra");
 
   return (
     <div>
-      {/* Hero Section */}
+      {/* Section A: Hero Section */}
       <section className="hero-section">
         <div className="container hero-container">
           {/* Left Hero copy */}
@@ -156,13 +112,6 @@ export default function Home() {
             <p className="hero-desc">
               {t("hero.desc")}
             </p>
-
-            {/* hero.badge 统一排版流 */}
-            <div className="hero-badge-container">
-              <span className="hero-badge-tag">
-                {t("hero.badge")}
-              </span>
-            </div>
 
             <div className="hero-actions">
               <a href="https://app.univeros.cn/explore" target="_blank" rel="noopener noreferrer">
@@ -202,31 +151,11 @@ export default function Home() {
                 { name: "Meta", slug: "meta" },
                 { name: "Apple", slug: "apple" },
                 { name: "Oracle", slug: "oracle" },
-                { name: "SAP", slug: "sap" },
-                { name: "Pfizer", slug: "pfizer" },
-                { name: "Accenture", slug: "accenture" },
-                { name: "Chevron", slug: "chevron" },
-                { name: "AT&T", slug: "att" },
-                { name: "Dropbox", slug: "dropbox" },
-                { name: "Nike", slug: "nike" },
-                { name: "Chase", slug: "chase" },
-                { name: "Wise", slug: "wise" },
-
-                // Duplicate array for seamless infinite marquee loop
                 { name: "NVIDIA", slug: "nvidia" },
                 { name: "Tesla", slug: "tesla" },
                 { name: "Meta", slug: "meta" },
                 { name: "Apple", slug: "apple" },
-                { name: "Oracle", slug: "oracle" },
-                { name: "SAP", slug: "sap" },
-                { name: "Pfizer", slug: "pfizer" },
-                { name: "Accenture", slug: "accenture" },
-                { name: "Chevron", slug: "chevron" },
-                { name: "AT&T", slug: "att" },
-                { name: "Dropbox", slug: "dropbox" },
-                { name: "Nike", slug: "nike" },
-                { name: "Chase", slug: "chase" },
-                { name: "Wise", slug: "wise" }
+                { name: "Oracle", slug: "oracle" }
               ].map((logo, index) => (
                 <div key={index} className="tech-logo-item">
                   <CompanyLogoIcon slug={logo.slug} name={logo.name} />
@@ -240,7 +169,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Product Lines Section */}
+      {/* Section B: Three Core SOP Product Lines (三大核心业务产线首屏聚焦) */}
       <section id="features" className="site-section site-section-primary">
         <div className="container">
           <div className="site-section-header">
@@ -253,98 +182,271 @@ export default function Home() {
           </div>
 
           <div className="grid-cols-3">
+            {/* CF: 内容工厂 */}
             <ProductCard 
-              number="00"
+              number="01"
+              title={t("features.cf.title")}
+              description={t("features.cf.desc")}
+              tags={[t("features.cf.tag1"), t("features.cf.tag2"), t("features.cf.tag3")]}
+              icon={<CFIcon />}
+            />
+            {/* IB: 认知感知 */}
+            <ProductCard 
+              number="02"
+              title={t("features.ib.title")}
+              description={t("features.ib.desc")}
+              tags={[t("features.ib.tag1"), t("features.ib.tag2"), t("features.ib.tag3")]}
+              icon={<IBIcon />}
+            />
+            {/* RD: 软件研发 */}
+            <ProductCard 
+              number="03"
               title={t("features.rd.title")}
               description={t("features.rd.desc")}
               tags={[t("features.rd.tag1"), t("features.rd.tag2"), t("features.rd.tag3")]}
               icon={<RDIcon />}
             />
-            <ProductCard 
-              number="01"
-              title={t("features.gen.title")}
-              description={t("features.gen.desc")}
-              tags={[t("features.gen.tag1"), t("features.gen.tag2"), t("features.gen.tag3")]}
-              icon={<GeneratorIcon />}
-            />
-            <ProductCard 
-              number="02"
-              title={t("features.ing.title")}
-              description={t("features.ing.desc")}
-              tags={[t("features.ing.tag1"), t("features.ing.tag2"), t("features.ing.tag3")]}
-              icon={<IngestorIcon />}
-              invited={true}
-            />
           </div>
         </div>
       </section>
 
-      {/* Combined: univerOS System Features Section (univerOS 系统特性) */}
-      <section className="site-section site-section-secondary">
+      {/* Section C: Full-Stack Architecture Matrix (3 Tabs × 6 Cards) */}
+      <section id="architecture" className="site-section site-section-secondary">
         <div className="container">
           <div className="site-section-header">
             <h2 className="site-section-title">
-              {t("systemFeatures.title")}
+              {t("architectureTabs.title")}
             </h2>
             <p className="site-section-desc-wide">
-              {t("systemFeatures.desc")}
+              {t("architectureTabs.desc")}
             </p>
           </div>
 
-          <div className="system-features-grid">
-            {/* Brain */}
-            <div className="system-feature-card">
-              <div className="feature-card-step">01 / DISPATCH</div>
-              <h3 className="feature-card-title">{t("architecture.brain")}</h3>
-              <p className="feature-card-desc">{t("architecture.brainDesc")}</p>
+          <div className="arch-tabs-container">
+            {/* Tabs Navigation */}
+            <div className="arch-tabs-nav">
+              <button 
+                className={`arch-tab-btn ${activeTab === "infra" ? "active" : ""}`}
+                onClick={() => setActiveTab("infra")}
+              >
+                <ShieldCheck style={{ width: 18, height: 18 }} />
+                {t("architectureTabs.tabInfra")}
+              </button>
+              <button 
+                className={`arch-tab-btn ${activeTab === "worker" ? "active" : ""}`}
+                onClick={() => setActiveTab("worker")}
+              >
+                <Bot style={{ width: 18, height: 18 }} />
+                {t("architectureTabs.tabWorker")}
+              </button>
+              <button 
+                className={`arch-tab-btn ${activeTab === "ecosystem" ? "active" : ""}`}
+                onClick={() => setActiveTab("ecosystem")}
+              >
+                <Network style={{ width: 18, height: 18 }} />
+                {t("architectureTabs.tabEcosystem")}
+              </button>
             </div>
-            {/* Agent */}
-            <div className="system-feature-card">
-              <div className="feature-card-step">02 / SWARM</div>
-              <h3 className="feature-card-title">{t("architecture.agent")}</h3>
-              <p className="feature-card-desc">{t("architecture.agentDesc")}</p>
-            </div>
-            {/* Skills */}
-            <div className="system-feature-card">
-              <div className="feature-card-step">03 / SKILLS</div>
-              <h3 className="feature-card-title">{t("architecture.skills")}</h3>
-              <p className="feature-card-desc">{t("architecture.skillsDesc")}</p>
-            </div>
-            {/* Memory */}
-            <div className="system-feature-card">
-              <div className="feature-card-step">04 / MEMORY</div>
-              <h3 className="feature-card-title">{t("architecture.memory")}</h3>
-              <p className="feature-card-desc">{t("architecture.memoryDesc")}</p>
-            </div>
-            {/* Self-Healing */}
-            <div className="system-feature-card">
-              <div className="feature-card-step">05 / HEALING</div>
-              <h3 className="feature-card-title">{t("architecture.healing")}</h3>
-              <p className="feature-card-desc">{t("architecture.healingDesc")}</p>
-            </div>
-            {/* CUP Isolation */}
-            <div className="system-feature-card">
-              <div className="feature-card-step">06 / ISOLATION</div>
-              <h3 className="feature-card-title">{t("trust.t1.title")}</h3>
-              <p className="feature-card-desc">{t("trust.t1.desc")}</p>
-            </div>
-            {/* Append-only Ledger */}
-            <div className="system-feature-card">
-              <div className="feature-card-step">07 / LEDGER</div>
-              <h3 className="feature-card-title">{t("trust.t2.title")}</h3>
-              <p className="feature-card-desc">{t("trust.t2.desc")}</p>
-            </div>
-            {/* Safe Deployment */}
-            <div className="system-feature-card">
-              <div className="feature-card-step">08 / CONFIRMATION</div>
-              <h3 className="feature-card-title">{t("trust.t3.title")}</h3>
-              <p className="feature-card-desc">{t("trust.t3.desc")}</p>
-            </div>
+
+            {/* Tab 1: Infra */}
+            {activeTab === "infra" && (
+              <div className="arch-cards-grid animate-fade-in">
+                <div className="arch-card">
+                  <div>
+                    <div className="arch-card-header">
+                      <div className="arch-card-icon"><ShieldCheck size={20} /></div>
+                      <h3 className="arch-card-title">{t("architectureTabs.infra.c1Title")}</h3>
+                    </div>
+                    <p className="arch-card-desc">{t("architectureTabs.infra.c1Desc")}</p>
+                  </div>
+                </div>
+
+                <div className="arch-card">
+                  <div>
+                    <div className="arch-card-header">
+                      <div className="arch-card-icon"><Key size={20} /></div>
+                      <h3 className="arch-card-title">{t("architectureTabs.infra.c2Title")}</h3>
+                    </div>
+                    <p className="arch-card-desc">{t("architectureTabs.infra.c2Desc")}</p>
+                  </div>
+                </div>
+
+                <div className="arch-card">
+                  <div>
+                    <div className="arch-card-header">
+                      <div className="arch-card-icon"><Cpu size={20} /></div>
+                      <h3 className="arch-card-title">{t("architectureTabs.infra.c3Title")}</h3>
+                    </div>
+                    <p className="arch-card-desc">{t("architectureTabs.infra.c3Desc")}</p>
+                  </div>
+                </div>
+
+                <div className="arch-card">
+                  <div>
+                    <div className="arch-card-header">
+                      <div className="arch-card-icon"><Zap size={20} /></div>
+                      <h3 className="arch-card-title">{t("architectureTabs.infra.c4Title")}</h3>
+                    </div>
+                    <p className="arch-card-desc">{t("architectureTabs.infra.c4Desc")}</p>
+                  </div>
+                </div>
+
+                <div className="arch-card">
+                  <div>
+                    <div className="arch-card-header">
+                      <div className="arch-card-icon"><Database size={20} /></div>
+                      <h3 className="arch-card-title">{t("architectureTabs.infra.c5Title")}</h3>
+                    </div>
+                    <p className="arch-card-desc">{t("architectureTabs.infra.c5Desc")}</p>
+                  </div>
+                </div>
+
+                <div className="arch-card">
+                  <div>
+                    <div className="arch-card-header">
+                      <div className="arch-card-icon"><Layers size={20} /></div>
+                      <h3 className="arch-card-title">{t("architectureTabs.infra.c6Title")}</h3>
+                    </div>
+                    <p className="arch-card-desc">{t("architectureTabs.infra.c6Desc")}</p>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* Tab 2: Worker */}
+            {activeTab === "worker" && (
+              <div className="arch-cards-grid animate-fade-in">
+                <div className="arch-card">
+                  <div>
+                    <div className="arch-card-header">
+                      <div className="arch-card-icon"><Globe size={20} /></div>
+                      <h3 className="arch-card-title">{t("architectureTabs.worker.c1Title")}</h3>
+                    </div>
+                    <p className="arch-card-desc">{t("architectureTabs.worker.c1Desc")}</p>
+                  </div>
+                </div>
+
+                <div className="arch-card">
+                  <div>
+                    <div className="arch-card-header">
+                      <div className="arch-card-icon"><Bot size={20} /></div>
+                      <h3 className="arch-card-title">{t("architectureTabs.worker.c2Title")}</h3>
+                    </div>
+                    <p className="arch-card-desc">{t("architectureTabs.worker.c2Desc")}</p>
+                  </div>
+                </div>
+
+                <div className="arch-card">
+                  <div>
+                    <div className="arch-card-header">
+                      <div className="arch-card-icon"><FileText size={20} /></div>
+                      <h3 className="arch-card-title">{t("architectureTabs.worker.c3Title")}</h3>
+                    </div>
+                    <p className="arch-card-desc">{t("architectureTabs.worker.c3Desc")}</p>
+                  </div>
+                </div>
+
+                <div className="arch-card">
+                  <div>
+                    <div className="arch-card-header">
+                      <div className="arch-card-icon"><Sparkles size={20} /></div>
+                      <h3 className="arch-card-title">{t("architectureTabs.worker.c4Title")}</h3>
+                    </div>
+                    <p className="arch-card-desc">{t("architectureTabs.worker.c4Desc")}</p>
+                  </div>
+                </div>
+
+                <div className="arch-card">
+                  <div>
+                    <div className="arch-card-header">
+                      <div className="arch-card-icon"><Server size={20} /></div>
+                      <h3 className="arch-card-title">{t("architectureTabs.worker.c5Title")}</h3>
+                    </div>
+                    <p className="arch-card-desc">{t("architectureTabs.worker.c5Desc")}</p>
+                  </div>
+                </div>
+
+                <div className="arch-card">
+                  <div>
+                    <div className="arch-card-header">
+                      <div className="arch-card-icon"><Cpu size={20} /></div>
+                      <h3 className="arch-card-title">{t("architectureTabs.worker.c6Title")}</h3>
+                    </div>
+                    <p className="arch-card-desc">{t("architectureTabs.worker.c6Desc")}</p>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* Tab 3: Ecosystem Connectors */}
+            {activeTab === "ecosystem" && (
+              <div className="arch-cards-grid animate-fade-in">
+                <div className="arch-card">
+                  <div>
+                    <div className="arch-card-header">
+                      <div className="arch-card-icon"><Server size={20} /></div>
+                      <h3 className="arch-card-title">{t("architectureTabs.ecosystem.c1Title")}</h3>
+                    </div>
+                    <p className="arch-card-desc">{t("architectureTabs.ecosystem.c1Desc")}</p>
+                  </div>
+                </div>
+
+                <div className="arch-card">
+                  <div>
+                    <div className="arch-card-header">
+                      <div className="arch-card-icon"><Workflow size={20} /></div>
+                      <h3 className="arch-card-title">{t("architectureTabs.ecosystem.c2Title")}</h3>
+                    </div>
+                    <p className="arch-card-desc">{t("architectureTabs.ecosystem.c2Desc")}</p>
+                  </div>
+                </div>
+
+                <div className="arch-card">
+                  <div>
+                    <div className="arch-card-header">
+                      <div className="arch-card-icon"><Radio size={20} /></div>
+                      <h3 className="arch-card-title">{t("architectureTabs.ecosystem.c3Title")}</h3>
+                    </div>
+                    <p className="arch-card-desc">{t("architectureTabs.ecosystem.c3Desc")}</p>
+                  </div>
+                </div>
+
+                <div className="arch-card">
+                  <div>
+                    <div className="arch-card-header">
+                      <div className="arch-card-icon"><Globe size={20} /></div>
+                      <h3 className="arch-card-title">{t("architectureTabs.ecosystem.c4Title")}</h3>
+                    </div>
+                    <p className="arch-card-desc">{t("architectureTabs.ecosystem.c4Desc")}</p>
+                  </div>
+                </div>
+
+                <div className="arch-card">
+                  <div>
+                    <div className="arch-card-header">
+                      <div className="arch-card-icon"><Headphones size={20} /></div>
+                      <h3 className="arch-card-title">{t("architectureTabs.ecosystem.c5Title")}</h3>
+                    </div>
+                    <p className="arch-card-desc">{t("architectureTabs.ecosystem.c5Desc")}</p>
+                  </div>
+                </div>
+
+                <div className="arch-card">
+                  <div>
+                    <div className="arch-card-header">
+                      <div className="arch-card-icon"><Network size={20} /></div>
+                      <h3 className="arch-card-title">{t("architectureTabs.ecosystem.c6Title")}</h3>
+                    </div>
+                    <p className="arch-card-desc">{t("architectureTabs.ecosystem.c6Desc")}</p>
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </section>
 
-      {/* Enterprise Scale & Customers Section */}
+      {/* Section D: Enterprise Scale & Customers Section */}
       <section id="customers" className="site-section site-section-primary">
         <div className="container">
           <div className="site-section-header">
@@ -357,240 +459,74 @@ export default function Home() {
           </div>
 
           <div className="customer-grid">
-            {/* OPC */}
             <div className="customer-card">
               <div>
-                <span className="customer-badge">
-                  {t("customers.opc.badge")}
-                </span>
-                <h3 className="customer-title">
-                  {t("customers.opc.title")}
-                </h3>
-                <p className="customer-desc">
-                  {t("customers.opc.desc")}
-                </p>
+                <span className="customer-badge">{t("customers.opc.badge")}</span>
+                <h3 className="customer-title">{t("customers.opc.title")}</h3>
+                <p className="customer-desc">{t("customers.opc.desc")}</p>
               </div>
             </div>
 
-            {/* SME */}
             <div className="customer-card">
               <div>
-                <span className="customer-badge">
-                  {t("customers.sme.badge")}
-                </span>
-                <h3 className="customer-title">
-                  {t("customers.sme.title")}
-                </h3>
-                <p className="customer-desc">
-                  {t("customers.sme.desc")}
-                </p>
+                <span className="customer-badge">{t("customers.sme.badge")}</span>
+                <h3 className="customer-title">{t("customers.sme.title")}</h3>
+                <p className="customer-desc">{t("customers.sme.desc")}</p>
               </div>
             </div>
 
-            {/* Traditional */}
             <div className="customer-card">
               <div>
-                <span className="customer-badge">
-                  {t("customers.trad.badge")}
-                </span>
-                <h3 className="customer-title">
-                  {t("customers.trad.title")}
-                </h3>
-                <p className="customer-desc">
-                  {t("customers.trad.desc")}
-                </p>
+                <span className="customer-badge">{t("customers.trad.badge")}</span>
+                <h3 className="customer-title">{t("customers.trad.title")}</h3>
+                <p className="customer-desc">{t("customers.trad.desc")}</p>
               </div>
             </div>
 
-            {/* Enterprise */}
             <div className="customer-card">
               <div>
-                <span className="customer-badge">
-                  {t("customers.enterprise.badge")}
-                </span>
-                <h3 className="customer-title">
-                  {t("customers.enterprise.title")}
-                </h3>
-                <p className="customer-desc">
-                  {t("customers.enterprise.desc")}
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Credentials and Security Section */}
-      <section className="site-section site-section-secondary">
-        <div className="container security-container">
-          {/* Left Details */}
-          <div className="security-content">
-            <h2 className="security-title">
-              {t("security.title")}
-            </h2>
-            <p className="security-desc">
-              {t("security.desc")}
-            </p>
-
-            <div className="security-feature-list">
-              <div className="security-feature-item">
-                <div className="security-icon-wrapper">
-                  <SecurityIcon />
-                </div>
-                <div>
-                  <h4 className="security-feature-title">
-                    {t("security.cup.title")}
-                  </h4>
-                  <p className="security-feature-desc">
-                    {t("security.cup.desc")}
-                  </p>
-                </div>
-              </div>
-
-              <div className="security-feature-item">
-                <div className="security-icon-wrapper">
-                  <SecurityIcon />
-                </div>
-                <div>
-                  <h4 className="security-feature-title">
-                    {t("security.ledger.title")}
-                  </h4>
-                  <p className="security-feature-desc">
-                    {t("security.ledger.desc")}
-                  </p>
-                </div>
+                <span className="customer-badge">{t("customers.enterprise.badge")}</span>
+                <h3 className="customer-title">{t("customers.enterprise.title")}</h3>
+                <p className="customer-desc">{t("customers.enterprise.desc")}</p>
               </div>
             </div>
           </div>
 
-          {/* Right illustration / Info box */}
-          <div className="security-box">
-            <h3 className="security-box-title">
-              {t("security.boxTitle")}
-            </h3>
-            <ul className="security-box-list">
-              <li>
-                <strong>✓</strong> {t("security.item1")}
-              </li>
-              <li>
-                <strong>✓</strong> {t("security.item2")}
-              </li>
-              <li>
-                <strong>✓</strong> {t("security.item3")}
-              </li>
-            </ul>
-          </div>
-
-          {/* Integrated Stats Data Section */}
+          {/* Stats Bar */}
           <div className="stats-wrapper">
-            <h3 className="stats-title">
-              {t("stats.title")}
-            </h3>
-            <p className="stats-subtitle">
-              {t("stats.subtitle")}
-            </p>
-
-            {/* Large Numbers */}
+            <h3 className="stats-title">{t("stats.title")}</h3>
+            <p className="stats-subtitle">{t("stats.subtitle")}</p>
             <div className="stats-grid">
               <div>
-                <div className="stats-number">
-                  {t("stats.num1")}
-                </div>
-                <p className="stats-label">
-                  {t("stats.label1")}
-                </p>
+                <div className="stats-number">{t("stats.num1")}</div>
+                <div className="stats-label">{t("stats.label1")}</div>
               </div>
               <div>
-                <div className="stats-number">
-                  {t("stats.num2")}
-                </div>
-                <p className="stats-label">
-                  {t("stats.label2")}
-                </p>
+                <div className="stats-number">{t("stats.num2")}</div>
+                <div className="stats-label">{t("stats.label2")}</div>
               </div>
               <div>
-                <div className="stats-number">
-                  {t("stats.num3")}
-                </div>
-                <p className="stats-label">
-                  {t("stats.label3")}
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {/* Integrated FAQ */}
-          <div className="faq-wrapper">
-            <h3 className="faq-title">
-              {t("faq.title")}
-            </h3>
-            
-            <div className="faq-list">
-              <div className="faq-item">
-                <h4 className="faq-question">
-                  {t("faq.q1")}
-                </h4>
-                <p className="faq-answer">
-                  {t("faq.a1")}
-                </p>
-              </div>
-
-              <div className="faq-item">
-                <h4 className="faq-question">
-                  {t("faq.q2")}
-                </h4>
-                <p className="faq-answer">
-                  {t("faq.a2")}
-                </p>
-              </div>
-
-              <div className="faq-item">
-                <h4 className="faq-question">
-                  {t("faq.q3")}
-                </h4>
-                <p className="faq-answer">
-                  {t("faq.a3")}
-                </p>
-              </div>
-
-              <div className="faq-item">
-                <h4 className="faq-question">
-                  {t("faq.q4")}
-                </h4>
-                <p className="faq-answer">
-                  {t("faq.a4")}
-                </p>
-              </div>
-
-              <div className="faq-item-last">
-                <h4 className="faq-question">
-                  {t("faq.q5")}
-                </h4>
-                <p className="faq-answer">
-                  {t("faq.a5")}
-                </p>
+                <div className="stats-number">{t("stats.num3")}</div>
+                <div className="stats-label">{t("stats.label3")}</div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Combined Partner Ecosystem & Contact Section */}
-      <section id="contact" className="site-section site-section-primary text-center">
-        <div className="container contact-container">
-          <h2 className="contact-title">
-            联系我们 共建 AI Workforce 生态
-          </h2>
-          <p className="contact-desc">
-            {t("partner.desc")} 专属客户经理与技术顾问 24/7 为您提供严肃企业级 AI Workforce 落地咨询与解决方案架构支持。
-          </p>
-
-          <div className="contact-btn-wrapper">
-            <Link href="/partner">
-              <button className="btn-primary contact-btn">
-                {t("partner.btn")}
-              </button>
-            </Link>
+      {/* Section E: CTA */}
+      <section className="site-section site-section-secondary">
+        <div className="container">
+          <div className="contact-container text-center" style={{ textAlign: 'center' }}>
+            <h2 className="contact-title">{t("partner.title")}</h2>
+            <p className="contact-desc">{t("partner.desc")}</p>
+            <div className="contact-btn-wrapper">
+              <Link href="/partner#apply-form">
+                <button className="btn-primary contact-btn">
+                  {t("partner.formTitle")}
+                </button>
+              </Link>
+            </div>
           </div>
         </div>
       </section>

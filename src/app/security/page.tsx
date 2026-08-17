@@ -21,7 +21,13 @@ const localTranslations = {
     sec2Item2Desc: "基于租户 DID（去中心化身份）对账单及流水进行严格的命名空间隔离，Token CFO 将随时比对计费签名，在检测到异常调用时本地阻断，保证费用精确归因。",
     sec3Title: "3. 数据主权保障 (Local Knowledge Base)",
     sec3Desc1: "AI 工作流在运行过程中所提取的业务上下文、蒸馏的 Lesson 经验库，全部存放在本地客户端的嵌入式 LanceDB 向量数据库中，无需同步至平台云端。",
-    sec3Desc2: "这种“知识与密钥双轨不出关”的设计，保证了哪怕在云端遭到攻击或断网的情况下，企业本地的工作空间依旧安全，研发经验资产完全掌控在企业自身手中。"
+    sec3Desc2: "这种“知识与密钥双轨不出关”的设计，保证了哪怕在云端遭到攻击或断网的情况下，企业本地的工作空间依旧安全，研发经验资产完全掌控在企业自身手中。",
+    sec4Title: "4. Dual-Rail 人机双通道审批门与受控回放 (Governed Gate)",
+    sec4Desc: "AI Agent 在执行高危操作（如调整模型参数、修改租户配置或对外发布）时，自动触发动态审批防线：",
+    sec4Item1Title: "人机双通道分轨鉴权",
+    sec4Item1Desc: "人类管理员与 AI Agent 分离专属接入通道，Agent 必须携带 X-Agent-Key 专有凭据，网关依据策略矩阵实时评估风险等级。",
+    sec4Item2Title: "精确快照入队与受控内部回放",
+    sec4Item2Desc: "高危动作被网关自动拦截挂起并序列化存证。管理员在控制台或飞书点击批准后，由内部受控引擎注入原子令牌受控回放，杜绝越权伪造。"
   },
   en: {
     tag: "Security Specifications",
@@ -41,7 +47,13 @@ const localTranslations = {
     sec2Item2Desc: "Strict partitioning based on tenant DIDs ensures complete billing isolation, while Token CFO enforces hard caps locally to block anomalies immediately.",
     sec3Title: "3. Local Knowledge Base Sovereignty",
     sec3Desc1: "All run-time business contexts and distilled lesson archives are stored inside the client's local embedded LanceDB vector database, never synced to our cloud.",
-    sec3Desc2: "This 'dual-track local-first' design ensures that even during cloud outages or cyber incidents, the tenant's on-premise workspace remains secure, under absolute corporate control."
+    sec3Desc2: "This 'dual-track local-first' design ensures that even during cloud outages or cyber incidents, the tenant's on-premise workspace remains secure, under absolute corporate control.",
+    sec4Title: "4. Dual-Rail Approval Gate & Controlled Replay",
+    sec4Desc: "When AI Agents perform sensitive actions (e.g. modifying model switches, tenant configs, or marketing dispatches), dynamic approval gates activate automatically:",
+    sec4Item1Title: "Human-Agent Track Separation",
+    sec4Item1Desc: "Dedicated channels strictly partition human users from AI Agents. Agents must authenticate with X-Agent-Key credentials against dynamic policy matrices.",
+    sec4Item2Title: "Snapshot Persistence & Controlled Replay",
+    sec4Item2Desc: "High-risk actions are intercepted (HTTP 202) and serialized into tamper-proof snapshots. Approval triggers atomic internal replay with controlled system tokens, eliminating forgery."
   }
 };
 
@@ -128,7 +140,7 @@ export default function SecurityPage() {
         </div>
 
         {/* Data sovereignty Section */}
-        <div>
+        <div style={{ marginBottom: '3.5rem' }}>
           <h2 style={{ fontSize: '1.6rem', color: 'var(--color-text-primary)', marginBottom: '1.25rem' }}>
             {t.sec3Title}
           </h2>
@@ -138,6 +150,28 @@ export default function SecurityPage() {
           <p style={{ fontSize: '0.95rem', color: 'var(--color-text-secondary)', lineHeight: '1.7' }}>
             {t.sec3Desc2}
           </p>
+        </div>
+
+        {/* Dual-Rail Approval Gate Section */}
+        <div>
+          <h2 style={{ fontSize: '1.6rem', color: 'var(--color-text-primary)', marginBottom: '1.25rem' }}>
+            {t.sec4Title}
+          </h2>
+          <p style={{ fontSize: '0.95rem', color: 'var(--color-text-secondary)', lineHeight: '1.7', marginBottom: '1.5rem' }}>
+            {t.sec4Desc}
+          </p>
+          <div style={{
+            border: '1px solid rgba(0, 201, 129, 0.3)',
+            borderRadius: '8px',
+            padding: '1.5rem',
+            background: 'var(--color-bg-secondary)',
+            fontSize: '0.85rem',
+            lineHeight: '1.6',
+            color: 'var(--color-text-secondary)'
+          }}>
+            <div><strong>· {t.sec4Item1Title}</strong>：{t.sec4Item1Desc}</div>
+            <div style={{ marginTop: '0.75rem' }}><strong>· {t.sec4Item2Title}</strong>：{t.sec4Item2Desc}</div>
+          </div>
         </div>
 
       </div>

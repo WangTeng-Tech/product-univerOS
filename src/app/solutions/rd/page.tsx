@@ -19,13 +19,13 @@ export default function RDSolutionPage() {
             marginBottom: '1rem',
             border: '1px solid rgba(0, 201, 129, 0.15)'
           }}>
-            解决方案 (Solutions) • RD Product Line
+            解决方案 (Solutions) • Software R&D (univerOS-RD)
           </span>
           <h1 style={{ fontSize: '2.5rem', marginBottom: '1.25rem', color: 'var(--color-text-primary)' }}>
-            RD 研发自动化产线
+            univerOS-RD 软件研发自动化与双轨交付
           </h1>
           <p style={{ color: 'var(--color-text-secondary)', fontSize: '1rem', lineHeight: '1.7' }}>
-            面向 Git 分支与影子隔离区的全自动迭代。实现从代码智能修改、语义冲突评估到闭环黑盒测试的完整生命周期。
+            覆盖 AI 官网、小程序、H5、OA、CRM、ERP 与财务系统。具备 AST CodeVision 架构审计、纯净沙箱环境与 Git PR / ZIP 双轨交付能力。
           </p>
         </div>
 
@@ -33,85 +33,90 @@ export default function RDSolutionPage() {
         <div style={{ display: 'flex', flexDirection: 'column', gap: '3rem', marginBottom: '4rem' }}>
           <div>
             <h2 style={{ fontSize: '1.5rem', color: 'var(--color-text-primary)', marginBottom: '1rem' }}>
-              1. 分支物理隔离 (Shadow Worktree)
+              1. 独立沙箱与物理隔离 (Isolated Sandbox)
             </h2>
             <p style={{ fontSize: '0.95rem', color: 'var(--color-text-secondary)', lineHeight: '1.7' }}>
-              RD 产线并不直接对您的主开发分支（Main/Master）执行修改。在接收到工作流规划后，引擎会在本地自动派生一个独立的物理隔离影子工作树（Worktree），在此沙盒空间内进行文件变更与合并评估，防止对运行期代码产生任何直接的逻辑干扰。
+              RD 产线并不直接对您的生产分支执行修改。在接收到意图规划后，引擎会在独立物理沙箱空间内进行依赖分析、文件生成与合并评估，防止对运行期代码产生任何直接的逻辑干扰。
             </p>
           </div>
 
           <div>
             <h2 style={{ fontSize: '1.5rem', color: 'var(--color-text-primary)', marginBottom: '1rem' }}>
-              2. CodeVision 语义影响审计
+              2. AST CodeVision 架构与依赖图谱审计
             </h2>
             <p style={{ fontSize: '0.95rem', color: 'var(--color-text-secondary)', lineHeight: '1.7' }}>
-              在应用任何代码变更之前，系统自动执行 AST（抽象语法树）解析，抽取当前的类、方法与依赖接口依赖关系拓扑，评估新引入的变动是否会破损现有的公共 API 或引发表外副作用。
+              在应用任何代码变更之前，系统自动执行 AST（抽象语法树）解析，抽取当前的类、方法与依赖接口拓扑，扫描硬编码凭据与不合规项，评估新引入的变动是否影响现有系统稳定性。
             </p>
           </div>
 
           <div>
             <h2 style={{ fontSize: '1.5rem', color: 'var(--color-text-primary)', marginBottom: '1rem' }}>
-              3. V1-V4 测试自愈反馈矩阵
+              3. V1-V4 自动化验证与自愈反馈矩阵
             </h2>
             <p style={{ fontSize: '0.95rem', color: 'var(--color-text-secondary)', lineHeight: '1.7', marginBottom: '1.5rem' }}>
-              影子分支的代码修改完成后，将依次触发四级严苛黑盒校验，拦截任何异常：
+              沙箱代码生成完成后，将依次触发四级严苛黑盒校验，拦截任何异常：
             </p>
             <div style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
               gap: '1rem'
             }}>
-              <div style={{ border: '1px solid var(--color-border)', borderRadius: '8px', padding: '1.25rem', background: 'var(--color-bg-secondary)' }}>
-                <strong style={{ display: 'block', marginBottom: '0.5rem', color: 'var(--color-text-primary)' }}>V1: CI/CD 构建</strong>
-                <span style={{ fontSize: '0.8rem', color: 'var(--color-text-secondary)' }}>确保静态类型与编译通过</span>
+              <div style={{ background: 'var(--color-bg-secondary)', padding: '1rem', borderRadius: '8px', border: '1px solid var(--color-border)' }}>
+                <strong style={{ color: 'var(--color-accent-main)' }}>V1 编译构建</strong>
+                <p style={{ fontSize: '0.8rem', color: 'var(--color-text-secondary)', marginTop: '0.25rem' }}>静态语法检查与无报错构建</p>
               </div>
-              <div style={{ border: '1px solid var(--color-border)', borderRadius: '8px', padding: '1.25rem', background: 'var(--color-bg-secondary)' }}>
-                <strong style={{ display: 'block', marginBottom: '0.5rem', color: 'var(--color-text-primary)' }}>V2: 节点进程健康</strong>
-                <span style={{ fontSize: '0.8rem', color: 'var(--color-text-secondary)' }}>进程挂载与生命周期稳定</span>
+              <div style={{ background: 'var(--color-bg-secondary)', padding: '1rem', borderRadius: '8px', border: '1px solid var(--color-border)' }}>
+                <strong style={{ color: 'var(--color-accent-main)' }}>V2 进程健康</strong>
+                <p style={{ fontSize: '0.8rem', color: 'var(--color-text-secondary)', marginTop: '0.25rem' }}>运行时进程健康探针监测</p>
               </div>
-              <div style={{ border: '1px solid var(--color-border)', borderRadius: '8px', padding: '1.25rem', background: 'var(--color-bg-secondary)' }}>
-                <strong style={{ display: 'block', marginBottom: '0.5rem', color: 'var(--color-text-primary)' }}>V3: 日志异常扫描</strong>
-                <span style={{ fontSize: '0.8rem', color: 'var(--color-text-secondary)' }}>无 Python/JS/Go 崩溃堆栈</span>
+              <div style={{ background: 'var(--color-bg-secondary)', padding: '1rem', borderRadius: '8px', border: '1px solid var(--color-border)' }}>
+                <strong style={{ color: 'var(--color-accent-main)' }}>V3 日志扫描</strong>
+                <p style={{ fontSize: '0.8rem', color: 'var(--color-text-secondary)', marginTop: '0.25rem' }}>零 Critical / Warning 干净日志</p>
               </div>
-              <div style={{ border: '1px solid var(--color-border)', borderRadius: '8px', padding: '1.25rem', background: 'var(--color-bg-secondary)' }}>
-                <strong style={{ display: 'block', marginBottom: '0.5rem', color: 'var(--color-text-primary)' }}>V4: 核心接口验证</strong>
-                <span style={{ fontSize: '0.8rem', color: 'var(--color-text-secondary)' }}>关键 API 返回 HTTP 200</span>
+              <div style={{ background: 'var(--color-bg-secondary)', padding: '1rem', borderRadius: '8px', border: '1px solid var(--color-border)' }}>
+                <strong style={{ color: 'var(--color-accent-main)' }}>V4 HTTP 探针</strong>
+                <p style={{ fontSize: '0.8rem', color: 'var(--color-text-secondary)', marginTop: '0.25rem' }}>API 连通性与 HTTP 200 响应</p>
               </div>
             </div>
-            <p style={{ fontSize: '0.9rem', color: 'var(--color-text-muted)', marginTop: '1.5rem', lineHeight: '1.6' }}>
-              一旦 V1-V4 的任一环节报错，引擎将自动触发修复策略，如果无法自愈则立即停止，并将经过严格验证后的变更合并提至 Pull Request 目标分支，等待您的开发团队进行确认。
+          </div>
+
+          <div>
+            <h2 style={{ fontSize: '1.5rem', color: 'var(--color-text-primary)', marginBottom: '1rem' }}>
+              4. Git PR / 纯净生产 ZIP 双轨交付
+            </h2>
+            <p style={{ fontSize: '0.95rem', color: 'var(--color-text-secondary)', lineHeight: '1.7' }}>
+              验证无误后，系统支持自动向企业 Git 仓库提交 Pull Request / Merge Request，或者一键打包生成纯净生产部署 ZIP 文件，供运维团队离线审核上线。
             </p>
           </div>
         </div>
 
-        {/* Console Showcase */}
+        {/* Real Console Simulation */}
+        <div style={{ marginBottom: '4rem' }}>
+          <h3 style={{ fontSize: '1.25rem', color: 'var(--color-text-primary)', marginBottom: '1rem' }}>
+            实时任务日志与审计流
+          </h3>
+          <ConsoleBlock />
+        </div>
+
+        {/* CTA */}
         <div style={{
           background: 'var(--color-bg-secondary)',
           border: '1px solid var(--color-border)',
           borderRadius: '12px',
           padding: '2.5rem',
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          flexWrap: 'wrap',
-          gap: '2.5rem'
+          textAlign: 'center'
         }}>
-          <div style={{ flex: '1 1 300px' }}>
-            <h3 style={{ fontSize: '1.25rem', color: 'var(--color-text-primary)', marginBottom: '0.75rem' }}>
-              查看真实的 RD 执行状态
-            </h3>
-            <p style={{ fontSize: '0.85rem', color: 'var(--color-text-secondary)', lineHeight: '1.6', marginBottom: '1.5rem' }}>
-              控制台会实时展示影子沙箱内工作流任务的分发、CUP 密钥装载与 V1-V4 测试运行。
-            </p>
-            <Link href="/pricing">
-              <button className="btn-primary" style={{ padding: '0.5rem 1.5rem', fontSize: '0.85rem' }}>
-                订阅 RD 席位
-              </button>
-            </Link>
-          </div>
-          <div style={{ flex: '1 1 400px', display: 'flex', justifyContent: 'center' }}>
-            <ConsoleBlock />
-          </div>
+          <h3 style={{ fontSize: '1.4rem', color: 'var(--color-text-primary)', marginBottom: '0.75rem' }}>
+            体验全自动软件研发
+          </h3>
+          <p style={{ color: 'var(--color-text-secondary)', fontSize: '0.95rem', marginBottom: '1.5rem' }}>
+            无需从零配置环境，让 AI 团队帮您高质量交付全栈软件项目。
+          </p>
+          <a href="https://app.univeros.cn/explore" target="_blank" rel="noopener noreferrer">
+            <button className="btn-primary">
+              马上体验软件研发
+            </button>
+          </a>
         </div>
 
       </div>

@@ -3,23 +3,19 @@
 import { useEffect, useState, useRef } from "react";
 
 const SIMULATED_LOGS = [
-  { text: ">>> Initializing local worker context...", type: "system" },
-  { text: "[XT-Queue] Received NATS event: xt.tasks.proposed | tenant: tenant-002", type: "event" },
-  { text: "[Shield] Credential status: OK | Loaded from local client memory", type: "security" },
-  { text: "[Brain] Target state: Sync codebase & analyze dependencies...", type: "info" },
-  { text: "[Worker] Created isolated workspace branch: shadow/task-f23b", type: "system" },
-  { text: "[CodeVision] Triggering AST semantic impact analysis...", type: "info" },
-  { text: "  - Interface stability scan: 100% compatible", type: "success" },
-  { text: "  - AST verification: 0 critical logic conflicts found", type: "success" },
-  { text: "[Git] Code modified inside local sandbox branch successfully", type: "system" },
-  { text: "[Verification] Executing V1-V4 validation checks...", type: "info" },
-  { text: "  - V1 (Compile & Build): [PASSED]", type: "success" },
-  { text: "  - V2 (Runtime Process Health): [STABLE]", type: "success" },
-  { text: "  - V3 (Exceptions Log Scan): [CLEAN]", type: "success" },
-  { text: "  - V4 (API HTTP Status Probe): [HTTP 200]", type: "success" },
-  { text: "[Ledger] Immutable block hash written: 7a82c...91f2 (SOP: RD_Line)", type: "ledger" },
-  { text: "[XT-Queue] Pushed confirmation event to PR staging pipeline...", type: "event" },
-  { text: ">>> Worktree cleared. Ready for next task.", type: "system" }
+  { text: ">>> [Agent Swarm] Autonomous worker initialized...", type: "system" },
+  { text: "[Shield Gate] Client credential authenticated: AI_Agent (uos_agent_ak_copilot)", type: "security" },
+  { text: "[Brain Router] Intent parsed: CF pipeline model auto-scaling...", type: "info" },
+  { text: "[Dual-Rail Gate] Evaluating policy matrix for 'POST /api/v1/admin/llm/switches'", type: "event" },
+  { text: "  - Policy match: 'require_approval' (High Risk)", type: "warning" },
+  { text: "  - Action: Intercepted! Snapshot queued into agent_pending_ops -> HTTP 202", type: "warning" },
+  { text: "[WS Stream] Broadcasted event 'pending_op_created' to admin dashboard", type: "event" },
+  { text: "[Mirrored Approval] Feishu card sent with HMAC-SHA256 signature", type: "info" },
+  { text: "[Admin Action] Platform Admin approved request (ID: op_agent_82fa91)", type: "success" },
+  { text: "[Controlled Replay] Injected X-Internal-System-Token -> Replay executed [200 OK]", type: "success" },
+  { text: "[Reality Ledger] Immutable block hash written: 7a82c...91f2 (Zero-Leakage)", type: "ledger" },
+  { text: "[IB Omni-Perception] Synced 11+ social trends & YouTube video ASR insights", type: "event" },
+  { text: ">>> Workflow completed safely. Ready for next task.", type: "system" }
 ];
 
 export default function ConsoleBlock() {
@@ -39,7 +35,7 @@ export default function ConsoleBlock() {
         setLogs([]);
         idx = 0;
       }
-    }, 1500);
+    }, 1400);
 
     return () => clearInterval(interval);
   }, []);
@@ -55,6 +51,7 @@ export default function ConsoleBlock() {
       case "event": return "#00c981"; // Accent main (Green)
       case "security": return "#17bebb"; // Accent secondary (Cyan)
       case "success": return "#8cd17d"; // Light green success
+      case "warning": return "#f59e0b"; // Amber warning
       case "ledger": return "#e5c07b"; // Gold/yellow
       case "system": return "#8c9ba5"; // Muted gray
       default: return "#e6edf3"; // Text primary white-ish
@@ -62,10 +59,7 @@ export default function ConsoleBlock() {
   };
 
   return (
-    <div className="console-container" style={{
-      width: '100%',
-      maxWidth: '560px'
-    }}>
+    <div className="console-container" style={{ width: '100%', maxWidth: '560px' }}>
       {/* Title Bar */}
       <div style={{
         background: '#161b22',
@@ -75,14 +69,17 @@ export default function ConsoleBlock() {
         alignItems: 'center',
         justifyContent: 'space-between'
       }}>
-        <div style={{ display: 'flex', gap: '6px' }}>
+        <div style={{ display: 'flex', gap: '6px', alignItems: 'center' }}>
           <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#ff5f56' }} />
           <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#ffbd2e' }} />
           <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#27c93f' }} />
         </div>
-        <span style={{ color: '#8c9ba5', fontSize: '0.7rem', fontWeight: 500 }}>
-          univeros-agent (local:shadow-worktree)
-        </span>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+          <span className="pulsing-indicator" />
+          <span style={{ color: '#8c9ba5', fontSize: '0.7rem', fontWeight: 600 }}>
+            Dual-Rail Gate: Active (univerOS:Core)
+          </span>
+        </div>
         <div style={{ width: '20px' }} />
       </div>
 
@@ -91,27 +88,19 @@ export default function ConsoleBlock() {
         ref={containerRef}
         style={{
           padding: '1.25rem',
-          height: '280px',
+          height: '290px',
           overflowY: 'auto',
           display: 'flex',
           flexDirection: 'column',
           gap: '6px',
           scrollBehavior: 'smooth',
-          fontSize: '0.8rem',
-          lineHeight: '1.4'
+          fontSize: '0.78rem',
+          fontFamily: 'Consolas, Monaco, "Courier New", monospace',
+          lineHeight: '1.5'
         }}
       >
-        {logs.length === 0 && (
-          <div style={{ color: '#8c9ba5', fontStyle: 'italic' }}>
-            Awaiting incoming NATS event...
-          </div>
-        )}
-        {logs.map((log, i) => (
-          <div key={i} style={{ 
-            color: getLogColor(log.type), 
-            whiteSpace: 'pre-wrap', 
-            wordBreak: 'break-all' 
-          }}>
+        {logs.map((log, index) => (
+          <div key={index} style={{ color: getLogColor(log.type), wordBreak: 'break-all' }}>
             {log.text}
           </div>
         ))}
