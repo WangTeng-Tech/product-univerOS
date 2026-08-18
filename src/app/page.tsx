@@ -226,31 +226,34 @@ export default function Home() {
               {t("features.title")}
             </h2>
             <p className="site-section-desc">
-              {t("features.subtitle")}
+              {t("features.desc")}
             </p>
           </div>
 
           <div className="grid-cols-3">
+            {/* CF: 内容工厂 */}
             <ProductCard
               number="01"
-              title={t("features.product1Title")}
-              description={t("features.product1Desc")}
-              tags={[t("features.product1Tag1"), t("features.product1Tag2"), t("features.product1Tag3")]}
-              icon={<Code2 size={24} color="var(--color-accent-main)" />}
+              title={t("features.cf.title")}
+              description={t("features.cf.desc")}
+              tags={[t("features.cf.tag1"), t("features.cf.tag2"), t("features.cf.tag3")]}
+              icon={<CFIcon />}
             />
+            {/* IB: 认知感知 */}
             <ProductCard
               number="02"
-              title={t("features.product2Title")}
-              description={t("features.product2Desc")}
-              tags={[t("features.product2Tag1"), t("features.product2Tag2"), t("features.product2Tag3")]}
-              icon={<Layers size={24} color="var(--color-accent-main)" />}
+              title={t("features.ib.title")}
+              description={t("features.ib.desc")}
+              tags={[t("features.ib.tag1"), t("features.ib.tag2"), t("features.ib.tag3")]}
+              icon={<IBIcon />}
             />
+            {/* RD: 软件研发 */}
             <ProductCard
               number="03"
-              title={t("features.product3Title")}
-              description={t("features.product3Desc")}
-              tags={[t("features.product3Tag1"), t("features.product3Tag2"), t("features.product3Tag3")]}
-              icon={<Cpu size={24} color="var(--color-accent-main)" />}
+              title={t("features.rd.title")}
+              description={t("features.rd.desc")}
+              tags={[t("features.rd.tag1"), t("features.rd.tag2"), t("features.rd.tag3")]}
+              icon={<RDIcon />}
             />
           </div>
         </div>
