@@ -26,7 +26,8 @@ import {
   Key, 
   Zap, 
   Server, 
-  CheckCircle2 
+  CheckCircle2,
+  Code2
 } from "lucide-react";
 
 // SVG icons for cards
