@@ -5,7 +5,7 @@ import { useTranslation } from "../../context/LanguageContext";
 const localTranslations = {
   zh: {
     tag: "安全白皮书 (Security Specifications)",
-    title: "凭证本地隔离与审计就绪安全规范",
+    title: "凭证-审计-安全-规范",
     desc: "univerOS 在架构设计上秉承“数据主权与物理隔离”的第一原则，从技术底层切断由于明文密钥云端托管所引发的数据泄漏和账单失控风险。",
     sec1Title: "1. CUP (Credential Utility Protocol) 凭证本地隔离协议",
     sec1Desc: "在严肃的企业生产环境中，API 密钥及服务器 Deploy Key 属于核心数字资产，不应上传至任何第三方 SaaS 云平台。CUP 协议规定：",
@@ -31,7 +31,7 @@ const localTranslations = {
   },
   en: {
     tag: "Security Specifications",
-    title: "Credential Isolation & Audit-Ready Specifications",
+    title: "Credential · Audit · Security · Specification",
     desc: "univerOS is built on the core principle of 'Data Sovereignty and Physical Isolation', cutting off data leakage and runaway billing risks from the codebase level.",
     sec1Title: "1. CUP (Credential Utility Protocol) Credential Isolation",
     sec1Desc: "In critical enterprise environments, API keys and Git deploy keys are vital digital assets that should never be hosted on SaaS cloud platforms. CUP mandates:",
