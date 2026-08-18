@@ -46,7 +46,7 @@ const localTranslations = {
     step2Desc: "专属渠道经理对接，确认伙伴类型并签署正式合作协议",
     step3Title: "3. 开启推广获利",
     step3Desc: "获取专属邀请链接与推广素材，享受 40%+25% 永续分润",
-    formTitle: "在线申请加盟合作伙伴",
+    formTitle: "立刻加盟",
     formSubtitle: "填写以下信息，我们的渠道总监将在 24 小时内与您直接对接",
     lblCompany: "公司/机构名称",
     lblContact: "联系人姓名",
@@ -61,9 +61,9 @@ const localTranslations = {
     faqTitle: "常见问题解答 (FAQ)",
     ctaTitle: "开启您的合作伙伴之旅",
     ctaDesc: "现在注册或登录代理商平台，一键生成属于您的专属客户推广链接。",
-    btnEnter: "进入代理商后台",
+    btnEnter: "代理平台",
     btnContact: "联系合作专员",
-    btnApplyNow: "立即在线申请"
+    btnApplyNow: "立刻加盟"
   },
   en: {
     tag: "Partner Ecosystem Recruitment | Partner Program",
@@ -493,7 +493,7 @@ export default function UpgradedPartnerPage() {
               </ul>
               <a href="#apply-form" style={{ width: '100%' }}>
                 <button className="btn-glowing-primary" style={{ width: '100%', borderRadius: '8px' }}>
-                  立即申请加盟
+                  立刻加盟
                 </button>
               </a>
             </div>

@@ -22,7 +22,7 @@ const translations: Record<Language, TranslationDict> = {
       security: "安全治理",
       partner: "代理加盟",
       contact: "联系我们",
-      login: "代理商后台",
+      login: "代理平台",
       apply: "马上体验"
     },
     footer: {
@@ -260,7 +260,7 @@ const translations: Record<Language, TranslationDict> = {
       b3Desc: "一键生成专属推广链接，实时监控客户转化漏斗、佣金收益报表并管理二级渠道伙伴。",
       b4Title: "售前技术支持与全套方案物料",
       b4Desc: "提供完备的 PPT 方案白皮书、Demo 实机演练账号及资深架构师远程协助成单。",
-      formTitle: "在线申请成为合作伙伴",
+      formTitle: "立刻加盟",
       formSubtitle: "填写以下信息，我们的渠道总监将在 24 小时内与您直接对接",
       btnSubmit: "提交加盟申请"
     }
