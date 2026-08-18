@@ -169,8 +169,8 @@ const translations: Record<Language, TranslationDict> = {
         annualDiscount: "年付首月 5 折"
       },
       modeToggle: {
-        byok: "BYOK 纯软件模式 (自备大模型凭证)",
-        hosted: "全托管算力模式 (含多模态算力包)"
+        byok: "BYOK 自备凭证",
+        hosted: "算力全托管"
       },
       cards: {
         starter: {
@@ -425,8 +425,8 @@ const translations: Record<Language, TranslationDict> = {
         annualDiscount: "Annual Plan: 50% Off First Month"
       },
       modeToggle: {
-        byok: "BYOK Software Tier (Bring Your Own Key)",
-        hosted: "Fully Managed Compute Tier (Credits Included)"
+        byok: "BYOK (Own Keys)",
+        hosted: "Fully Managed Compute"
       },
       cards: {
         starter: {
