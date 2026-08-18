@@ -298,6 +298,12 @@ input:focus {
   width: 100%;
 }
 
+.hero-tag-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+}
+
 .hero-tag {
   background: var(--color-accent-light);
   color: var(--color-accent-hover);
@@ -340,18 +346,16 @@ input:focus {
 }
 
 .hero-tip {
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   color: var(--color-text-muted);
-  display: block;
-  text-align: center;
 }
 
 .hero-visual {
-  flex: 1 1 45%;
-  max-width: 560px;
-  width: 100%;
+  flex: 1 1 50%;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
+  max-width: 580px;
+  width: 100%;
 }
 
 /* 竖屏/窄屏 (Tablet & Mobile Portrait: <= 960px) 响应式适配 */
@@ -371,6 +375,10 @@ input:focus {
     max-width: 100%;
     width: 100%;
     text-align: center;
+  }
+
+  .hero-tag-wrapper {
+    justify-content: flex-start !important;
   }
 
   .hero-title {
@@ -820,29 +828,47 @@ input:focus {
 .arch-tabs-nav {
   display: flex;
   justify-content: center;
-  gap: 1rem;
   margin-bottom: 2.5rem;
-  flex-wrap: wrap;
+  width: 100%;
+}
+
+.arch-tabs-pill-wrapper {
+  display: inline-flex;
+  align-items: center;
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  padding: 4px;
+  border-radius: 9999px;
+  gap: 4px;
+  max-width: 100%;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.arch-tabs-pill-wrapper::-webkit-scrollbar {
+  display: none;
 }
 
 .arch-tab-btn {
-  background: var(--color-bg-secondary);
-  border: 1px solid var(--color-border);
+  background: transparent;
+  border: none;
   color: var(--color-text-secondary);
   font-weight: 600;
-  font-size: 0.9rem;
-  padding: 0.75rem 1.5rem;
-  border-radius: 8px;
+  font-size: 0.88rem;
+  padding: 8px 18px;
+  border-radius: 9999px;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  white-space: nowrap;
+  transition: all var(--transition-smooth);
 }
 
 .arch-tab-btn:hover {
-  border-color: rgba(0, 201, 129, 0.4);
   color: var(--color-text-primary);
+  background: rgba(0, 201, 129, 0.08);
 }
 
 .arch-tab-btn.active {
@@ -850,6 +876,19 @@ input:focus {
   border-color: var(--color-accent-main);
   color: var(--color-btn-primary-text, #ffffff);
   font-weight: 700;
+  border-radius: 9999px;
+}
+
+@media (max-width: 640px) {
+  .arch-tabs-pill-wrapper {
+    gap: 2px;
+    padding: 3px;
+  }
+  .arch-tab-btn {
+    padding: 6px 12px;
+    font-size: 0.78rem;
+    gap: 0.35rem;
+  }
 }
 
 .arch-cards-grid {

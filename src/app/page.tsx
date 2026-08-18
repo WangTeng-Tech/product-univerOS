@@ -145,9 +145,11 @@ export default function Home() {
         <div className="container hero-container">
           {/* Left Hero copy */}
           <div className="hero-copy animate-fade-in">
-            <span className="hero-tag">
-              {t("hero.tag")}
-            </span>
+            <div className="hero-tag-wrapper">
+              <span className="hero-tag">
+                {t("hero.tag")}
+              </span>
+            </div>
             
             <h1 className="hero-title">
               {t("hero.title") ? <>{t("hero.title")}<br /></> : null}
@@ -223,40 +225,37 @@ export default function Home() {
               {t("features.title")}
             </h2>
             <p className="site-section-desc">
-              {t("features.desc")}
+              {t("features.subtitle")}
             </p>
           </div>
 
           <div className="grid-cols-3">
-            {/* CF: 内容工厂 */}
-            <ProductCard 
+            <ProductCard
               number="01"
-              title={t("features.cf.title")}
-              description={t("features.cf.desc")}
-              tags={[t("features.cf.tag1"), t("features.cf.tag2"), t("features.cf.tag3")]}
-              icon={<CFIcon />}
+              title={t("features.product1Title")}
+              description={t("features.product1Desc")}
+              tags={[t("features.product1Tag1"), t("features.product1Tag2"), t("features.product1Tag3")]}
+              icon={<Code2 size={24} color="var(--color-accent-main)" />}
             />
-            {/* IB: 认知感知 */}
-            <ProductCard 
+            <ProductCard
               number="02"
-              title={t("features.ib.title")}
-              description={t("features.ib.desc")}
-              tags={[t("features.ib.tag1"), t("features.ib.tag2"), t("features.ib.tag3")]}
-              icon={<IBIcon />}
+              title={t("features.product2Title")}
+              description={t("features.product2Desc")}
+              tags={[t("features.product2Tag1"), t("features.product2Tag2"), t("features.product2Tag3")]}
+              icon={<Layers size={24} color="var(--color-accent-main)" />}
             />
-            {/* RD: 软件研发 */}
-            <ProductCard 
+            <ProductCard
               number="03"
-              title={t("features.rd.title")}
-              description={t("features.rd.desc")}
-              tags={[t("features.rd.tag1"), t("features.rd.tag2"), t("features.rd.tag3")]}
-              icon={<RDIcon />}
+              title={t("features.product3Title")}
+              description={t("features.product3Desc")}
+              tags={[t("features.product3Tag1"), t("features.product3Tag2"), t("features.product3Tag3")]}
+              icon={<Cpu size={24} color="var(--color-accent-main)" />}
             />
           </div>
         </div>
       </section>
 
-      {/* Section C: Full-Stack Architecture Matrix (3 Tabs × 6 Cards) */}
+      {/* Section C: Architecture Matrix 3-Tabs (系统核心架构：按 Infra / Worker / 第三方生态划分) */}
       <section id="architecture" className="site-section site-section-secondary">
         <div className="container">
           <div className="site-section-header">
@@ -264,34 +263,36 @@ export default function Home() {
               {t("architectureTabs.title")}
             </h2>
             <p className="site-section-desc-wide">
-              {t("architectureTabs.desc")}
+              {t("architectureTabs.subtitle")}
             </p>
           </div>
 
           <div className="arch-tabs-container">
-            {/* Tabs Navigation */}
+            {/* Tabs Navigation (Pill Capsule) */}
             <div className="arch-tabs-nav">
-              <button 
-                className={`arch-tab-btn ${activeTab === "infra" ? "active" : ""}`}
-                onClick={() => setActiveTab("infra")}
-              >
-                <ShieldCheck style={{ width: 18, height: 18 }} />
-                {t("architectureTabs.tabInfra")}
-              </button>
-              <button 
-                className={`arch-tab-btn ${activeTab === "worker" ? "active" : ""}`}
-                onClick={() => setActiveTab("worker")}
-              >
-                <Bot style={{ width: 18, height: 18 }} />
-                {t("architectureTabs.tabWorker")}
-              </button>
-              <button 
-                className={`arch-tab-btn ${activeTab === "ecosystem" ? "active" : ""}`}
-                onClick={() => setActiveTab("ecosystem")}
-              >
-                <Network style={{ width: 18, height: 18 }} />
-                {t("architectureTabs.tabEcosystem")}
-              </button>
+              <div className="arch-tabs-pill-wrapper">
+                <button 
+                  className={`arch-tab-btn ${activeTab === "infra" ? "active" : ""}`}
+                  onClick={() => setActiveTab("infra")}
+                >
+                  <ShieldCheck style={{ width: 16, height: 16 }} />
+                  {t("architectureTabs.tabInfra")}
+                </button>
+                <button 
+                  className={`arch-tab-btn ${activeTab === "worker" ? "active" : ""}`}
+                  onClick={() => setActiveTab("worker")}
+                >
+                  <Bot style={{ width: 16, height: 16 }} />
+                  {t("architectureTabs.tabWorker")}
+                </button>
+                <button 
+                  className={`arch-tab-btn ${activeTab === "ecosystem" ? "active" : ""}`}
+                  onClick={() => setActiveTab("ecosystem")}
+                >
+                  <Network style={{ width: 16, height: 16 }} />
+                  {t("architectureTabs.tabEcosystem")}
+                </button>
+              </div>
             </div>
 
             {/* Tab 1: Infra */}
