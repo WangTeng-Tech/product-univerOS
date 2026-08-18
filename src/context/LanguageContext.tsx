@@ -86,9 +86,9 @@ const translations: Record<Language, TranslationDict> = {
     architectureTabs: {
       title: "univerOS 全景系统核心架构",
       desc: "按核心基础设施（Infra）、分布式算力网络（Worker）与全域生态协同底座，深度探索企业级技术底座",
-      tabInfra: "Infra 核心引擎与安全",
-      tabWorker: "Worker 算力与员工网络",
-      tabEcosystem: "全域生态连接与协同底座",
+      tabInfra: "核心引擎",
+      tabWorker: "算力节点",
+      tabEcosystem: "生态协同",
       infra: {
         c1Title: "Shield 认证与防御网关",
         c1Desc: "统一外部请求入口、多租户 DID 鉴权、CUP 隐私协议、防重放签名与自适应抗限频熔断。",
@@ -342,9 +342,9 @@ const translations: Record<Language, TranslationDict> = {
     architectureTabs: {
       title: "univerOS Full-Stack Architecture Matrix",
       desc: "Explore our enterprise foundation categorized into Core Infra, Distributed Worker Swarms, and Sovereign Ecosystem Connectors",
-      tabInfra: "Core Infra & Security",
-      tabWorker: "Worker Compute & Swarms",
-      tabEcosystem: "Sovereign Connectors & Stack",
+      tabInfra: "Core Engine",
+      tabWorker: "Compute Nodes",
+      tabEcosystem: "Ecosystem Collab",
       infra: {
         c1Title: "Shield Auth & Defensive Gateway",
         c1Desc: "Unified ingress, multi-tenant DID verification, CUP privacy protocol, anti-replay signatures, and adaptive rate-limiting.",
