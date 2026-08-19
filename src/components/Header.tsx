@@ -81,7 +81,7 @@ export default function Header() {
         }}>
           <Link href="/#features" className={isActive("/#features") ? "active-link" : ""}>{t("nav.features")}</Link>
           <Link href="/pricing" style={{ color: isActive("/pricing") ? "var(--color-accent-main)" : undefined, fontWeight: isActive("/pricing") ? 700 : undefined }}>{t("nav.pricing")}</Link>
-          <Link href="/security" style={{ color: isActive("/security") ? "var(--color-accent-main)" : undefined, fontWeight: isActive("/security") ? 700 : undefined }}>{t("nav.security")}</Link>
+          <a href="https://docs.univeros.cn" target="_blank" rel="noopener noreferrer">{t("nav.docs")}</a>
           <Link href="/partner" style={{ color: isActive("/partner") ? "var(--color-accent-main)" : undefined, fontWeight: isActive("/partner") ? 700 : undefined }}>{t("nav.partner")}</Link>
           <Link href="/#contact">{t("nav.contact")}</Link>
         </nav>
@@ -116,11 +116,11 @@ export default function Header() {
               {t("nav.login")}
             </button>
           </Link>
-          <Link href="/console/login">
+          <a href="https://app.univeros.cn" target="_blank" rel="noopener noreferrer">
             <button className="btn-primary" style={{ padding: '0.45rem 1.2rem', fontSize: '0.85rem', height: '35px' }}>
               {t("nav.apply")}
             </button>
-          </Link>
+          </a>
         </div>
 
         {/* Mobile Hamburger Toggle Button */}
@@ -169,9 +169,9 @@ export default function Header() {
               <Link href="/pricing" onClick={() => setIsMenuOpen(false)} style={{ color: 'var(--color-text-primary)' }}>
                 {t("nav.pricing")}
               </Link>
-              <Link href="/security" onClick={() => setIsMenuOpen(false)} style={{ color: 'var(--color-text-primary)' }}>
-                {t("nav.security")}
-              </Link>
+              <a href="https://docs.univeros.cn" target="_blank" rel="noopener noreferrer" onClick={() => setIsMenuOpen(false)} style={{ color: 'var(--color-text-primary)', textDecoration: 'none' }}>
+                {t("nav.docs")}
+              </a>
               <Link href="/partner" onClick={() => setIsMenuOpen(false)} style={{ color: 'var(--color-text-primary)' }}>
                 {t("nav.partner")}
               </Link>
@@ -210,11 +210,11 @@ export default function Header() {
                   {t("nav.login")}
                 </button>
               </Link>
-              <Link href="/console/login" onClick={() => setIsMenuOpen(false)} style={{ width: '100%' }}>
+              <a href="https://app.univeros.cn" target="_blank" rel="noopener noreferrer" onClick={() => setIsMenuOpen(false)} style={{ width: '100%' }}>
                 <button className="btn-primary" style={{ width: '100%', justifyContent: 'center', height: '42px' }}>
                   {t("nav.apply")}
                 </button>
-              </Link>
+              </a>
             </div>
           </div>
         )}

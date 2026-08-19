@@ -99,7 +99,7 @@ export default function Footer() {
           <div>
             <h4 style={{ fontSize: '0.8rem', color: 'var(--color-text-primary)', marginBottom: '1.25rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Resources</h4>
             <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-              <li><Link href="/#features">{t("footer.manual")}</Link></li>
+              <li><a href="https://docs.univeros.cn" target="_blank" rel="noopener noreferrer">{t("footer.manual")}</a></li>
               <li><Link href="/changelog">{t("footer.changelog")}</Link></li>
               <li><a href="https://github.com/WangTeng-Tech/product-univerOS" target="_blank" rel="noopener noreferrer">{t("footer.github")}</a></li>
             </ul>
@@ -110,7 +110,6 @@ export default function Footer() {
               <li><a href="mailto:us@wangteng.tech" style={{ color: 'var(--color-text-secondary)', textDecoration: 'none' }}>us@wangteng.tech</a></li>
               <li><a href="mailto:press@wangteng.tech" style={{ color: 'var(--color-text-secondary)', textDecoration: 'none' }}>press@wangteng.tech</a></li>
               <li><a href="mailto:support@wangteng.tech" style={{ color: 'var(--color-text-secondary)', textDecoration: 'none' }}>support@wangteng.tech</a></li>
-              <li style={{ marginTop: '0.5rem' }}><Link href="/partner">{t("footer.partner")}</Link></li>
             </ul>
           </div>
         </div>

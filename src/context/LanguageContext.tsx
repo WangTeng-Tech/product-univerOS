@@ -15,13 +15,11 @@ const translations: Record<Language, TranslationDict> = {
       brandDesc: "具备认知感知、动态审批受控的企业级多职能 AI Workforce 交付系统。覆盖软件研发、内容营销与全域认知感知。"
     },
     nav: {
-      features: "业务产线",
-      architecture: "系统架构",
-      customers: "适用场景",
-      pricing: "套餐定价",
-      security: "安全治理",
-      partner: "代理加盟",
-      contact: "联系我们",
+      features: "功能",
+      pricing: "定价",
+      docs: "文档",
+      partner: "加盟",
+      contact: "联系",
       login: "代理平台",
       apply: "马上体验"
     },
@@ -272,12 +270,10 @@ const translations: Record<Language, TranslationDict> = {
       brandDesc: "Enterprise Multi-Role AI Workforce Delivery System with Cognitive Perception, Dynamic Approval Gate, and Sovereign Infrastructure."
     },
     nav: {
-      features: "Product Lines",
-      architecture: "Architecture",
-      customers: "Enterprise Scale",
+      features: "Features",
       pricing: "Pricing",
-      security: "Governance & Security",
-      partner: "Partner Program",
+      docs: "Docs",
+      partner: "Partner",
       contact: "Contact",
       login: "Partner Portal",
       apply: "Try Now"

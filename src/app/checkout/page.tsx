@@ -319,7 +319,7 @@ function CheckoutContent() {
               <button className="btn-primary" style={{ width: '100%', justifyContent: 'center' }} onClick={handleDownloadDid}>
                 {t.btnDownloadDid}
               </button>
-              <a href="/console/login" style={{ width: '100%' }}>
+              <a href="https://app.univeros.cn" target="_blank" rel="noopener noreferrer" style={{ width: '100%' }}>
                 <button className="btn-secondary" style={{ width: '100%', justifyContent: 'center' }}>
                   {t.btnGoToGuide}
                 </button>
