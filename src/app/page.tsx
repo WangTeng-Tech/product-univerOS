@@ -150,6 +150,10 @@ export default function Home() {
               <span className="hero-tag">
                 {t("hero.tag")}
               </span>
+              <span className="hero-agent-badge">
+                <ShieldCheck style={{ width: 14, height: 14 }} />
+                {t("hero.agentFriendly")}
+              </span>
             </div>
             
             <h1 className="hero-title">

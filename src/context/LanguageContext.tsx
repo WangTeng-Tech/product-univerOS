@@ -33,13 +33,14 @@ const translations: Record<Language, TranslationDict> = {
       github: "GitHub 源码",
       sales: "商务咨询 (Sales)",
       partner: "合作伙伴 (Partner)",
-      copyright: "©2026 univerOS · 企业级多职能 AI Workforce 交付系统"
+      copyright: "©2026 univerOS · 企业级 AI 多职能 Agent Workforce 交付系统"
     },
     hero: {
       tag: "univerOS",
       badge: "智能 · 安全 · 交付",
+      agentFriendly: "Agent Friendly · Dual-Rail Ready",
       title: "",
-      titleHighlight: "企业级多职能 AI Workforce 交付系统",
+      titleHighlight: "企业级 AI 多职能 Agent Workforce 交付系统",
       desc: "融合软件研发、内容矩阵营销与全域认知感知。独创 Dual-Rail 动态审批门与自主可控基础设施，兼具 Agent Swarm 极致生产力与企业级安全合规。",
       btnApply: "代理加盟",
       btnPricing: "马上体验",
@@ -77,8 +78,8 @@ const translations: Record<Language, TranslationDict> = {
       },
       rd: {
         title: "软件研发",
-        desc: "覆盖 AI 官网、小程序、H5、OA、CRM、ERP 及财务系统。具备 AST CodeVision 架构审计、纯净沙箱环境与 Git PR / ZIP 双轨交付能力，安全隔离自愈。",
-        tag1: "AST 依赖图谱与合规审计",
+        desc: "覆盖 AI 官网、小程序、H5、OA、CRM、ERP 及财务系统。集成 ChaosBase 混沌云底座 (AI-Native BaaS)、具备 AST CodeVision 架构审计、纯净沙箱环境与 Git PR / ZIP 双轨交付能力，安全隔离自愈。",
+        tag1: "ChaosBase 混沌 BaaS 动态底座",
         tag2: "租户独立沙箱隔离构建",
         tag3: "Git 仓库自动 PR / ZIP 双轨交付"
       }
@@ -100,8 +101,8 @@ const translations: Record<Language, TranslationDict> = {
         c4Desc: "全网节点心跳监测、黑盒探针探测、亚 15 秒故障自动诊断与业务流程自愈重规划。",
         c5Title: "Reality Ledger 银行级审计账本",
         c5Desc: "不可篡改事实账本，调用计费零渗透原则，每一笔 Token 消耗与分润绑定唯一哈希链，财务透明可审计。",
-        c6Title: "PGVector 权威长短期记忆",
-        c6Desc: "知识轨与技能轨持久化隔离存储，亚 50ms 向量检索与长短期业务上下文追踪。"
+        c6Title: "ChaosBase 混沌云底座 (BaaS)",
+        c6Desc: "面向 Vibe Coding 的 AI-Native 混沌云底座，提供动态元数据 CRUD、Casbin 组织权限树、状态机工作流与 PGVector 知识库一体化流转。"
       },
       worker: {
         c1Title: "分布式多地域 Worker 网络",
@@ -294,8 +295,9 @@ const translations: Record<Language, TranslationDict> = {
     hero: {
       tag: "univerOS",
       badge: "Intelligent · Governed · Delivered",
+      agentFriendly: "Agent Friendly · Dual-Rail Ready",
       title: "",
-      titleHighlight: "Enterprise Multi-Role AI Workforce Delivery System",
+      titleHighlight: "Enterprise AI Multi-Role Agent Workforce Delivery System",
       desc: "Integrating software R&D, viral content marketing, and omni-channel perception. Featuring Dual-Rail dynamic approval gates and sovereign infrastructure for enterprise safety and Swarm productivity.",
       btnApply: "Partner Program",
       btnPricing: "Try Now",
@@ -333,8 +335,8 @@ const translations: Record<Language, TranslationDict> = {
       },
       rd: {
         title: "Software R&D",
-        desc: "From Web apps, mini-programs, and H5 landing pages to OA, CRM, ERP, and Finance systems. Features AST CodeVision architecture audits, sandbox environments, and automated Git PR / ZIP delivery.",
-        tag1: "AST Dependency & Compliance Audit",
+        desc: "From Web apps, mini-programs, and H5 landing pages to OA, CRM, ERP, and Finance systems. Features ChaosBase AI-Native BaaS, AST CodeVision architecture audits, sandbox environments, and automated Git PR / ZIP delivery.",
+        tag1: "ChaosBase AI-Native BaaS",
         tag2: "Isolated Tenant Sandbox Build",
         tag3: "Automated Git PR & ZIP Dual Delivery"
       }
@@ -356,8 +358,8 @@ const translations: Record<Language, TranslationDict> = {
         c4Desc: "Real-time node heartbeats, black-box probes, sub-15s auto-diagnosis, and self-healing task replanning.",
         c5Title: "Reality Ledger Bank-Grade Audit",
         c5Desc: "Append-only immutable ledger, zero-leakage accounting, hash-chained token billing, and fully auditable finances.",
-        c6Title: "PGVector Dual-Track Memory",
-        c6Desc: "Knowledge and skills track persistence, sub-50ms vector retrieval, and long-term context tracking."
+        c6Title: "ChaosBase AI-Native BaaS",
+        c6Desc: "BaaS engine designed for Vibe Coding: dynamic schema CRUD, Casbin RBAC tree, FSM workflows, and hybrid PGVector memory stream."
       },
       worker: {
         c1Title: "Distributed Global Worker Network",
